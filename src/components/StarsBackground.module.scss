@@ -1,0 +1,28 @@
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;  // Garantir que o container ocupe 100% da largura da tela
+  height: 100vh; // Garantir que o container ocupe 100% da altura da tela
+  z-index: 0;
+  overflow: hidden; // Impede que as estrelas saiam do contêiner
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
