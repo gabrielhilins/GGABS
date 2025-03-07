@@ -1,45 +1,89 @@
+$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+
 .hero-container {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  color: white;
+  background: #0a0a23; // Fundo escuro simulando o espaço
+  overflow: hidden;
+  z-index: 1; // Acima das estrelas
+
+  .title {
     position: relative;
-    text-align: center;
-    color: white;
-    background: #0a0a23; // Cor de fundo escura para simular o espaço
-    overflow: hidden;
+    z-index: 2; // Título acima das estrelas
+    padding-top: 20vh;
   
     h1 {
-      position: relative;
-      z-index: 1; // Garante que o título fique acima das estrelas
-      padding-top: 20vh;
-    }
-  
-    .stars-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-  
-    .star {
-      position: absolute;
-      background-color: white;
-      border-radius: 50%;
-      animation: twinkle 1.5s infinite ease-in-out;
-    }
-  
-    // Animação de cintilar das estrelas
-    @keyframes twinkle {
-      0% {
-        opacity: 0.5;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0.5;
-      }
+      font-size: 64px;
+      background: $gradient-one; // Gradiente como fundo do texto
+      -webkit-background-clip: text; // Clipa o gradiente ao texto
+      -webkit-text-fill-color: transparent; // Torna o texto transparente para mostrar o gradiente
     }
   }
-  
+
+  .subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    line-height: normal;
+    margin-top: 26px;
+  }
+
+  .botoes {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    z-index: 3; // Botões acima das estrelas e do título
+    position: relative;
+  }
+
+  .act {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background: #111D3E; // Cor padrão
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $gradient-one; // Gradiente no hover
+      color: #111D3E;
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .saibamais {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: #AFF0FF;
+    }
+
+    .icon2 {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}

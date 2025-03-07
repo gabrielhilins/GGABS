@@ -1,0 +1,75 @@
+// src/sections/Historia/Historia.module.scss
+$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+
+.historia-container {
+  background: #030614; // Fundo escuro
+  padding: 60px 20px;
+  height: 100vh; // Altura da viewport para o pin
+  position: relative;
+  color: white;
+  overflow: hidden; // Para garantir que o conteúdo fora da tela não seja visível
+}
+
+.horizontal-story {
+  display: flex;
+  width: 500%; // 5 painéis, ajuste conforme necessário
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.panel {
+  flex: 1 0 20%; // Cada painel ocupa 1/5 da largura total
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  background: #030614; // Fundo escuro padrão
+  color: white;
+}
+
+.illustration {
+  width: 300px; // Ajuste o tamanho da imagem conforme necessário
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 24px;
+  line-height: 1.5;
+  max-width: 80%;
+  color: white;
+  z-index: 10; // Garantir que o texto fique acima das imagens
+  position: relative;
+}
+
+.panel:nth-child(even) {
+  background: $gradient-one; // Aplicando o gradiente nos painéis alternados
+  color: white; // Texto claro em fundo escuro
+}
+
+.panel:nth-child(odd) {
+  background: #111D3E; // Cor sólida para painéis ímpares
+}
+
+@media (max-width: 768px) {
+  .horizontal-story {
+    width: 100%; // Ajuste a largura para telas menores
+  }
+
+  .panel {
+    padding: 15px; // Menos padding em telas menores
+  }
+
+  .illustration {
+    width: 250px; // Ajuste a largura das imagens para telas pequenas
+  }
+
+  .text {
+    font-size: 20px; // Reduza o tamanho da fonte para dispositivos móveis
+  }
+}

@@ -1,0 +1,133 @@
+$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+$gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
+
+.servicos-container {
+  background: #030614; // Fundo escuro consistente com o projeto
+  padding: 80px 20px;
+  min-height: 100vh; // Garante que a seção ocupe a tela inteira
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white; // Fundo azul escuro padrão
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent; // Borda inicial transparente
+  display: flex; // Adicionado para organizar os elementos internos
+  flex-direction: column; // Garante que os elementos fiquem em coluna
+  height: 100%; // Garante altura igual para todos os cards
+
+  &:hover {
+    background: #111D3E; // Fundo branco no hover
+    border: 2px solid #00DDEB; // Borda ciano no hover
+    transform: translateY(-10px); // Eleva o card ligeiramente
+    box-shadow: 0 10px 20px rgba(0, 221, 235, 0.3); // Sombra mais pronunciada
+
+    h2, ul, svg{
+      color: white; 
+    }
+
+    a {
+      color: #111D3E;
+      background: white;
+    }
+
+
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111D3E;
+    margin: 15px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    color: #111D3E;
+    text-align: justify; 
+
+    li {
+      margin: 10px 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: "•"; // Adiciona o ponto antes de cada item
+        color: #00DDEB;
+        font-size: 18px;
+      }
+    }
+  }
+
+  a.saiba-mais {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #111D3E;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto; // Faz o botão descer para a base do card
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: white;
+      color: #111D3E;
+    }
+  }
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #111D3E;
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

@@ -1,57 +1,68 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import styles from './StarsBackground.module.scss';
 
-const StarsBackground = () => {
+const StarsBackground = ({ section }) => {
+  const [stars, setStars] = useState([]);
+
   useEffect(() => {
-    const stars = document.querySelectorAll('.star');
-    
-    // Definindo a animação das estrelas para o eixo X
-    gsap.to(stars, {
-      x: "100vw", // Move as estrelas até a largura da tela
-      repeat: -1, // Loop infinito
-      duration: 20, // Ajuste conforme necessário
-      ease: "linear", // Movimento constante
-      stagger: 0.1, // Distância entre as estrelas
-      onRepeat: () => {
-        // Reposicionando as estrelas para o início do eixo X após o ciclo
-        stars.forEach(star => {
-          gsap.set(star, { x: -window.innerWidth });
+    const generateStars = () => {
+      const newStars = [];
+      for (let i = 0; i < 100; i++) {
+        newStars.push({
+          id: i,
+          size: Math.random() * 3 + 1,
+          left: Math.random() * 100, // Posição inicial aleatória em %
+          top: Math.random() * 100, // Posição inicial aleatória em %
+          duration: Math.random() * 20 + 10, // Tempo aleatório de movimento
         });
       }
-    });
+      setStars(newStars);
+    };
+
+    generateStars();
   }, []);
 
-  // Gerar estrelas dinamicamente
-  const generateStars = () => {
-    const stars = [];
-    for (let i = 0; i < 200; i++) {
-      const size = Math.random() * 3 + 1;
-      const left = Math.random() * 100; // Posição inicial aleatória das estrelas
-      const top = Math.random() * 100; // Posição inicial aleatória das estrelas
-      stars.push(
+  useEffect(() => {
+    stars.forEach((star) => {
+      gsap.fromTo(
+        `#star-${star.id}`,
+        { x: -window.innerWidth }, // Começa fora da tela à esquerda
+        {
+          x: window.innerWidth, // Move até o fim da tela à direita
+          duration: star.duration,
+          repeat: -1,
+          ease: "linear",
+        }
+      );
+    });
+  }, [stars]);
+
+  // Determina a classe do container com base na prop "section"
+  const containerClass =
+    section === "header"
+      ? styles["header-stars-container"]
+      : styles["hero-stars-container"];
+
+  return (
+    <div className={containerClass}>
+      {stars.map((star) => (
         <div
-          key={i}
-          className="star"
+          key={star.id}
+          id={`star-${star.id}`}
+          className={styles.star}
           style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            left: `${left}vw`,
-            top: `${top}vh`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            left: `${star.left}%`, // Posição inicial em %
+            top: `${star.top}%`,  // Posição inicial em %
             position: "absolute",
             borderRadius: "50%",
             backgroundColor: "white",
-            opacity: Math.random() * 0.8 + 0.2
+            opacity: Math.random() * 0.8 + 0.2,
           }}
         />
-      );
-    }
-    return stars;
-  };
-
-  return (
-    <div className={styles["stars-container"]}>
-      {generateStars()}
+      ))}
     </div>
   );
 };
