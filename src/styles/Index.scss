@@ -10,7 +10,11 @@
         font-family: "Michroma", sans-serif !important;
   }
 
-  h1, h2, h3, p, span, button {
+  html, body {
+    overflow-x: hidden; /* Impede o scroll horizontal */
+  }
+
+  h1, h2, h3, p, span, button, placeholder, form, input, select, textarea{
     font-family: "Michroma", sans-serif !important;
   }
   

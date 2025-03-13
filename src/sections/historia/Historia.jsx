@@ -31,7 +31,7 @@ const Historia = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top", // Inicia quando o topo da seção atinge o topo da viewport
-          end: () => `+=${horizontalRef.current.scrollWidth - window.innerWidth}`, // Define o fim da animação
+          end: () => `+=${horizontalRef.current.scrollWidth}`, // Define o fim da animação
           scrub: true, // Faz a animação seguir a rolagem
           pin: true, // Fixa a seção enquanto a animação acontece
         },

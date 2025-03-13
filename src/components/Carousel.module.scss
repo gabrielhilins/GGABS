@@ -1,178 +1,322 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-
 $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+$gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
 
 .carouselContainer {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-  
-    .sectionTitle {
-      font-size: 2rem;
-      font-weight: bold;
+  position: relative;
+  min-height: 100vh;
+  background: $gradient-two;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow: hidden;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 29, 62, 0.6);
+    z-index: 1;
+  }
+
+  .sectionTitle {
+    font-family: 'Michroma', sans-serif;
+    font-size: clamp(28px, 5vw, 36px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #AFF0FF;
+    margin-bottom: 2.5rem;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .carouselSwiper {
+    width: 100%;
+    max-width: 1200px;
+    z-index: 2;
+
+    .swiperSlide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 450px;
+      position: relative;
+      z-index: 1;
     }
-  
-    .carouselSwiper {
-      width: 100%;
-      max-width: 1200px;
-      padding: 2rem;
-  
-      .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        background: transparent;
-      }
-  
-      .slideContent {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+    .slideContent {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: clamp(20px, 3vw, 30px);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 1100px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
         gap: 2rem;
-        color: white;
-  
-        .leftSection {
-          flex: 1;
+      }
+
+      .leftSection {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .titleWrapper {
           display: flex;
-          flex-direction: column;
-          gap: 1rem;
-  
-          .slideTitle {
-            font-size: 2rem;
-            font-weight: bold;
-          }
-  
-          .description {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #d1d5db;
-            max-width: 500px;
-            text-align: justify;
-          }
-  
-          .featuresList {
-            list-style: square;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            background: $gradient-one;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-  
-            li {
-              font-size: 1rem;
-              color: #d1d5db;
-            }
-          }
-        }
-  
-        .rightSection {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
           align-items: center;
           gap: 1rem;
-  
-          .ctaTitle {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
+
+          .serviceIcon {
+            font-size: clamp(2.2rem, 5vw, 2.8rem);
+            color: #00DDEB;
+            filter: drop-shadow(0 0 8px rgba(0, 221, 235, 0.5));
           }
-  
-          .ctaButton {
+
+          .slideTitle {
+            font-family: 'Michroma', sans-serif;
+            font-size: clamp(26px, 4vw, 34px);
+            font-weight: 700;
+            color: white;
+            margin: 0;
+          }
+        }
+
+        .description {
+          font-size: clamp(14px, 2.5vw, 16px);
+          font-weight: 400;
+          text-align: justify;
+          line-height: 1.5;
+          color: #E0E0E0;
+          max-width: 90%;
+        }
+
+        .targetAudienceSection {
+          padding: 10px 12px;
+          background: rgba(0, 221, 235, 0.15);
+          border-radius: 8px;
+          border-left: 4px solid #00DDEB;
+
+          .targetAudienceTitle {
+            font-size: clamp(14px, 2.5vw, 16px);
+            font-weight: 600;
+            color: #AFF0FF;
+            margin-bottom: 6px;
+          }
+
+          .targetAudienceList {
+            list-style: none;
+            padding-left: 10px;
+
+            li {
+              font-size: clamp(10px, 2vw, 12px);
+              text-align: justify;
+              color: #E0E0E0;
+              margin-bottom: 5px;
+              position: relative;
+
+            }
+          }
+        }
+
+        .featuresToggle {
+          margin-top: 0.5rem;
+
+          summary {
+            font-size: clamp(14px, 2vw, 16px);
+            color: #AFF0FF;
+            cursor: pointer;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #00DDEB;
+            }
+          }
+
+          
+
+          .featuresList {
+            list-style: none;
+            padding: 10px 0 0 15px;
+            color: #E0E0E0;
+
+            li {
+              font-size: clamp(10px, 2vw, 12px);
+              margin-bottom: 6px;
+              padding-left: 15px;
+              position: relative;
+
+              &:before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: #6046FF;
+              }
+            }
+          }
+        }
+
+        .ctaPortfolio {
+          margin-top: 1rem;
+
+          .ctaButtonPortfolio {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            gap: 1.5rem; // Espaço entre o texto e o ícone
-            background: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
+            gap: 0.8rem;
+            background: #6046FF;
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 2rem);
             color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 0.5rem;
+            font-size: clamp(13px, 2vw, 15px);
+            font-weight: 700;
+            border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.2s;
-            width: 250px;
+            box-shadow: 0 5px 15px rgba(96, 70, 255, 0.4);
+            transition: all 0.3s ease;
 
-            .buttonText {
-                font-weight: bold;
-                color: white;
-            }
-          
             &:hover {
-              transform: scale(1.05);
+              background: #00DDEB;
+              transform: translateY(-3px);
+              box-shadow: 0 8px 20px rgba(0, 221, 235, 0.5);
             }
-          
+
             .ctaIcon {
-              font-size: 24px; // Ajuste do tamanho do ícone
+              font-size: clamp(1rem, 2vw, 1.2rem);
             }
           }
-          
         }
       }
-    }
-  
-    .swiperButtonPrev,
-    .swiperButtonNext {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-  
-      &:hover {
-        background-color: white;
-        color: #1e3a8a;
-        transform: scale(1.1);
-      }
-    }
-  
-    .swiperButtonPrev {
-      left: 10px;
-    }
-  
-    .swiperButtonNext {
-      right: 10px;
-    }
-  
-    .swiperPagination {
-      position: absolute;
-      bottom: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-  
-      .swiperPaginationBullet {
-        width: 12px;
-        height: 12px;
-        background-color: white;
-        border-radius: 50%;
-        opacity: 0.5;
-        cursor: pointer;
-        transition: opacity 0.3s;
-  
-        &.swiperPaginationBulletActive {
-          opacity: 1;
+
+      .ctaSection {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .ctaTitle {
+          font-size: clamp(18px, 3vw, 20px);
+          font-weight: 700;
+          color: #AFF0FF;
+          text-align: center;
+        }
+
+        .ctaButton {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          background: $gradient-one;
+          border: none;
+          padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+          color: white;
+          font-size: clamp(16px, 2.5vw, 18px);
+          font-weight: 700;
+          border-radius: 12px;
+          cursor: pointer;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          animation: pulse 2s infinite ease-in-out;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 25px rgba(0, 221, 235, 0.5);
+          }
+
+          .ctaIcon {
+            font-size: clamp(1.2rem, 2vw, 1.4rem);
+          }
         }
       }
     }
   }
+
+  // Estilização antiga restaurada para Navigation
+  .swiperButtonPrev,
+  .swiperButtonNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .swiperButtonPrev { left: 10px; }
+  .swiperButtonNext { right: 10px; }
+
+  // Estilização antiga restaurada para Pagination
+  .swiperPagination {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    gap: 8px;
+    z-index: 10;
+
+    .swiper-pagination-bullet {
+      background: rgba(0, 221, 235, 0.3);
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      &.swiper-pagination-bullet-active {
+        background: #00DDEB;
+        width: 16px;
+        height: 16px;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    min-height: auto;
+
+    .slideContent {
+      padding: 1.5rem;
+    }
+
+    .swiperButtonPrev,
+    .swiperButtonNext {
+      display: none;
+    }
+  }
+}

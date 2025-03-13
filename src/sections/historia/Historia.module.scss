@@ -1,4 +1,3 @@
-// src/sections/Historia/Historia.module.scss
 $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .historia-container {
@@ -12,7 +11,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .horizontal-story {
   display: flex;
-  width: 500%; // 5 painéis, ajuste conforme necessário
+  width: calc(100% * 5);
   height: 100%;
   position: absolute;
   top: 0;
@@ -33,7 +32,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 }
 
 .illustration {
-  width: 300px; // Ajuste o tamanho da imagem conforme necessário
+  width: 500px; // Ajuste o tamanho da imagem conforme necessário
   height: auto;
   margin-bottom: 20px;
 }
@@ -42,18 +41,23 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   font-size: 24px;
   line-height: 1.5;
   max-width: 80%;
-  color: white;
+  color: white; // Cor padrão do texto
   z-index: 10; // Garantir que o texto fique acima das imagens
   position: relative;
 }
 
 .panel:nth-child(even) {
-  background: $gradient-one; // Aplicando o gradiente nos painéis alternados
-  color: white; // Texto claro em fundo escuro
+  background: white; // Fundo branco para painéis pares
+  .text {
+    color: #111D3E; // Texto azul escuro para painéis pares
+  }
 }
 
 .panel:nth-child(odd) {
-  background: #111D3E; // Cor sólida para painéis ímpares
+  background: #111D3E; // Fundo azul escuro para painéis ímpares
+  .text {
+    color: white; // Texto branco para painéis ímpares
+  }
 }
 
 @media (max-width: 768px) {
