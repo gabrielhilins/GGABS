@@ -29,7 +29,7 @@ const Hero = () => {
     document.getElementById("diferenciais").scrollIntoView({ behavior: "smooth" });
   };
   const handleOrçamentoClick = () => {
-    navigate("/solicitar-orçamentos")
+    navigate("/solicitar-orcamentos")
   };
 
   return (

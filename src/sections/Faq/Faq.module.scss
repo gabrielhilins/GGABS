@@ -107,23 +107,28 @@ $button-hover: #009ac7; // Darker cyan
 }
 
 .answer {
-    padding: 5px 15px 5px 30px; // Reduced vertical padding, increased left padding for bullet
-    font-size: 12px; // Reduced font size
-    color: white;
-    background-color: $background-color; // Match the page background
-    border: 2px solid #fff; // White border
-    border-top: 0; // Remove top border
-    display: none;
-    font-family: "Michroma", sans-serif;
-    border-radius: 0 0 10px 10px; 
-    text-align: justify;
-    margin: 0;
-    box-sizing: border-box;
-  
-    .item.open & {
-      display: block;
-    }
+  padding: 0 15px; // Padding inicial (sem espaço vertical)
+  font-size: 12px;
+  color: white;
+  background-color: $background-color;
+  border: 2px solid #fff;
+  border-top: 0;
+  font-family: "Michroma", sans-serif;
+  border-radius: 0 0 10px 10px;
+  text-align: justify;
+  margin: 0;
+  box-sizing: border-box;
+  max-height: 0; // Altura inicial fechada
+  overflow: hidden; // Esconde o conteúdo
+  opacity: 0; // Inicia invisível
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out; // Transições suaves
+
+  .item.open & {
+    max-height: 500px; // Altura máxima (ajuste conforme necessário)
+    opacity: 1; // Torna visível
+    padding: 15px 15px 15px 30px; // Padding aumentado ao abrir
   }
+}
 
 .navigation {
   display: flex;

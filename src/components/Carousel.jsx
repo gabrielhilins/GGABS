@@ -32,7 +32,7 @@ const portfolioButtonText = {
 // Mapeamento de públicos-alvo para cada serviço
 const targetAudience = {
   "E-Commerce": [
-    "- Este serviço é para você que tem uma <strong>loja online</strong> e quer expandir suas vendas de maneira estratégica.",
+    "- Este serviço é para você que tem uma loja e quer expandir suas vendas de maneira estratégica online.",
     "- Se você é um empreendedor em busca de otimização e potencializar seu resultados, esse serviço é para você.",
     "- Você que quer transformar sua loja em uma máquina de vendas, este serviço é para você.",
   ],

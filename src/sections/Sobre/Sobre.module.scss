@@ -127,8 +127,17 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   color: #00DDEB; // Cor do autor
   margin-top: 8px; // Espaço entre a citação e o autor
   text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
+.videoLink {
+  font-size: 10px;
+  color: white;
+  font-weight: lighter;
+}
 // Responsividade
 @media (max-width: 768px) {
   .title {

@@ -29,7 +29,7 @@ const servicosData = [
     title: "Design",
     exemplos: [
       { nome: "Identidade Visual", descricao: "logotipos, paleta de cores e tipografia" },
-      { nome: "Cardápios", descricao: "menus interativos para restaurantes" },
+      { nome: "Cardápios", descricao: "menus bonitos e funcionais para restaurantes" },
       { nome: "Material Promocional", descricao: "banners, flyers e postagens para redes sociais" }
     ]
   }

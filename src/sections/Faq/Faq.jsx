@@ -52,7 +52,7 @@ function Faq() {
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className={styles.answer}>{item.resposta}</div>
+                  <div className={styles.answer}>- {item.resposta}</div>
                 )}
               </div>
             ))}

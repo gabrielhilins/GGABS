@@ -22,6 +22,25 @@ $gray: #E0E0E0;
     padding: 3rem;
   }
 
+  .goBackButton {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    background-color: #111D3E;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .goBackIcon {
+    margin-right: 10px;
+  }
+  
+
   .formSection, .contactSection {
     width: 100%;
     animation: fadeInUp 1s ease-out;
@@ -45,6 +64,11 @@ $gray: #E0E0E0;
       color: #666;
       margin-bottom: 1.5rem;
       text-align: center;
+    }
+
+    .umpasso {
+      font-size: 20px;
+      color: #5A7CFF;
     }
   }
 
@@ -225,6 +249,153 @@ $gray: #E0E0E0;
       }
     }
   }
+
+  .postSubmissionInfo {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil para destacar */
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  
+    strong {
+      font-weight: bold;
+      font-size: 18px;
+      color: #111D3E; /* Cor destacada para o título */
+    }
+  
+    p {
+      margin: 5px 0;
+      line-height: 1.5;
+    }
+  }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+  
+    h2 {
+      font-size: 24px;
+      color: #111D3E;
+      margin-bottom: 15px;
+    }
+  
+    p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .modalCloseButton {
+    background: #00DDEB;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      background: #00B8C4;
+    }
+  }
+
+  .fileList {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  
+    h4 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  .fileItem {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  
+    &:last-child {
+      border-bottom: none;
+    }
+  
+    span {
+      flex: 1;
+      font-size: 14px;
+      color: #444;
+    }
+  }
+  
+  .progressContainer {
+    width: 150px;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 10px;
+  }
+  
+  .progressBar {
+    height: 100%;
+    background: #4caf50;
+    transition: width 0.2s ease-in-out;
+  }
+  
+  .removeFileButton {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &:hover {
+      background: #cc0000;
+    }
+  }
+
+  
 
   @media (max-width: 768px) {
     padding: 1rem;

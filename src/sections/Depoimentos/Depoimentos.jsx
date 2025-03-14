@@ -15,7 +15,7 @@ function Depoimentos() {
       link: "https://www.instagram.com/uwed", // Exemplo de link do Instagram
     },
     {
-      user: "Metalmax",
+      user: "Maria Clara - Arquiteta",
       text: "I'm at a loss for words, this is amazing, I love it.",
       gradient: "linear-gradient(135deg, #22C55E, #A3E635)", // Verde claro
       link: "https://www.metalmax.com.br", // Exemplo de site

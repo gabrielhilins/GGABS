@@ -64,8 +64,8 @@ function Sobre() {
         <Tooltip id="curriculo-tooltip" place="bottom" />
         <hr className={styles.hr}></hr>
         <p className={styles.description}>
-          <strong>Fundador da GGABS Software & Design</strong>, sou um entusiasta
-          da tecnologia e inovação.
+          <strong>Fundador da GGABS Software & Design</strong>, sou um
+          entusiasta da tecnologia e inovação.
         </p>
         <p className={styles.description}>
           Com uma visão clara de transformar ideias em realidade, criei a{" "}
@@ -79,18 +79,30 @@ function Sobre() {
           qualidade e soluções tecnológicas inovadoras.
         </p>
         <p className={styles.description}>
-          Através da <strong>GGABS</strong>, busco oferecer soluções personalizadas e
-          acessíveis, ajudando empresas a transformarem suas ideias em realidade
-          e alcançarem seu potencial máximo.
+          Através da <strong>GGABS</strong>, busco oferecer soluções
+          personalizadas e acessíveis, ajudando empresas a transformarem suas
+          ideias em realidade e alcançarem seu potencial máximo.
         </p>
         <blockquote className={styles.quote}>
           <p className={styles.quotePt}>
-            &quot;Se você não falha, você nem está tentando.&quot;
+            &quot;Para conseguir algo que você nunca teve, precisa fazer algo
+            que nunca fez.&quot;
           </p>
           <p className={styles.quoteEn}>
-            &quot;If you don&apos;t fail, you&apos;re not even trying.&quot;
+            &quot;To get something you never had, you have to do something you
+            never did.&quot;
           </p>
-          <footer className={styles.quoteFooter}>— Denzel Washington</footer>
+          <footer className={styles.quoteFooter}>
+            <a
+              href="https://youtu.be/tt4DFUmoM2o?si=OyHM8ef0hZvxoixK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.videoLink}
+            >
+              Veja no YouTube
+            </a>
+            — Denzel Washington
+          </footer>
         </blockquote>
       </div>
     </div>

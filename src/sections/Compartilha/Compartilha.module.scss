@@ -1,281 +1,392 @@
 .compartilha-container {
-    text-align: center;
-    background-color: #111D3E;
+  text-align: center;
+  background-color: #111D3E;
+  color: white;
+  padding: 40px 20px;
+  margin: 0 auto;
+  width: 100%;
+
+  .title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
     color: white;
-    padding: 40px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .compartilha-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    padding: 32px;
+    max-width: 800px;
+    height: auto;
+    min-height: 600px;
+    border-radius: 16px;
     margin: 0 auto;
+    background: linear-gradient(135deg, #111D3E, #1A2A5A);
+    border: 2px solid #00DDEB;
+    box-shadow: 0 12px 24px rgba(0, 221, 235, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  .video-container {
+    margin-bottom: 20px;
     width: 100%;
-  
-    .title {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    max-width: 360px; /* Largura típica para simular tela de celular */
+
+    .video {
+      width: 100%;
+      height: 440px; /* Proporção 9:16 (360px * 16/9 = 640px) */
+      max-width: 100%;
+      border-radius: 8px;
+      object-fit: cover; /* Garante que o vídeo preencha o espaço sem distorção */
     }
-  
-    .subtitle {
-      font-size: 16px;
-      margin-bottom: 40px;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 600px;
+
+    .video-legenda {
       text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 10px;
     }
-  
-    .compartilha-card {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-      padding: 32px;
-      max-width: 800px;
-      height: auto;
-      min-height: 600px;
-      border-radius: 16px;
-      margin: 0 auto;
-      background: linear-gradient(135deg, #111D3E, #1A2A5A);
-      border: 2px solid #00DDEB;
-      box-shadow: 0 12px 24px rgba(0, 221, 235, 0.2);
-      transition: transform 0.3s ease;
-  
-      &:hover {
-        transform: translateY(-8px);
-      }
+  }
+
+  .passo-a-passo {
+    margin-bottom: 30px;
+    width: 100%;
+
+    .passo-titulo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #00DDEB;
+      text-align: center;
     }
-  
-    .link-container {
-      background: #ffffff;
-      color: #111D3E;
-      padding: 16px;
-      border-radius: 12px;
-      max-width: 500px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-      .link-text {
-        font-size: 14px;
-        margin-bottom: 8px;
-        font-weight: 500;
-      }
-  
-      .link-box {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding-left: 4px;
-        gap: 16px;
-        background: #f9f9f9;
-  
-        span {
-          font-size: 14px;
-          color: #333;
-        }
-  
-        button {
-          background: rgba(0, 119, 181, 1);
+
+    .passo-lista {
+      list-style: decimal;
+      padding-left: 20px;
+      text-align: left;
+
+      li {
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.9);
+
+        strong {
           color: white;
+          font-weight: 700;
+        }
+
+        p {
+          margin: 5px 0;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        .link-box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding-left: 4px;
+          gap: 16px;
+          background: #f9f9f9;
+          max-width: 500px;
+
+          span {
+            font-size: 14px;
+            color: #333;
+          }
+
+          button {
+            background: rgba(0, 119, 181, 1);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+
+            &:hover {
+              background: #00B8C4;
+            }
+          }
+        }
+
+        .instagram {
+          background: linear-gradient(180deg, #833AB4 0%, #FD1D1D 50%, #FDCB82 75%, #F5A623 100%);
+          color: white;
+          padding: 10px 15px;
           border: none;
-          padding: 6px 16px;
-          border-radius: 6px;
+          border-radius: 10px;
           cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 14px;
           font-weight: 600;
-          transition: background 0.3s ease;
-  
+          transition: transform 0.3s ease;
+
           &:hover {
-            background: #00B8C4;
+            transform: translateY(4px);
+          }
+
+          .icon {
+            font-size: 20px;
           }
         }
       }
     }
-  
-    .texto-e-botoes {
+  }
+
+  .link-container {
+    background: #ffffff;
+    color: #111D3E;
+    padding: 16px;
+    border-radius: 12px;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .link-text {
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .link-box {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-  
-    .textoExplicativo {
-      color: white;
-      text-align: justify;
-      width: 100%;
-  
-      .destaque {
-        font-size: 20px;
-        font-weight: 700;
-        color: #00DDEB;
-        display: block;
-        margin: 4px 0;
-      }
-  
-      .texto-secundario {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.8);
-      }
-    }
-  
-    .botoes-redes {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin: 15px 0;
-  
-      button {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 25px;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-size: 18px;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        transition: color 0.3s ease;
-        min-width: 150px;
-  
-        &:hover {
-          color: #ffffff;
-        }
-  
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          width: 6em;
-          aspect-ratio: 1;
-          background: rgba(255, 255, 255, 0.3);
-          opacity: 0.5;
-          border-radius: 50%;
-          transition: transform 500ms ease, opacity 300ms ease;
-          z-index: 0;
-        }
-  
-        &::before {
-          left: 0;
-          transform: translateX(-6em);
-        }
-  
-        &::after {
-          right: 0;
-          transform: translateX(6em);
-        }
-  
-        &:hover::before {
-          transform: translateX(-1em);
-          opacity: 0.7;
-        }
-  
-        &:hover::after {
-          transform: translateX(1em);
-          opacity: 0.7;
-        }
-  
-        &:active::before,
-        &:active::after {
-          background: rgba(0, 221, 235, 0.5);
-          opacity: 1;
-        }
-  
-        > * {
-          position: relative;
-          z-index: 1;
-        }
-  
-        .icon {
-          font-size: 24px;
-          display: flex;
-          align-items: center;
-        }
-  
-        span {
-          display: flex;
-          align-items: center;
-          font-size: 14px;
-          font-weight: bold;
-        }
-      }
-  
-      .whatsapp {
-        background: #25d366;
-        color: white;
-      }
-  
-      .twitter {
-        background: black;
-        color: white;
-      }
-  
-      .facebook {
-        background: #1877f2;
-        color: white;
-      }
-  
-      .linkedin {
-        background: #0a66c2;
-        color: white;
-      }
-    }
-  
-    .panfleto {
-      background: rgba(182, 0, 0, 1);
-      color: white;
-      padding: 12px 24px;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ddd;
       border-radius: 8px;
-      border: none;
-      cursor: pointer;
+      padding-left: 4px;
+      gap: 16px;
+      background: #f9f9f9;
+
+      span {
+        font-size: 14px;
+        color: #333;
+      }
+
+      button {
+        background: rgba(0, 119, 181, 1);
+        color: white;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #00B8C4;
+        }
+      }
+    }
+  }
+
+  .texto-e-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .textoExplicativo {
+    color: white;
+    text-align: justify;
+    width: 100%;
+
+    .destaque {
+      font-size: 20px;
+      font-weight: 700;
+      color: #00DDEB;
+      display: block;
+      margin: 4px 0;
+    }
+
+    .texto-secundario {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .botoes-redes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+
+    button {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 24px;
-      transition: background 0.3s ease, color 0.3s ease;
-  
+      gap: 25px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease;
+      min-width: 150px;
+
+      &:hover {
+        color: #ffffff;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 6em;
+        aspect-ratio: 1;
+        background: rgba(255, 255, 255, 0.3);
+        opacity: 0.5;
+        border-radius: 50%;
+        transition: transform 500ms ease, opacity 300ms ease;
+        z-index: 0;
+      }
+
+      &::before {
+        left: 0;
+        transform: translateX(-6em);
+      }
+
+      &::after {
+        right: 0;
+        transform: translateX(6em);
+      }
+
+      &:hover::before {
+        transform: translateX(-1em);
+        opacity: 0.7;
+      }
+
+      &:hover::after {
+        transform: translateX(1em);
+        opacity: 0.7;
+      }
+
+      &:active::before,
+      &:active::after {
+        background: rgba(0, 221, 235, 0.5);
+        opacity: 1;
+      }
+
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+
       .icon {
         font-size: 24px;
+        display: flex;
+        align-items: center;
       }
-  
-      &:hover {
-        background: white;
-        color: rgba(182, 0, 0, 1);
+
+      span {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
       }
     }
-  
-    .panfleto-instrucao {
-      font-size: 10px; /* Tamanho pequeno para não roubar atenção */
-      color: rgba(255, 255, 255, 0.7); /* Tom suave para hierarquia */
-      text-align: center;
-      max-width: 300px; /* Limita a largura para não ficar espalhado */
+
+    .whatsapp {
+      background: #25d366;
+      color: white;
     }
 
-    .fim {
-        margin-top: 70px;
+    .twitter {
+      background: black;
+      color: white;
     }
 
-    .agradecimento {
-        font-size: 12px;
+    .facebook {
+      background: #1877f2;
+      color: white;
     }
 
-    .voltar-para-topo {
-        font-size: 10px;
-        padding-top: 40px;
-        text-align: center; /* Opcional: centraliza o link, já que é comum em "voltar ao topo" */
-      
-        a {
-          color: white !important; /* Garante que o link seja branco */
-          text-decoration: underline;
-          transition: color 0.3s ease; /* Adiciona uma transição suave para o hover */
-      
-          &:hover {
-            color: #00B8C4; /* Um branco mais opaco no hover para feedback visual */
-          }
+    .linkedin {
+      background: #0a66c2;
+      color: white;
+    }
+  }
+
+  .panfleto {
+    background: rgba(182, 0, 0, 1);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    .icon {
+      font-size: 24px;
+    }
+
+    &:hover {
+      background: white;
+      color: rgba(182, 0, 0, 1);
+    }
+  }
+
+  .panfleto-instrucao {
+    font-size: 10px; /* Tamanho pequeno para não roubar atenção */
+    color: rgba(255, 255, 255, 0.7); /* Tom suave para hierarquia */
+    text-align: center;
+    max-width: 300px; /* Limita a largura para não ficar espalhado */
+  }
+
+  .fim {
+      margin-top: 70px;
+  }
+
+  .agradecimento {
+      font-size: 12px;
+  }
+
+  .voltar-para-topo {
+      font-size: 10px;
+      padding-top: 40px;
+      text-align: center; /* Opcional: centraliza o link, já que é comum em "voltar ao topo" */
+    
+      a {
+        color: white !important; /* Garante que o link seja branco */
+        text-decoration: underline;
+        transition: color 0.3s ease; /* Adiciona uma transição suave para o hover */
+    
+        &:hover {
+          color: #00B8C4; /* Um branco mais opaco no hover para feedback visual */
         }
       }
-  }
+    }
+}

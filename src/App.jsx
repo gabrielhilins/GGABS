@@ -8,7 +8,7 @@ import Estatisticas from "./sections/Estatisticas/Estatisticas";
 import Faq from "./sections/Faq/Faq";
 import Hero from "./sections/Hero/Hero";
 import Historia from "./sections/historia/Historia";
-import Orçamento from "./sections/Orçamento/Orçamento";
+import Orçamento from "./pages/Orçamento/Orçamento";
 import Portifolio from "./sections/Portifolio/Portifolio";
 import ServicoDevWeb from "./sections/Serviços/DesenvolvimentoWeb/DevWeb";
 import ServicoDesign from "./sections/Serviços/Design/Design";

@@ -25,7 +25,7 @@ function Header() {
             handleScroll('hero');
           }}
         >
-          Home
+          Início
         </a>
         <a
           href="#sobre"
