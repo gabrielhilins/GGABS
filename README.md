@@ -1,1 +1,1 @@
-# GGABS - Soluções Tech & Design
+# GGABS - Software & Design
