@@ -1,0 +1,158 @@
+$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+$gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
+
+.servicos-container {
+  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
+  padding: 40px 20px 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 400px; // Aumentando a largura
+  min-height: 200px; // Reduzindo a altura
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Distribui melhor os elementos
+  height: 100%;
+
+  &:hover {
+    background: #111D3E;
+    border: 2px solid #00DDEB;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 221, 235, 0.3);
+
+    h2, ul, svg {
+      color: white;
+    }
+
+    a {
+      color: #111D3E;
+      background: white;
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111D3E;
+    margin: 10px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: justify;
+
+    li {
+      margin: 5px 0;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: "•";
+        color: #00DDEB;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.exemplos {
+  color: #666;
+  margin-top: 5px;
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    font-size: 16px;
+    color: #999;
+    display: flex;
+    align-items: baseline; /* Mantém o exemplo e a descrição alinhados */
+    text-align: justify;
+    }
+  }
+
+
+a.saiba-mais {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #111D3E;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: auto;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: white;
+    color: #111D3E;
+  }
+}
+
+.icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #111D3E;
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .exemplos li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exemploDescricao {
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 13px;
+  }
+}

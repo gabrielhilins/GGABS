@@ -1,0 +1,119 @@
+.footerContainer {
+    background: #0a0a23;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    color: white;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        gap: 30px;
+    }
+}
+
+.verticalLine {
+    width: 2px;
+    height: 80px;
+    background-color: white;
+
+    @media (max-width: 768px) {
+        width: 60%;
+        height: 2px;
+    }
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+
+    p {
+        max-width: 300px;
+        font-size: 12px;
+        text-align: justify;
+    }
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+}
+
+.redesSociais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        margin: 0;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .icons {
+        display: flex;
+        gap: 40px;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        // Box padrão para as redes sociais
+        .socialBox {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: #111d3e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+            position: relative;
+
+            &:hover {
+                transform: translateY(5px);
+            }
+
+            .icon {
+                height: 32px;
+                width: 32px;
+                color: #111d3e;
+                transition: color 0.3s ease;
+            }
+
+            // Tooltip
+            &::after {
+                content: attr(data-tooltip);
+                position: absolute;
+                top: 120%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.8);
+                color: #fff;
+                font-size: 12px;
+                padding: 6px 10px;
+                border-radius: 4px;
+                white-space: nowrap;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                z-index: 10;
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+    }
+}

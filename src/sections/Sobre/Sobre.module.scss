@@ -1,0 +1,179 @@
+$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+
+.sobre-container {
+  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
+  padding: 60px 20px;
+  min-height: 100vh; // Garante que a seção ocupe a tela inteira
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; // Cor do texto ajustada para o fundo branco
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 60px; // Reduzi o espaço abaixo do título
+  color: white; // Cor do texto ajustada para o fundo branco
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  gap: 20px; // Espaço entre os ícones
+}
+
+.link {
+  color: white; // Cor dos ícones
+  font-size: 28px; // Tamanho dos ícones
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #00DDEB; // Cor ao passar o mouse
+  }
+}
+
+.profile-card {
+  border: 2px solid white; // Borda branca
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 221, 235, 0.2); // Sombra sutil para profundidade
+  position: relative; // Contexto para posicionamento absoluto da foto
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 253px; // Altura da logo
+  margin-bottom: 20px; // Espaço reduzido para ajustar a sobreposição
+}
+
+.logo {
+  width: 100%;
+  height: 253px;
+  flex-shrink: 0;
+  display: block; // Garante que a logo ocupe o espaço corretamente
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #00DDEB; // Borda azul para destacar
+  position: absolute;
+  bottom: -60px; // Posiciona a foto sobre a logo
+  left: 50%;
+  transform: translateX(-50%); // Centraliza horizontalmente
+  background: #fff; // Fundo branco para a foto se sobrepor bem
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Sombra para destacar
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-top: 60px; // Espaço após a foto sobreposta
+  margin-bottom: 2px;
+}
+
+.founder {
+  color: white;
+  margin-bottom: 16px;
+
+  p {
+    font-size: 10px;
+    opacity: 0.8;
+  }
+}
+
+.hr {
+  height: 2px;
+  width: 80px;
+  margin: 10px 0; // Espaço acima e abaixo da linha
+  background: #00DDEB; // Cor da linha
+  border: none;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8); // Texto com leve transparência
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.quote {
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px; // Espaço acima da citação
+  padding: 10px;
+  border-left: 4px solid #00DDEB; // Borda lateral para destacar
+  background-color: rgba(0, 221, 235, 0.1); // Fundo sutil
+  border-radius: 4px;
+}
+
+.quotePt {
+  font-size: 18px; // Tamanho maior para o texto em português
+  color: rgba(255, 255, 255, 0.9); // Cor do texto com menos transparência
+  margin-bottom: 8px; // Espaço entre as frases
+}
+
+.quoteEn {
+  font-size: 14px; // Tamanho menor para o texto em inglês
+  color: rgba(255, 255, 255, 0.7); // Cor do texto com mais transparência
+}
+
+.quoteFooter {
+  font-size: 14px;
+  font-weight: bold;
+  color: #00DDEB; // Cor do autor
+  margin-top: 8px; // Espaço entre a citação e o autor
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.videoLink {
+  font-size: 10px;
+  color: white;
+  font-weight: lighter;
+}
+// Responsividade
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .links {
+    gap: 15px; // Reduz o espaço entre os ícones
+    margin-bottom: 30px; // Reduz o espaço abaixo dos links
+  }
+
+  .profile-card {
+    padding: 30px;
+    max-width: 400px;
+  }
+
+  .logo {
+    height: 200px; // Reduz a altura da logo em telas menores
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    bottom: -50px; // Ajusta a posição da foto em telas menores
+  }
+
+  .name {
+    margin-top: 50px; // Ajusta o espaçamento após a foto
+  }
+}

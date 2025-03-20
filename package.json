@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-spring/web": "^9.7.5",
     "@tsparticles/react": "^3.0.0",
     "aos": "^2.3.4",
@@ -17,9 +18,16 @@
     "ggabs": "file:",
     "gsap": "^3.12.7",
     "react": "^18.3.1",
+    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
+    "react-router-dom": "^7.3.0",
     "react-scroll-parallax": "^3.4.5",
+    "react-toastify": "^11.0.5",
+    "react-tooltip": "^5.28.0",
+    "react-tsparticles": "^2.12.2",
+    "react-typed": "^2.0.12",
+    "swiper": "^11.2.5",
     "tsparticles": "^3.8.1"
   },
   "devDependencies": {
