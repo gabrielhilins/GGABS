@@ -3,47 +3,56 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 
 .servicos-container {
   background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
-  padding: 40px 20px 400px;
+  padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px) clamp(200px, 40vw, 400px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  min-height: 100vh;
 }
 
 .title {
-  font-size: 48px;
+  font-size: clamp(32px, 8vw, 48px);
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: clamp(5px, 2vw, 10px);
   color: white;
+  text-align: center;
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 40px;
+  margin-bottom: clamp(20px, 5vw, 40px);
   text-align: center;
 }
 
 .cards-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: clamp(15px, 3vw, 30px);
+  width: 90%;
+  max-width: 1200px;
+  flex-direction: row;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .card {
   background: white;
   border-radius: 15px;
-  padding: 20px;
-  width: 400px; // Aumentando a largura
-  min-height: 200px; // Reduzindo a altura
+  padding: clamp(15px, 3vw, 20px);
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid transparent;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; // Distribui melhor os elementos
+  justify-content: space-between;
   height: 100%;
 
   &:hover {
@@ -63,29 +72,30 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
   }
 
   h2 {
-    font-size: 22px;
+    font-size: clamp(18px, 3.5vw, 22px);
     font-weight: bold;
     color: #111D3E;
-    margin: 10px 0;
+    margin: clamp(5px, 1.5vw, 10px) 0;
   }
 
   ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: clamp(5px, 1.5vw, 10px) 0;
     text-align: justify;
 
     li {
-      margin: 5px 0;
-      font-size: 15px;
+      margin: clamp(3px, 1vw, 5px) 0;
+      font-size: clamp(13px, 2vw, 15px);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: clamp(5px, 1vw, 8px);
 
       &::before {
         content: "•";
         color: #00DDEB;
-        font-size: 16px;
+        font-size: clamp(14px, 2vw, 16px);
+        flex-shrink: 0;
       }
     }
   }
@@ -93,29 +103,34 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 
 .exemplos {
   color: #666;
-  margin-top: 5px;
+  margin-top: clamp(3px, 1vw, 5px);
   padding-left: 0;
   list-style-type: none;
 
   li {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     color: #999;
     display: flex;
-    align-items: baseline; /* Mantém o exemplo e a descrição alinhados */
+    align-items: baseline;
     text-align: justify;
-    }
   }
+}
 
+.exemploDescricao {
+  font-size: clamp(11px, 1.8vw, 13px);
+  margin-left: clamp(5px, 1vw, 10px);
+}
 
 a.saiba-mais {
   display: inline-block;
-  padding: 8px 16px;
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2.5vw, 16px);
   background: #111D3E;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   margin-top: auto;
   transition: background 0.3s ease;
+  font-size: clamp(12px, 2vw, 14px);
 
   &:hover {
     background: white;
@@ -124,24 +139,21 @@ a.saiba-mais {
 }
 
 .icon {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: clamp(24px, 6vw, 36px);
+  margin-bottom: clamp(5px, 2vw, 10px);
   color: #111D3E;
 }
 
-// Responsividade
-@media (max-width: 768px) {
-  .title {
-    font-size: 36px;
-  }
-
+// Media queries específicas
+@media screen and (max-width: 768px) {
   .cards-container {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .card {
-    width: 90%;
+    width: 95%;
     max-width: 400px;
   }
 
@@ -153,6 +165,21 @@ a.saiba-mais {
   .exemploDescricao {
     margin-left: 0;
     margin-top: 5px;
-    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .servicos-container {
+    padding: 20px 15px 150px;
+  }
+
+  .card {
+    min-height: 180px;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 }

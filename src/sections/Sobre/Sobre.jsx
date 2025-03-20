@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
 import styles from "./Sobre.module.scss";
 import Logo from "../../assets/img/Logo-T-Branco-FundoAzul.png";
-import profilePhoto from "../../assets/img/fotoGabriel.png";
+import profilePhoto from "../../assets/img/FotoGabriel.png";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css"; // Importando os estilos do Tooltip
 import AOS from "aos";
