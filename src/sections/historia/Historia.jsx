@@ -18,28 +18,51 @@ const Historia = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Verifica se os elementos existem antes de iniciar a animação
     if (!containerRef.current || !horizontalRef.current) return;
 
-    // Definindo a animação com ScrollTrigger
-    gsap.fromTo(
-      horizontalRef.current,
-      { x: 0 }, // Posição inicial
-      {
-        x: () => -(horizontalRef.current.scrollWidth - window.innerWidth), // Movimento horizontal
-        ease: "none", // Não vai ter aceleração ou desaceleração
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top", // Inicia quando o topo da seção atinge o topo da viewport
-          end: () => `+=${horizontalRef.current.scrollWidth}`, // Define o fim da animação
-          scrub: true, // Faz a animação seguir a rolagem
-          pin: true, // Fixa a seção enquanto a animação acontece
-        },
-      }
-    );
+    const panels = horizontalRef.current.children;
+    const isMobile = window.innerWidth <= 768;
+
+    let animation;
+
+    if (!isMobile) {
+      // Animação Horizontal para Telas Grandes
+      animation = gsap.fromTo(
+        horizontalRef.current,
+        { x: 0 },
+        {
+          x: () => -(horizontalRef.current.scrollWidth - window.innerWidth),
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: () => `+=${horizontalRef.current.scrollWidth}`,
+            scrub: true,
+            pin: true,
+            invalidateOnRefresh: true, // Recalcula ao redimensionar
+          },
+        }
+      );
+    } else {
+      // Desativa o efeito horizontal e ajusta para vertical em telas pequenas
+      gsap.set(horizontalRef.current, { x: 0 }); // Reseta a posição
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        pin: false, // Remove o pin em telas pequenas
+      });
+    }
+
+    // Atualiza a animação ao redimensionar a janela
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("resize", handleResize);
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

@@ -2,8 +2,8 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
 
 .servicos-container {
-  background: #030614;
-  padding: 40px 20px;
+  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
+  padding: 40px 20px 400px;
   display: flex;
   flex-direction: column;
   align-items: center;

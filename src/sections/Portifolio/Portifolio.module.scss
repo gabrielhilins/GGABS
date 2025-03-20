@@ -1,6 +1,6 @@
 .portifolio-container {
   padding: 60px 20px; /* Mais espaço no topo para harmonia */
-  background-color: #f5f7fa;
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   text-align: center;
   position: relative;
 
@@ -8,13 +8,13 @@
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #111d3e;
+    color: white;
   }
 
   .subtitle {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #111d3e;
+    color: white;
     opacity: 0.7;
   }
 
@@ -192,6 +192,7 @@
     &:has(input[type="radio"]:checked) {
       background: #111d3e; // Cor do botão ativo
       color: white;
+      border: white 1px solid;
 
       &::before {
         background: white; /* Deixa a bolinha preenchida quando selecionado */

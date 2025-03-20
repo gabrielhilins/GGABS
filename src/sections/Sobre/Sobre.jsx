@@ -16,7 +16,7 @@ function Sobre() {
 
   return (
     <div className={styles["sobre-container"]}>
-      <h1 className={styles.title}>Sobre a GGABS Software & Design</h1>
+      <h1 className={styles.title}>Sobre a GGABS Tech & Design</h1>
       <div className={styles["profile-card"]} data-aos="fade-up">
         <div className={styles["logo-wrapper"]}>
           <img src={Logo} alt="Logo GGABS" className={styles.logo} />
@@ -27,6 +27,9 @@ function Sobre() {
           />
         </div>
         <h2 className={styles.name}>Gabriel Henrique Lins</h2>
+        <div className={styles.founder}>
+          <p>Fundador da GGABS Tech & Design</p>
+        </div>
         <div className={styles.links}>
           <a
             href="https://www.linkedin.com/in/gabriel-henrique-lins/"
@@ -63,10 +66,6 @@ function Sobre() {
         <Tooltip id="github-tooltip" place="bottom" />
         <Tooltip id="curriculo-tooltip" place="bottom" />
         <hr className={styles.hr}></hr>
-        <p className={styles.description}>
-          <strong>Fundador da GGABS Software & Design</strong>, sou um
-          entusiasta da tecnologia e inovação.
-        </p>
         <p className={styles.description}>
           Com uma visão clara de transformar ideias em realidade, criei a{" "}
           <strong>GGABS </strong>para oferecer soluções digitais que impulsionam

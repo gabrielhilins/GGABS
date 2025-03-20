@@ -15,7 +15,7 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
 .carouselContainer {
   position: relative;
   min-height: 100vh;
-  background: $gradient-two;
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,6 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(17, 29, 62, 0.6);
     z-index: 1;
   }
 
@@ -265,8 +264,6 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
     justify-content: center;
     font-size: clamp(1rem, 3vw, 1.5rem);
     color: white;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
     cursor: pointer;
     z-index: 10;
 
