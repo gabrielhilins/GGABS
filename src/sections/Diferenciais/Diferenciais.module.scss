@@ -2,9 +2,13 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .diferenciais-container {
   background: #0a0a23; // Fundo escuro similar ao da imagem
-  padding: 60px 40px;
+  padding: 60px 40px 180px;
   text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -24,7 +28,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   display: grid;
   grid-template-columns: repeat(4, 1fr); // 4 colunas
   grid-template-rows: repeat(3, auto); // 3 linhas
-  gap: 20px;
+  gap: 120px;
   max-width: 1200px;
   margin: 0 auto;
 }

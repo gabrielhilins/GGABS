@@ -1,8 +1,12 @@
 .depoimentos-container {
-    padding: 40px 20px 140px;
+    padding: 40px 20px 450px;
     background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
     text-align: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   
     .title {
       font-size: 32px;

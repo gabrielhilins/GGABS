@@ -29,7 +29,7 @@ function App() {
   );
 
   return (
-    <div className="app-container">
+    <div className="app-container ">
       {!isOrcamentoRoute && <Header />}
       <Routes>
         {/* Rota principal */}
@@ -82,7 +82,7 @@ function App() {
 
         <Route path="/solicitar-orcamentos" element={<Orçamento />}></Route>
       </Routes>
-      <Footer />
+      {!isOrcamentoRoute && <Footer />}
     </div>
   );
 }
