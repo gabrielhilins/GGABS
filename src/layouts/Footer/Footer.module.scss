@@ -1,119 +1,141 @@
 .footerContainer {
     background: #0a0a23;
     width: 100%;
-    height: 220px;
+    height: auto; // Alterado de 220px fixo para auto
+    min-height: 220px; // Mantém uma altura mínima
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: clamp(30px, 8vw, 80px); // Gap ajustável
     color: white;
     text-align: center;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        height: auto;
-        padding: 20px 0;
-        gap: 30px;
+    padding: clamp(20px, 5vw, 40px) 0; // Padding vertical ajustável, sem padding lateral
+  
+    .verticalLine {
+      width: 2px;
+      height: clamp(40px, 10vw, 80px); // Altura ajustável
+      background-color: white;
     }
-}
-
-.verticalLine {
-    width: 2px;
-    height: 80px;
-    background-color: white;
-
-    @media (max-width: 768px) {
-        width: 60%;
-        height: 2px;
-    }
-}
-
-.copyright {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 5px;
-
-    p {
-        max-width: 300px;
-        font-size: 12px;
+  
+    .copyright {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: clamp(3px, 1vw, 5px);
+  
+      p {
+        max-width: clamp(200px, 40vw, 300px); // Largura ajustável
+        font-size: clamp(10px, 1.5vw, 12px);
         text-align: justify;
+        margin: 0; // Remove margens indesejadas
+      }
     }
-}
-
-.logo img {
-    width: 180px;
-    height: auto;
-}
-
-.redesSociais {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    p {
+  
+    .logo img {
+      width: clamp(120px, 20vw, 180px); // Tamanho ajustável
+      height: auto;
+    }
+  
+    .redesSociais {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(5px, 1.5vw, 10px);
+  
+      p {
         margin: 0;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .icons {
+        font-size: clamp(12px, 2vw, 16px);
+        margin-bottom: clamp(5px, 1vw, 10px);
+      }
+  
+      .icons {
         display: flex;
-        gap: 40px;
-
+        gap: clamp(20px, 5vw, 40px); // Gap ajustável
+  
         a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
-
-        // Box padrão para as redes sociais
+  
         .socialBox {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          width: clamp(36px, 8vw, 48px); // Tamanho ajustável
+          height: clamp(36px, 8vw, 48px);
+          border-radius: 10px;
+          background: white;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          color: #111d3e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.3s ease, transform 0.3s ease;
+          position: relative;
+  
+          &:hover {
+            transform: translateY(5px);
+          }
+  
+          .icon {
+            height: clamp(20px, 5vw, 32px);
+            width: clamp(20px, 5vw, 32px);
             color: #111d3e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s ease, transform 0.3s ease;
-            position: relative;
-
-            &:hover {
-                transform: translateY(5px);
-            }
-
-            .icon {
-                height: 32px;
-                width: 32px;
-                color: #111d3e;
-                transition: color 0.3s ease;
-            }
-
-            // Tooltip
-            &::after {
-                content: attr(data-tooltip);
-                position: absolute;
-                top: 120%;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: rgba(0, 0, 0, 0.8);
-                color: #fff;
-                font-size: 12px;
-                padding: 6px 10px;
-                border-radius: 4px;
-                white-space: nowrap;
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-                z-index: 10;
-            }
-
-            &:hover::after {
-                opacity: 1;
-            }
+            transition: color 0.3s ease;
+          }
+  
+          // Tooltip
+          &::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: clamp(10px, 1.5vw, 12px);
+            padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 10px);
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 10;
+          }
+  
+          &:hover::after {
+            opacity: 1;
+          }
         }
+      }
     }
-}
+  
+    // Media queries específicas
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: clamp(15px, 4vw, 20px) 0;
+      gap: clamp(20px, 5vw, 30px);
+      min-height: auto; // Remove altura fixa em telas menores
+  
+      .verticalLine {
+        width: clamp(40%, 60vw, 60%);
+        height: 2px;
+      }
+    }
+  
+    @media screen and (max-width: 480px) {
+      padding: 10px 0;
+  
+      .copyright {
+        flex-direction: column;
+        text-align: center;
+  
+        p {
+          text-align: center;
+        }
+      }
+  
+      .redesSociais {
+        .icons {
+          gap: clamp(10px, 3vw, 20px);
+        }
+      }
+    }
+  }

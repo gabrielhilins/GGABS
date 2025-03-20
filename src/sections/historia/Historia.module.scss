@@ -11,18 +11,12 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .horizontal-story {
   display: flex;
-  width: calc(100% * 5); // Mantém a largura total para telas grandes
+  width: calc(100% * 5); // 5 painéis em telas grandes
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    flex-direction: column; // Muda para vertical em telas pequenas
-    position: relative;
-    height: auto;
-  }
+  transition: transform 0.5s ease; // Animação original mantida
 }
 
 .panel {
@@ -34,61 +28,97 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   text-align: center;
   padding: clamp(1rem, 3vw, 1.25rem);
   position: relative;
-  background: #111D3E;
   color: white;
-
-  @media (max-width: 768px) {
-    flex: 1 0 auto; // Painéis ocupam altura total em modo vertical
-    min-height: 100vh; // Cada painel ocupa a altura da tela
-  }
 }
 
 .illustration {
-  width: clamp(15rem, 40vw, 31.25rem); // Escala de 240px a 500px
+  width: clamp(15rem, 40vw, 31.25rem); // 240px a 500px
   height: auto;
   margin-bottom: clamp(1rem, 2vw, 1.25rem);
+  max-width: 100%; // Evita overflow
 }
 
 .text {
-  font-size: clamp(1rem, 4vw, 1.5rem); // Escala de 16px a 24px
+  font-size: clamp(1rem, 4vw, 1.5rem); // 16px a 24px
   line-height: 1.5;
-  max-width: 80%;
+  max-width: clamp(70%, 80vw, 80%);
   color: white;
   z-index: 10;
   position: relative;
 }
 
 .panel:nth-child(even) {
-  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
+  
   .text {
     color: white;
   }
 }
 
 .panel:nth-child(odd) {
-  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
+  
   .text {
     color: white;
   }
 }
 
-@media (max-width: 768px) {
+// Media queries específicas
+@media screen and (max-width: 768px) {
+  .horizontal-story {
+    width: 100%;
+    flex-direction: column; // Vertical em telas menores
+    position: relative;
+    height: auto;
+    transition: none; // Remove transição em modo vertical para evitar lentidão
+  }
+
   .panel {
+    flex: 1 0 auto;
     padding: clamp(0.75rem, 2vw, 0.9375rem);
   }
 
   .illustration {
-    width: clamp(10rem, 60vw, 15.625rem); // Ajuste para telas menores
+    width: clamp(10rem, 60vw, 15.625rem); // 160px a 250px
+    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
   }
 
   .text {
-    font-size: clamp(0.875rem, 3vw, 1.25rem); // Ajuste fino para mobile
+    font-size: clamp(0.875rem, 3vw, 1.25rem); // 14px a 20px
     max-width: 90%;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+  .historia-container {
+    padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .panel {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
   .illustration {
-    width: clamp(8rem, 50vw, 12.5rem);
+    width: clamp(8rem, 50vw, 12.5rem); // 128px a 200px
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+  }
+
+  .text {
+    font-size: clamp(0.75rem, 2.5vw, 1rem); // 12px a 16px
+    max-width: 95%;
+  }
+}
+
+// Ajustes para telas grandes
+@media screen and (min-width: 1200px) {
+  .panel {
+    padding: clamp(1.5rem, 2vw, 2rem);
+  }
+
+  .illustration {
+    width: clamp(20rem, 30vw, 31.25rem); // Maior em telas grandes
+  }
+
+  .text {
+    font-size: clamp(1.25rem, 2vw, 1.5rem); // Maior legibilidade
+    max-width: 70%;
   }
 }

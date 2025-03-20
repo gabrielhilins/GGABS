@@ -1,117 +1,118 @@
 .portifolio-container {
-  padding: 60px 20px; /* Mais espaço no topo para harmonia */
+  padding: clamp(30px, 8vw, 60px) clamp(15px, 3vw, 20px);
   background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   text-align: center;
   position: relative;
+  min-height: 100vh;
 
   .title {
-    font-size: 32px;
+    font-size: clamp(24px, 6vw, 32px);
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: clamp(5px, 2vw, 10px);
     color: white;
   }
 
   .subtitle {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: clamp(14px, 3vw, 18px);
+    margin-bottom: clamp(20px, 5vw, 40px);
     color: white;
     opacity: 0.7;
   }
 
   .portifolio-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    gap: 20px; /* Espaçamento entre cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(15px, 3vw, 20px);
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza o grid */
-    padding-bottom: 40px; /* Espaço antes da navegação */
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr; /* 1 coluna em telas menores */
-    }
+    margin: 0 auto;
+    padding-bottom: clamp(20px, 5vw, 40px);
+    width: 90%;
   }
 
   .portifolio-card {
-    background: linear-gradient(135deg, #2d3748, #4a5568); /* Gradiente escuro */
+    background: linear-gradient(135deg, #2d3748, #4a5568);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-      transform: translateY(-10px); /* Eleva o card no hover */
+      transform: translateY(-10px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
     .card-image {
       width: 100%;
-      height: 200px; /* Altura fixa baseada no vídeo */
-      object-fit: cover; /* Garante que o vídeo ocupe o espaço */
-      border-bottom: 2px solid #4a5568; /* Linha de separação */
+      height: clamp(150px, 40vw, 200px);
+      object-fit: cover;
+      border-bottom: 2px solid #4a5568;
     }
 
     video {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Garante que o vídeo cubra o espaço */
-      border-radius: 15px 15px 0 0; /* Bordas arredondadas no topo */
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
     }
 
     .card-content {
-      padding: 20px;
+      padding: clamp(15px, 3vw, 20px);
       text-align: left;
       color: white;
 
       .card-title {
-        font-size: 24px;
+        font-size: clamp(18px, 4vw, 24px);
         font-weight: 600;
-        margin-bottom: 10px;
-        color: #f7fafc; /* Branco suave */
+        margin-bottom: clamp(5px, 2vw, 10px);
+        color: #f7fafc;
       }
 
       .card-text {
-        font-size: 14px;
+        font-size: clamp(12px, 2vw, 14px);
         color: #e2e8f0;
-        margin-bottom: 20px;
+        margin-bottom: clamp(10px, 3vw, 20px);
         line-height: 1.6;
       }
 
       .links {
         display: flex;
-        justify-content: space-between; /* Isso garante que os itens fiquem nas extremidades */
+        justify-content: space-between;
         align-items: center;
-        width: 100%; /* Para garantir que o container ocupe toda a largura disponível */
+        width: 100%;
+        flex-wrap: wrap;
+        gap: clamp(5px, 1vw, 10px);
       }
 
       .card-button {
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        padding: 8px;
+        gap: clamp(5px, 1vw, 10px);
+        padding: clamp(6px, 1.5vw, 8px);
         max-width: 320px;
         text-decoration: none;
         border-radius: 5px;
-        font-size: 12px;
+        font-size: clamp(10px, 1.8vw, 12px);
         font-weight: bold;
-        transition: background 0.3s ease;
+        transition: opacity 0.3s ease;
 
         &:hover {
-          opacity: 0.8; /* Exemplo de hover para o botão */
+          opacity: 0.8;
         }
       }
 
       .card-instagram {
         color: white;
-        font-size: 24px;
-      }
+        font-size: clamp(18px, 4vw, 24px);
+        transition: color 0.3s ease;
 
-      .card-instagram:hover {
-        color: aqua;
+        &:hover {
+          color: aqua;
+        }
       }
 
       .icon {
-        height: 24px;
-        width: 24px;
+        height: clamp(18px, 4vw, 24px);
+        width: clamp(18px, 4vw, 24px);
       }
     }
   }
@@ -119,40 +120,41 @@
   .portifolio-nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px; /* Espaço acima da navegação */
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(20px, 5vw, 40px);
+    flex-wrap: wrap;
   }
 
   .portifolio-sub-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem; // Espaçamento menor entre os sub-radios
+    gap: clamp(0.2rem, 0.5vw, 0.3rem);
     justify-content: center;
-    margin: 1rem 0;
+    margin: clamp(0.5rem, 2vw, 1rem) 0;
 
     .sub-nav-button {
-      padding: 0.3rem 0.8rem; // Padding menor para os sub-radios
-      font-size: 0.8rem; // Fonte menor para os sub-radios
-      border: 1px solid #ccc; // Borda mais fina
-      border-radius: 15px; // Bordas menos arredondadas
+      padding: clamp(0.2rem, 0.8vw, 0.3rem) clamp(0.6rem, 1.5vw, 0.8rem);
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      border: 1px solid #ccc;
+      border-radius: 15px;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-bottom: 20px;
-      background-color: #f1f1f1; // Cor de fundo mais clara
-      color: #555; // Cor do texto mais suave
+      margin-bottom: clamp(10px, 2vw, 20px);
+      background-color: #f1f1f1;
+      color: #555;
 
       input[type="radio"] {
         display: none;
       }
 
       &:hover {
-        background-color: #ddd; // Cor de fundo ao passar o mouse
+        background-color: #ddd;
       }
 
       &.active {
-        background-color: #555; // Cor de fundo quando ativo
-        color: #fff; // Cor do texto quando ativo
-        border-color: #555; // Cor da borda quando ativo
+        background-color: #555;
+        color: #fff;
+        border-color: #555;
       }
     }
   }
@@ -161,27 +163,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 10px 35px;
+    gap: clamp(5px, 1vw, 10px);
+    padding: clamp(8px, 2vw, 10px) clamp(20px, 5vw, 35px);
     background: white;
     color: #111d3e;
     border-radius: 10px;
     border: 2px solid #111d3e;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease;
-    position: relative; /* Para posicionar a bolinha corretamente */
+    position: relative;
 
     input[type="radio"] {
-      display: none; // Esconde o input original
+      display: none;
     }
 
     &::before {
       content: "";
-      width: 12px;
-      height: 12px;
-      left: 4px;
+      width: clamp(8px, 2vw, 12px);
+      height: clamp(8px, 2vw, 12px);
+      left: clamp(2px, 1vw, 4px);
       border: 2px solid #111d3e;
       border-radius: 50%;
       position: absolute;
@@ -190,13 +192,41 @@
     }
 
     &:has(input[type="radio"]:checked) {
-      background: #111d3e; // Cor do botão ativo
+      background: #111d3e;
       color: white;
       border: white 1px solid;
 
       &::before {
-        background: white; /* Deixa a bolinha preenchida quando selecionado */
+        background: white;
       }
+    }
+  }
+
+  // Media queries específicas
+  @media screen and (max-width: 768px) {
+    .portifolio-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .portifolio-nav {
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 20px 10px;
+
+    .portifolio-card .card-content {
+      padding: 10px;
+    }
+
+    .links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .card-button {
+      max-width: 100%;
     }
   }
 }

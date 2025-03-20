@@ -17,9 +17,7 @@ function Orçamento() {
     service: "",
     otherService: "",
     briefing: "",
-    deadline: "", // Novo campo adicionado
-    files: [],
-    deadline: "", // Novo campo adicionado
+    deadline: "",
     files: [],
   });
   const [errors, setErrors] = useState({});
@@ -39,18 +37,11 @@ function Orçamento() {
 
   const formatarTelefone = (value) => {
     const onlyNums = value.replace(/[^\d]/g, "");
-    const onlyNums = value.replace(/[^\d]/g, "");
     if (onlyNums.length <= 11) {
       return onlyNums
         .replace(/(\d{2})(\d)/, "($1) $2")
         .replace(/(\d{5})(\d)/, "$1-$2");
-        .replace(/(\d{2})(\d)/, "($1) $2")
-        .replace(/(\d{5})(\d)/, "$1-$2");
     }
-    return onlyNums
-      .slice(0, 11)
-      .replace(/(\d{2})(\d)/, "($1) $2")
-      .replace(/(\d{5})(\d)/, "$1-$2");
     return onlyNums
       .slice(0, 11)
       .replace(/(\d{2})(\d)/, "($1) $2")
@@ -59,12 +50,8 @@ function Orçamento() {
 
   const handleChangeTelefone = (e) => {
     const value = e.target.value.replace(/[^\d]/g, "");
-    const value = e.target.value.replace(/[^\d]/g, "");
     const formattedPhone = formatarTelefone(value);
-    setFormData((prev) => ({
-      ...prev,
-      phone: formattedPhone,
-    }));
+    setFormData((prev) => ({ ...prev, phone: formattedPhone }));
     setErrors((prev) => ({ ...prev, phone: "" }));
   };
 
@@ -82,13 +69,10 @@ function Orçamento() {
       newErrors.phone = "Digite um telefone válido";
     }
     if (!formData.service) newErrors.service = "Selecione um serviço";
-    if (!formData.briefing.trim())
-      newErrors.briefing = "O resumo é obrigatório";
+    if (!formData.briefing.trim()) newErrors.briefing = "O resumo é obrigatório";
     if (formData.service === "outro" && !formData.otherService.trim())
       newErrors.otherService = "Descreva o tipo de serviço";
-    if (!formData.deadline) newErrors.deadline = "Selecione um prazo"; // Validação do novo campo
-      newErrors.otherService = "Descreva o tipo de serviço";
-    if (!formData.deadline) newErrors.deadline = "Selecione um prazo"; // Validação do novo campo
+    if (!formData.deadline) newErrors.deadline = "Selecione um prazo";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -109,12 +93,10 @@ function Orçamento() {
 
   const handleFileChange = (e) => {
     const newFiles = Array.from(e.target.files || []);
-    const newFiles = Array.from(e.target.files || []);
     if (newFiles.length > 0) {
       setFormData((prev) => ({
         ...prev,
-        files: [...(prev.files || []), ...newFiles],
-        files: [...(prev.files || []), ...newFiles],
+        files: [...prev.files, ...newFiles],
       }));
       newFiles.forEach((file) => simulateUploadProgress(file.name));
     }
@@ -123,8 +105,7 @@ function Orçamento() {
   const removeFile = (fileName) => {
     setFormData((prev) => ({
       ...prev,
-      files: (prev.files || []).filter((file) => file.name !== fileName),
-      files: (prev.files || []).filter((file) => file.name !== fileName),
+      files: prev.files.filter((file) => file.name !== fileName),
     }));
     setUploadProgress((prev) => {
       const newProgress = { ...prev };
@@ -138,10 +119,8 @@ function Orçamento() {
     if (validateForm()) {
       const dataToSend = {
         ...formData,
-        files: (formData.files || []).map((file) => file.name),
-        files: (formData.files || []).map((file) => file.name),
+        files: formData.files.map((file) => file.name),
       };
-
 
       emailjs
         .send(
@@ -152,11 +131,7 @@ function Orçamento() {
         )
         .then(
           (response) => {
-            console.log(
-              "E-mail enviado com sucesso!",
-              response.status,
-              response.text
-            );
+            console.log("E-mail enviado com sucesso!", response.status, response.text);
             toast.success("Orçamento solicitado com sucesso!", {
               position: "top-right",
               autoClose: 5000,
@@ -171,9 +146,7 @@ function Orçamento() {
               service: "",
               otherService: "",
               briefing: "",
-              deadline: "", // Reset do novo campo
-              files: [],
-              deadline: "", // Reset do novo campo
+              deadline: "",
               files: [],
             });
             setErrors({});
@@ -204,10 +177,7 @@ function Orçamento() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
@@ -251,11 +221,7 @@ function Orçamento() {
           </a>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className={styles.form}
-          autoComplete="off"
-        >
+        <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
           <div className={styles.formGroup}>
             <label htmlFor="name">Nome</label>
             <div className={styles.inputWrapper}>
@@ -269,9 +235,7 @@ function Orçamento() {
                 className={errors.name ? styles.inputError : ""}
                 autoComplete="off"
               />
-              {errors.name && (
-                <span className={styles.errorMessage}>{errors.name}</span>
-              )}
+              {errors.name && <span className={styles.errorMessage}>{errors.name}</span>}
             </div>
           </div>
 
@@ -288,9 +252,7 @@ function Orçamento() {
                 className={errors.email ? styles.inputError : ""}
                 autoComplete="off"
               />
-              {errors.email && (
-                <span className={styles.errorMessage}>{errors.email}</span>
-              )}
+              {errors.email && <span className={styles.errorMessage}>{errors.email}</span>}
             </div>
           </div>
 
@@ -308,14 +270,10 @@ function Orçamento() {
                 autoComplete="off"
                 className={errors.phone ? styles.inputError : ""}
                 onKeyPress={(e) => {
-                  if (!/[0-9]/.test(e.key)) {
-                    e.preventDefault();
-                  }
+                  if (!/[0-9]/.test(e.key)) e.preventDefault();
                 }}
               />
-              {errors.phone && (
-                <span className={styles.errorMessage}>{errors.phone}</span>
-              )}
+              {errors.phone && <span className={styles.errorMessage}>{errors.phone}</span>}
             </div>
           </div>
 
@@ -331,28 +289,17 @@ function Orçamento() {
               >
                 <option value="">Selecione o tipo de serviço</option>
                 <option value="cardapio">Cardápio</option>
-                <option value="cardapio">Cardápio</option>
                 <option value="ecommerce">E-Commerce</option>
                 <option value="gestaoEmpresarial">Gestão Empresarial (ERP)</option>
                 <option value="gestaoPedidos">Gestão de Pedidos</option>
                 <option value="design">Identidade Visual</option>
-                <option value="gestaoEmpresarial">
-                  Gestão Empresarial (ERP)
-                </option>
-                <option value="gestaoPedidos">Gestão de Pedidos</option>
-                <option value="design">Identidade Visual</option>
                 <option value="landingPage">Landing Page</option>
                 <option value="materialPromocional">Material Promocional</option>
-                <option value="materialPromocional">
-                  Material Promocional
-                </option>
                 <option value="portfolio">Portfólio</option>
                 <option value="siteInstitucional">Site Institucional</option>
                 <option value="outro">Outro</option>
               </select>
-              {errors.service && (
-                <span className={styles.errorMessage}>{errors.service}</span>
-              )}
+              {errors.service && <span className={styles.errorMessage}>{errors.service}</span>}
             </div>
           </div>
 
@@ -370,9 +317,7 @@ function Orçamento() {
                   className={errors.otherService ? styles.inputError : ""}
                 />
                 {errors.otherService && (
-                  <span className={styles.errorMessage}>
-                    {errors.otherService}
-                  </span>
+                  <span className={styles.errorMessage}>{errors.otherService}</span>
                 )}
               </div>
             </div>
@@ -390,13 +335,10 @@ function Orçamento() {
                 rows="4"
                 className={errors.briefing ? styles.inputError : ""}
               />
-              {errors.briefing && (
-                <span className={styles.errorMessage}>{errors.briefing}</span>
-              )}
+              {errors.briefing && <span className={styles.errorMessage}>{errors.briefing}</span>}
             </div>
           </div>
 
-          {/* Novo campo: Prazo Desejado */}
           <div className={styles.formGroup}>
             <label htmlFor="deadline">Prazo Desejado</label>
             <div className={styles.inputWrapper}>
@@ -405,7 +347,7 @@ function Orçamento() {
                 name="deadline"
                 value={formData.deadline}
                 onChange={handleChange}
-                className={`${styles.deadlineSelect} ${errors.deadline ? styles.inputError : ""}`}
+                className={errors.deadline ? styles.inputError : ""}
               >
                 <option value="">Selecione um prazo</option>
                 <option value="1-semana">1 semana</option>
@@ -414,35 +356,7 @@ function Orçamento() {
                 <option value="2-meses">2 meses</option>
                 <option value="flexivel">Flexível</option>
               </select>
-              {errors.deadline && (
-                <span className={styles.errorMessage}>{errors.deadline}</span>
-              )}
-            </div>
-          </div>
-
-          {/* Novo campo: Prazo Desejado */}
-          <div className={styles.formGroup}>
-            <label htmlFor="deadline">Prazo Desejado</label>
-            <div className={styles.inputWrapper}>
-              <select
-                id="deadline"
-                name="deadline"
-                value={formData.deadline}
-                onChange={handleChange}
-                className={`${styles.deadlineSelect} ${
-                  errors.deadline ? styles.inputError : ""
-                }`}
-              >
-                <option value="">Selecione um prazo</option>
-                <option value="1-semana">1 semana</option>
-                <option value="2-semanas">2 semanas</option>
-                <option value="1-mes">1 mês</option>
-                <option value="2-meses">2 meses</option>
-                <option value="flexivel">Flexível</option>
-              </select>
-              {errors.deadline && (
-                <span className={styles.errorMessage}>{errors.deadline}</span>
-              )}
+              {errors.deadline && <span className={styles.errorMessage}>{errors.deadline}</span>}
             </div>
           </div>
 
@@ -477,9 +391,7 @@ function Orçamento() {
                       <div className={styles.progressContainer}>
                         <div
                           className={styles.progressBar}
-                          style={{
-                            width: `${uploadProgress[file.name] || 0}%`,
-                          }}
+                          style={{ width: `${uploadProgress[file.name] || 0}%` }}
                         />
                       </div>
                       <button
@@ -524,7 +436,6 @@ function Orçamento() {
       </div>
 
       <FooterOrçamento />
-
       <ToastContainer />
     </section>
   );

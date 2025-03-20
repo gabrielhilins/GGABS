@@ -3,11 +3,9 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 .hero-container {
   width: 100%;
   min-height: 100vh;
-  min-height: 100vh;
   position: relative;
   text-align: center;
   color: white;
-  background: #0a0a23;
   background: #0a0a23;
   overflow: hidden;
   z-index: 1;
@@ -16,15 +14,9 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   .title {
     position: relative;
     z-index: 2;
-    padding-top: clamp(1.5rem, 5vw, 3rem);
+    padding-top: clamp(2rem, 5vw, 3.75rem);
     
     h1 {
-      font-size: clamp(1.5rem, 6vw, 4rem); // Ajustado para telas menores
-      background: $gradient-one;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0 clamp(0.5rem, 2vw, 1rem);
-      line-height: 1.2;
       font-size: clamp(1.5rem, 6vw, 4rem); // Ajustado para telas menores
       background: $gradient-one;
       -webkit-background-clip: text;
@@ -59,68 +51,17 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
       cursor: pointer;
       padding: 0.5rem;
     }
-    font-size: clamp(0.875rem, 2.5vw, 1.25rem);
-    line-height: 1.5;
-    margin: clamp(1rem, 2vw, 1.625rem) clamp(0.5rem, 2vw, 1rem) 0;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
-  .hamburger-menu {
-    display: none; // Escondido por padrão (telas grandes)
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 4;
-
-    .hamburger-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-  }
-
-  .botoes, .desktop-buttons, .desktop-buttons {
+  .botoes, .desktop-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1rem, 3vw, 2.5rem);
     flex-wrap: wrap;
     gap: clamp(1rem, 3vw, 2.5rem);
     align-items: center;
     justify-content: center;
     margin-top: clamp(2rem, 5vw, 3.75rem);
     z-index: 3;
-    margin-top: clamp(2rem, 5vw, 3.75rem);
-    z-index: 3;
     position: relative;
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
-  }
-
-  .mobile-menu {
-    display: none; // Escondido por padrão
-    flex-direction: column;
-    gap: 1.5rem;
-    position: absolute;
-    top: 4rem;
-    right: 1rem;
-    background: rgba(#0a0a23, 0.95);
-    padding: 1.5rem;
-    border-radius: 10px;
-    z-index: 4;
-    width: clamp(12rem, 80vw, 20rem);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-
-    &.active {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-    }
     padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
@@ -150,28 +91,22 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   .act {
     display: flex;
     align-items: center;
-    gap: clamp(0.5rem, 1vw, 0.75rem);
-    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+    justify-content: center;
     gap: clamp(0.5rem, 1vw, 0.75rem);
     padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
     border-radius: 10px;
     border: 3px solid transparent;
     background: #111D3E;
-    background: #111D3E;
     color: white;
-    font-size: clamp(0.75rem, 2vw, 1.125rem);
     font-size: clamp(0.75rem, 2vw, 1.125rem);
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
     text-transform: uppercase;
     white-space: nowrap;
-    white-space: nowrap;
-    
+
     &:hover {
       background: $gradient-one;
-      background: $gradient-one;
       color: #111D3E;
-      transform: translateY(-0.625rem);
       transform: translateY(-0.625rem);
     }
 
@@ -179,13 +114,9 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
       width: clamp(1rem, 3vw, 1.75rem);
       height: clamp(1rem, 3vw, 1.75rem);
       transition: transform 0.3s ease;
-      width: clamp(1rem, 3vw, 1.75rem);
-      height: clamp(1rem, 3vw, 1.75rem);
-      transition: transform 0.3s ease;
     }
 
     &:hover .icon {
-      transform: translate(0.625rem, -0.9375rem);
       transform: translate(0.625rem, -0.9375rem);
     }
   }
@@ -196,23 +127,16 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     justify-content: center;
     gap: clamp(0.5rem, 1vw, 0.625rem);
     padding: clamp(0.625rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
-    justify-content: center;
-    gap: clamp(0.5rem, 1vw, 0.625rem);
-    padding: clamp(0.625rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
     border: none;
     border-radius: 15px;
     background: white;
     color: #111D3E;
     font-size: clamp(0.75rem, 2vw, 1.125rem);
-    font-size: clamp(0.75rem, 2vw, 1.125rem);
     cursor: pointer;
     transition: 0.3s;
     white-space: nowrap;
-    white-space: nowrap;
   
     .icon2 {
-      width: clamp(1rem, 3vw, 1.75rem);
-      height: clamp(1rem, 3vw, 1.75rem);
       width: clamp(1rem, 3vw, 1.75rem);
       height: clamp(1rem, 3vw, 1.75rem);
       transition: all 0.3s ease-in-out;
@@ -221,13 +145,10 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     .text {
       transition: all 0.5s ease-in-out;
       opacity: 1;
-      opacity: 1;
     }
   
     &:hover {
       .text {
-        transform: translateX(clamp(2rem, 8vw, 5rem));
-        opacity: 0;
         transform: translateX(clamp(2rem, 8vw, 5rem));
         opacity: 0;
       }
@@ -254,8 +175,9 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     }
 
     .act, .saibamais {
-      width: 100%; // Botões ocupam largura total no menu
-      justify-content: flex-start;
+      width: 80%; // Reduz a largura dos botões em telas menores
+      margin: 0 auto; // Centraliza os botões
+      justify-content: center; // Centraliza o conteúdo dos botões
     }
   }
 
@@ -275,52 +197,11 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
       &.active {
         transform: translateX(50%);
       }
-    }
-  }
-}
-        transform: translateX(clamp(1.5rem, 5vw, 3.125rem));
-      }
-    }
-  }
-
-  // Media Queries
-  @media screen and (max-width: 768px) {
-    padding-top: clamp(3rem, 12vh, 6rem);
-
-    .hamburger-menu {
-      display: block; // Mostra o hambúrguer em telas menores
-    }
-
-    .desktop-buttons {
-      display: none; // Esconde os botões normais
-    }
-
-    .mobile-menu.active {
-      display: flex; // Mostra o menu quando ativo
     }
 
     .act, .saibamais {
-      width: 100%; // Botões ocupam largura total no menu
-      justify-content: flex-start;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .title {
-      padding-top: 1.5rem;
-    }
-    
-    .subtitle {
-      max-width: 95%;
-    }
-
-    .mobile-menu {
-      width: 90vw;
-      right: 50%;
-      transform: translateX(50%);
-      &.active {
-        transform: translateX(50%);
-      }
+      width: 90%; // Aumenta um pouco a largura para telas muito pequenas
+      padding: 0.75rem 1rem; // Ajusta o padding para telas muito pequenas
     }
   }
 }
