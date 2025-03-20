@@ -1,79 +1,94 @@
 $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .historia-container {
-  background: #030614; // Fundo escuro
-  padding: 60px 20px;
-  height: 100vh; // Altura da viewport para o pin
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
+  padding: clamp(2rem, 5vw, 3.75rem) clamp(1rem, 3vw, 1.25rem);
+  min-height: 100vh;
   position: relative;
   color: white;
-  overflow: hidden; // Para garantir que o conteúdo fora da tela não seja visível
+  overflow: hidden;
 }
 
 .horizontal-story {
   display: flex;
-  width: calc(100% * 5);
+  width: calc(100% * 5); // Mantém a largura total para telas grandes
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column; // Muda para vertical em telas pequenas
+    position: relative;
+    height: auto;
+  }
 }
 
 .panel {
-  flex: 1 0 20%; // Cada painel ocupa 1/5 da largura total
+  flex: 1 0 20%; // Cada painel ocupa 20% em telas grandes
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  padding: clamp(1rem, 3vw, 1.25rem);
   position: relative;
-  background: #030614; // Fundo escuro padrão
+  background: #111D3E;
   color: white;
+
+  @media (max-width: 768px) {
+    flex: 1 0 auto; // Painéis ocupam altura total em modo vertical
+    min-height: 100vh; // Cada painel ocupa a altura da tela
+  }
 }
 
 .illustration {
-  width: 500px; // Ajuste o tamanho da imagem conforme necessário
+  width: clamp(15rem, 40vw, 31.25rem); // Escala de 240px a 500px
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 2vw, 1.25rem);
 }
 
 .text {
-  font-size: 24px;
+  font-size: clamp(1rem, 4vw, 1.5rem); // Escala de 16px a 24px
   line-height: 1.5;
   max-width: 80%;
-  color: white; // Cor padrão do texto
-  z-index: 10; // Garantir que o texto fique acima das imagens
+  color: white;
+  z-index: 10;
   position: relative;
 }
 
 .panel:nth-child(even) {
-  background: white; // Fundo branco para painéis pares
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   .text {
-    color: #111D3E; // Texto azul escuro para painéis pares
+    color: white;
   }
 }
 
 .panel:nth-child(odd) {
-  background: #111D3E; // Fundo azul escuro para painéis ímpares
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   .text {
-    color: white; // Texto branco para painéis ímpares
+    color: white;
   }
 }
 
 @media (max-width: 768px) {
-  .horizontal-story {
-    width: 100%; // Ajuste a largura para telas menores
-  }
-
   .panel {
-    padding: 15px; // Menos padding em telas menores
+    padding: clamp(0.75rem, 2vw, 0.9375rem);
   }
 
   .illustration {
-    width: 250px; // Ajuste a largura das imagens para telas pequenas
+    width: clamp(10rem, 60vw, 15.625rem); // Ajuste para telas menores
   }
 
   .text {
-    font-size: 20px; // Reduza o tamanho da fonte para dispositivos móveis
+    font-size: clamp(0.875rem, 3vw, 1.25rem); // Ajuste fino para mobile
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .illustration {
+    width: clamp(8rem, 50vw, 12.5rem);
   }
 }

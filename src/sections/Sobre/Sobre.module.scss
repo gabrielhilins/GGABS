@@ -1,21 +1,21 @@
 $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .sobre-container {
-  background: white; // Fundo branco
+  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
   padding: 60px 20px;
   min-height: 100vh; // Garante que a seção ocupe a tela inteira
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #111D3E; // Cor do texto ajustada para o fundo branco
+  color: white; // Cor do texto ajustada para o fundo branco
 }
 
 .title {
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 20px; // Reduzi o espaço abaixo do título
-  color: #111D3E; // Cor do texto ajustada para o fundo branco
+  margin-bottom: 60px; // Reduzi o espaço abaixo do título
+  color: white; // Cor do texto ajustada para o fundo branco
   text-align: center;
 }
 
@@ -35,7 +35,6 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 }
 
 .profile-card {
-  background: #111D3E; // Fundo azul escuro do card
   border: 2px solid white; // Borda branca
   border-radius: 20px;
   padding: 40px;
@@ -81,7 +80,17 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   font-weight: bold;
   color: white;
   margin-top: 60px; // Espaço após a foto sobreposta
-  margin-bottom: 10px;
+  margin-bottom: 2px;
+}
+
+.founder {
+  color: white;
+  margin-bottom: 16px;
+
+  p {
+    font-size: 10px;
+    opacity: 0.8;
+  }
 }
 
 .hr {

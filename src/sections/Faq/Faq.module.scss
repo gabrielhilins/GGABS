@@ -10,7 +10,7 @@ $button-hover: #009ac7; // Darker cyan
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 .faq-container {
-  background-color: $background-color;
+  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
   color: $text-color;
   padding: 40px;
   text-align: center;

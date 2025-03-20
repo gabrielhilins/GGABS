@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { FaBookOpen } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
@@ -85,6 +86,7 @@ const targetAudience = {
 
 const Carousel = ({ slides, sectionTitle }) => {
   const [backgroundImage, setBackgroundImage] = useState(slides[0].image);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -106,6 +108,13 @@ const Carousel = ({ slides, sectionTitle }) => {
     "Identidade Visual": <FaPaintBrush className={styles.serviceIcon} />,
     "Cardápio Digital": <BiSolidFoodMenu className={styles.serviceIcon} />,
     "Materiais Promocionais": <FaBullhorn className={styles.serviceIcon} />,
+  };
+
+  const handleSolicitar = () => {
+    navigate("/solicitar-orcamentos");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // Delay de 100ms para garantir que a página esteja carregada
   };
 
   return (
@@ -175,7 +184,7 @@ const Carousel = ({ slides, sectionTitle }) => {
               {slide.cta && (
                 <div className={styles.ctaSection}>
                   <h3 className={styles.ctaTitle}>{slide.cta.title}</h3>
-                  <button className={styles.ctaButton}>
+                  <button className={styles.ctaButton} onClick={handleSolicitar}>
                     <FaArrowUpRightFromSquare className={styles.ctaIcon} />
                     {slide.cta.buttonText}
                   </button>

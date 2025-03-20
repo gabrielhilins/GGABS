@@ -19,7 +19,7 @@ const slidesData = [
   {
     title: "Portfólio",
     description:
-      "páginas personalizadas para exibir projetos, habilidades e conquistas de forma profissional, destacando o trabalho e a experiência de maneira visual e organizada.",
+      "Páginas personalizadas para exibir projetos, habilidades e conquistas de forma profissional, destacando o trabalho e a experiência de maneira visual e organizada.",
     features: ["Carregamento Rápido", "Call-to-Action Claro", "Animações Suaves", "Analytics Integrado"],
     cta: { title: "Tenha seu Portfólio", buttonText: "Solicite Já" },
   },

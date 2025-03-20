@@ -1,6 +1,6 @@
 .depoimentos-container {
     padding: 40px 20px 140px;
-    background-color: #f5f7fa;
+    background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
     text-align: center;
     position: relative;
   
@@ -8,13 +8,13 @@
       font-size: 32px;
       font-weight: bold;
       margin-bottom: 10px;
-      color: #111D3E;
+      color: white;
     }
   
     .subtitle {
       font-size: 18px;
       margin-bottom: 40px;
-      color: #111D3E;
+      color: white;
       opacity: 0.7;
     }
   
@@ -43,7 +43,7 @@
     .depoimento-card {
       display: flex;
       align-items: center;
-      background: white;
+      background: #111D3E;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -71,19 +71,20 @@
         .user-name {
           font-size: 16px;
           font-weight: 600;
-          color: #111D3E;
+          color: white;
           margin-bottom: 5px;
         }
   
         .user-text {
           font-size: 14px;
-          color: #666;
+          color: white;
+          opacity: 0.6;
           line-height: 1.5;
         }
   
         .user-link {
           font-size: 12px;
-          color: black;
+          color: white;
           text-decoration: underline;
           margin-top: 10px;
           transition: color 0.3s ease;
