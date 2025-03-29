@@ -10,17 +10,21 @@
   min-height: 100vh;
 
   .title {
-    font-size: clamp(24px, 6vw, 32px);
     font-weight: bold;
     margin-bottom: clamp(5px, 2vw, 10px);
     color: white;
+
+    h1 {
+      font-size: clamp(32px, 6vw, 48px);
+    }
   }
 
   .subtitle {
-    font-size: clamp(14px, 3vw, 18px);
     margin-bottom: clamp(20px, 5vw, 40px);
     color: white;
     opacity: 0.7;
+
+    p { font-size: clamp(10px, 3vw, 18px);}
   }
 
   .depoimentos-slider {

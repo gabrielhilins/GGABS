@@ -19,45 +19,35 @@ const Historia = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     if (!containerRef.current || !horizontalRef.current) return;
+    if (window.innerWidth <= 768) return;
 
-    const panels = horizontalRef.current.children;
-    const isMobile = window.innerWidth <= 768;
+    const totalWidth = horizontalRef.current.scrollWidth;
+    const movementDistance = -(totalWidth - window.innerWidth);
 
-    let animation;
+    // Configuração mínima e direta
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top",
+      end: `+=${totalWidth}`,
+      pin: true,
+      scrub: 0.1, // Valor mínimo para suavidade básica
+      animation: gsap.to(horizontalRef.current, {
+        x: movementDistance,
+        ease: "none",
+        duration: 0.1 // Duração mínima
+      }),
+      markers: false // Desative para produção
+    });
 
-    if (!isMobile) {
-      // Animação Horizontal para Telas Grandes
-      animation = gsap.fromTo(
-        horizontalRef.current,
-        { x: 0 },
-        {
-          x: () => -(horizontalRef.current.scrollWidth - window.innerWidth),
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: () => `+=${horizontalRef.current.scrollWidth}`,
-            scrub: true,
-            pin: true,
-            invalidateOnRefresh: true, // Recalcula ao redimensionar
-          },
-        }
-      );
-    } else {
-      // Desativa o efeito horizontal e ajusta para vertical em telas pequenas
-      gsap.set(horizontalRef.current, { x: 0 }); // Reseta a posição
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        pin: false, // Remove o pin em telas pequenas
-      });
-    }
+    // Otimização de performance
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+    });
 
-    // Atualiza a animação ao redimensionar a janela
     const handleResize = () => {
       ScrollTrigger.refresh();
     };
+    
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -79,7 +69,12 @@ const Historia = () => {
       <div className={styles["horizontal-story"]} ref={horizontalRef}>
         {panels.map((text, index) => (
           <div key={index} className={styles.panel}>
-            <img src={images[index]} alt={`Ilustração ${index + 1}`} className={styles.illustration} />
+            <img 
+              src={images[index]} 
+              alt={`Ilustração ${index + 1}`} 
+              className={styles.illustration}
+              loading="lazy" // Otimização de carregamento
+            />
             <p className={styles.text}>{text}</p>
           </div>
         ))}

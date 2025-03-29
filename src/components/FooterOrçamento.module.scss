@@ -1,5 +1,12 @@
 .footerContainer {
-    background: transparent;
+  background: linear-gradient(0deg,  
+  #1A2A6C 0%,   /* Azul escuro intenso para profundidade */  
+  #2E4377 30%,  /* Azul intermediário para suavizar a transição */  
+  #5A7CFF 60%,  /* Azul vibrante para contraste e destaque */  
+  #3A539B 85%,  /* Azul mais frio para equilíbrio */  
+  #0A122A 100%  /* Azul quase preto para um efeito dramático */  
+);
+
     width: 100%;
     height: clamp(180px, 25vh, 220px); // Altura fluida com limite
     display: flex;

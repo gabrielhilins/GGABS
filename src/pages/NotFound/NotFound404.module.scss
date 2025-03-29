@@ -1,0 +1,107 @@
+// src/pages/NotFound404.module.scss
+.notFoundContainer {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('../../assets/img/Among.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+        padding-left: 0;
+        background-position: top center;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    max-width: 1200px;
+    margin: 0 20px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 15px;
+        margin: 0 10px;
+    }
+}
+
+.title {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ff4444;
+    text-shadow: 2px 2px 5px #000;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 32px;
+    }
+}
+
+.message {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #e0e0e0;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
+}
+
+.subMessage {
+    font-size: 18px;
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
+}
+
+.backButton {
+    padding: 12px 25px;
+    background: #FF9A00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: white;
+        box-shadow: 0 0 10px #FF9A00;
+        color: #FF9A00;
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

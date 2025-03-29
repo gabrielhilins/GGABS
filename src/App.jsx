@@ -22,15 +22,17 @@ import Sobre from "./sections/Sobre/Sobre";
 // Pagina de orçamento
 import Orçamento from "./pages/Orçamento/Orçamento";
 
+// Pagina 404
+import NotFound404 from "./pages/NotFound/NotFound404";
+
 function App() {
   const location = useLocation();
-  const isOrcamentoRoute = location.pathname.startsWith(
-    "/solicitar-orcamentos"
-  );
+  const isOrcamentoRoute = location.pathname.startsWith("/solicitar-orcamentos");
+  const is404Route = location.pathname !== "/" && !isOrcamentoRoute; // Identifica a rota 404
 
   return (
     <div className="app-container ">
-      {!isOrcamentoRoute && <Header />}
+      {!isOrcamentoRoute && !is404Route && <Header />} {/* Header oculto na 404 e orçamento */}
       <Routes>
         {/* Rota principal */}
         <Route
@@ -80,9 +82,13 @@ function App() {
           }
         />
 
-        <Route path="/solicitar-orcamentos" element={<Orçamento />}></Route>
+        {/* Rota de orçamento */}
+        <Route path="/solicitar-orcamentos" element={<Orçamento />} />
+
+        {/* Rota 404 */}
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
-      {!isOrcamentoRoute && <Footer />}
+      {!isOrcamentoRoute && <Footer />} {/* Footer visível na 404 e na rota principal */}
     </div>
   );
 }

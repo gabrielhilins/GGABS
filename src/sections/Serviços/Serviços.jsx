@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styles from "./Serviços.module.scss";
 import { FaCode, FaLayerGroup, FaPaintBrush } from "react-icons/fa";
 
@@ -36,6 +37,34 @@ const servicosData = [
 ];
 
 function Servicos() {
+  useEffect(() => {
+    // Adiciona smooth scroll para os links internos
+    const handleSmoothScroll = (e) => {
+      const targetId = e.currentTarget.getAttribute('href');
+      if (targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    const saibaMaisLinks = document.querySelectorAll(`.${styles['saiba-mais']}`);
+    saibaMaisLinks.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll);
+    });
+
+    return () => {
+      saibaMaisLinks.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll);
+      });
+    };
+  }, []);
+
   return (
     <section className={styles["servicos-container"]}>
       <h1 className={styles.title}>Serviços</h1>
@@ -56,7 +85,11 @@ function Servicos() {
                 </li>
               ))}
             </ul>
-            <a href={`#${servico.title.replace(/\s+/g, '-').toLowerCase()}`} className={styles["saiba-mais"]}>
+            <a 
+              href={`#${servico.title.replace(/\s+/g, '-').toLowerCase()}`} 
+              className={styles["saiba-mais"]}
+              aria-label={`Saiba mais sobre ${servico.title}`}
+            >
               Saiba Mais
             </a>
           </div>

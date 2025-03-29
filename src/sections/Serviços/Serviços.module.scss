@@ -3,7 +3,7 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 
 .servicos-container {
   background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
-  padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px) clamp(200px, 40vw, 400px);
+  padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px) clamp(150px, 30vw, 300px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,18 +13,21 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 }
 
 .title {
-  font-size: clamp(32px, 8vw, 48px);
+  font-size: clamp(28px, 6vw, 42px);
   font-weight: bold;
-  margin-bottom: clamp(5px, 2vw, 10px);
+  margin-bottom: clamp(5px, 1.5vw, 8px);
   color: white;
   text-align: center;
+  line-height: 1.3;
 }
 
 .subtitle {
-  font-size: clamp(14px, 2.5vw, 16px);
-  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(14px, 2.2vw, 16px);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: clamp(20px, 5vw, 40px);
   text-align: center;
+  max-width: 90%;
+  line-height: 1.5;
 }
 
 .cards-container {
@@ -33,33 +36,34 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
   gap: clamp(15px, 3vw, 30px);
   width: 90%;
   max-width: 1200px;
-  flex-direction: row;
+  flex-wrap: wrap;
 
   @media(max-width: 768px) {
     flex-direction: column;
+    align-items: center;
   }
 }
 
 .card {
   background: white;
-  border-radius: 15px;
-  padding: clamp(15px, 3vw, 20px);
+  border-radius: 16px;
+  padding: clamp(20px, 3vw, 25px);
   width: 100%;
-  max-width: 400px;
-  min-height: 200px;
+  max-width: 380px;
+  min-height: 220px;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   &:hover {
     background: #111D3E;
     border: 2px solid #00DDEB;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 221, 235, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 221, 235, 0.3);
 
     h2, ul, svg {
       color: white;
@@ -72,29 +76,34 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
   }
 
   h2 {
-    font-size: clamp(18px, 3.5vw, 22px);
-    font-weight: bold;
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 700;
     color: #111D3E;
     margin: clamp(5px, 1.5vw, 10px) 0;
+    line-height: 1.4;
   }
 
   ul {
     list-style: none;
     padding: 0;
-    margin: clamp(5px, 1.5vw, 10px) 0;
-    text-align: justify;
+    margin: clamp(10px, 2vw, 15px) 0;
+    text-align: left;
 
     li {
-      margin: clamp(3px, 1vw, 5px) 0;
-      font-size: clamp(13px, 2vw, 15px);
+      margin: clamp(8px, 1.5vw, 12px) 0;
+      font-size: clamp(14px, 2vw, 15px);
       display: flex;
-      align-items: center;
-      gap: clamp(5px, 1vw, 8px);
+      align-items: flex-start;
+      text-align: justify;
+      gap: 10px;
+      line-height: 1.5;
 
       &::before {
         content: "•";
         color: #00DDEB;
-        font-size: clamp(14px, 2vw, 16px);
+        font-size: 1.5em;
+        line-height: 0;
+        margin-top: 0.2em;
         flex-shrink: 0;
       }
     }
@@ -103,83 +112,131 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 
 .exemplos {
   color: #666;
-  margin-top: clamp(3px, 1vw, 5px);
+  margin-top: clamp(10px, 2vw, 15px);
   padding-left: 0;
-  list-style-type: none;
 
   li {
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: clamp(13px, 1.8vw, 15px);
     color: #999;
     display: flex;
-    align-items: baseline;
-    text-align: justify;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 }
 
 .exemploDescricao {
-  font-size: clamp(11px, 1.8vw, 13px);
-  margin-left: clamp(5px, 1vw, 10px);
+  font-size: clamp(12px, 1.8vw, 14px);
+  margin-left: 0;
+  margin-top: 2px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.4;
 }
 
 a.saiba-mais {
   display: inline-block;
-  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2.5vw, 16px);
+  padding: clamp(8px, 1.8vw, 10px) clamp(15px, 3vw, 20px);
   background: #111D3E;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  margin-top: auto;
-  transition: background 0.3s ease;
-  font-size: clamp(12px, 2vw, 14px);
+  border-radius: 8px;
+  margin-top: clamp(15px, 3vw, 20px);
+  transition: all 0.3s ease;
+  font-size: clamp(13px, 2vw, 15px);
+  font-weight: 600;
+  border: 2px solid transparent;
+  align-self: center;
+  width: fit-content;
 
   &:hover {
     background: white;
     color: #111D3E;
+    border-color: #111D3E;
+    transform: translateY(-2px);
   }
 }
 
 .icon {
-  font-size: clamp(24px, 6vw, 36px);
-  margin-bottom: clamp(5px, 2vw, 10px);
+  font-size: clamp(28px, 6vw, 40px);
+  margin-bottom: clamp(8px, 2vw, 12px);
   color: #111D3E;
 }
 
-// Media queries específicas
+// Media queries melhoradas
 @media screen and (max-width: 768px) {
+  .servicos-container {
+    padding-bottom: clamp(100px, 25vw, 200px);
+  }
+
   .cards-container {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: clamp(20px, 4vw, 30px);
+    width: 95%;
   }
 
   .card {
-    width: 95%;
+    width: 100%;
     max-width: 400px;
+    min-height: auto;
+    padding: 20px;
+
+    ul li {
+      align-items: flex-start;
+      gap: 8px;
+      
+      &::before {
+        display: none;
+      }
+    }
+    
   }
 
   .exemplos li {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .exemploDescricao {
-    margin-left: 0;
-    margin-top: 5px;
+    gap: 4px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .servicos-container {
-    padding: 20px 15px 150px;
+    padding: 20px 12px 120px;
+  }
+
+  .title {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .subtitle {
+    font-size: clamp(13px, 3vw, 15px);
   }
 
   .card {
-    min-height: 180px;
+    padding: 18px 16px;
+    border-radius: 14px;
+
+    h2 {
+      font-size: clamp(16px, 4vw, 20px);
+    }
+
+    ul li {
+      font-size: clamp(13px, 3vw, 15px);
+      margin: 10px 0;
+      gap: 6px;
+    }
   }
 
-  ul li {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+  .exemploDescricao {
+    font-size: clamp(11px, 3vw, 13px);
+  }
+
+  a.saiba-mais {
+    padding: 8px 16px;
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
+  .icon {
+    font-size: clamp(24px, 7vw, 32px);
   }
 }

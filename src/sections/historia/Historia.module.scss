@@ -6,119 +6,75 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   min-height: 100vh;
   position: relative;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden; // Permite scroll horizontal
+  scroll-snap-type: x mandatory; // Scroll snap para melhor experiência
+  -webkit-overflow-scrolling: touch; // Suave em iOS
 }
 
 .horizontal-story {
   display: flex;
-  width: calc(100% * 5); // 5 painéis em telas grandes
+  width: max-content;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.5s ease; // Animação original mantida
+  will-change: transform; // Otimização
 }
 
 .panel {
-  flex: 1 0 20%; // Cada painel ocupa 20% em telas grandes
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start; // Alinhamento do scroll snap
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: clamp(1rem, 3vw, 1.25rem);
+  padding: 1rem;
   position: relative;
-  color: white;
 }
 
 .illustration {
-  width: clamp(15rem, 40vw, 31.25rem); // 240px a 500px
+  width: clamp(15rem, 40vw, 31.25rem);
   height: auto;
-  margin-bottom: clamp(1rem, 2vw, 1.25rem);
-  max-width: 100%; // Evita overflow
+  margin-bottom: 1rem;
+  max-width: 100%;
+  transform: translateZ(0); // Aceleração GPU
 }
 
 .text {
-  font-size: clamp(1rem, 4vw, 1.5rem); // 16px a 24px
+  font-size: clamp(1rem, 4vw, 1.5rem);
   line-height: 1.5;
-  max-width: clamp(70%, 80vw, 80%);
-  color: white;
-  z-index: 10;
-  position: relative;
+  max-width: 80%;
+  text-align: center;
 }
 
-.panel:nth-child(even) {
-  
-  .text {
-    color: white;
-  }
-}
-
-.panel:nth-child(odd) {
-  
-  .text {
-    color: white;
-  }
-}
-
-// Media queries específicas
+/* Media Queries */
 @media screen and (max-width: 768px) {
-  .horizontal-story {
-    width: 100%;
-    flex-direction: column; // Vertical em telas menores
-    position: relative;
+  .historia-container {
+    overflow-x: hidden;
+    overflow-y: auto;
     height: auto;
-    transition: none; // Remove transição em modo vertical para evitar lentidão
+    scroll-snap-type: none;
+  }
+
+  .horizontal-story {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
   }
 
   .panel {
-    flex: 1 0 auto;
-    padding: clamp(0.75rem, 2vw, 0.9375rem);
-  }
-
-  .illustration {
-    width: clamp(10rem, 60vw, 15.625rem); // 160px a 250px
-    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
-  }
-
-  .text {
-    font-size: clamp(0.875rem, 3vw, 1.25rem); // 14px a 20px
-    max-width: 90%;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .historia-container {
-    padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 1.5vw, 1rem);
-  }
-
-  .panel {
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
-  }
-
   .illustration {
-    width: clamp(8rem, 50vw, 12.5rem); // 128px a 200px
-    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    width: clamp(10rem, 60vw, 20rem);
   }
-
+  
   .text {
-    font-size: clamp(0.75rem, 2.5vw, 1rem); // 12px a 16px
-    max-width: 95%;
-  }
-}
-
-// Ajustes para telas grandes
-@media screen and (min-width: 1200px) {
-  .panel {
-    padding: clamp(1.5rem, 2vw, 2rem);
-  }
-
-  .illustration {
-    width: clamp(20rem, 30vw, 31.25rem); // Maior em telas grandes
-  }
-
-  .text {
-    font-size: clamp(1.25rem, 2vw, 1.5rem); // Maior legibilidade
-    max-width: 70%;
+    max-width: 90%;
   }
 }
