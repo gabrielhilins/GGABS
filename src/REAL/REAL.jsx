@@ -6,9 +6,9 @@ import { IoMdArrowBack } from "react-icons/io";
 import { FaArrowsRotate } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styles from "./REAL.module.scss";
-import LogoReal from "../assets/img/Logo Preto Simulador.png"; // Ajuste o caminho conforme necessário
-import enviarWhatsApp from "./EnviarMensagem"; // Ajuste o caminho conforme necessário
+import styles from "./REAl.module.scss";
+import LogoReal from "../assets/img/Logo Preto Simulador.png"; 
+import enviarWhatsApp from "./EnviarMensagem";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -29,11 +29,10 @@ function REAL() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Initialize AOS
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Whether animation should happen only once
+      duration: 1000,
+      once: true, 
     });
   }, []);
 
