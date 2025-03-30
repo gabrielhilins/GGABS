@@ -7,10 +7,11 @@ import { FaArrowsRotate } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./REAl.module.scss";
-import LogoReal from "../assets/img/Logo Preto Simulador.png"; 
+import LogoReal from "../assets/img/Logo Preto Simulador.png";
 import enviarWhatsApp from "./EnviarMensagem";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaCheck } from "react-icons/fa";
 
 function REAL() {
   const [formData, setFormData] = useState({
@@ -27,12 +28,13 @@ function REAL() {
   const [uploadProgress, setUploadProgress] = useState({});
   const [budget, setBudget] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [completedFiles, setCompletedFiles] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true, 
+      once: true,
     });
   }, []);
 
@@ -184,8 +186,10 @@ function REAL() {
     const { name, lastname, deadline } = formData;
     const { service, briefingSummary, total, details } = budget;
 
-    const precoBase = details.find((d) => d.desc === "Serviço Base")?.total ?? 0;
-    const ajustePrazo = details.find((d) => d.desc === "Ajuste por Prazo")?.total ?? 0;
+    const precoBase =
+      details.find((d) => d.desc === "Serviço Base")?.total ?? 0;
+    const ajustePrazo =
+      details.find((d) => d.desc === "Ajuste por Prazo")?.total ?? 0;
     const precoTotal = total ?? 0;
 
     enviarWhatsApp(
@@ -233,7 +237,11 @@ function REAL() {
         <p className={styles.umpasso} data-aos="fade-up" data-aos-delay="100">
           Transforme o futuro do seu negócio em realidade agora!
         </p>
-        <div className={styles.description} data-aos="fade-up" data-aos-delay="200">
+        <div
+          className={styles.description}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <p>
             Preencha o formulário abaixo com os detalhes do seu projeto e gere
             um orçamento automático sob medida instantaneamente.
@@ -262,7 +270,9 @@ function REAL() {
               </div>
             </div>
             <div>
-              <h3 style={{ color: "black", fontSize: "28px" }}>Simulador de Orçamento</h3>
+              <h3 style={{ color: "black", fontSize: "28px" }}>
+                Simulador de Orçamento
+              </h3>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="name">Qual seu Nome?</label>
@@ -420,26 +430,33 @@ function REAL() {
                 <div className={styles.fileList}>
                   <h4>Arquivos selecionados:</h4>
                   <ul>
-                    {formData.files.map((file, index) => (
-                      <li key={index} className={styles.fileItem}>
-                        <span>{file.name}</span>
-                        <div className={styles.progressContainer}>
-                          <div
-                            className={styles.progressBar}
-                            style={{
-                              width: `${uploadProgress[file.name] || 0}%`,
-                            }}
-                          />
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => removeFile(file.name)}
-                          className={styles.removeFileButton}
-                        >
-                          ×
-                        </button>
-                      </li>
-                    ))}
+                    {formData.files.map((file, index) => {
+                      const progress = uploadProgress[file.name] || 0;
+                      const isCompleted = progress === 100;
+
+                      return (
+                        <li key={index} className={styles.fileItem}>
+                          <span>{file.name}</span>
+                          <div className={styles.progressContainer}>
+                            <div
+                              className={styles.progressBar}
+                              style={{ width: `${progress}%` }}
+                            />
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(file.name)}
+                            className={styles.removeFileButton}
+                          >
+                            ×
+                          </button>
+                          {isCompleted && (
+                            <FaCheck className={styles.checkIcon} />
+                            
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
@@ -522,8 +539,8 @@ function REAL() {
             <hr />
             <div className={styles.contactSection}>
               <p style={{ color: "black" }}>
-                Clique em &quot;Solicitar Orçamento via WhatsApp&quot; para podermos fechar
-                negócio!
+                Clique em &quot;Solicitar Orçamento via WhatsApp&quot; para
+                podermos fechar negócio!
               </p>
               <button
                 onClick={handleEnviarWhatsApp}
@@ -554,8 +571,9 @@ function REAL() {
             <h3>Seu pedido está a caminho!</h3>
             <p>
               Agradecemos por escolher a GGabs Design e Tech! Sua solicitação de
-              orçamento foi enviada com sucesso via WhatsApp. Nossa equipe entrará
-              em contato em breve para transformar sua ideia em realidade.
+              orçamento foi enviada com sucesso via WhatsApp. Nossa equipe
+              entrará em contato em breve para transformar sua ideia em
+              realidade.
             </p>
             <p className={styles.redirectNotice}>
               Você será redirecionado ao topo da página inicial em 10 segundos.

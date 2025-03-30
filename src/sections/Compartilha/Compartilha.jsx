@@ -1,7 +1,8 @@
 import styles from "./Compartilha.module.scss";
-import { FaWhatsapp, FaFacebook, FaLinkedin, FaInstagram, FaArrowRight } from "react-icons/fa";
+import { FaWhatsapp, FaFacebook, FaLinkedin, FaInstagram} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
+import CTA from "./CTA";
 
 function Compartilha() {
   const siteURL = "https://www.ggabssoftwaredesign.com.br";
@@ -151,18 +152,7 @@ function Compartilha() {
         </div>
       </div>
 
-      <div className={styles.fim}>
-        <div className={styles.ctaContainer}>
-          <h2 className={styles.ctaTitle}>Pronto para transformar seu projeto em realidade?</h2>
-          <p className={styles.ctaSubtitle}>Não deixe para depois - vamos criar algo incrível juntos!</p>
-          <a href="/solicitar-orcamentos" className={styles.ctaButton}>
-            Solicitar Orçamento Agora <FaArrowRight className={styles.ctaIcon} />
-          </a>
-        </div>
-        <div className={styles["voltar-para-topo"]}>
-          <a href="/">Voltar para o topo</a>
-        </div>
-      </div>
+      <CTA />
     </div>
   );
 }

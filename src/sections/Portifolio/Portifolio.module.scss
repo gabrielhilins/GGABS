@@ -9,17 +9,169 @@
     font-size: clamp(24px, 6vw, 32px);
     font-weight: bold;
     margin-bottom: clamp(5px, 2vw, 10px);
-    color: white;
+    color: #f8fafc; // Branco suave para contraste
   }
 
   .subtitle {
-    
-    margin-bottom: clamp(20px, 5vw, 40px);
-    color: white;
-    opacity: 0.7;
+    color: #cbd5e1; // Cinza claro para subtítulo
+    opacity: 0.9;
 
     p {
-      font-size: clamp(10px, 3vw, 18px);
+      font-size: clamp(14px, 3vw, 18px);
+    }
+  }
+
+  .obs {
+    margin-bottom: clamp(20px, 5vw, 40px);
+     color: white;
+     opacity: 0.7;
+
+     p {
+      font-size: clamp(10px, 3vw, 14px);
+    }
+  }
+
+  .portifolio-section-nav {
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(20px, 5vw, 40px);
+    flex-wrap: wrap;
+
+    .nav-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(5px, 1vw, 10px);
+      padding: clamp(10px, 2.5vw, 14px) clamp(25px, 6vw, 40px); // Maior para destacar hierarquia
+      background: #ffffff; // Fundo branco puro
+      color: #1e40af; // Azul vibrante para texto
+      border-radius: 12px;
+      border: 2px solid #1e40af; // Borda azul vibrante
+      font-size: clamp(14px, 2.2vw, 18px); // Maior para destacar
+      font-weight: 700; // Mais negrito
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        width: clamp(10px, 2.5vw, 14px);
+        height: clamp(10px, 2.5vw, 14px);
+        left: clamp(4px, 1vw, 6px);
+        border: 2px solid #1e40af;
+        border-radius: 50%;
+        position: absolute;
+        background: #ffffff;
+        transition: background 0.3s ease;
+      }
+
+      &:has(input[type="radio"]:checked) {
+        background: #1e40af; // Azul vibrante quando ativo
+        color: #ffffff;
+        border: 2px solid #ffffff;
+
+        &::before {
+          background: #ffffff;
+        }
+      }
+
+      &:hover:not(:has(input[type="radio"]:checked)) {
+        background: #dbeafe; // Azul claro no hover
+      }
+    }
+  }
+
+  .portifolio-nav {
+    display: flex;
+    justify-content: center;
+    gap: clamp(8px, 1.5vw, 15px); // Menor gap para diferenciar
+    margin-bottom: clamp(15px, 4vw, 30px);
+    flex-wrap: wrap;
+
+    .nav-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(4px, 0.8vw, 8px);
+      padding: clamp(6px, 1.5vw, 8px) clamp(15px, 4vw, 25px); // Menor que section-nav
+      background: #e2e8f0; // Cinza claro para segundo nível
+      color: #2d3748; // Cinza escuro para texto
+      border-radius: 10px;
+      border: 2px solid #2d3748;
+      font-size: clamp(12px, 1.8vw, 14px); // Menor para hierarquia
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        width: clamp(6px, 1.5vw, 10px);
+        height: clamp(6px, 1.5vw, 10px);
+        left: clamp(2px, 0.8vw, 4px);
+        border: 2px solid #2d3748;
+        border-radius: 50%;
+        position: absolute;
+        background: #e2e8f0;
+        transition: background 0.3s ease;
+      }
+
+      &:has(input[type="radio"]:checked) {
+        background: #2d3748; // Cinza escuro quando ativo
+        color: #e2e8f0;
+        border: 2px solid #e2e8f0;
+
+        &::before {
+          background: #e2e8f0;
+        }
+      }
+
+      &:hover:not(:has(input[type="radio"]:checked)) {
+        background: #cbd5e1; // Cinza mais claro no hover
+      }
+    }
+  }
+
+  .portifolio-sub-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.2rem, 0.5vw, 0.3rem);
+    justify-content: center;
+    margin: clamp(0.5rem, 2vw, 1rem) 0;
+
+    .sub-nav-button {
+      padding: clamp(0.2rem, 0.8vw, 0.3rem) clamp(0.6rem, 1.5vw, 0.8rem);
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      border: 1px solid #93c5fd; // Azul claro para subcategoria
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: clamp(10px, 2vw, 20px);
+      background-color: #dbeafe; // Fundo azul claro
+      color: #1e40af; // Texto azul vibrante
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      &:hover {
+        background-color: #bfdbfe; // Azul mais escuro no hover
+      }
+
+      &.active {
+        background-color: #1e40af; // Azul vibrante quando ativo
+        color: #ffffff;
+        border-color: #1e40af;
+      }
     }
   }
 
@@ -34,22 +186,22 @@
   }
 
   .portifolio-card {
-    background: linear-gradient(135deg, #2d3748, #4a5568);
+    background: linear-gradient(135deg, #334155, #64748b); // Gradiente mais claro e moderno
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
-    .card-image {
+    .card-video {
       width: 100%;
       height: clamp(150px, 40vw, 200px);
       object-fit: cover;
-      border-bottom: 2px solid #4a5568;
+      border-bottom: 2px solid #64748b; // Borda harmoniosa com o gradiente
     }
 
     video {
@@ -59,17 +211,15 @@
       border-radius: 15px 15px 0 0;
     }
 
+    .card-logo {
+      max-width: 120px;
+      max-height: 200px;
+    }
+
     .card-content {
       padding: clamp(15px, 3vw, 20px);
       text-align: left;
-      color: white;
-
-      .card-title {
-        font-size: clamp(18px, 4vw, 24px);
-        font-weight: 600;
-        margin-bottom: clamp(5px, 2vw, 10px);
-        color: #f7fafc;
-      }
+      color: #f8fafc;
 
       .card-text {
         font-size: clamp(12px, 2vw, 14px);
@@ -100,17 +250,17 @@
         transition: opacity 0.3s ease;
 
         &:hover {
-          opacity: 0.8;
+          opacity: 0.85;
         }
       }
 
       .card-instagram {
-        color: white;
+        color: #f8fafc;
         font-size: clamp(18px, 4vw, 24px);
         transition: color 0.3s ease;
 
         &:hover {
-          color: aqua;
+          color: #93c5fd; // Azul claro no hover
         }
       }
 
@@ -121,98 +271,14 @@
     }
   }
 
-  .portifolio-nav {
-    display: flex;
-    justify-content: center;
-    gap: clamp(10px, 2vw, 20px);
-    margin-bottom: clamp(20px, 5vw, 40px);
-    flex-wrap: wrap;
-  }
-
-  .portifolio-sub-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(0.2rem, 0.5vw, 0.3rem);
-    justify-content: center;
-    margin: clamp(0.5rem, 2vw, 1rem) 0;
-
-    .sub-nav-button {
-      padding: clamp(0.2rem, 0.8vw, 0.3rem) clamp(0.6rem, 1.5vw, 0.8rem);
-      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-      border: 1px solid #ccc;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-bottom: clamp(10px, 2vw, 20px);
-      background-color: #f1f1f1;
-      color: #555;
-
-      input[type="radio"] {
-        display: none;
-      }
-
-      &:hover {
-        background-color: #ddd;
-      }
-
-      &.active {
-        background-color: #555;
-        color: #fff;
-        border-color: #555;
-      }
-    }
-  }
-
-  .nav-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(5px, 1vw, 10px);
-    padding: clamp(8px, 2vw, 10px) clamp(20px, 5vw, 35px);
-    background: white;
-    color: #111d3e;
-    border-radius: 10px;
-    border: 2px solid #111d3e;
-    font-size: clamp(12px, 2vw, 16px);
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    position: relative;
-
-    input[type="radio"] {
-      display: none;
-    }
-
-    &::before {
-      content: "";
-      width: clamp(8px, 2vw, 12px);
-      height: clamp(8px, 2vw, 12px);
-      left: clamp(2px, 1vw, 4px);
-      border: 2px solid #111d3e;
-      border-radius: 50%;
-      position: absolute;
-      background: white;
-      transition: background 0.3s ease;
-    }
-
-    &:has(input[type="radio"]:checked) {
-      background: #111d3e;
-      color: white;
-      border: white 1px solid;
-
-      &::before {
-        background: white;
-      }
-    }
-  }
-
   // Media queries específicas
   @media screen and (max-width: 768px) {
     .portifolio-grid {
       grid-template-columns: 1fr;
     }
 
-    .portifolio-nav {
+    .portifolio-nav,
+    .portifolio-section-nav {
       gap: 10px;
     }
   }
