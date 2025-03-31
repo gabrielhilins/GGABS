@@ -41,6 +41,7 @@ $sidebar-width: 280px;
   display: flex;
   gap: 2.5rem;
   z-index: 6;
+  margin-left: 4rem; // **Adicionado espaço entre a logo e a navbar**
 
   @media (max-width: $breakpoint-md) {
     display: none; // Esconde o nav em telas menores
@@ -91,6 +92,7 @@ $sidebar-width: 280px;
     padding: 0.5rem;
     cursor: pointer;
     z-index: 12;
+    margin-left: 1rem; // **Afastando o botão do menu hamburguer da logo**
   }
 }
 
@@ -105,7 +107,7 @@ $sidebar-width: 280px;
   z-index: 11;
   display: flex;
   flex-direction: column;
-  padding: 6rem 1.5rem 2rem;
+  padding: 8rem 1.5rem 2rem; // **Aumentado o padding-top para afastar os itens da logo**
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
 

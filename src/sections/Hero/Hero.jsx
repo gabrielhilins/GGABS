@@ -28,8 +28,10 @@ const Hero = () => {
   const handleSaibaMaisClick = () => {
     document.getElementById("diferenciais").scrollIntoView({ behavior: "smooth" });
   };
+  
   const handleOrçamentoClick = () => {
-    navigate("/solicitar-orcamentos")
+    navigate("/solicitar-orcamentos");
+    window.scrollTo(0, 0); // Rola a página para o topo
   };
 
   return (

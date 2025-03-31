@@ -24,6 +24,7 @@ import Orçamento from "./pages/Orçamento/Orçamento";
 
 // Pagina 404
 import NotFound404 from "./pages/NotFound/NotFound404";
+import Pacotes from "./sections/Pacotes/Pacotes";
 
 function App() {
   const location = useLocation();
@@ -65,6 +66,9 @@ function App() {
               </div>
               <div id="design">
                 <ServicoDesign />
+              </div>
+              <div id="pacotes">
+                <Pacotes />
               </div>
               <div id="portifolio">
                 <Portifolio />

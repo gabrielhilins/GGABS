@@ -19,6 +19,7 @@ function Header() {
     "início",
     "sobre",
     "serviços",
+    "pacotes",
     "portifolio",
     "faq",
     "depoimentos",

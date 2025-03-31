@@ -15,7 +15,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 
 function Portifolio() {
-  const [selectedSection, setSelectedSection] = useState("own-products");
+  const [selectedSection, setSelectedSection] = useState("solutions");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
 
