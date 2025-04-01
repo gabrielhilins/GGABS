@@ -17,7 +17,7 @@ const tecnologiaEstatisticas = [
   {
     title: "Sites Responsivos",
     value: 70,
-    description: "afirmam que a experiência móvel influencia na compra.",
+    description: "afirmam que a experiência com celular influencia na compra.",
   },
   {
     title: "Eficiência Operacional",

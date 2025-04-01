@@ -5,7 +5,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import CTA from "./CTA";
 
 function Compartilha() {
-  const siteURL = "https://www.ggabssoftwaredesign.com.br";
+  const siteURL = "https://www.ggabstechdesign.com.br";
 
   const copiarLink = () => {
     navigator.clipboard.writeText(siteURL);
@@ -15,7 +15,7 @@ function Compartilha() {
   const compartilhar = (rede) => {
     let url = "";
     const mensagem = encodeURIComponent(
-      "Transforme sonhos em realidade com a GGabs Software & Design! Acesse: " +
+      "Transforme sonhos em realidade com a GGabs Tech & Design! Acesse: " +
         siteURL
     );
 

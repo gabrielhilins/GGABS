@@ -25,7 +25,7 @@ const Modal = ({
       <div className={styles.modalContent}>
         <h3>Seu pedido está a caminho!</h3>
         <p>
-          Agradecemos por escolher a GGabs Design e Tech! Sua solicitação de
+          Agradecemos por escolher a GGABS TECH & DESIGN! Sua solicitação de
           orçamento foi enviada com sucesso via WhatsApp. Nossa equipe entrará
           em contato em breve.
         </p>

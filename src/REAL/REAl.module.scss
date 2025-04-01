@@ -583,6 +583,18 @@ $border-gray: #D1D5DB; // Borda suave
     margin-top: 20px;
   }
 
+  .timestamp {
+    font-size: clamp(14px, 1.8vw, 16px);
+    color: #666;
+    text-align: center;
+    margin: 10px 0;
+  
+    strong {
+      color: #333;
+      font-weight: 600;
+    }
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;

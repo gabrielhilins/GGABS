@@ -11,12 +11,27 @@ import Modal from "./Modal";
 import Form from "./Form";
 import Receipt from "./Receipt";
 
+// Mapeamento dos valores do serviço para nomes legíveis
+const serviceNames = {
+  cardapio: "Cardápio",
+  ecommerce: "E-Commerce",
+  gestaoEmpresarial: "Gestão Empresarial (ERP)",
+  gestaoPedidos: "Gestão de Pedidos",
+  design: "Identidade Visual",
+  landingPage: "Landing Page",
+  materialPromocional: "Material Promocional",
+  portfolio: "Portfólio",
+  siteInstitucional: "Site Institucional",
+  outro: "Serviço Personalizado",
+};
+
 function REAL() {
   const [formData, setFormData] = useState({ name: "", lastname: "", service: "", otherService: "", briefing: "", deadline: "", files: [] });
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [uploadProgress, setUploadProgress] = useState({});
   const [budget, setBudget] = useState(null);
+  const [generatedTimestamp, setGeneratedTimestamp] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -86,7 +101,10 @@ function REAL() {
     setLoading(true);
     if (validateForm()) {
       setTimeout(() => {
-        setBudget(calculateBudget());
+        const newBudget = calculateBudget();
+        const timestamp = new Date();
+        setGeneratedTimestamp(timestamp);
+        setBudget(newBudget);
         toast.success("Orçamento gerado com sucesso!");
         setLoading(false);
       }, 2000);
@@ -97,10 +115,32 @@ function REAL() {
   };
 
   const handleEnviarWhatsApp = () => {
-    if (!budget) return;
+    if (!budget || !generatedTimestamp) return;
     const { name, lastname, deadline } = formData;
     const { service, briefingSummary, total, details } = budget;
-    enviarWhatsApp(name, lastname, service, deadline, briefingSummary, details[0].total, details[1].total, 0, total);
+    const formattedDate = generatedTimestamp.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    const formattedTime = generatedTimestamp.toLocaleTimeString("pt-BR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+    enviarWhatsApp(
+      name,
+      lastname,
+      serviceNames[service] || service, // Usa o serviceNames definido aqui
+      deadline,
+      briefingSummary,
+      details[0].total,
+      details[1].total,
+      0,
+      total,
+      formattedDate,
+      formattedTime
+    );
     setShowModal(true);
   };
 
@@ -108,6 +148,7 @@ function REAL() {
     setFormData({ name: "", lastname: "", service: "", otherService: "", briefing: "", deadline: "", files: [] });
     setErrors({});
     setBudget(null);
+    setGeneratedTimestamp(null);
     setUploadProgress({});
   };
 
@@ -145,6 +186,8 @@ function REAL() {
             formData={formData}
             handleEnviarWhatsApp={handleEnviarWhatsApp}
             resetForm={resetForm}
+            generatedTimestamp={generatedTimestamp}
+            serviceNames={serviceNames} // Passa serviceNames como prop
           />
         )}
       </div>
