@@ -65,12 +65,12 @@ const Hero = () => {
 
       {buttonsVisible && (
         <div className={styles.botoes} data-aos="fade-up">
-          <button className={styles.act} onClick={handleOrçamentoClick}>
+          <button className={styles.act} onClick={handleOrçamentoClick} aria-label="Conecte-se ao futuro agora">
             <HiRocketLaunch className={styles.icon} />
             <span>CONECTE-SE AO FUTURO AGORA!</span>
           </button>
           <button className={styles.saibamais} onClick={handleSaibaMaisClick}>
-            <IoIosArrowDropdownCircle className={styles.icon2} />
+            <IoIosArrowDropdownCircle className={styles.icon2}  aria-label="Saiba mais sobre meus diferenciais"/>
             <p className={styles.text}>Saiba mais</p>
           </button>
         </div>

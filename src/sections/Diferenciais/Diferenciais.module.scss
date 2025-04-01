@@ -4,18 +4,18 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   background: #0a0a23;
   padding: clamp(30px, 8vw, 60px) clamp(20px, 5vw, 40px) clamp(90px, 15vw, 180px);
   text-align: justify;
-  color: white;
+  color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden; // Prevent horizontal scroll during animations
+  overflow: hidden;
 }
 
 .title {
-  font-size: clamp(20px, 5vw, 36px);
-  font-weight: bold;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 700;
   margin-bottom: clamp(20px, 4vw, 40px);
   line-height: 1.2;
   text-align: center;
@@ -34,8 +34,8 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(30px, 10vw, 120px);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(25px, 8vw, 60px);
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
@@ -43,18 +43,18 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
 .item {
   display: flex;
-  align-items: center;
-  gap: clamp(5px, 1.5vw, 10px);
-  font-size: clamp(16px, 2.5vw, 18px);
-  padding: clamp(10px, 2vw, 20px) 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 1.5vw, 12px);
+  padding: clamp(15px, 2vw, 20px);
   border-bottom: 1px solid rgba(0, 221, 235, 0.3);
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(var(--animation-direction, 30px));
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--delay, 0s);
 
   &[data-direction="left"] {
-    transform: translateX(-30px);
+    transform: translateX(var(--animation-direction, -30px));
   }
 
   &.animate {
@@ -65,16 +65,32 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   &:last-child {
     border-bottom: none;
   }
+
+  &:hover {
+    border-bottom-color: rgba(0, 221, 235, 0.6);
+  }
+
+  strong {
+    font-size: clamp(18px, 2.2vw, 20px);
+    font-weight: 600;
+    color: #00DDEB;
+  }
+
+  span {
+    font-size: clamp(14px, 1.8vw, 16px);
+    color: #A1C4FF;
+    line-height: 1.5;
+  }
 }
 
-.star {
+.icon {
   color: #00DDEB;
-  font-size: clamp(16px, 2.5vw, 20px);
-  flex-shrink: 0;
+  font-size: clamp(20px, 3vw, 24px);
+  margin-bottom: clamp(8px, 1vw, 12px);
   transition: transform 0.3s ease;
 
   .item:hover & {
-    transform: scale(1.2) rotate(15deg);
+    transform: scale(1.2) rotate(10deg);
   }
 }
 
@@ -89,32 +105,47 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   }
 }
 
-// Responsive adjustments
 @media screen and (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: clamp(20px, 8vw, 60px);
-  }
-  
   .diferenciais-container {
-    padding-bottom: clamp(60px, 12vw, 120px);
+    padding: clamp(20px, 6vw, 40px) clamp(15px, 4vw, 30px) clamp(60px, 12vw, 120px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(20px, 6vw, 40px);
+  }
+
+  .item {
+    padding: clamp(12px, 1.8vw, 18px);
   }
 }
 
 @media screen and (max-width: 480px) {
+  .diferenciais-container {
+    padding: clamp(15px, 5vw, 30px) clamp(10px, 3vw, 20px) clamp(40px, 10vw, 90px);
+  }
+
+  .title {
+    font-size: clamp(20px, 4.5vw, 28px);
+    margin-bottom: clamp(15px, 3vw, 30px);
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .item {
-    flex-direction: column;
     text-align: center;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 221, 235, 0.2);
-    
-    &:last-child {
-      border-bottom: none;
+    align-items: center;
+    padding: 15px;
+
+    strong {
+      font-size: clamp(16px, 2vw, 18px);
+    }
+
+    span {
+      font-size: clamp(13px, 1.6vw, 15px);
     }
   }
 }

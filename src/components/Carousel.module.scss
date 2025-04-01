@@ -256,27 +256,28 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
           display: flex;
           align-items: center;
           gap: clamp(0.5rem, 1vw, 0.8rem);
-          background: $gradient-one;
+          background: #AFF0FF;
           border: none;
           padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1rem, 2vw, 2.5rem);
-          color: white;
+          color: black;
           font-size: clamp(14px, 2vw, 18px);
           font-weight: 700;
           border-radius: 12px;
           cursor: pointer;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 20px rgba(63, 92, 121, 0.3); /* Cor de box-shadow mais harmônica */
           animation: pulse 2s infinite ease-in-out;
           transition: all 0.3s ease;
-
+        
           &:hover {
             transform: scale(1.08);
-            box-shadow: 0 12px 25px rgba(0, 221, 235, 0.5);
+            box-shadow: 0 12px 25px rgba(63, 92, 121, 0.5); /* Um efeito de sombreamento mais forte */
           }
-
+        
           .ctaIcon {
             font-size: clamp(1rem, 1.8vw, 1.4rem);
           }
         }
+        
       }
     }
   }
