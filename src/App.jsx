@@ -23,7 +23,7 @@ import Sobre from "./sections/Sobre/Sobre";
 import Orçamento from "./pages/Orçamento/Orçamento";
 
 // Pagina 404
-import NotFound404 from "./pages/NotFound/NotFound404";
+import NotFound404 from "./pages/404";
 import Pacotes from "./sections/Pacotes/Pacotes";
 
 function App() {

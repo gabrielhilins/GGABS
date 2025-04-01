@@ -1,5 +1,5 @@
 // src/pages/NotFound404.jsx
-import styles from './NotFound404.module.scss';
+import styles from './404.module.scss';
 
 function NotFound404() {
   return (
@@ -17,7 +17,7 @@ function NotFound404() {
           className={styles.backButton}
           onClick={() => (window.location.href = "/")}
         >
-          Voltar para a Nave (Página Inicial)
+          Voltar para a Nave GGABS(Página Inicial)
         </button>
       </div>
     </div>
