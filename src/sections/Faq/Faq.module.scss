@@ -1,10 +1,9 @@
-// Cores
 $background-color: #1a2a44;
 $text-color: #000000;
 $primary-color: #00c4ff;
-$input-bg: #ffffff;
 $button-bg: #00c4ff;
 $button-hover: #009ac7;
+$disabled-color: #666;
 
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
@@ -14,6 +13,7 @@ $button-hover: #009ac7;
   padding: clamp(20px, 5vw, 40px);
   text-align: center;
   min-height: 100vh;
+  padding-bottom: clamp(60px, 10vw, 320px); // Espaço maior para a próxima seção
 }
 
 .title {
@@ -21,10 +21,6 @@ $button-hover: #009ac7;
   font-weight: bold;
   margin-bottom: clamp(10px, 2vw, 10px);
   color: white;
-
-  @media (max-width: 768px) {
-    font-size: 18px;
-  }
 }
 
 .subtitle {
@@ -32,27 +28,20 @@ $button-hover: #009ac7;
   margin-bottom: clamp(20px, 5vw, 40px);
   color: white;
   opacity: 0.7;
-  
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
 }
 
-.panels {
+.content {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1000px;
-  margin: auto;
-  margin-top: clamp(5px, 2vw, 10px);
-  margin-bottom: clamp(50px, 10vw, 100px);
-  gap: clamp(40px, 15vw, 170px);
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: clamp(40px, 8vw, 80px); // Espaço maior entre perguntas e ilustração
 }
 
-.left-panel {
+.questions {
   width: 100%;
-  max-width: 620px;
-  margin-top: clamp(30px, 8vw, 50px);
+  max-width: 900px;
 }
 
 .accordion {
@@ -75,26 +64,24 @@ $button-hover: #009ac7;
 
 .question {
   width: 100%;
-  padding: clamp(10px, 2vw, 15px);
+  padding: clamp(15px, 2.5vw, 20px);
   text-align: left;
   background: transparent;
   border: none;
   color: rgba(17, 29, 62, 0.7);
-  font-size: clamp(12px, 2vw, 14px);
+  font-size: clamp(14px, 2.2vw, 16px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: color 0.3s ease;
 
   span {
     display: flex;
     align-items: center;
 
     svg {
-      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
       color: #1a2a44;
-      transition: color 0.3s ease;
     }
   }
 
@@ -108,8 +95,8 @@ $button-hover: #009ac7;
 }
 
 .answer {
-  padding: 0 clamp(10px, 2vw, 15px);
-  font-size: clamp(10px, 1.8vw, 12px);
+  padding: 0 clamp(15px, 2.5vw, 20px);
+  font-size: clamp(12px, 2vw, 14px);
   color: white;
   background-color: $background-color;
   border: 2px solid #fff;
@@ -121,49 +108,51 @@ $button-hover: #009ac7;
   box-sizing: border-box;
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
 
   .item.open & {
-    max-height: 500px;
-    opacity: 1;
-    padding: clamp(10px, 2vw, 15px) clamp(10px, 2vw, 15px) clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+    max-height: 500px; // Altura suficiente para o conteúdo
+    padding: clamp(15px, 2.5vw, 20px);
   }
 }
 
 .navigation {
   display: flex;
   justify-content: space-between;
-  margin-top: clamp(10px, 3vw, 20px);
-  gap: clamp(5px, 1vw, 20px);
-  flex-wrap: nowrap; // Mantém os botões na mesma linha
+  margin-top: clamp(15px, 3vw, 25px);
+  gap: clamp(10px, 2vw, 20px);
 }
 
 .navButton {
   background: transparent;
   color: $primary-color;
   border: 2px solid $primary-color;
-  padding: clamp(4px, 1vw, 8px) clamp(8px, 1.5vw, 15px);
+  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2vw, 15px);
   border-radius: 5px;
   cursor: pointer;
-  font-size: clamp(8px, 1.5vw, 12px); // Reduzido para caber em telas pequenas
-  transition: all 0.3s ease;
-  flex: 1; // Permite que os botões ocupem espaço igual
-  min-width: 80px; // Reduzido para caber em telas menores
+  font-size: clamp(10px, 1.8vw, 14px);
+  flex: 1;
+  min-width: 100px;
+  transition: background 0.3s ease, color 0.3s ease;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background: $primary-color;
     color: $text-color;
   }
+
+  &.disabled {
+    color: $disabled-color;
+    border-color: $disabled-color;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
-.right-panel {
+.illustration {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 400px;
-  justify-content: center;
+  max-width: 500px;
 }
 
 .ilustracao {
@@ -172,17 +161,18 @@ $button-hover: #009ac7;
 }
 
 .texto {
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   margin-bottom: clamp(10px, 3vw, 20px);
   color: white;
-  text-align: justify;
+  text-align: center;
   line-height: 1.4;
 }
 
 .input {
   width: 100%;
-  padding: clamp(8px, 2vw, 10px);
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  max-width: 400px;
+  padding: clamp(10px, 2vw, 12px);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   border-radius: 10px;
   border: 1px solid #fff;
   background-color: transparent;
@@ -201,38 +191,31 @@ $button-hover: #009ac7;
   color: $text-color;
   font-weight: bold;
   border: none;
-  padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+  padding: clamp(10px, 2vw, 12px) clamp(15px, 3vw, 20px);
   border-radius: 5px;
   cursor: pointer;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   width: 100%;
-  transition: background-color 0.3s ease;
+  max-width: 400px;
+  transition: background 0.3s ease;
 
   &:hover {
     background: $button-hover;
   }
 }
 
-// Media queries específicas
+/* Media Queries */
 @media screen and (max-width: 768px) {
-  .panels {
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(20px, 5vw, 40px);
+  .questions {
+    max-width: 100%;
   }
 
-  .left-panel,
-  .right-panel {
-    width: 90%;
-    max-width: none;
+  .illustration {
+    max-width: 100%;
   }
 
   .ilustracao {
     width: clamp(50%, 30vw, 60%);
-  }
-
-  .texto {
-    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   }
 }
 
@@ -241,13 +224,27 @@ $button-hover: #009ac7;
     padding: 15px;
   }
 
-  .navigation {
-    gap: clamp(3px, 0.8vw, 5px); // Reduz o gap em telas pequenas
+  .question {
+    padding: clamp(10px, 2vw, 15px);
+    font-size: clamp(12px, 2vw, 14px);
+
+    svg {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+  }
+
+  .answer {
+    padding: 0 clamp(10px, 2vw, 15px);
+    font-size: clamp(10px, 1.8vw, 12px);
+
+    .item.open & {
+      padding: clamp(10px, 2vw, 15px);
+    }
   }
 
   .navButton {
-    min-width: 60px; // Ainda menor para telas muito pequenas
-    padding: clamp(3px, 0.8vw, 6px) clamp(5px, 1vw, 10px); // Padding reduzido
-    font-size: clamp(7px, 1.2vw, 10px); // Fonte ainda menor se necessário
+    min-width: 80px;
+    padding: clamp(5px, 1vw, 8px) clamp(8px, 1.5vw, 12px);
+    font-size: clamp(8px, 1.5vw, 12px);
   }
 }

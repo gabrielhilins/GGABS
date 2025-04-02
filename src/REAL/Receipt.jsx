@@ -42,7 +42,6 @@ const Receipt = ({ budget, formData, handleEnviarWhatsApp, resetForm, generatedT
         <p><strong>Cliente:</strong> {formData.name} {formData.lastname}</p>
         <p><strong>Serviço:</strong> {serviceDisplayName}</p>
         <p><strong>Prazo Desejado:</strong> {budget.deadline}</p>
-        <p><strong>Descrição inicial do Projeto:</strong> {budget.briefingSummary}</p>
       </div>
       <hr />
       <h4>Detalhamento do Orçamento</h4>
@@ -50,8 +49,7 @@ const Receipt = ({ budget, formData, handleEnviarWhatsApp, resetForm, generatedT
         <thead>
           <tr>
             <th>Descrição</th>
-            <th>Quantidade</th>
-            <th>Preço Unitário</th>
+            <th>Preço</th>
             <th>Total (R$)</th>
           </tr>
         </thead>
@@ -59,8 +57,7 @@ const Receipt = ({ budget, formData, handleEnviarWhatsApp, resetForm, generatedT
           {budget.details.map((item, index) => (
             <tr key={index}>
               <td data-label="Descrição">{item.desc}</td>
-              <td data-label="Quantidade">{item.qty}</td>
-              <td data-label="Preço Unitário">{item.unit === "-" ? "-" : `R$${item.unit.toFixed(2)}`}</td>
+              <td data-label="Preço">{item.unit === "-" ? "-" : `R$${item.unit.toFixed(2)}`}</td>
               <td data-label="Total (R$)">R${item.total.toFixed(2)}</td>
             </tr>
           ))}
@@ -69,7 +66,7 @@ const Receipt = ({ budget, formData, handleEnviarWhatsApp, resetForm, generatedT
       <h4 className={styles.total}>Total do Orçamento: R${budget.total.toFixed(2)}</h4>
       <p className={styles.observacao}>Observações:</p>
       <ul>
-        <li>Orçamento sujeito à alteração após análise detalhada do Briefing.</li>
+        <li>Orçamento sujeito à alteração.</li>
         <li>Validade do orçamento: 7 dias.</li>
         <li>Quer ajustar algo? Refaça a simulação ou entre em contato!</li>
       </ul>

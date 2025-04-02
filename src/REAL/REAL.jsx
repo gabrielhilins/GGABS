@@ -1,32 +1,31 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import { IoMdArrowBack } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import styles from "./REAl.module.scss";
 import enviarWhatsApp from "./EnviarMensagem";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import Modal from "./Modal";
 import Form from "./Form";
 import Receipt from "./Receipt";
 
-// Mapeamento dos valores do serviço para nomes legíveis
-const serviceNames = {
-  cardapio: "Cardápio",
-  ecommerce: "E-Commerce",
-  gestaoEmpresarial: "Gestão Empresarial (ERP)",
-  gestaoPedidos: "Gestão de Pedidos",
-  design: "Identidade Visual",
-  landingPage: "Landing Page",
-  materialPromocional: "Material Promocional",
-  portfolio: "Portfólio",
-  siteInstitucional: "Site Institucional",
-  outro: "Serviço Personalizado",
-};
+import { serviceNames } from "./serviceNames";
+import { questionFlows } from "./questions";
+import { pricingModels } from "./pricing";
+import calculateBudget from "./calculateBudget";
 
 function REAL() {
-  const [formData, setFormData] = useState({ name: "", lastname: "", service: "", otherService: "", briefing: "", deadline: "", files: [] });
+  const [formData, setFormData] = useState({
+    name: "",
+    lastname: "",
+    service: "",
+    details: {},
+    deadline: "",
+    files: [],
+  });
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [uploadProgress, setUploadProgress] = useState({});
@@ -41,8 +40,17 @@ function REAL() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+    if (name.startsWith("details.")) {
+      const detailKey = name.split(".")[1];
+      setFormData((prev) => ({
+        ...prev,
+        details: { ...prev.details, [detailKey]: value },
+      }));
+      setErrors((prev) => ({ ...prev, [detailKey]: "" }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleFileChange = (e) => {
@@ -61,39 +69,41 @@ function REAL() {
   };
 
   const removeFile = (fileName) => {
-    setFormData((prev) => ({ ...prev, files: prev.files.filter((f) => f.name !== fileName) }));
-    setUploadProgress((prev) => { const { [fileName]: _, ...rest } = prev; return rest; });
+    setFormData((prev) => ({
+      ...prev,
+      files: prev.files.filter((f) => f.name !== fileName),
+    }));
+    setUploadProgress((prev) => {
+      const { [fileName]: _, ...rest } = prev;
+      return rest;
+    });
   };
 
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = "O nome é obrigatório";
     if (!formData.service) newErrors.service = "Selecione um serviço";
-    if (!formData.briefing.trim()) newErrors.briefing = "O resumo é obrigatório";
-    if (formData.service === "outro" && !formData.otherService.trim()) newErrors.otherService = "Descreva o serviço";
     if (!formData.deadline) newErrors.deadline = "Selecione um prazo";
+
+    const questions = [
+      ...(questionFlows.initial[formData.service] || []),
+      ...(questionFlows.detailed[formData.service] || []),
+    ];
+    questions.forEach((q) => {
+      const value = formData.details[q.id];
+      // Só valida se o campo for obrigatório
+      if (q.required) {
+        if (q.type === "number" && (!value || value < q.min))
+          newErrors[q.id] = `${q.label} deve ser pelo menos ${q.min}`;
+        if ((q.type === "text" || q.type === "textarea") && !value?.trim())
+          newErrors[q.id] = `${q.label} é obrigatório`;
+        if (q.type === "select" && !value)
+          newErrors[q.id] = `Selecione uma opção para ${q.label}`;
+      }
+    });
+
     setErrors(newErrors);
     return !Object.keys(newErrors).length;
-  };
-
-  const calculateBudget = () => {
-    const { service, otherService, deadline } = formData;
-    const precosBase = { cardapio: 800, ecommerce: 5000, gestaoEmpresarial: 7000, gestaoPedidos: 3000, design: 1500, landingPage: 2000, materialPromocional: 1000, portfolio: 2500, siteInstitucional: 3500, outro: 2000 };
-    const multiplicadoresPrazo = { "1-semana": 1.5, "2-semanas": 1.3, "1-mes": 1.1, "2-meses": 1.0, flexivel: 0.9 };
-    const precoBase = precosBase[service] || precosBase.outro;
-    const multiplicador = multiplicadoresPrazo[deadline] || 1.0;
-    const total = precoBase * multiplicador;
-
-    return {
-      service: service === "outro" ? otherService : service,
-      deadline,
-      briefingSummary: formData.briefing.slice(0, 100) + (formData.briefing.length > 100 ? "..." : ""),
-      details: [
-        { desc: "Serviço Base", qty: "1", unit: precoBase, total: precoBase },
-        { desc: "Ajuste por Prazo", qty: "-", unit: "-", total: total - precoBase },
-      ],
-      total,
-    };
   };
 
   const handleSubmit = (e) => {
@@ -101,7 +111,11 @@ function REAL() {
     setLoading(true);
     if (validateForm()) {
       setTimeout(() => {
-        const newBudget = calculateBudget();
+        const newBudget = calculateBudget(
+          formData,
+          pricingModels,
+          serviceNames
+        );
         const timestamp = new Date();
         setGeneratedTimestamp(timestamp);
         setBudget(newBudget);
@@ -117,7 +131,7 @@ function REAL() {
   const handleEnviarWhatsApp = () => {
     if (!budget || !generatedTimestamp) return;
     const { name, lastname, deadline } = formData;
-    const { service, briefingSummary, total, details } = budget;
+    const { service, total, details } = budget;
     const formattedDate = generatedTimestamp.toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "2-digit",
@@ -131,12 +145,12 @@ function REAL() {
     enviarWhatsApp(
       name,
       lastname,
-      serviceNames[service] || service, // Usa o serviceNames definido aqui
+      serviceNames[service],
       deadline,
-      briefingSummary,
-      details[0].total,
-      details[1].total,
-      0,
+      "Detalhes enviados no formulário",
+      details[0].total, // Base price
+      details.slice(1, -1).reduce((sum, item) => sum + item.total, 0), // Additional costs
+      0, // Assuming no discount for now
       total,
       formattedDate,
       formattedTime
@@ -145,7 +159,14 @@ function REAL() {
   };
 
   const resetForm = () => {
-    setFormData({ name: "", lastname: "", service: "", otherService: "", briefing: "", deadline: "", files: [] });
+    setFormData({
+      name: "",
+      lastname: "",
+      service: "",
+      details: {},
+      deadline: "",
+      files: [],
+    });
     setErrors({});
     setBudget(null);
     setGeneratedTimestamp(null);
@@ -164,10 +185,17 @@ function REAL() {
         <p className={styles.umpasso} data-aos="fade-up" data-aos-delay="100">
           Transforme o futuro do seu negócio em realidade agora!
         </p>
-        <div className={styles.description} data-aos="fade-up" data-aos-delay="200">
-          <p>Preencha o formulário abaixo e gere um orçamento automático.</p>
+        <div
+          className={styles.description}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p>Responda às perguntas abaixo e gere um orçamento personalizado.</p>
           <p>É rápido, prático e sem compromisso!</p>
         </div>
+        <p className={styles.requiredNote} data-aos="fade-up" data-aos-delay="300">
+          Campos com <span className={styles.requiredAsterisk}>*</span> são obrigatórios
+        </p>
 
         {!budget ? (
           <Form
@@ -179,6 +207,8 @@ function REAL() {
             files={formData.files}
             uploadProgress={uploadProgress}
             removeFile={removeFile}
+            serviceNames={serviceNames}
+            questionFlows={questionFlows}
           />
         ) : (
           <Receipt
@@ -187,7 +217,7 @@ function REAL() {
             handleEnviarWhatsApp={handleEnviarWhatsApp}
             resetForm={resetForm}
             generatedTimestamp={generatedTimestamp}
-            serviceNames={serviceNames} // Passa serviceNames como prop
+            serviceNames={serviceNames}
           />
         )}
       </div>
@@ -199,7 +229,11 @@ function REAL() {
         </div>
       )}
 
-      <Modal showModal={showModal} setShowModal={setShowModal} navigate={navigate} />
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        navigate={navigate}
+      />
       <ToastContainer />
     </section>
   );

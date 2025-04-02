@@ -163,8 +163,8 @@ function Portifolio() {
       {/* Navegação entre seções */}
       <div className={styles["portifolio-section-nav"]} data-aos="fade-up">
         {[
-          { id: "solutions", label: "O Que Oferecemos" },
-          { id: "clients", label: "Para Clientes" },
+          { id: "solutions", label: "O Que Ofereço" },
+          { id: "clients", label: "Feitos para Clientes" },
           { id: "own-products", label: "Criações GGABS" },
         ].map((section) => (
           <label

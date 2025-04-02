@@ -1,15 +1,15 @@
-$primary-blue: #1E3A8A; // Cor base para $primary-blue
-$secondary-blue: #2E4377; // Tom secundário
-$accent-blue: #5A7CFF; // Tom vibrante
-$light-gray: #F7F9FB; // Fundo claro
-$dark-gray: #333; // Texto escuro
-$border-gray: #D1D5DB; // Borda suave
+$primary-blue: #1E3A8A;
+$secondary-blue: #2E4377;
+$accent-blue: #5A7CFF;
+$light-gray: #F7F9FB;
+$dark-gray: #333;
+$border-gray: #D1D5DB;
 
 .realContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: clamp(15px, 4vw, 20px); // Ajusta padding pra telas menores
   min-height: 100vh;
   background: linear-gradient(
     180deg,
@@ -24,85 +24,98 @@ $border-gray: #D1D5DB; // Borda suave
     max-width: 1200px;
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 3vw, 20px);
 
     .logo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: clamp(3px, 1vw, 5px);
 
       img {
-        max-width: 200px;
+        max-width: clamp(120px, 20vw, 200px); // Responsivo pra telas pequenas
         height: auto;
       }
 
       p {
-        font-size: 10px;
+        font-size: clamp(8px, 1.5vw, 10px); // Menor em telas pequenas
         color: black;
       }
     }
 
     a {
       color: #111D3E;
-      font-size: 12px;
+      font-size: clamp(10px, 1.8vw, 12px);
       text-decoration: underline;
     }
   }
+
+  // REAl.module.scss
+.requiredNote {
+  font-size: 0.9rem;
+  color: #bebebe;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.requiredAsterisk {
+  color: red;
+  font-weight: bold;
+}
 
   .formSection {
     max-width: 800px;
     width: 100%;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: clamp(40px, 10vw, 80px);
 
     .headerRow {
       display: flex;
       justify-content: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: clamp(15px, 3vw, 20px);
 
       .goBackButton {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: clamp(3px, 1vw, 5px);
         background: none;
         border: none;
         color: #fff;
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 2vw, 1rem);
         cursor: pointer;
 
         .goBackIcon {
-          font-size: 1.2rem;
+          font-size: clamp(1rem, 2.5vw, 1.2rem);
         }
       }
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
       color: #fff;
       font-weight: 700;
-      margin-bottom: 50px;
+      margin-bottom: clamp(20px, 6vw, 50px);
       line-height: 1.2;
     }
 
     .umpasso {
-      font-size: clamp(1rem, 4vw, 1.2rem);
+      font-size: clamp(0.85rem, 2.5vw, 1.2rem);
       color: #00c49a;
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: clamp(10px, 2vw, 15px);
       line-height: 1.4;
       letter-spacing: 0.5px;
     }
 
     .description {
-      max-width: 700px;
+      max-width: clamp(300px, 80vw, 700px); // Ajusta largura pra telas menores
       margin: 0 auto;
       color: #ddd;
 
       p {
-        font-size: clamp(0.9rem, 3vw, 1rem);
+        font-size: clamp(0.75rem, 2vw, 1rem);
         line-height: 1.6;
-        margin-bottom: 10px;
+        margin-bottom: clamp(5px, 1.5vw, 10px);
 
         &:last-child {
           font-style: italic;
@@ -112,27 +125,27 @@ $border-gray: #D1D5DB; // Borda suave
     }
 
     .contactSection {
-      margin: 20px 0;
+      margin: clamp(15px, 4vw, 20px) 0;
 
       p {
-        font-size: 10px;
+        font-size: clamp(8px, 1.5vw, 10px);
       }
 
       .whatsappButton {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: clamp(5px, 1.5vw, 10px);
         background-color: #25d366;
         color: white;
-        padding: 12px 24px;
+        padding: clamp(8px, 2vw, 12px) clamp(15px, 3vw, 24px);
         border: none;
         border-radius: 8px;
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 2vw, 1rem);
         cursor: pointer;
         transition: background-color 0.3s ease;
 
         .whatsappIcon {
-          font-size: 1.2rem;
+          font-size: clamp(1rem, 2.5vw, 1.2rem);
         }
 
         &:hover {
@@ -144,7 +157,7 @@ $border-gray: #D1D5DB; // Borda suave
 
   .form {
     background: $light-gray;
-    padding: 30px;
+    padding: clamp(15px, 4vw, 30px);
     border-radius: 12px;
     border: 1px solid $border-gray;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
@@ -155,15 +168,15 @@ $border-gray: #D1D5DB; // Borda suave
     }
 
     .formGroup {
-      margin-bottom: 25px;
+      margin-bottom: clamp(15px, 3vw, 25px);
       text-align: left;
 
       label {
         display: block;
-        font-size: 0.95rem;
+        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
         color: $dark-gray;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: clamp(5px, 1vw, 8px);
         letter-spacing: 0.2px;
       }
 
@@ -174,10 +187,10 @@ $border-gray: #D1D5DB; // Borda suave
         select,
         textarea {
           width: 100%;
-          padding: 12px 15px;
+          padding: clamp(8px, 2vw, 12px) clamp(10px, 2.5vw, 15px);
           border: 1px solid $border-gray;
           border-radius: 8px;
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2vw, 1rem);
           background: #fff;
           color: $dark-gray;
           transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -188,20 +201,11 @@ $border-gray: #D1D5DB; // Borda suave
             box-shadow: 0 0 5px rgba($accent-blue, 0.3);
           }
 
-          &::-webkit-input-placeholder {
-            font-size: 0.9rem;
-            color: #A0AEC0;
-          }
-          &:-moz-placeholder {
-            font-size: 0.9rem;
-            color: #A0AEC0;
-          }
-          &::-moz-placeholder {
-            font-size: 0.9rem;
-            color: #A0AEC0;
-          }
+          &::-webkit-input-placeholder,
+          &:-moz-placeholder,
+          &::-moz-placeholder,
           &:-ms-input-placeholder {
-            font-size: 0.9rem;
+            font-size: clamp(0.75rem, 1.8vw, 0.9rem); // Placeholders responsivos
             color: #A0AEC0;
           }
         }
@@ -213,8 +217,8 @@ $border-gray: #D1D5DB; // Borda suave
 
         .errorMessage {
           color: #e74c3c;
-          font-size: 0.85rem;
-          margin-top: 6px;
+          font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+          margin-top: clamp(4px, 1vw, 6px);
           font-style: italic;
         }
       }
@@ -228,13 +232,14 @@ $border-gray: #D1D5DB; // Borda suave
 
         .customFileButton {
           display: inline-block;
-          padding: 10px 20px;
+          padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
           background-color: #fff;
           color: $primary-blue;
           border: 1px solid $primary-blue;
           border-radius: 8px;
           cursor: pointer;
           font-weight: 500;
+          font-size: clamp(0.8rem, 1.8vw, 0.95rem);
           transition: background-color 0.3s ease, color 0.3s ease;
 
           &:hover {
@@ -245,10 +250,10 @@ $border-gray: #D1D5DB; // Borda suave
       }
 
       .fileList {
-        margin-top: 15px;
+        margin-top: clamp(10px, 2vw, 15px);
 
         h4 {
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2vw, 1rem);
           color: $dark-gray;
           font-weight: 600;
         }
@@ -258,25 +263,25 @@ $border-gray: #D1D5DB; // Borda suave
           padding: 0;
 
           .checkIcon {
-            margin-left: 8px;
+            margin-left: clamp(5px, 1vw, 8px);
             color: green;
-            font-size: 18px;
+            font-size: clamp(14px, 2.5vw, 18px);
           }
 
           .fileItem {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: clamp(8px, 1.5vw, 12px);
+            margin-bottom: clamp(8px, 1.5vw, 12px);
 
             span {
               flex: 1;
-              font-size: 0.9rem;
+              font-size: clamp(0.75rem, 1.8vw, 0.9rem);
               color: $dark-gray;
             }
 
             .progressContainer {
-              width: 120px;
+              width: clamp(80px, 15vw, 120px); // Responsivo
               height: 6px;
               background: #E2E8F0;
               border-radius: 6px;
@@ -294,10 +299,10 @@ $border-gray: #D1D5DB; // Borda suave
               color: white;
               border: none;
               border-radius: 50%;
-              width: 22px;
-              height: 22px;
+              width: clamp(18px, 3vw, 22px);
+              height: clamp(18px, 3vw, 22px);
               cursor: pointer;
-              font-size: 1rem;
+              font-size: clamp(0.8rem, 2vw, 1rem);
               line-height: 1;
               transition: background-color 0.3s ease;
 
@@ -314,21 +319,21 @@ $border-gray: #D1D5DB; // Borda suave
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 12px 30px;
+      gap: clamp(5px, 1.5vw, 10px);
+      padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 30px);
       background: linear-gradient(135deg, $primary-blue 0%, $secondary-blue 50%, $accent-blue 100%);
       color: white;
       border: none;
       border-radius: 10px;
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
       font-weight: 600;
       cursor: pointer;
-      margin: 20px auto 0;
+      margin: clamp(15px, 3vw, 20px) auto 0;
       width: fit-content;
       transition: all 0.3s ease-in-out;
 
       .buttonIcon {
-        font-size: 1.3rem;
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
       }
 
       &:hover {
@@ -345,12 +350,12 @@ $border-gray: #D1D5DB; // Borda suave
 
   .receiptContainer {
     background: $light-gray;
-    padding: 30px;
+    padding: clamp(15px, 4vw, 30px);
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-    max-width: 600px;
+    max-width: clamp(300px, 80vw, 600px);
     width: 100%;
-    margin: 20px auto;
+    margin: clamp(15px, 3vw, 20px) auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,47 +364,47 @@ $border-gray: #D1D5DB; // Borda suave
       width: 100%;
       border: none;
       border-top: 1px solid $border-gray;
-      margin: 20px 0;
+      margin: clamp(15px, 3vw, 20px) 0;
     }
 
     h3 {
-      font-size: 1.6rem;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
       color: $dark-gray;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: clamp(15px, 3vw, 20px);
       font-weight: 600;
     }
 
     .receiptInfos {
       text-align: left;
-      margin-bottom: 20px;
+      margin-bottom: clamp(15px, 3vw, 20px);
       width: 100%;
 
       p {
-        font-size: 0.95rem;
+        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
         color: #555;
-        margin: 6px 0;
+        margin: clamp(4px, 1vw, 6px) 0;
       }
     }
 
     h4 {
-      font-size: 1.15rem;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
       color: $dark-gray;
-      margin: 20px 0 12px;
+      margin: clamp(15px, 3vw, 20px) 0 clamp(8px, 1.5vw, 12px);
       font-weight: 600;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 12px 0;
+      margin: clamp(8px, 2vw, 12px) 0;
 
       th,
       td {
         border: 1px solid $border-gray;
-        padding: 10px;
+        padding: clamp(8px, 2vw, 10px);
         text-align: left;
-        font-size: 0.9rem;
+        font-size: clamp(0.75rem, 1.8vw, 0.9rem);
       }
 
       th {
@@ -422,7 +427,7 @@ $border-gray: #D1D5DB; // Borda suave
         }
 
         tr {
-          margin-bottom: 15px;
+          margin-bottom: clamp(10px, 2vw, 15px);
           border-bottom: 2px solid $border-gray;
         }
 
@@ -431,14 +436,14 @@ $border-gray: #D1D5DB; // Borda suave
           padding-left: 50%;
           text-align: right;
           border: none;
-          border-bottom: 1px solid #E2E8F0; // Substituído lighten
+          border-bottom: 1px solid #E2E8F0;
 
           &:before {
             content: attr(data-label);
             position: absolute;
-            left: 10px;
+            left: clamp(5px, 1vw, 10px);
             width: 45%;
-            padding-right: 10px;
+            padding-right: clamp(5px, 1vw, 10px);
             font-weight: 600;
             color: $dark-gray;
             text-align: left;
@@ -454,49 +459,49 @@ $border-gray: #D1D5DB; // Borda suave
 
     .total {
       font-weight: bold;
-      margin-top: 12px;
-      font-size: 1.2rem;
+      margin-top: clamp(8px, 2vw, 12px);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: $dark-gray;
     }
 
     .observacao {
-      font-size: 0.85rem;
+      font-size: clamp(0.7rem, 1.5vw, 0.85rem);
       color: #555;
-      margin-top: 12px;
+      margin-top: clamp(8px, 2vw, 12px);
       font-style: italic;
     }
 
     ul {
-      font-size: 10px;
+      font-size: clamp(8px, 1.5vw, 10px);
       color: $dark-gray;
-      margin-top: 8px;
-      padding-left: 20px;
+      margin-top: clamp(5px, 1vw, 8px);
+      padding-left: clamp(15px, 3vw, 20px);
       text-align: left;
       width: 100%;
 
       li {
-        margin-bottom: 6px;
+        margin-bottom: clamp(4px, 1vw, 6px);
       }
     }
 
     .resetButton {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin: 20px auto 0;
+      gap: clamp(5px, 1vw, 8px);
+      margin: clamp(15px, 3vw, 20px) auto 0;
       background-color: $primary-blue;
       opacity: 0.9;
       color: white;
-      padding: 10px 20px;
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.95rem;
+      font-size: clamp(0.8rem, 1.8vw, 0.95rem);
       transition: opacity 0.3s ease;
 
       .icon {
-        margin-right: 8px;
-        font-size: 1.1rem;
+        margin-right: clamp(5px,  Cavendish, 8px);
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
       }
 
       &:hover {
@@ -517,21 +522,21 @@ $border-gray: #D1D5DB; // Borda suave
     justify-content: center;
     align-items: center;
     z-index: 999;
-  }
 
-  .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
+    .spinner {
+      width: clamp(40px, 10vw, 50px);
+      height: clamp(40px, 10vw, 50px);
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
 
-  .loader p {
-    color: #fff;
-    font-size: 18px;
-    margin-top: 15px;
+    p {
+      color: #fff;
+      font-size: clamp(14px, 3vw, 18px);
+      margin-top: clamp(10px, 2vw, 15px);
+    }
   }
 
   @keyframes spin {
@@ -554,41 +559,41 @@ $border-gray: #D1D5DB; // Borda suave
 
   .modalContent {
     background: #fff;
-    padding: 30px;
+    padding: clamp(20px, 5vw, 30px);
     border-radius: 12px;
     text-align: center;
-    max-width: 450px;
+    max-width: clamp(300px, 80vw, 450px);
     width: 90%;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in-out;
-  }
 
-  .modalContent h3 {
-    color: #2c3e50;
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
+    h3 {
+      color: #2c3e50;
+      font-size: clamp(18px, 4vw, 24px);
+      margin-bottom: clamp(10px, 2vw, 15px);
+    }
 
-  .modalContent p {
-    color: #555;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
+    p {
+      color: #555;
+      font-size: clamp(12px, 3vw, 16px);
+      line-height: 1.5;
+      margin-bottom: clamp(8px, 2vw, 10px);
+    }
 
-  .redirectNotice {
-    font-size: 14px;
-    color: #888;
-    font-style: italic;
-    margin-top: 20px;
+    .redirectNotice {
+      font-size: clamp(10px, 2.5vw, 14px);
+      color: #888;
+      font-style: italic;
+      margin-top: clamp(15px, 3vw, 20px);
+    }
   }
 
   .timestamp {
-    font-size: clamp(14px, 1.8vw, 16px);
+    font-size: clamp(12px, 2vw, 16px);
     color: #666;
     text-align: center;
-    margin: 10px 0;
-  
+    margin: clamp(8px, 2vw, 10px) 0;
+
     strong {
       color: #333;
       font-weight: 600;
@@ -603,6 +608,51 @@ $border-gray: #D1D5DB; // Borda suave
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  // Media Queries para ajustes adicionais
+  @media (max-width: 768px) {
+    .panels {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(20px, 5vw, 40px);
+    }
+
+    .formSection,
+    .receiptContainer {
+      width: 90%;
+      max-width: none;
+    }
+
+    .form {
+      padding: clamp(10px, 3vw, 15px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .realContainer {
+      padding: clamp(10px, 3vw, 15px);
+    }
+
+    .logoContainer {
+      margin-bottom: clamp(10px, 2vw, 15px);
+    }
+
+    .formSection {
+      margin-bottom: clamp(20px, 5vw, 40px);
+
+      h1 {
+        margin-bottom: clamp(15px, 4vw, 20px);
+      }
+    }
+
+    .formGroup {
+      margin-bottom: clamp(10px, 2vw, 15px);
+    }
+
+    .submitButton {
+      padding: clamp(6px, 1.5vw, 8px) clamp(15px, 3vw, 20px);
     }
   }
 }

@@ -23,11 +23,10 @@ const Modal = ({
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h3>Seu pedido está a caminho!</h3>
+        <h3>Muito Obrigado pela confiança!</h3>
         <p>
           Agradecemos por escolher a GGABS TECH & DESIGN! Sua solicitação de
-          orçamento foi enviada com sucesso via WhatsApp. Nossa equipe entrará
-          em contato em breve.
+          orçamento foi enviada com sucesso via WhatsApp. Entrarei em contato o mais breve possível.
         </p>
         <p className={styles.redirectNotice}>
           Redirecionando ao topo da página inicial em 10 segundos.
