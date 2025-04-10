@@ -1,141 +1,176 @@
 .footerContainer {
-    background: #0a0a23;
-    width: 100%;
-    height: auto; // Alterado de 220px fixo para auto
-    min-height: 220px; // Mantém uma altura mínima
+  background: #0a0a23;
+  width: 100%;
+  height: auto;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 8vw, 80px);
+  color: white;
+  text-align: center;
+  padding: clamp(20px, 5vw, 40px) 0;
+
+  .verticalLine {
+    width: 2px;
+    height: clamp(40px, 10vw, 80px);
+    background-color: white;
+  }
+
+  .copyright {
     display: flex;
-    justify-content: center;
+    flex-direction: column; // Alterado para column para empilhar texto e links
     align-items: center;
-    gap: clamp(30px, 8vw, 80px); // Gap ajustável
-    color: white;
-    text-align: center;
-    padding: clamp(20px, 5vw, 40px) 0; // Padding vertical ajustável, sem padding lateral
-  
-    .verticalLine {
-      width: 2px;
-      height: clamp(40px, 10vw, 80px); // Altura ajustável
-      background-color: white;
-    }
-  
-    .copyright {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      gap: clamp(3px, 1vw, 5px);
-  
+    gap: clamp(5px, 1.5vw, 10px); // Espaço entre texto e links
+
+    .copyrightText {
       p {
-        max-width: clamp(200px, 40vw, 300px); // Largura ajustável
+        max-width: clamp(200px, 40vw, 400px);
         font-size: clamp(10px, 1.5vw, 12px);
-        text-align: justify;
-        margin: 0; // Remove margens indesejadas
-      }
-    }
-  
-    .logo img {
-      width: clamp(120px, 20vw, 180px); // Tamanho ajustável
-      height: auto;
-    }
-  
-    .redesSociais {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(5px, 1.5vw, 10px);
-  
-      p {
+        text-align: justify; // Centralizado para alinhar com os links
         margin: 0;
-        font-size: clamp(12px, 2vw, 16px);
-        margin-bottom: clamp(5px, 1vw, 10px);
       }
-  
-      .icons {
-        display: flex;
-        gap: clamp(20px, 5vw, 40px); // Gap ajustável
-  
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-  
-        .socialBox {
-          width: clamp(36px, 8vw, 48px); // Tamanho ajustável
-          height: clamp(36px, 8vw, 48px);
-          border-radius: 10px;
-          background: white;
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          color: #111d3e;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.3s ease, transform 0.3s ease;
-          position: relative;
-  
-          &:hover {
-            transform: translateY(5px);
-          }
-  
-          .icon {
-            height: clamp(20px, 5vw, 32px);
-            width: clamp(20px, 5vw, 32px);
-            color: #111d3e;
-            transition: color 0.3s ease;
-          }
-  
-          // Tooltip
-          &::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            top: 120%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            font-size: clamp(10px, 1.5vw, 12px);
-            padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 10px);
-            border-radius: 4px;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 10;
-          }
-  
-          &:hover::after {
-            opacity: 1;
-          }
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
-  
-    // Media queries específicas
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      padding: clamp(15px, 4vw, 20px) 0;
-      gap: clamp(20px, 5vw, 30px);
-      min-height: auto; // Remove altura fixa em telas menores
-  
-      .verticalLine {
-        width: clamp(40%, 60vw, 60%);
-        height: 2px;
-      }
-    }
-  
-    @media screen and (max-width: 480px) {
-      padding: 10px 0;
-  
-      .copyright {
-        flex-direction: column;
-        text-align: center;
-  
-        p {
-          text-align: center;
-        }
-      }
-  
-      .redesSociais {
-        .icons {
-          gap: clamp(10px, 3vw, 20px);
+
+    .copyrightLinks {
+      display: flex;
+      gap: clamp(10px, 2vw, 20px); // Espaço entre os links
+      flex-wrap: wrap; // Permite quebra de linha em telas pequenas
+      justify-content: center;
+
+      a {
+        font-size: clamp(10px, 1.5vw, 10px);
+        color: #b0b0b0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
   }
+
+  .logo img {
+    width: clamp(120px, 20vw, 180px);
+    height: auto;
+  }
+
+  .redesSociais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(5px, 1.5vw, 10px);
+
+    p {
+      margin: 0;
+      font-size: clamp(12px, 2vw, 16px);
+      margin-bottom: clamp(5px, 1vw, 10px);
+    }
+
+    .icons {
+      display: flex;
+      gap: clamp(20px, 5vw, 40px);
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .socialBox {
+        width: clamp(36px, 8vw, 48px);
+        height: clamp(36px, 8vw, 48px);
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: #111d3e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease, transform 0.3s ease;
+        position: relative;
+
+        &:hover {
+          transform: translateY(5px);
+        }
+
+        .icon {
+          height: clamp(20px, 5vw, 32px);
+          width: clamp(20px, 5vw, 32px);
+          color: #111d3e;
+          transition: color 0.3s ease;
+        }
+
+        // Tooltip
+        &::after {
+          content: attr(data-tooltip);
+          position: absolute;
+          top: 120%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: white;
+          color: #111d3e;
+          font-weight: bold;
+          font-size: clamp(10px, 1.5vw, 12px);
+          padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 10px);
+          border-radius: 4px;
+          white-space: nowrap;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          z-index: 10;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Media queries específicas
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: clamp(15px, 4vw, 20px) 0;
+    gap: clamp(20px, 5vw, 30px);
+    min-height: auto;
+
+    .verticalLine {
+      width: clamp(40%, 60vw, 60%);
+      height: 2px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 10px 0;
+
+    .copyright {
+      .copyrightText {
+        p {
+          text-align: center;
+        }
+      }
+
+      .copyrightLinks {
+        flex-direction: column; // Links empilhados em telas muito pequenas
+        gap: clamp(5px, 1vw, 10px);
+      }
+    }
+
+    .redesSociais {
+      .icons {
+        gap: clamp(10px, 3vw, 20px);
+      }
+    }
+  }
+}

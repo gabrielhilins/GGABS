@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; // Importando Link do react-router-dom
 import Logo from "../../assets/img/Logo-ITSSL-Branco.png";
 import styles from "./Footer.module.scss";
 import { SiThreads } from "react-icons/si";
@@ -8,8 +9,13 @@ function Footer() {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.copyright}>
-        <p>© 2025 GGABS.</p>
-        <p>Todos os direitos reservados</p>
+        <div className={styles.copyrightText}>
+          <p>© 2025. Todos os direitos reservados <a href="/">GGABS</a></p>
+        </div>
+        <div className={styles.copyrightLinks}>
+          <Link to="/politica-de-privacidade">Política de Privacidade</Link>
+          <Link to="/termos-de-uso">Termos de Uso</Link>
+        </div>
       </div>
 
       <div className={styles.verticalLine}></div>

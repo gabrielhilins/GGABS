@@ -3,150 +3,109 @@ import styles from "./Portifolio.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import uWed from "../../assets/img/uWed.png";
-import Eazy from "../../assets/img/Eazy.png";
-import PeladaFc from "../../assets/img/PeladaFC.png";
 import Tarefex from "../../assets/img/Tarefex.png";
-import REAL from '../../assets/img/Logo Branco Simulador.png'
-import MesaPronta from '../../assets/img/MesaPronta.png'
-import MariaClara from '../../assets/img/Maria Clara.png'
+import REAL from "../../assets/img/Logo Branco Simulador.png";
+import REALPreview from "../../assets/img/REALPreview.png";
+import MariaClara from "../../assets/img/Maria Clara Logo.png";
+import PedrocezarPreview from "../../assets/img/PreviewPedrocezar.png";
+import LogoPedroCezar from "../../assets/img/LogoPedroCezar.png";
 
-import { FaInstagram } from "react-icons/fa";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
+import { FaCheckCircle } from "react-icons/fa"; // Ícone para "Finalizado"
+import { FaTools } from "react-icons/fa"; // Ícone para "Em Desenvolvimento"
+import { FaLightbulb } from "react-icons/fa"; // Ícone para "Em Concepção"
 
 function Portifolio() {
-  const [selectedSection, setSelectedSection] = useState("solutions");
+  const [selectedSection, setSelectedSection] = useState("clients");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedType, setSelectedType] = useState("all");
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
-  
-  // Produtos Próprios (criados e mantidos por você)
+
+  // Criações GGABS
   const ownProducts = [
     {
-      title: "uWed",
-      text: "Site para organizar casamentos, feito para um cliente especial.",
-      link: "#",
-      logo: uWed,
-      cor1: "#302B2B",
-      cor2: "#EFAAA0",
-      sector: "tech",
-      type: "app",
-      instagram: "https://www.instagram.com/uwed",
-      video: "https://www.example.com/videos/uWed.mp4",
-    },
-    {
-      title: "Pelada FC",
-      text: "Aplicativo para marcar jogos de futebol, criado para um grupo de amigos.",
-      link: "#",
-      logo: PeladaFc,
-      cor1: "#2E8B57",
-      cor2: "#ffffff",
-      sector: "tech",
-      type: "app",
-      instagram: "https://www.instagram.com/peladafc",
-      video: "https://www.example.com/videos/PeladaFC.mp4",
-    },
-    {
-      title: "Tarefex",
-      text: "Um aplicativo criado por nós para organizar suas tarefas diárias de forma simples.",
-      link: "#",
-      logo: Tarefex,
-      cor1: "#006FFF",
-      cor2: "#ffffff",
-      sector: "tech",
-      type: "app",
-      instagram: "https://www.instagram.com/tarefex",
-      video: "https://www.example.com/videos/Tarefex.mp4",
-    },
-  ];
-
-  // Soluções Oferecidas (serviços que você oferece)
-  const solutions = [
-    {
-      title: "REAL",
-      text: "Simulador de Orçamentos",
+      title: "REAL - Simulador de Orçamentos",
+      text: [
+        "- O ",
+        <strong key="strong">REAL</strong>,
+        " é um simulador de orçamentos inteligente que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas.",
+      ],
       link: "https://real-iota-ivory.vercel.app/",
       logo: REAL,
       cor1: "#00C49A",
       cor2: "#FFFFFF",
       sector: "tech",
       type: "landing-page",
-      instagram: "https://www.instagram.com/eazy",
-      video: "https://www.example.com/videos/Eazy.mp4",
+      image: REALPreview,
+      gender: "masculino",
+      status: "finalizado",
     },
     {
-      title: "Mesa Pronta",
-      text: "Página inicial personalizável para destacar seu negócio online.",
+      title: "Tarefex",
+      text: [
+        "- Um ",
+        <strong key="strong">aplicativo</strong>,
+        " de gerenciamento de tarefas perfeito para organizar suas tarefas diárias de forma simples, completamente intuitiva e organizada!",
+      ],
       link: "#",
-      logo: MesaPronta,
-      cor1: "#EBE5BD",
-      cor2: "#450D0D",
-      sector: "tech",
-      type: "landing-page",
-      instagram: "https://www.instagram.com/eazy",
-      video: "https://www.example.com/videos/Eazy.mp4",
-    },
-    {
-      title: "Eazy",
-      text: "Página inicial personalizável para destacar seu negócio online.",
-      link: "#",
-      logo: Eazy,
-      cor1: "#24004A",
+      logo: Tarefex,
+      cor1: "#006FFF",
       cor2: "#ffffff",
       sector: "tech",
-      type: "landing-page",
-      instagram: "https://www.instagram.com/eazy",
-      video: "https://www.example.com/videos/Eazy.mp4",
+      type: "app",
+      image: Tarefex,
+      gender: "masculino",
+      status: "em concepção",
     },
   ];
 
-  // Projetos para Clientes (feitos para outros)
+  // Projetos para Clientes
   const clientProjects = [
     {
+      title: "Pedro Cezar Sites",
+      text: [
+        "- ",
+        <strong key="strong">Identidade visual</strong>,
+        " para o Pedro Cezar Sites",
+      ],
+      link: "https://pedrocezar-orcamento.vercel.app/",
+      logo: LogoPedroCezar,
+      cor1: "#040122",
+      cor2: "#4B3CFF",
+      sector: "design",
+      type: "identidade-visual",
+      image: PedrocezarPreview,
+      gender: "masculino",
+      status: "finalizado",
+    },
+    {
       title: "Maria Clara Arquitetura",
-      text: "Portfólio para a arquiteta Maria Clara",
+      text: [
+        "- ",
+        <strong key="strong">Portfólio e Identidade Visual</strong>,
+        " para a Estudante de Arquitetura Maria Clara",
+      ],
       link: "#",
       logo: MariaClara,
       cor1: "#FFFCED",
       cor2: "#273BB1",
       sector: "tech",
       type: "portfolio",
-      instagram: "https://www.instagram.com/uwed",
-      video: "https://www.example.com/videos/uWed.mp4",
+      image: MariaClara,
+      gender: "feminino",
+      status: "em desenvolvimento",
     },
   ];
 
   const projects =
-    selectedSection === "own-products"
-      ? ownProducts
-      : selectedSection === "solutions"
-      ? solutions
-      : clientProjects;
+    selectedSection === "clients" ? clientProjects : ownProducts;
 
   const filteredProjects =
     selectedCategory === "all"
       ? projects
-      : projects.filter((project) => {
-          if (selectedCategory === "tech" && selectedType !== "all") {
-            return (
-              project.sector === selectedCategory &&
-              project.type === selectedType
-            );
-          } else {
-            return project.sector === selectedCategory;
-          }
-        });
-
-  const types = [
-    "all",
-    "e-commerce",
-    "landing-page",
-    "app",
-    "sites institucionais",
-  ];
+      : projects.filter((project) => project.sector === selectedCategory);
 
   return (
     <div className={styles["portifolio-container"]}>
@@ -154,16 +113,12 @@ function Portifolio() {
         <h1>Portfólio</h1>
       </div>
       <div className={styles.subtitle} data-aos="fade-up">
-        <p>Veja o Meu trabalho: O que criei, ofereço e já fiz para meus clientes!</p>
-      </div>
-      <div className={styles.obs}>
-        <p>Obs: Todas as landing pages dos produtos que criei e ofereço foram desenvolvidas por mim!</p>
+        <p>Veja o Meu trabalho: O que criei e já fiz para meus clientes!</p>
       </div>
 
       {/* Navegação entre seções */}
       <div className={styles["portifolio-section-nav"]} data-aos="fade-up">
         {[
-          { id: "solutions", label: "O Que Ofereço" },
           { id: "clients", label: "Feitos para Clientes" },
           { id: "own-products", label: "Criações GGABS" },
         ].map((section) => (
@@ -181,7 +136,6 @@ function Portifolio() {
               onChange={() => {
                 setSelectedSection(section.id);
                 setSelectedCategory("all");
-                setSelectedType("all");
               }}
             />
             {section.label}
@@ -207,72 +161,76 @@ function Portifolio() {
               name="category"
               value={category.id}
               checked={selectedCategory === category.id}
-              onChange={() => {
-                setSelectedCategory(category.id);
-                setSelectedType("all");
-              }}
+              onChange={() => setSelectedCategory(category.id)}
             />
             {category.label}
           </label>
         ))}
       </div>
 
-      {/* Sub-navegação para tipos (apenas em tech) */}
-      {selectedCategory === "tech" && (
-        <div className={styles["portifolio-sub-nav"]} data-aos="fade-up">
-          {[
-            { id: "all", label: "Tudo" },
-            { id: "e-commerce", label: "Lojas Online" },
-            { id: "landing-page", label: "Páginas de Venda" },
-            { id: "app", label: "Aplicativos" },
-            { id: "sites institucionais", label: "Sites Completos" },
-          ].map((type) => (
-            <label
-              key={type.id}
-              className={`${styles["sub-nav-button"]} ${
-                selectedType === type.id ? styles.active : ""
-              }`}
-            >
-              <input
-                type="radio"
-                name="type"
-                value={type.id}
-                checked={selectedType === type.id}
-                onChange={() => setSelectedType(type.id)}
-              />
-              {type.label}
-            </label>
-          ))}
-        </div>
-      )}
-
       {/* Grid de projetos */}
-      <div className={styles["portifolio-grid"]}>
+      <div className={styles["portifolio-grid"]} data-aos="zoom-in">
         {filteredProjects.map((project, index) => (
           <div
             key={index}
             className={styles["portifolio-card"]}
             style={{ background: project.cor1 }}
-            data-aos="zoom-in"
           >
-            <video
-              className={styles["card-video"]}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-            >
-              <source src={project.video} type="video/mp4" />
-              Seu navegador não suporta vídeos.
-            </video>
+            <div className={styles["card-image-wrapper"]}>
+              <img
+                className={styles["card-image"]}
+                src={project.image}
+                alt={`${project.title} preview`}
+              />
+            </div>
             <div className={styles["card-content"]}>
               <img
                 src={project.logo}
                 alt={`${project.title} logo`}
                 className={styles["card-logo"]}
+                style={
+                  project.title === "Pedro Cezar Sites"
+                    ? { maxWidth: "450px", maxHeight: "450px" }
+                    : {}
+                }
               />
-              <p className={styles["card-text"]} style={{ color: project.cor2 }}>{project.text}</p>
+              <p
+                className={styles["card-text"]}
+                style={{ color: project.cor2 }}
+              >
+                {Array.isArray(project.text) ? project.text : project.text}
+              </p>
+              <div className={styles["project-status"]}>
+                {project.status === "finalizado" && (
+                  <>
+                    <FaCheckCircle
+                      className={styles["status-icon"]}
+                      style={{ color: project.cor2 }}
+                    />
+                    <span style={{ color: project.cor2 }}>Finalizado</span>
+                  </>
+                )}
+                {project.status === "em desenvolvimento" && (
+                  <>
+                    <FaTools
+                      className={styles["status-icon"]}
+                      style={{ color: project.cor2 }}
+                    />
+                    <span style={{ color: project.cor2 }}>
+                      Em Desenvolvimento
+                    </span>
+                  </>
+                )}
+                {project.status === "em concepção" && (
+                  <>
+                    <FaLightbulb
+                      className={styles["status-icon"]}
+                      style={{ color: project.cor2 }}
+                    />
+                    <span style={{ color: project.cor2 }}>Em Concepção</span>
+                  </>
+                )}
+              </div>
               <div className={styles.links}>
                 <a
                   href={project.link}
@@ -282,16 +240,9 @@ function Portifolio() {
                   rel="noopener noreferrer"
                 >
                   <FaSquareArrowUpRight className={styles.icon} />
-                  Conheça o {project.title}
-                </a>
-                <a
-                  href={project.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles["card-instagram"]}
-                  style={{ color: project.cor2 }}
-                >
-                  <FaInstagram />
+                  {project.gender === "feminino"
+                    ? `Conheça a ${project.title}`
+                    : `Conheça o ${project.title}`}
                 </a>
               </div>
             </div>

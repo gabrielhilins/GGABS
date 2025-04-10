@@ -6,31 +6,22 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
+import PedroCezar from '../../assets/img/Pedro Cezar.png'
+import MariaClara from '../../assets/img/MariaClara.png'
+
 function Depoimentos() {
   const depoimentos = [
     {
-      user: "uWed",
+      user: "Pedro Cezar Sites",
       text: "I don't know what to say, I'm speechless.",
-      gradient: "linear-gradient(135deg, #A855F7, #EC4899)", // Roxo e rosa
-      link: "https://www.instagram.com/uwed", // Exemplo de link do Instagram
+      imagem: PedroCezar, 
+      link: "https://pedrocezar-orcamento.vercel.app/",
     },
     {
       user: "Maria Clara - Arquiteta",
       text: "I'm at a loss for words, this is amazing, I love it.",
-      gradient: "linear-gradient(135deg, #22C55E, #A3E635)", // Verde claro
-      link: "https://www.metalmax.com.br", // Exemplo de site
-    },
-    {
-      user: "Empório Caxangá",
-      text: "I'm at a loss for words, this is amazing, I love it.",
-      gradient: "linear-gradient(135deg, #EF4444, #F97316)", // Vermelho e laranja
-      link: "https://www.instagram.com/emporiocaxanga", // Exemplo de Instagram
-    },
-    {
-      user: "083 Burguer",
-      text: "I'm at a loss for words, this is amazing, I love it.",
-      gradient: "linear-gradient(135deg, #3B82F6, #93C5FD)", // Azul claro
-      link: "https://www.083burguer.com.br", // Exemplo de site
+      imagem: MariaClara,
+      link: "https://www.metalmax.com.br",
     },
   ];
 
@@ -40,7 +31,7 @@ function Depoimentos() {
         <h1>Depoimentos</h1>
       </div>
       <div className={styles.subtitle}>
-        <p>Veja os depoimentos de quem confiou na gente!</p>
+        <p>Veja os depoimentos de quem confiou!</p>
       </div>
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -49,7 +40,7 @@ function Depoimentos() {
         centeredSlides={true}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 7000,
           disableOnInteraction: false,
         }}
         pagination={{ clickable: true }}
@@ -63,10 +54,11 @@ function Depoimentos() {
         {depoimentos.map((depoimento, index) => (
           <SwiperSlide key={index} className={styles["depoimento-slide"]}>
             <div className={styles["depoimento-card"]}>
-              <div
+              <img
                 className={styles["user-avatar"]}
-                style={{ background: depoimento.gradient }}
-              ></div>
+                src={depoimento.imagem}
+                alt="Imagem da pessoa do depoimento"
+              ></img>
               <div className={styles["user-info"]}>
                 <span className={styles["user-name"]}>{depoimento.user}</span>
                 <p className={styles["user-text"]}>{depoimento.text}</p>

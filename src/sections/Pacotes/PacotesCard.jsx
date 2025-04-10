@@ -9,7 +9,7 @@ function PacotesCard({ title, description, target, benefits, price, icon, observ
       <p className={styles.cardDescription}>{description}</p>
       {target && target.length > 0 && (
         <div className={styles.target}>
-          <h4 className={styles.targetTitle}>Indicado para:</h4>
+          <h4 className={styles.targetTitle}>Ideal para:</h4>
           <ul className={styles.targetList}>
             {target.map((profession, index) => (
               <li key={index}>{profession}</li>

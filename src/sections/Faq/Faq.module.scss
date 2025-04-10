@@ -5,7 +5,7 @@ $button-bg: #00c4ff;
 $button-hover: #009ac7;
 $disabled-color: #666;
 
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 
 .faq-container {
   background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
@@ -13,11 +13,11 @@ $disabled-color: #666;
   padding: clamp(20px, 5vw, 40px);
   text-align: center;
   min-height: 100vh;
-  padding-bottom: clamp(60px, 10vw, 320px); // Espaço maior para a próxima seção
+  padding-bottom: clamp(60px, 10vw, 320px);
 }
 
 .title {
-  font-size: clamp(18px, 6vw, 32px);
+  font-size: clamp(24px, 6vw, 40px);
   font-weight: bold;
   margin-bottom: clamp(10px, 2vw, 10px);
   color: white;
@@ -30,13 +30,75 @@ $disabled-color: #666;
   opacity: 0.7;
 }
 
+.service-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 20px);
+  margin-bottom: clamp(20px, 5vw, 40px);
+  flex-wrap: wrap;
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(5px, 1vw, 10px);
+    padding: clamp(10px, 2.5vw, 12px) clamp(16px, 6vw, 30px);
+    background: #ffffff;
+    color: #1a2a44;
+    border-radius: 12px;
+    border: 2px solid #1a2a44;
+    font-size: clamp(10px, 2.2vw, 14px);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: clamp(10px, 2.5vw, 14px);
+      height: clamp(10px, 2.5vw, 14px);
+      left: clamp(4px, 1vw, 6px);
+      border: 2px solid #1a2a44;
+      border-radius: 50%;
+      position: absolute;
+      background: #ffffff;
+      transition: background 0.3s ease;
+    }
+
+    &:has(input[type="radio"]:checked) {
+      background: #1a2a44;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+
+      &::before {
+        background: #ffffff;
+      }
+    }
+
+    &:hover:not(:has(input[type="radio"]:checked)) {
+      background: #e6f0ff;
+    }
+  }
+}
+
+.service-title {
+  font-size: clamp(16px, 4vw, 24px);
+  font-weight: 600;
+  color: white;
+  margin-bottom: clamp(15px, 3vw, 25px);
+}
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  gap: clamp(40px, 8vw, 80px); // Espaço maior entre perguntas e ilustração
+  gap: clamp(40px, 8vw, 80px);
 }
 
 .questions {
@@ -110,7 +172,7 @@ $disabled-color: #666;
   overflow: hidden;
 
   .item.open & {
-    max-height: 500px; // Altura suficiente para o conteúdo
+    max-height: 500px;
     padding: clamp(15px, 2.5vw, 20px);
   }
 }

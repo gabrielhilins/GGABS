@@ -113,7 +113,7 @@ const Carousel = ({ slides, sectionTitle }) => {
     "Sites Institucionais": <FaBuilding className={styles.serviceIcon} />,
     "Gestão de Pedidos": <FaClipboardList className={styles.serviceIcon} />,
     "Gestão Empresarial (ERP)": <FaCogs className={styles.serviceIcon} />,
-    "Gestão de Consultas": <FaCalendarCheck className={styles.serviceIcon} />,
+    "Gestão de Agendamentos": <FaCalendarCheck className={styles.serviceIcon} />,
     "Identidade Visual": <FaPaintBrush className={styles.serviceIcon} />,
     "Cardápio Digital": <BiSolidFoodMenu className={styles.serviceIcon} />,
     "Materiais Promocionais": <FaBullhorn className={styles.serviceIcon} />,

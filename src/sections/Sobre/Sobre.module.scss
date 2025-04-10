@@ -16,6 +16,35 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   margin-bottom: clamp(30px, 6vw, 60px);
   color: white;
   text-align: center;
+  font-size: clamp(24px, 5vw, 40px);
+}
+
+// Keyframes para o efeito de brilho
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  20% {
+    transform: translateX(100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+// Ajustes para telas menores
+@media screen and (max-width: 768px) {
+  .purpose {
+    font-size: clamp(14px, 3vw, 20px);
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .purpose {
+    font-size: clamp(12px, 2.5vw, 16px);
+    padding: 6px 10px;
+  }
 }
 
 .links {
@@ -61,6 +90,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   flex-shrink: 0;
   display: block;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .profile-photo {

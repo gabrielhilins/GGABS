@@ -96,7 +96,7 @@ const Diferenciais = () => {
   return (
     <section className={styles['diferenciais-container']}>
       <h2 className={styles.title}>
-        <span className={styles.gradient}>Diferenciais únicos</span> que me destacam no mercado:
+        <span className={styles.gradient}>Diferenciais</span> que me destacam no mercado:
       </h2>
       <div className={styles.grid}>
         {diferenciais.map((diferencial, index) => (

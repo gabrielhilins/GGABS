@@ -1,17 +1,16 @@
 import { useEffect } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { IoDocumentText } from "react-icons/io5";
 import styles from "./Sobre.module.scss";
 import Logo from "../../assets/img/Logo-T-Branco-FundoAzul.png";
 import profilePhoto from "../../assets/img/FotoGabriel.png";
 import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css"; // Importando os estilos do Tooltip
+import "react-tooltip/dist/react-tooltip.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Importando os estilos
+import "aos/dist/aos.css";
 
 function Sobre() {
   useEffect(() => {
-    AOS.init({ duration: 1200, easing: "ease-out" }); // Ajuste conforme necessário
+    AOS.init({ duration: 1200, easing: "ease-out" });
   }, []);
 
   return (
@@ -51,21 +50,18 @@ function Sobre() {
           >
             <FaGithub />
           </a>
-          <a
-            href="https://drive.google.com/file/d/1JZJZJZJZJZJZJZJZJZJZJZJZJZJZJZJZ/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-            data-tooltip-id="curriculo-tooltip"
-            data-tooltip-content="Veja meu Currículo"
-          >
-            <IoDocumentText />
-          </a>
         </div>
         <Tooltip id="linkedin-tooltip" place="bottom" />
         <Tooltip id="github-tooltip" place="bottom" />
         <Tooltip id="curriculo-tooltip" place="bottom" />
         <hr className={styles.hr}></hr>
+        <p className={styles.description}>
+          A <strong>GGABS Tech & Design</strong> é uma agência independente
+          especializada em soluções digitais sob medida. Atuo na interseção
+          entre tecnologia e design para desenvolver experiências únicas,
+          funcionais e visualmente impactantes.
+        </p>
+
         <p className={styles.description}>
           Com uma visão clara de transformar ideias em realidade, criei a{" "}
           <strong>GGABS </strong>para oferecer soluções digitais que impulsionam

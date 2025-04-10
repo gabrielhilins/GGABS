@@ -25,6 +25,8 @@ import Orçamento from "./pages/Orçamento/Orçamento";
 // Pagina 404
 import NotFound404 from "./pages/404";
 import Pacotes from "./sections/Pacotes/Pacotes";
+import PoliticaPrivacidade from "./pages/Política de Privacidade/PoliticaPrivacidade";
+import TermosDeUso from "./pages/Termos de Uso/TermosDeUso";
 
 function App() {
   const location = useLocation();
@@ -88,6 +90,8 @@ function App() {
 
         {/* Rota de orçamento */}
         <Route path="/solicitar-orcamentos" element={<Orçamento />} />
+        <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+        <Route path="/termos-de-uso" element={<TermosDeUso />} />
 
         {/* Rota 404 */}
         <Route path="*" element={<NotFound404 />} />
