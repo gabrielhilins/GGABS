@@ -9,7 +9,6 @@ import PacotesCard from "./PacotesCard";
 import {
   FaUtensils,
   FaInstagram,
-  FaBuilding,
   FaBriefcase,
 } from "react-icons/fa";
 import AOS from "aos";
@@ -53,6 +52,7 @@ const pacotesData = [
       "Suporte para ajustes",
     ],
   },
+  /*
   {
     title: "Corporativo",
     description:
@@ -71,6 +71,7 @@ const pacotesData = [
       "Reuniões semanais",
     ],
   },
+  */
   {
     title: "Profissional",
 

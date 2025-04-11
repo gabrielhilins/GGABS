@@ -4,8 +4,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Tarefex from "../../assets/img/Tarefex.png";
+import TarefexPreview from "../../assets/img/TarefexPreview.png";
 import REAL from "../../assets/img/Logo Branco Simulador.png";
 import REALPreview from "../../assets/img/REALPreview.png";
+
+import MariaClaraPreview from "../../assets/img/MariaClaraPreview.png";
 import MariaClara from "../../assets/img/Maria Clara Logo.png";
 import PedrocezarPreview from "../../assets/img/PreviewPedrocezar.png";
 import LogoPedroCezar from "../../assets/img/LogoPedroCezar.png";
@@ -28,9 +31,11 @@ function Portifolio() {
     {
       title: "REAL - Simulador de Orçamentos",
       text: [
-        "- O ",
-        <strong key="strong">REAL</strong>,
-        " é um simulador de orçamentos inteligente que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas.",
+        "- O REAL é",
+
+        " um ",
+        <strong key="strong">simulador de orçamentos inteligente</strong>,
+        " que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas.",
       ],
       link: "https://real-iota-ivory.vercel.app/",
       logo: REAL,
@@ -45,9 +50,9 @@ function Portifolio() {
     {
       title: "Tarefex",
       text: [
-        "- Um ",
-        <strong key="strong">aplicativo</strong>,
-        " de gerenciamento de tarefas perfeito para organizar suas tarefas diárias de forma simples, completamente intuitiva e organizada!",
+        "- O Tarefex é um ",
+        <strong key="strong">aplicativo de gerenciamento de tarefas</strong>,
+        " perfeito para organizar suas tarefas diárias de forma simples, completamente intuitiva e organizada!",
       ],
       link: "#",
       logo: Tarefex,
@@ -55,7 +60,7 @@ function Portifolio() {
       cor2: "#ffffff",
       sector: "tech",
       type: "app",
-      image: Tarefex,
+      image: TarefexPreview,
       gender: "masculino",
       status: "em concepção",
     },
@@ -87,20 +92,19 @@ function Portifolio() {
         <strong key="strong">Portfólio e Identidade Visual</strong>,
         " para a Estudante de Arquitetura Maria Clara",
       ],
-      link: "#",
+      link: "https://portfolio-maria-clara.vercel.app/",
       logo: MariaClara,
       cor1: "#FFFCED",
       cor2: "#273BB1",
       sector: "tech",
       type: "portfolio",
-      image: MariaClara,
+      image: MariaClaraPreview,
       gender: "feminino",
       status: "em desenvolvimento",
     },
   ];
 
-  const projects =
-    selectedSection === "clients" ? clientProjects : ownProducts;
+  const projects = selectedSection === "clients" ? clientProjects : ownProducts;
 
   const filteredProjects =
     selectedCategory === "all"
@@ -232,18 +236,20 @@ function Portifolio() {
                 )}
               </div>
               <div className={styles.links}>
-                <a
-                  href={project.link}
-                  className={styles["card-button"]}
-                  style={{ background: project.cor2, color: project.cor1 }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaSquareArrowUpRight className={styles.icon} />
-                  {project.gender === "feminino"
-                    ? `Conheça a ${project.title}`
-                    : `Conheça o ${project.title}`}
-                </a>
+                {project.status !== "em concepção" && (
+                  <a
+                    href={project.link}
+                    className={styles["card-button"]}
+                    style={{ background: project.cor2, color: project.cor1 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaSquareArrowUpRight className={styles.icon} />
+                    {project.gender === "feminino"
+                      ? `Conheça a ${project.title}`
+                      : `Conheça o ${project.title}`}
+                  </a>
+                )}
               </div>
             </div>
           </div>

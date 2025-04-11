@@ -60,6 +60,9 @@ function App() {
               <div id="serviços">
                 <Serviços />
               </div>
+              <div id="portifolio">
+                <Portifolio />
+              </div>
               <div id="desenvolvimento-web">
                 <ServicoDevWeb />
               </div>
@@ -71,9 +74,6 @@ function App() {
               </div>
               <div id="pacotes">
                 <Pacotes />
-              </div>
-              <div id="portifolio">
-                <Portifolio />
               </div>
               <div id="faq">
                 <Faq />

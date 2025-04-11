@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { FaBookOpen } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare} from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import {
   FaBullhorn,
@@ -24,22 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import styles from "./Carousel.module.scss";
 
-// Mapeamento de textos personalizados para o botão do portfolio
-const portfolioButtonText = {
-  "E-Commerce": "Conheça os E-commerces que já criei",
-  "Landing Pages": "Conheça as Landing Pages que desenvolvi",
-  Portfólio: "Conheça os portfólios que já desenvolvi",
-  "Sites Institucionais": "Conheça os Sites Institucionais que já desenvolvi",
-  "Sistema de Pedidos": "Conheça os Sistemas de Pedidos que implementei",
-  "Sistema de Gestão Empresarial (ERP)": "Conheça os ERPs que desenvolvi",
-  "Sistema de Gestão de Consultas":
-    "Conheça os Sistemas de Consultas que criei",
-  "Identidade Visual": "Conheça as Identidades Visuais que produzi",
-  "Cardápio Digital": "Conheça os Cardápios que já fiz",
-  "Materiais Promocionais": "Conheça os Materiais Promocionais que criei",
-};
-
-// Mapeamento de públicos-alvo para cada serviço (com <strong> adicionado)
+// Mapeamento de públicos-alvo para cada serviço
 const targetAudience = {
   "E-Commerce": [
     "- Este serviço é para você que tem <strong>uma loja</strong> e quer expandir suas vendas de maneira estratégica online.",
@@ -61,19 +45,19 @@ const targetAudience = {
     "- Se você tem uma <strong>instituição</strong> e precisa de um site informativo, temos a solução perfeita para você.",
     "- Você que quer gerar confiança com um site institucional que destaque a <strong>credibilidade do seu negócio</strong>, este serviço é para você.",
   ],
-  "Gestão de Pedidos": [
-    "- Se você tem um <strong>restaurante, lanchonete, padaria, loja de conveniência</strong> ou qualquer negócio que lida com pedidos, esse sistema ajuda a otimizar sua gestão",
+  "Sistema de Gestão de Pedidos": [
+    "- Se você tem um <strong>restaurante, lanchonete, padaria, loja de conveniência</strong> ou qualquer negócio que lida com pedidos, esse sistema ajuda a otimizar sua gestão.",
     "- Para <strong>estabelecimentos</strong> que precisam de um sistema eficiente para gerenciar pedidos de forma ágil e organizada, estamos aqui para ajudar!",
-    "- Este serviço é para você, <strong>empreendedor do ramo alimentício, varejista ou prestador de serviços</strong>, que busca uma plataforma de pedidos sem erros e mais produtividade",
+    "- Este serviço é para você, <strong>empreendedor do ramo alimentício, varejista ou prestador de serviços</strong>, que busca uma plataforma de pedidos sem erros e mais produtividade.",
   ],
-  "Gestão Empresarial (ERP)": [
+  "Sistema de Gestão Empresarial (ERP)": [
     "- Se sua <strong>empresa</strong> precisa de integração de processos e maior controle financeiro, este serviço é ideal para você.",
     "- Para <strong>negócios</strong> que buscam automatizar suas operações e melhorar a eficiência, esse sistema ERP vai transformar a sua gestão.",
     "- Você, que está em busca de uma solução completa para gerenciar seu <strong>negócio</strong> de forma inteligente, este ERP é para você.",
   ],
-  "Gestão de Agendamentos": [
+  "Sistema de Gestão de Agendamentos": [
     "- Para <strong>clínicas, salões, barbearias, estúdios de tatuagem</strong> e outros negócios que dependem de agendamentos, esse sistema ajuda a organizar e otimizar sua rotina.",
-    "- Este serviço é ideal para <strong>profissionais</strong> que precisam gerenciar horários de forma ágil e eficiente, garantindo praticidade para clientes e equipe",
+    "- Este serviço é ideal para <strong>profissionais</strong> que precisam gerenciar horários de forma ágil e eficiente, garantindo praticidade para clientes e equipe.",
     "- Se você quer transformar a gestão do seu <strong>consultório</strong> com um sistema eficiente de agendamento, esse serviço é para você.",
   ],
   "Identidade Visual": [
@@ -93,8 +77,10 @@ const targetAudience = {
   ],
 };
 
+
 const Carousel = ({ slides, sectionTitle }) => {
   const [backgroundImage, setBackgroundImage] = useState(slides[0].image);
+  const [activeSlideTitle, setActiveSlideTitle] = useState(slides[0].title);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -103,35 +89,67 @@ const Carousel = ({ slides, sectionTitle }) => {
 
   const handleSlideChange = (swiper) => {
     setBackgroundImage(slides[swiper.realIndex].image);
+    setActiveSlideTitle(slides[swiper.realIndex].title);
   };
 
-  // Ícones correspondentes aos serviços
   const serviceIcons = {
     "E-Commerce": <FaCartShopping className={styles.serviceIcon} />,
     "Landing Pages": <FaRocket className={styles.serviceIcon} />,
     Portfólio: <BsFillGrid1X2Fill className={styles.serviceIcon} />,
     "Sites Institucionais": <FaBuilding className={styles.serviceIcon} />,
-    "Gestão de Pedidos": <FaClipboardList className={styles.serviceIcon} />,
-    "Gestão Empresarial (ERP)": <FaCogs className={styles.serviceIcon} />,
-    "Gestão de Agendamentos": <FaCalendarCheck className={styles.serviceIcon} />,
+    "Sistema de Gestão de Pedidos": <FaClipboardList className={styles.serviceIcon} />,
+    "Sistema de Gestão Empresarial (ERP)": <FaCogs className={styles.serviceIcon} />,
+    "Sistema de Gestão de Agendamentos": <FaCalendarCheck className={styles.serviceIcon} />,
     "Identidade Visual": <FaPaintBrush className={styles.serviceIcon} />,
     "Cardápio Digital": <BiSolidFoodMenu className={styles.serviceIcon} />,
     "Materiais Promocionais": <FaBullhorn className={styles.serviceIcon} />,
+  };
+
+  const webDevelopmentServices = [
+    "E-Commerce",
+    "Landing Pages",
+    "Portfólio",
+    "Sites Institucionais",
+  ];
+  const managementSystemServices = [
+    "Sistema de Gestão de Pedidos",
+    "Sistema de Gestão Empresarial (ERP)",
+    "Sistema de Gestão de Agendamentos",
+  ];
+  const designServices = [
+    "Identidade Visual",
+    "Cardápio Digital",
+    "Materiais Promocionais",
+  ];
+
+  // Determinar a classe de categoria com base no slide ativo
+  const getCategoryClass = () => {
+    if (webDevelopmentServices.includes(activeSlideTitle)) {
+      return styles.webDevelopment;
+    } else if (managementSystemServices.includes(activeSlideTitle)) {
+      return styles.managementSystems;
+    } else if (designServices.includes(activeSlideTitle)) {
+      return styles.design;
+    }
+    return ""; // Classe padrão, se necessário
   };
 
   const handleSolicitar = () => {
     navigate("/solicitar-orcamentos");
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100); // Delay de 100ms para garantir que a página esteja carregada
+    }, 100);
   };
 
   return (
-    <section className={styles.carouselContainer} data-aos="fade-up">
+    <section
+      className={`${styles.carouselContainer} ${getCategoryClass()}`}
+      data-aos="fade-up"
+    >
       <div className={styles.overlay}></div>
       <div className={styles.titleContainer}>
-      <h1 className={styles.sectionTitle}>{sectionTitle}</h1>
-      <hr />
+        <h1 className={styles.sectionTitle}>{sectionTitle}</h1>
+        <hr />
       </div>
       <Swiper
         modules={[Navigation, Pagination, EffectFade, Autoplay]}
@@ -160,25 +178,16 @@ const Carousel = ({ slides, sectionTitle }) => {
                   <h2 className={styles.slideTitle}>{slide.title}</h2>
                 </div>
                 <p className={styles.description}>{slide.description}</p>
-
-                {/* Seção de Público-Alvo como teaser inicial */}
                 <div className={styles.targetAudienceSection}>
                   <h3 className={styles.targetAudienceTitle}>
                     Esse serviço é pra você🫵?
                   </h3>
                   <ul className={styles.targetAudienceList}>
-                    {targetAudience[slide.title]
-                      ?.slice(0, 3)
-                      .map((audience, i) => (
-                        <li
-                          key={i}
-                          dangerouslySetInnerHTML={{ __html: audience }}
-                        />
-                      ))}
+                    {targetAudience[slide.title]?.slice(0, 3).map((audience, i) => (
+                      <li key={i} dangerouslySetInnerHTML={{ __html: audience }} />
+                    ))}
                   </ul>
                 </div>
-
-                {/* Features como detalhe opcional */}
                 {slide.features && (
                   <details className={styles.featuresToggle}>
                     <summary>Veja os benefícios</summary>
@@ -189,25 +198,11 @@ const Carousel = ({ slides, sectionTitle }) => {
                     </ul>
                   </details>
                 )}
-
-                {/* Botão CTA Portfolio destacado */}
-                <div className={styles.ctaPortfolio}>
-                  <button className={styles.ctaButtonPortfolio}>
-                    <FaBookOpen className={styles.ctaIcon} />
-                    {portfolioButtonText[slide.title] ||
-                      "Conheça Nosso Trabalho"}
-                  </button>
-                </div>
               </div>
-
-              {/* CTA Principal com mais destaque */}
               {slide.cta && (
                 <div className={styles.ctaSection}>
                   <h3 className={styles.ctaTitle}>{slide.cta.title}</h3>
-                  <button
-                    className={styles.ctaButton}
-                    onClick={handleSolicitar}
-                  >
+                  <button className={styles.ctaButton} onClick={handleSolicitar}>
                     <FaArrowUpRightFromSquare className={styles.ctaIcon} />
                     {slide.cta.buttonText}
                   </button>

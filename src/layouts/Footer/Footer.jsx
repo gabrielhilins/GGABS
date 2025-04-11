@@ -30,12 +30,12 @@ function Footer() {
         <p>Acompanhe nas Redes Sociais</p>
         <div className={styles.icons}>
           <div className={styles.socialBox} data-tooltip="Instagram">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/ggabstechdesign/" target="_blank" rel="noopener noreferrer">
               <FaInstagram className={styles.icon} />
             </a>
           </div>
           <div className={styles.socialBox} data-tooltip="Pinterest">
-            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.pinterest.com/ggabstechdesign" target="_blank" rel="noopener noreferrer">
               <FaPinterest className={styles.icon} />
             </a>
           </div>
@@ -45,12 +45,12 @@ function Footer() {
             </a>
           </div>
           <div className={styles.socialBox} data-tooltip="X (Twitter)">
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/ggabstechdesign" target="_blank" rel="noopener noreferrer">
               <FaXTwitter className={styles.icon} />
             </a>
           </div>
           <div className={styles.socialBox} data-tooltip="Threads">
-            <a href="https://threads.net" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.threads.net/@ggabstechdesign" target="_blank" rel="noopener noreferrer">
               <SiThreads className={styles.icon} />
             </a>
           </div>

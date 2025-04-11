@@ -4,6 +4,7 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
+  padding-bottom: clamp(60px, 10vw, 320px);
 
   .title {
     font-size: clamp(24px, 6vw, 32px);

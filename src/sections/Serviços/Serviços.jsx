@@ -95,7 +95,7 @@ function Servicos() {
           </div>
         ))}
       </div>
-      <p className={styles.notice}></p>
+      
     </section>
   );
 }

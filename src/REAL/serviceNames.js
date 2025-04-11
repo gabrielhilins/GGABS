@@ -9,5 +9,5 @@ export const serviceNames = {
   materialPromocional: "Material Promocional",
   portfolio: "Portfólio",
   siteInstitucional: "Site Institucional",
-  outro: "Serviço Personalizado",
+  outro: "Outro",
 };

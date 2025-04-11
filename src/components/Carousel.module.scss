@@ -15,13 +15,25 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
 .carouselContainer {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
+  background: linear-gradient(0deg, #111D3E 0%, #0A0A23 100%); // Gradiente padrão
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
   overflow: hidden;
+
+  &.webDevelopment {
+    background: linear-gradient(180deg, #111D3E 0%, #0A0A23 100%); // 180deg para Desenvolvimento Web
+  }
+
+  &.managementSystems {
+    background: linear-gradient(0deg, #111D3E 0%, #0A0A23 100%); // 0deg para Sistemas de Gestão
+  }
+
+  &.design {
+    background: linear-gradient(180deg, #111D3E 0%, #0A0A23 100%); // 180deg para Design
+  }
 
   .overlay {
     position: absolute;
@@ -32,17 +44,17 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
     z-index: 1;
   }
 
-
   .titleContainer {
+    text-align: center;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    z-index: 2;
 
     .sectionTitle {
       font-family: 'Michroma', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
       color: #AFF0FF;
-      z-index: 2;
       animation: fadeInUp 1s ease-out;
-      text-align: center;
       letter-spacing: 1px;
     }
 
@@ -77,7 +89,7 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
       &::after {
         right: -15px;
       }
-        }
+    }
   }
 
   .carouselSwiper {
@@ -205,36 +217,6 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
             }
           }
         }
-
-        .ctaPortfolio {
-          margin-top: clamp(0.5rem, 2vw, 1rem);
-
-          .ctaButtonPortfolio {
-            display: flex;
-            align-items: center;
-            gap: clamp(0.5rem, 1vw, 0.8rem);
-            background: #6046FF;
-            border: none;
-            padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 2vw, 2rem);
-            color: white;
-            font-size: clamp(12px, 1.8vw, 15px);
-            font-weight: 700;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(96, 70, 255, 0.4);
-            transition: all 0.3s ease;
-
-            &:hover {
-              background: #00DDEB;
-              transform: translateY(-3px);
-              box-shadow: 0 8px 20px rgba(0, 221, 235, 0.5);
-            }
-
-            .ctaIcon {
-              font-size: clamp(0.8rem, 1.5vw, 1.2rem);
-            }
-          }
-        }
       }
 
       .ctaSection {
@@ -264,20 +246,19 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
           font-weight: 700;
           border-radius: 12px;
           cursor: pointer;
-          box-shadow: 0 8px 20px rgba(63, 92, 121, 0.3); /* Cor de box-shadow mais harmônica */
+          box-shadow: 0 8px 20px rgba(63, 92, 121, 0.3);
           animation: pulse 2s infinite ease-in-out;
           transition: all 0.3s ease;
-        
+
           &:hover {
             transform: scale(1.08);
-            box-shadow: 0 12px 25px rgba(63, 92, 121, 0.5); /* Um efeito de sombreamento mais forte */
+            box-shadow: 0 12px 25px rgba(63, 92, 121, 0.5);
           }
-        
+
           .ctaIcon {
             font-size: clamp(1rem, 1.8vw, 1.4rem);
           }
         }
-        
       }
     }
   }
@@ -329,11 +310,51 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
     }
   }
 
+  .portfolioButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(1rem, 2vw, 1.5rem);
+    z-index: 2;
+
+    .ctaButtonPortfolio {
+      display: inline-flex;
+      align-items: center;
+      gap: clamp(0.4rem, 0.8vw, 0.6rem);
+      background: #6046FF;
+      border: none;
+      padding: clamp(0.4rem, 1vw, 0.6rem) clamp(0.8rem, 1.5vw, 1.2rem);
+      color: white;
+      font-size: clamp(10px, 1.5vw, 13px);
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(96, 70, 255, 0.3);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #00DDEB;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 221, 235, 0.4);
+      }
+
+      .ctaIcon {
+        font-size: clamp(0.6rem, 1.2vw, 1rem);
+      }
+    }
+  }
+
   // Media queries específicas
   @media screen and (min-width: 768px) {
     .slideContent {
       flex-direction: row;
       gap: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .portfolioButtonContainer {
+      .ctaButtonPortfolio {
+        padding: clamp(0.5rem, 1vw, 0.7rem) clamp(1rem, 1.5vw, 1.5rem);
+        font-size: clamp(11px, 1.5vw, 14px);
+      }
     }
   }
 
@@ -348,6 +369,15 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
     .swiperButtonPrev,
     .swiperButtonNext {
       display: none;
+    }
+
+    .portfolioButtonContainer {
+      margin-top: clamp(0.8rem, 1.5vw, 1rem);
+
+      .ctaButtonPortfolio {
+        padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.6rem, 1.5vw, 1rem);
+        font-size: clamp(9px, 1.5vw, 12px);
+      }
     }
   }
 
@@ -370,6 +400,15 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
 
     .ctaSection {
       gap: 0.5rem;
+    }
+
+    .portfolioButtonContainer {
+      margin-top: clamp(0.5rem, 1vw, 0.8rem);
+
+      .ctaButtonPortfolio {
+        padding: clamp(0.2rem, 1vw, 0.4rem) clamp(0.5rem, 1.5vw, 0.8rem);
+        font-size: clamp(8px, 1.5vw, 11px);
+      }
     }
   }
 }

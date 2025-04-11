@@ -16,11 +16,10 @@ function Header() {
   };
 
   const navItems = [
-    "início",
     "sobre",
     "serviços",
-    "pacotes",
     "portifolio",
+    "pacotes",
     "faq",
     "depoimentos",
   ];

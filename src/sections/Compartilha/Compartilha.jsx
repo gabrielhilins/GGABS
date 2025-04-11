@@ -1,5 +1,5 @@
 import styles from "./Compartilha.module.scss";
-import { FaWhatsapp, FaFacebook, FaLinkedin, FaInstagram} from "react-icons/fa";
+import { FaWhatsapp, FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 import CTA from "./CTA";
@@ -14,23 +14,32 @@ function Compartilha() {
 
   const compartilhar = (rede) => {
     let url = "";
-    const mensagem = encodeURIComponent(
-      "Transforme sonhos em realidade com a GGabs Tech & Design! Acesse: " +
-        siteURL
-    );
+    let mensagem = "";
 
     switch (rede) {
       case "whatsapp":
+        mensagem = encodeURIComponent(
+          "Conheça a GGABS TECH & DESIGN! Transforme seus sonhos digitais em realidade: " + siteURL
+        );
         url = `https://wa.me/?text=${mensagem}`;
         break;
       case "twitter":
+        mensagem = encodeURIComponent(
+          "Transformando sonhos em realidade com a GGABS TECH & DESIGN! 🚀 Confira: " + siteURL
+        );
         url = `https://twitter.com/intent/tweet?text=${mensagem}`;
         break;
       case "facebook":
-        url = `https://www.facebook.com/sharer/sharer.php?u=${siteURL}`;
+        mensagem = encodeURIComponent(
+          "A GGABS TECH & DESIGN cria soluções digitais incríveis! Conheça o trabalho deles: " + siteURL
+        );
+        url = `https://www.facebook.com/sharer/sharer.php?u=${siteURL}&quote=${mensagem}`; // Corrigido "e=" para "&quote="
         break;
       case "linkedin":
-        url = `https://www.linkedin.com/sharing/share-offsite/?url=${siteURL}`;
+        mensagem = encodeURIComponent(
+          "Inovação e design caminham juntos na GGABS TECH & DESIGN. Veja como eles transformam ideias em realidade: " + siteURL
+        );
+        url = `https://www.linkedin.com/sharing/share-offsite/?url=${siteURL}&summary=${mensagem}`;
         break;
       case "instagram":
         url = `https://www.instagram.com/`;
@@ -50,12 +59,14 @@ function Compartilha() {
       </p>
 
       <div className={styles["compartilha-card"]}>
-        {/* Vídeo no topo do card */}
-        <div className={styles["video-container"]}>
-          <video controls className={styles.video} autoPlay loop muted>
-            <source src="/videos/passo-a-passo-stories.mp4" type="video/mp4" />
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
+        {/* Imagem no topo do card */}
+        <div className={styles["image-container"]}>
+          <img
+            src="/images/passo-a-passo-stories.jpg"
+            alt="Tutorial de compartilhamento GGABS TECH & DESIGN"
+            className={styles.image}
+            loading="lazy"
+          />
         </div>
 
         {/* Passo a passo escrito */}
@@ -99,8 +110,8 @@ function Compartilha() {
             <li>
               <strong>Pronto!</strong>
               <p>
-              Dessa forma você ajudou imensuravelmente o meu trabalho ser divulgado e chegar para mais pessoas!
-              Muito obrigado!
+                Dessa forma você ajudou imensuravelmente o meu trabalho ser divulgado e chegar para mais pessoas!
+                Muito obrigado!
               </p>
             </li>
           </ol>

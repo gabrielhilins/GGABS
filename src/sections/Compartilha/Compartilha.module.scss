@@ -48,24 +48,17 @@
     }
   }
 
-  .video-container {
+  .image-container {
     margin-bottom: clamp(10px, 3vw, 20px);
     width: 100%;
     max-width: clamp(280px, 50vw, 360px);
 
-    .video {
+    .image {
       width: 100%;
       height: clamp(320px, 70vw, 440px);
       max-width: 100%;
       border-radius: 8px;
       object-fit: cover;
-    }
-
-    .video-legenda {
-      text-align: center;
-      font-size: clamp(12px, 2vw, 14px);
-      color: rgba(255, 255, 255, 0.8);
-      margin-top: clamp(5px, 1.5vw, 10px);
     }
   }
 
