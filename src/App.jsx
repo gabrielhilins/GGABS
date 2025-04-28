@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Footer from "./layouts/Footer/Footer";
 import Header from "./layouts/Header/Header";
-import Compartilha from "./sections/Compartilha/Compartilha";
+// import Compartilha from "./sections/Compartilha/Compartilha";
 import Depoimentos from "./sections/Depoimentos/Depoimentos";
 import Diferenciais from "./sections/Diferenciais/Diferenciais";
 import Estatisticas from "./sections/Estatisticas/Estatisticas";
@@ -27,6 +27,7 @@ import NotFound404 from "./pages/404";
 import Pacotes from "./sections/Pacotes/Pacotes";
 import PoliticaPrivacidade from "./pages/Política de Privacidade/PoliticaPrivacidade";
 import TermosDeUso from "./pages/Termos de Uso/TermosDeUso";
+import CTA from "./sections/Compartilha/CTA";
 
 function App() {
   const location = useLocation();
@@ -81,9 +82,14 @@ function App() {
               <div id="depoimentos">
                 <Depoimentos />
               </div>
+              <div id="cta">
+                <CTA />
+              </div>
+              {/*
               <div id="compartilha">
                 <Compartilha />
               </div>
+              */}
             </>
           }
         />

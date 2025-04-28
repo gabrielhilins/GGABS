@@ -18,9 +18,11 @@ const CTA = () => {
           Solicitar Orçamento Agora <FaArrowRight className={styles.ctaIcon} />
         </button>
       </div>
+      {/*
       <div className={styles["voltar-para-topo"]}>
         <a href="/">Voltar para o topo</a>
       </div>
+      */}
     </div>
   );
 };

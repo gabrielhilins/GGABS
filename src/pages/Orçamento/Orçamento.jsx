@@ -1,6 +1,6 @@
 import FooterOrçamento from "../../components/FooterOrçamento";
-import REAL from "../../REAL/REAL";
 import { useEffect } from "react";
+import REALTeste from "../../REAL/REALTeste";
 
 function Orçamento() {
   useEffect(() => {
@@ -9,7 +9,7 @@ function Orçamento() {
 
   return (
     <>
-    <REAL />
+    <REALTeste />
     <FooterOrçamento />
     </>
   );

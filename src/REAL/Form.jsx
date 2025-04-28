@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./REAl.module.scss";
 import { LuHandshake } from "react-icons/lu";
-import LogoReal from "../assets/img/Logo Preto Simulador.png";
+// import LogoReal from "../assets/img/Logo Preto Simulador.png";
 import FileList from "./FileList";
 
 const Form = ({
@@ -85,6 +85,7 @@ const Form = ({
 
   return (
     <form className={styles.form} autoComplete="off" onSubmit={handleSubmit}>
+      {/*
       <div className={styles.logoContainer}>
         <div className={styles.logo}>
           <img src={LogoReal} alt="Logo REAL" />
@@ -102,6 +103,7 @@ const Form = ({
       <h3 style={{ color: "black", fontSize: "28px" }}>
         Simulador de Orçamento
       </h3>
+      */}
 
       <div className={styles.formGroup}>
         <label htmlFor="name">
