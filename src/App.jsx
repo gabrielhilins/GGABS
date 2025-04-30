@@ -52,16 +52,16 @@ function App() {
               <div id="estatisticas">
                 <Estatisticas />
               </div>
-              <div id="sobre">
+              <div id="about">
                 <Sobre />
               </div>
               <div id="historia">
                 <Historia />
               </div>
-              <div id="serviços">
+              <div id="services">
                 <Serviços />
               </div>
-              <div id="portifolio">
+              <div id="portfolio">
                 <Portifolio />
               </div>
               <div id="desenvolvimento-web">
@@ -73,13 +73,13 @@ function App() {
               <div id="design">
                 <ServicoDesign />
               </div>
-              <div id="pacotes">
+              <div id="packages">
                 <Pacotes />
               </div>
               <div id="faq">
                 <Faq />
               </div>
-              <div id="depoimentos">
+              <div id="feedback">
                 <Depoimentos />
               </div>
               <div id="cta">
