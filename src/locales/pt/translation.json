@@ -1,0 +1,1469 @@
+{
+  "back": "Voltar",
+  "header": {
+    "logoAlt": "Logotipo GGabs Design e Tech",
+    "toggleMenu": "Alternar menu",
+    "nav": {
+      "about": "Sobre",
+      "services": "Serviços",
+      "portfolio": "Portifólio",
+      "packages": "Pacotes",
+      "faq": "FAQ",
+      "feedback": "Feedback"
+    }
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados",
+    "brand": "GGABS",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfUse": "Termos de Uso",
+    "logoAlt": "Logotipo GGabs Design e Tech",
+    "followSocialMedia": "Acompanhe nas Redes Sociais",
+    "social": {
+      "instagram": "Instagram",
+      "pinterest": "Pinterest",
+      "linkedin": "LinkedIn",
+      "twitter": "X (Twitter)",
+      "threads": "Threads"
+    }
+  },
+  "hero": {
+    "title": "O que faltava para seu negócio está aqui!",
+    "subtitle": "Design e tecnologia que conectam sua visão ao sucesso.",
+    "connectButton": "CONECTE-SE AO FUTURO AGORA!",
+    "connectAriaLabel": "Conecte-se ao futuro agora",
+    "learnMoreButton": "Saiba mais",
+    "learnMoreAriaLabel": "Saiba mais sobre meus diferenciais"
+  },
+  "diferenciais": {
+    "title": "Diferenciais",
+    "subtitle": "que me destacam no mercado:",
+    "items": [
+      {
+        "title": "Design + Tecnologia",
+        "description": "Eu combino criatividade e tecnologia para criar soluções únicas que transformam ideias em realidade."
+      },
+      {
+        "title": "Variedade Criativa",
+        "description": "Ofereço uma ampla gama de serviços e criações, trazendo versatilidade para realizar seus sonhos."
+      },
+      {
+        "title": "Custo Acessível",
+        "description": "Ofereço qualidade premium a preços justos, porque acredito que todos merecem soluções incríveis."
+      },
+      {
+        "title": "Personalização Total",
+        "description": "Crio projetos sob medida, alinhados com seus sonhos e objetivos, com a minha identidade única."
+      },
+      {
+        "title": "Branding Impactante",
+        "description": "Construo marcas que conectam, engajam e deixam uma marca no mundo."
+      },
+      {
+        "title": "Internacionalização",
+        "description": "Adapto e traduzo projetos para alcançar mercados globais, levando sua visão além das fronteiras."
+      },
+      {
+        "title": "Inovação Sempre",
+        "description": "Busco as últimas tendências para entregar o que há de mais atual em design e tech."
+      },
+      {
+        "title": "Entregas Rápidas",
+        "description": "Realizo projetos com agilidade, sem abrir mão da qualidade que você merece."
+      },
+      {
+        "title": "Crescimento Junto",
+        "description": "Desenvolvo soluções que evoluem com seu negócio, acompanhando cada conquista."
+      },
+      {
+        "title": "Acessibilidade para Todos",
+        "description": "Crio projetos inclusivos, garantindo que todos possam aproveitar suas ideias."
+      },
+      {
+        "title": "Resultados Visíveis",
+        "description": "Foco em estratégias que geram impacto real, ajudando você a alcançar seu potencial máximo."
+      },
+      {
+        "title": "Suporte Dedicado",
+        "description": "Estou com você em cada etapa, oferecendo suporte contínuo para garantir seu sucesso."
+      }
+    ]
+  },
+  "estatisticas": {
+    "tecnologiaTitle": "O poder da tecnologia no mercado",
+    "designTitle": "O poder do Design no mercado",
+    "sources": "Fontes:",
+    "tecnologia": [
+      {
+        "title": "Importância do Site",
+        "value": 53,
+        "description": "dos consumidores não confiam em uma empresa sem um site."
+      },
+      {
+        "title": "Credibilidade Online",
+        "value": 80,
+        "description": "do aumento da confiança ao ter um site bem estruturado."
+      },
+      {
+        "title": "Sites Responsivos",
+        "value": 70,
+        "description": "afirmam que a experiência com celular influencia na compra."
+      },
+      {
+        "title": "Eficiência Operacional",
+        "value": 50,
+        "description": "implementação de sistemas de gerenciamento pode aumentar a eficiência."
+      },
+      {
+        "title": "Acesso 24/7",
+        "value": 100,
+        "description": "ter um site online aumenta o atendimento contínuo aos clientes."
+      },
+      {
+        "title": "Velocidade de Carregamento",
+        "value": 47,
+        "description": "dos usuários abandonam um site que demora mais de 3 segundos para carregar."
+      }
+    ],
+    "design": [
+      {
+        "title": "Identidade Visual Forte",
+        "value": 75,
+        "description": "dos consumidores julgam a credibilidade pela identidade visual."
+      },
+      {
+        "title": "Estética e Usabilidade",
+        "value": 94,
+        "description": "do julgamento inicial sobre um site depende do design."
+      },
+      {
+        "title": "Design de Cardápios",
+        "value": 15,
+        "description": "aumenta as vendas ao criar um cardápio visualmente atraente."
+      },
+      {
+        "title": "Logo e Branding",
+        "value": 80,
+        "description": "uma identidade visual coesa aumenta o reconhecimento de marca."
+      },
+      {
+        "title": "Design Responsivo",
+        "value": 67,
+        "description": "sites responsivos têm mais chances de conversão."
+      },
+      {
+        "title": "Primeira Impressão",
+        "value": 50,
+        "description": "dos usuários formam uma opinião sobre uma marca em menos de 1 segundo com base no design."
+      }
+    ]
+  },
+  "sobre": {
+    "title": "Sobre a GGABS Tech & Design",
+    "logoAlt": "Logotipo GGABS",
+    "profilePhotoAlt": "Foto de Gabriel Henrique Lins",
+    "name": "Gabriel Henrique Lins",
+    "founder": "Fundador da GGABS Tech & Design",
+    "linkedinTooltip": "Visite meu LinkedIn",
+    "githubTooltip": "Visite meu GitHub",
+    "description1": "A <strong>GGABS Tech & Design</strong> é uma agência independente especializada em soluções digitais sob medida. Atuo na interseção entre tecnologia e design para desenvolver experiências únicas, funcionais e visualmente impactantes.",
+    "description2": "Com uma visão clara de transformar ideias em realidade, criei a <strong>GGABS</strong> para oferecer soluções digitais que impulsionam negócios e realizam sonhos.",
+    "description3": "Minha missão é unir criatividade e tecnologia para entregar projetos que fazem a diferença. Acredito que todos os negócios, independentemente do tamanho, merecem ter acesso a um design de qualidade e soluções tecnológicas inovadoras.",
+    "description4": "Através da <strong>GGABS</strong>, busco oferecer soluções personalizadas e acessíveis, ajudando empresas a transformarem suas ideias em realidade e alcançarem seu potencial máximo.",
+    "quote": "\"Para conseguir algo que você nunca teve, precisa fazer algo que nunca fez.\"",
+    "videoLink": "Veja no YouTube",
+    "quoteAuthor": "Denzel Washington"
+  },
+  "historia": {
+    "panels": [
+      "Tem um sonho, mas não sabe por onde começar?",
+      "Procurando alguém para transformar sua ideia em realidade?",
+      "Encontre quem entende a sua necessidade!",
+      "Seu projeto ganha vida com tecnologia e criatividade!",
+      "Resultado? Seu sonho realizado da melhor forma!"
+    ],
+    "imageAlt": "Ilustração {{index}}"
+  },
+  "servicos": {
+    "title": "Serviços",
+    "subtitle": "Aqui você encontra alguns dos serviços que ofereço",
+    "saibaMais": "Saiba Mais",
+    "saibaMaisAriaLabel": "Saiba mais sobre {{title}}",
+    "services": [
+      {
+        "icon": "FaCode",
+        "ariaLabel": "Ícone de Desenvolvimento Web",
+        "title": "Desenvolvimento Web",
+        "exemplos": [
+          "<strong>E-commerce:</strong> lojas online com integração de pagamentos",
+          "<strong>Landing Pages:</strong> páginas de conversão para capturar leads",
+          "<strong>Portfólios:</strong> páginas personalizadas para exibir projetos, habilidades e conquistas de forma profissional",
+          "<strong>Sites Institucionais:</strong> presença digital para empresas"
+        ]
+      },
+      {
+        "icon": "FaLayerGroup",
+        "ariaLabel": "Ícone de Sistemas de Gestão",
+        "title": "Sistemas de Gestão",
+        "exemplos": [
+          "<strong>Gestão de Pedido:</strong> controle de pedidos e estoque para restaurantes",
+          "<strong>Gestão Empresarial (ERP):</strong> gestão de processos internos para empresas",
+          "<strong>Gestão de Agendamentos:</strong> sistemas para reservas e marcações"
+        ]
+      },
+      {
+        "icon": "FaPaintBrush",
+        "ariaLabel": "Ícone de Design",
+        "title": "Design",
+        "exemplos": [
+          "<strong>Identidade Visual:</strong> logotipos, paleta de cores e tipografia",
+          "<strong>Cardápios:</strong> menus bonitos e funcionais para restaurantes",
+          "<strong>Material Promocional:</strong> banners, flyers e postagens para redes sociais"
+        ]
+      }
+    ]
+  },
+  "pacotes": {
+    "title": "Meus Pacotes de Serviços",
+    "subtitle": {
+      "mainText": "Escolha o pacote ideal para o seu projeto e veja como posso ajudar a sua ideia a ganhar vida.",
+      "ctaText": "<strong>Todos os pacotes são flexíveis e podem ser adaptados conforme suas necessidades.</strong>"
+    },
+    "card": {
+      "targetTitle": "Ideal para:",
+      "priceLabel": "A partir de",
+      "observationsTitle": "Observações",
+      "ctaButton": "Adquira já o seu Pacote {{title}}"
+    },
+    "modal": {
+      "title": "Solicitar Pacote",
+      "description": "Preencha os detalhes para o pacote <strong>{{title}}</strong>",
+      "form": {
+        "nameLabel": "Seu Nome e Sobrenome",
+        "namePlaceholder": "Ex: Ana Silva",
+        "confirmationLabel": "Confirmo a solicitação do pacote <strong>{{title}}</strong>",
+        "requiredAsterisk": "*",
+        "nameError": "O nome é obrigatório",
+        "confirmationError": "Você deve confirmar a solicitação do pacote"
+      },
+      "buttons": {
+        "cancel": "Cancelar",
+        "submit": "Enviar Solicitação"
+      }
+    },
+    "packages": [
+      {
+        "title": "Restaurante",
+        "description": "Ideal para restaurantes que desejam atrair mais clientes e fortalecer sua presença online.",
+        "benefits": [
+          "Identidade Visual Única (Logo, Cores e Tipografia)",
+          "Design de Cardápio (Físico e Digital)",
+          "Mesa Pronta - Plataforma para gerenciamento de pedidos e delivery",
+          "Templates de Posts pro Instagram"
+        ],
+        "price": "R$ 3.000,00",
+        "icon": "FaUtensils",
+        "observations": [
+          "Plano mensal",
+          "Valores podem variar conforme o porte do restaurante",
+          "Inclui suporte contínuo por 3 meses"
+        ]
+      },
+      {
+        "title": "Profissional",
+        "target": [
+          "Médicos",
+          "Psicólogos",
+          "Coaches",
+          "Personal Trainers",
+          "Arquitetos",
+          "Nutricionistas",
+          "Consultores",
+          "Corretores",
+          "e Mais!"
+        ],
+        "benefits": [
+          "Logotipo e Identidade Visual",
+          "Cartões de Visita e Materiais de Papelaria",
+          "Portfólio web profissional",
+          "Pacote de Posts para Redes Sociais"
+        ],
+        "price": "R$ 2.000,00",
+        "icon": "FaBriefcase",
+        "observations": [
+          "Indicado para profissionais autônomos de diversas áreas",
+          "SEO otimizado para aumentar a visibilidade online",
+          "Entrega em até 15 dias úteis"
+        ]
+      },
+      {
+        "title": "Influencers e Criadores de Conteúdo",
+        "description": "Perfeito para criadores que querem se destacar com uma identidade visual única.",
+        "benefits": [
+          "Criação de Marca Pessoal",
+          "Templates para Posts e Stories",
+          "Site personalizado",
+          "Template Notion para Estratégia de conteúdo"
+        ],
+        "price": "R$ 1.000,00",
+        "icon": "FaInstagram",
+        "observations": [
+          "Inclui 10 templates personalizados",
+          "Estratégia válida por 30 dias",
+          "Suporte para ajustes"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Aqui estão as perguntas mais frequentes que os clientes me fazem",
+    "services": [
+      {
+        "id": "web",
+        "label": "Desenvolvimento Web",
+        "title": "Perguntas sobre Desenvolvimento Web",
+        "questions": [
+          {
+            "question": "Quanto tempo leva para um site ser entregue?",
+            "answer": "O prazo varia conforme a complexidade do projeto. Sites institucionais simples levam de 7 a 15 dias, enquanto projetos mais avançados podem levar até 30 dias."
+          },
+          {
+            "question": "O site será responsivo para celular e desktop?",
+            "answer": "Sim! Todos os sites são desenvolvidos para serem 100% responsivos, garantindo uma experiência fluida tanto em celulares quanto em desktops."
+          },
+          {
+            "question": "Quais tecnologias você usa para desenvolver os sites?",
+            "answer": "Trabalho com ferramentas modernas como React, Next.js, HTML5, CSS3, Javascript e hospedagem na plataforma Vercel, garantindo desempenho e segurança."
+          },
+          {
+            "question": "Como funciona a hospedagem do site?",
+            "answer": "Posso recomendar e configurar uma hospedagem confiável, como Vercel ou Netlify, para garantir alto desempenho e segurança."
+          },
+          {
+            "question": "Posso solicitar alterações após o início do desenvolvimento?",
+            "answer": "Sim! Pequenos ajustes estão incluídos no processo. Para mudanças maiores, avaliaremos o impacto no prazo e orçamento."
+          }
+        ]
+      },
+      {
+        "id": "design",
+        "label": "Design",
+        "title": "Perguntas sobre Design",
+        "questions": [
+          {
+            "question": "O design do site é personalizado?",
+            "answer": "Sim! Cada site é projetado para atender às necessidades do seu negócio, com um design exclusivo e funcional."
+          },
+          {
+            "question": "Você cria o design do site ou preciso fornecer um layout?",
+            "answer": "Posso criar um design exclusivo usando Figma, garantindo um layout intuitivo e moderno. Se você já tiver um design, posso implementá-lo."
+          },
+          {
+            "question": "Quanto tempo leva para criar um design?",
+            "answer": "Um design inicial geralmente leva de 3 a 7 dias, dependendo da complexidade e das revisões necessárias."
+          },
+          {
+            "question": "Posso usar o design em outros materiais além do site?",
+            "answer": "Sim! Os designs podem ser adaptados para cartões, banners ou outros materiais, mantendo a identidade visual consistente."
+          },
+          {
+            "question": "Você oferece revisões no design?",
+            "answer": "Sim, ofereço até duas rodadas de revisões grátis no design para garantir que atenda às suas expectativas."
+          }
+        ]
+      },
+      {
+        "id": "management",
+        "label": "Sistemas de Gestão",
+        "title": "Perguntas sobre Sistemas de Gestão",
+        "questions": [
+          {
+            "question": "O que é um sistema de gestão?",
+            "answer": "É uma solução personalizada para organizar processos do seu negócio, como estoque, finanças ou tarefas, tudo em uma plataforma digital."
+          },
+          {
+            "question": "Quanto tempo leva para desenvolver um sistema de gestão?",
+            "answer": "Depende da complexidade, mas sistemas simples podem levar de 15 a 30 dias, enquanto os mais robustos podem levar até 60 dias."
+          },
+          {
+            "question": "Quais tecnologias são usadas nos sistemas de gestão?",
+            "answer": "Utilizo Java Spring Boot para o backend, PostgreSQL para o banco de dados e React para interfaces modernas e intuitivas."
+          },
+          {
+            "question": "Os sistemas de gestão são personalizados?",
+            "answer": "Sim! Cada sistema é desenvolvido sob medida para atender às necessidades específicas do seu negócio."
+          },
+          {
+            "question": "Você oferece suporte após a entrega do sistema?",
+            "answer": "Sim, ofereço suporte técnico para ajustes e manutenção após a entrega, conforme acordado no projeto."
+          }
+        ]
+      },
+      {
+        "id": "ggabs",
+        "label": "Criações GGABS",
+        "title": "Perguntas sobre Criações GGABS",
+        "questions": [
+          {
+            "question": "O que são as Criações GGABS?",
+            "answer": "São projetos, SaaS (Software como serviço) que eu mesmo idealizei e desenvolvi, focados em soluções práticas e personalizáveis para negócios e usuários."
+          },
+          {
+            "question": "O REAL realmente ajuda a fazer orçamentos?",
+            "answer": "Sim! O REAL é um simulador de orçamentos que facilita a criação de propostas rápidas e profissionais, com design intuitivo e funcionalidade prática."
+          },
+          {
+            "question": "O Tarefex será gratuito ou pago?",
+            "answer": "O Tarefex é um aplicativo que irei lançar com uma versão gratuita básica. Versões premium com mais funcionalidades podem ser desenvolvidas sob demanda."
+          },
+          {
+            "question": "Como o Mesa Pronta pode ajudar meu negócio?",
+            "answer": "O Mesa Pronta é um sistema de gestão online (web app) para restaurantes, que facilita o gerenciamento de pedidos, entregas, cardápios e reservas. Com uma interface moderna e intuitiva, ele ajuda a otimizar o atendimento, organizar o fluxo de trabalho e aumentar as vendas, oferecendo uma experiência completa para o seu cliente."
+          },
+          {
+            "question": "Posso solicitar uma Criação GGABS personalizada?",
+            "answer": "Sim! Posso adaptar ou criar novas soluções GGABS conforme suas necessidades, como landing pages ou sistemas específicos."
+          }
+        ]
+      }
+    ],
+    "form": {
+      "illustrationAlt": "Ilustração",
+      "text": "Sinta-se à vontade para perguntar o que quiser sobre nosso serviço",
+      "namePlaceholder": "Seu nome",
+      "questionPlaceholder": "Sua pergunta",
+      "submitButton": "Enviar Pergunta",
+      "submitting": "Enviando..."
+    },
+    "toast": {
+      "error": "Por favor, preencha seu nome e a pergunta.",
+      "success": "Pergunta enviada com sucesso!",
+      "errorSend": "Ocorreu um erro ao enviar sua pergunta."
+    }
+  },
+  "depoimentos": {
+    "title": "Depoimentos",
+    "subtitle": "Veja os depoimentos de quem confiou!",
+    "testimonials": [
+      {
+        "user": "Pedro Cezar - Criador de Sites",
+        "text": "Muito bom o seu serviço, você tem ideias fora da caixa que complementam e dão vida a identidade visual, fiquei muito satisfeito com seu serviço, parabêns!",
+        "imageAlt": "Imagem de Pedro Cezar",
+        "linkText": "Conheça o {{user}}",
+        "link": "https://pedrocezar-orcamento.vercel.app/"
+      },
+      {
+        "user": "Maria Clara - Estudante de Arquitetura",
+        "text": "Estou extremamente empolgada em poder fazer minha marca pessoal de arquitetura e portfólio com o GGABS.",
+        "imageAlt": "Imagem de Maria Clara",
+        "linkText": "Conheça o {{user}}",
+        "link": "https://portfolio-maria-clara.vercel.app/"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto para transformar seu projeto em realidade?",
+    "subtitle": "Não deixe para depois - vamos criar algo incrível juntos!",
+    "button": "Solicitar Orçamento Agora",
+    "buttonAriaLabel": "Solicitar orçamento agora"
+  },
+  "portifolio": {
+    "title": "Portfólio",
+    "subtitle": "Veja o Meu trabalho: O que criei e já fiz para meus clientes!",
+    "sections": {
+      "clients": "Feitos para Clientes",
+      "own-products": "Criações GGABS"
+    },
+    "categories": {
+      "all": "Tudo",
+      "tech": "Tecnologia",
+      "design": "Design"
+    },
+    "status": {
+      "finalizado": "Finalizado",
+      "em desenvolvimento": "Em Desenvolvimento",
+      "em concepção": "Em Concepção"
+    },
+    "ownProducts": {
+      "real": {
+        "title": "REAL - Simulador de Orçamentos",
+        "text": "- O REAL é um {strong}simulador de orçamentos inteligente{/strong} que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas.",
+        "imageAlt": "Preview do REAL - Simulador de Orçamentos",
+        "logoAlt": "Logo do REAL - Simulador de Orçamentos",
+        "gender": "masculino",
+        "linkText": "Conheça o {{title}}"
+      },
+      "tarefex": {
+        "title": "Tarefex",
+        "text": "- O Tarefex é um {strong}aplicativo de gerenciamento de tarefas{/strong} perfeito para organizar suas tarefas diárias de forma simples, completamente intuitiva e organizada!",
+        "imageAlt": "Preview do Tarefex",
+        "logoAlt": "Logo do Tarefex",
+        "gender": "masculino",
+        "linkText": "Conheça o {{title}}"
+      }
+    },
+    "clientProjects": {
+      "pedro_cezar": {
+        "title": "Pedro Cezar Sites",
+        "text": "- {strong}Criação de Logo{/strong} para o Pedro Cezar Sites",
+        "imageAlt": "Preview do Pedro Cezar Sites",
+        "logoAlt": "Logo do Pedro Cezar Sites",
+        "gender": "masculino",
+        "linkText": "Conheça o {{title}}"
+      },
+      "maria_clara": {
+        "title": "Maria Clara Arquitetura",
+        "text": "- {strong}Pacote Profissional (Identidade Visual + Portfólio){/strong} para a Estudante de Arquitetura Maria Clara",
+        "imageAlt": "Preview do Maria Clara Arquitetura",
+        "logoAlt": "Logo do Maria Clara Arquitetura",
+        "gender": "feminino",
+        "linkText": "Conheça a {{title}}"
+      }
+    }
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidade",
+    "lastUpdated": "Última atualização: 09 de abril de 2025",
+    "intro": {
+      "text": "A GGABS Tech & Design valoriza a privacidade dos visitantes do site <a href=\"https://ggabstechdesign.com.br\" target=\"_blank\" rel=\"noopener noreferrer\">ggabstechdesign.com.br</a>. Esta Política de Privacidade da GGABS Tech & Design explica como coletamos, utilizamos, armazenamos e protegemos suas informações pessoais ao acessar ou utilizar nosso site oficial. Ao navegar no ggabs.com, você concorda com as práticas descritas nesta política. Caso não concorde, recomendamos que não utilize o site."
+    },
+    "sections": [
+      {
+        "title": "1. Informações que Coletamos",
+        "items": [
+          {
+            "title": "Informações fornecidas por você",
+            "description": "Dados como nome, e-mail, telefone ou outras informações pessoais que você nos envia voluntariamente ao preencher formulários, solicitar orçamentos, enviar e-mails ou entrar em contato com a GGABS Tech & Design por outros meios."
+          },
+          {
+            "title": "Informações coletadas automaticamente",
+            "description": "Dados técnicos como endereço IP, tipo de navegador, sistema operacional, páginas visitadas, horário e duração da visita no ggabs.com, captados por cookies e tecnologias similares para melhorar sua experiência e analisar o desempenho do site."
+          },
+          {
+            "title": "Informações de terceiros",
+            "description": "Dados recebidos de plataformas como redes sociais ou serviços integrados (ex.: Instagram, LinkedIn), caso você interaja com a GGABS Tech & Design por meio dessas ferramentas, conforme suas políticas de privacidade."
+          }
+        ]
+      },
+      {
+        "title": "2. Como Usamos Suas Informações",
+        "items": [
+          "Responder às suas perguntas, solicitações de orçamento ou suporte enviados à GGABS Tech & Design.",
+          "Melhorar a funcionalidade, o design e o conteúdo do site ggabs.com, bem como dos serviços e produtos oferecidos.",
+          "Enviar comunicações, como newsletters, atualizações sobre projetos ou promoções da GGABS Tech & Design, caso você opte por recebê-las.",
+          "Cumprir obrigações legais aplicáveis ou proteger os direitos, a propriedade e a segurança da GGABS Tech & Design, de nossos usuários ou do público."
+        ]
+      },
+      {
+        "title": "3. Compartilhamento de Informações",
+        "items": [
+          "A GGABS Tech & Design não vende, aluga nem comercializa suas informações pessoais com terceiros para fins de marketing.",
+          "Podemos compartilhar dados com parceiros ou prestadores de serviços (ex.: hospedagem de sites, ferramentas de análise, serviços de e-mail) que auxiliam a GGABS Tech & Design, sempre sob acordos que garantem confidencialidade e segurança.",
+          "Em situações exigidas por lei, para responder a processos judiciais ou para proteger a integridade do site ggabs.com e de nossos usuários."
+        ]
+      },
+      {
+        "title": "4. Cookies e Tecnologias Semelhantes",
+        "text": "O site ggabs.com utiliza cookies e tecnologias similares para personalizar sua experiência, lembrar preferências e analisar o tráfego. Você pode gerenciar ou desativar cookies nas configurações do seu navegador, mas isso pode limitar algumas funcionalidades do site da GGABS Tech & Design."
+      },
+      {
+        "title": "5. Segurança dos Dados",
+        "text": "A GGABS Tech & Design implementa medidas técnicas e organizacionais robustas para proteger suas informações pessoais contra acesso não autorizado, perda, alteração ou uso indevido. No entanto, reconhecemos que nenhum sistema conectado à internet é 100% seguro, e não podemos garantir segurança absoluta dos dados transmitidos."
+      },
+      {
+        "title": "6. Seus Direitos",
+        "items": [
+          "Você pode solicitar acesso, correção ou exclusão de seus dados pessoais entrando em contato com a GGABS Tech & Design.",
+          "Optar por cancelar o recebimento de comunicações promocionais a qualquer momento, utilizando o link de descadastramento ou nos contatando diretamente.",
+          "Em algumas jurisdições, você pode ter direitos adicionais sob leis de proteção de dados (ex.: LGPD no Brasil), que respeitaremos conforme aplicável."
+        ]
+      },
+      {
+        "title": "7. Links para Sites de Terceiros",
+        "text": "O site ggabs.com pode conter links para plataformas externas, como redes sociais ou portfólios de projetos. A GGABS Tech & Design não se responsabiliza pelas políticas de privacidade ou pelo conteúdo desses sites de terceiros."
+      },
+      {
+        "title": "8. Alterações nesta Política",
+        "text": "A GGABS Tech & Design pode atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou em requisitos legais. As alterações serão publicadas nesta página com a data de atualização revisada. Recomendamos que você revise a Política de Privacidade da GGABS Tech & Design regularmente para se manter informado."
+      },
+      {
+        "title": "9. Contato",
+        "text": "Para dúvidas, solicitações ou mais informações sobre esta Política de Privacidade da GGABS Tech & Design, entre em contato:",
+        "contact": {
+          "emailLabel": "E-mail",
+          "email": "contato@ggabstechdesign.com.br"
+        }
+      }
+    ]
+  },
+  "termsOfUse": {
+    "title": "Termos de Uso da GGABS Tech & Design",
+    "lastUpdated": "Última atualização: 09 de abril de 2025",
+    "intro": {
+      "text": "Bem-vindo ao site da GGABS Tech & Design. Estes Termos de Uso da GGABS Tech & Design estabelecem as regras para o acesso e a utilização do nosso site oficial, disponível em <a href=\"https://ggabstechdesign.com.br\" target=\"_blank\" rel=\"noopener noreferrer\">ggabstechdesign.com.br</a>. Ao acessar ou navegar neste site, você aceita cumprir plenamente estas condições. Se você não concordar com estes Termos de Uso, sugerimos que interrompa o uso do site imediatamente."
+    },
+    "sections": {
+      "section1": {
+        "title": "1. Uso do Site",
+        "items": [
+          "Você está autorizado a usar o site da GGABS Tech & Design exclusivamente para propósitos legítimos e de acordo com estes Termos de Uso.",
+          "É estritamente proibido utilizar o site para ações que violem a legislação, prejudiquem terceiros ou interfiram na operação do site, como tentativas de hacking, disseminação de malware ou qualquer atividade ilícita."
+        ]
+      },
+      "section2": {
+        "title": "2. Propriedade Intelectual",
+        "items": [
+          "Todos os elementos do site da GGABS Tech & Design, incluindo textos, designs, logotipos, imagens e códigos, pertencem exclusivamente à GGABS Tech & Design ou aos seus parceiros licenciados, sendo protegidos pelas leis de propriedade intelectual aplicáveis no Brasil.",
+          "Você pode visualizar e utilizar o conteúdo do site para fins pessoais e não comerciais, mas não tem permissão para reproduzir, compartilhar, alterar ou comercializar qualquer material sem prévia autorização por escrito da GGABS Tech & Design."
+        ]
+      },
+      "section3": {
+        "title": "3. Limitação de Responsabilidade",
+        "items": [
+          "O site da GGABS Tech & Design é oferecido como está, sem garantias de qualquer tipo, sejam elas expressas ou implícitas. Não garantimos que o site estará sempre acessível, livre de falhas ou imune a problemas técnicos.",
+          "A GGABS Tech & Design não será responsável por quaisquer danos diretos, indiretos, incidentais ou especiais decorrentes do uso ou da indisponibilidade do site, salvo quando a lei brasileira exigir responsabilidade específica."
+        ]
+      },
+      "section4": {
+        "title": "4. Links para Sites Externos",
+        "text": "O site da GGABS Tech & Design pode incluir links para plataformas ou serviços de terceiros. Não exercemos controle sobre esses sites externos e não nos responsabilizamos por seus conteúdos, práticas ou políticas de privacidade."
+      },
+      "section5": {
+        "title": "5. Atualizações dos Termos",
+        "text": "A GGABS Tech & Design pode revisar ou alterar estes Termos de Uso a qualquer momento, conforme necessário. As mudanças passam a valer assim que publicadas nesta página. Continuar utilizando o site após tais atualizações implica na aceitação dos novos termos."
+      },
+      "section6": {
+        "title": "6. Suspensão de Acesso",
+        "text": "Reservamo-nos o direito de suspender ou bloquear seu acesso ao site da GGABS Tech & Design, a nosso critério, especialmente em casos de descumprimento destes Termos de Uso ou para proteger a segurança do site, de nossos usuários ou de nossos direitos."
+      },
+      "section7": {
+        "title": "7. Legislação Aplicável",
+        "text": "Estes Termos de Uso são regidos pelas leis da República do Brasil. Qualquer controvérsia será submetida ao foro da comarca de Recife, PE, exceto quando a legislação determine outra jurisdição."
+      },
+      "section8": {
+        "title": "8. Contato",
+        "text": "Para perguntas, sugestões ou esclarecimentos sobre estes Termos de Uso da GGABS Tech & Design, entre em contato conosco:",
+        "contact": {
+          "emailLabel": "E-mail",
+          "email": "contato@ggabstechdesign.com.br"
+        }
+      }
+    }
+  },
+  "realTeste": {
+    "title": "Solicite seu Orçamento",
+    "subtitle": "Transforme o futuro do seu negócio em realidade agora!",
+    "description": {
+      "line1": "Responda às perguntas abaixo para solicitar um orçamento.",
+      "line2": "É rápido, prático e sem compromisso!"
+    },
+    "requiredNote": "Campos com <span class=\"requiredAsterisk\">*</span> são obrigatórios",
+    "loading": "Enviando sua solicitação...",
+    "toast": {
+      "success": "Solicitação enviada com sucesso!",
+      "error": "Corrija os erros no formulário."
+    }
+  },
+  "modal": {
+    "title": "Muito Obrigado pela confiança!",
+    "message": "Agradecemos por escolher a GGABS TECH & DESIGN! Sua solicitação de orçamento foi enviada com sucesso via WhatsApp. Entrarei em contato o mais breve possível.",
+    "redirect": "Redirecionando ao topo da página inicial em 10 segundos."
+  },
+  "form": {
+    "labels": {
+      "name": "Qual seu Nome?",
+      "lastname": "Qual seu Sobrenome?",
+      "service": "Tipo de serviço desejado",
+      "deadline": "Qual sua expectativa de prazo?"
+    },
+    "placeholders": {
+      "name": "Ex: Pedro",
+      "lastname": "Ex: Silva",
+      "service": "Selecione o tipo de serviço",
+      "deadline": "Selecione um prazo",
+      "select": "Selecione uma opção"
+    },
+    "deadlineOptions": {
+      "1-semana": "1 semana",
+      "2-semanas": "2 semanas",
+      "1-mes": "1 mês",
+      "2-meses": "2 meses",
+      "flexivel": "Flexível"
+    },
+    "errors": {
+      "name": "O nome é obrigatório",
+      "lastname": "O sobrenome é obrigatório",
+      "service": "Selecione um serviço",
+      "deadline": "Selecione um prazo"
+    },
+    "submitButton": "Solicitar Orçamento"
+  },
+  "questionFlows": {
+    "placeholders": {
+      "select_option": "Selecione uma opção",
+      "enter_number": "Digite um número",
+      "ex_dishes_drinks": "Ex: 15 pratos e 20 bebidas",
+      "ex_finance_inventory_hr": "Ex: financeiro, estoque, RH",
+      "ex_flyer_banner_instagram": "Ex: flyer, banner, post Instagram",
+      "ex_logo_card_letterhead": "Ex: logo, cartão, papel timbrado",
+      "describe_project": "Fale sobre objetivos, funcionalidades e público-alvo"
+    },
+    "initial": {
+      "cardapio": [
+        {
+          "id": "tipo_negocio",
+          "label": "Que tipo de estabelecimento você tem?",
+          "type": "select",
+          "options": ["Restaurante", "Cafeteria", "Bar", "Food Truck", "Outro"],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "ecommerce": [
+        {
+          "id": "estagio",
+          "label": "Em que estágio está seu e-commerce?",
+          "type": "select",
+          "options": [
+            "Ainda não tenho, quero criar do zero",
+            "Já tenho mas preciso melhorar",
+            "Preciso migrar de plataforma"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "gestaoEmpresarial": [
+        {
+          "id": "tamanho_empresa",
+          "label": "Quantos funcionários sua empresa tem?",
+          "type": "select",
+          "options": ["1-5", "6-15", "16-50", "51+"],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "gestaoPedidos": [
+        {
+          "id": "modelo_negocio",
+          "label": "Qual seu modelo principal de vendas?",
+          "type": "select",
+          "options": ["Delivery", "Balcão", "Mesa", "Misto", "Outro"],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "gestaoAgendamentos": [
+        {
+          "id": "tipo_agendamento",
+          "label": "Que tipo de agendamento você precisa gerenciar?",
+          "type": "select",
+          "options": [
+            "Aulas",
+            "Barbearia",
+            "Clínica",
+            "Consultorias",
+            "Eventos",
+            "Salão",
+            "Outro"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "design": [
+        {
+          "id": "contexto",
+          "label": "Precisa de identidade visual para:",
+          "type": "select",
+          "options": ["Novo negócio", "Reposicionamento", "Atualização", "Outro"],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "landingPage": [
+        {
+          "id": "objetivo_principal",
+          "label": "Qual o objetivo principal da página?",
+          "type": "select",
+          "options": [
+            "Gerar leads",
+            "Vender produto",
+            "Divulgar serviço",
+            "Outro"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "materialPromocional": [
+        {
+          "id": "tipos",
+          "label": "Quais materiais específicos precisa?",
+          "type": "text",
+          "required": true,
+          "placeholder": "ex_flyer_banner_instagram"
+        }
+      ],
+      "portfolio": [
+        {
+          "id": "area_atuacao",
+          "label": "Qual sua área de atuação?",
+          "type": "select",
+          "options": [
+            "Arquitetura",
+            "Coaching",
+            "Corretoria de Imóveis",
+            "Design",
+            "Fotografia",
+            "Medicina",
+            "Nutrição",
+            "Personal Training",
+            "Psicologia",
+            "Outro"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "siteInstitucional": [
+        {
+          "id": "publico_alvo",
+          "label": "Quem é seu público principal?",
+          "type": "select",
+          "options": [
+            "Consumidores",
+            "Empresas",
+            "Estudantes",
+            "Consumidores e Empresas também"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "outro": [
+        {
+          "id": "tipo_projeto",
+          "label": "Que tipo de projeto você imagina?",
+          "type": "select",
+          "options": [
+            "Aplicativo",
+            "Design",
+            "Sistema",
+            "Site",
+            "Plataforma",
+            "Outro"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ]
+    },
+    "detailed": {
+      "cardapio": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "digital",
+          "label": "Deseja versão digital com QR Code?",
+          "type": "select",
+          "options": [
+            "Sim, quero cardápio digital",
+            "Não, apenas versão impressa"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "itens",
+          "label": "Quantos itens terá aproximadamente?",
+          "type": "textarea",
+          "required": false,
+          "placeholder": "ex_dishes_drinks"
+        }
+      ],
+      "ecommerce": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "produtos",
+          "label": "Quantos produtos diferentes pretende vender?",
+          "type": "number",
+          "min": 1,
+          "required": true,
+          "placeholder": "enter_number"
+        },
+        {
+          "id": "integracao",
+          "label": "Precisa de integração com:",
+          "type": "select",
+          "options": [
+            "Mercado Pago",
+            "PagSeguro",
+            "Outro gateway",
+            "Ainda não sei"
+          ],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "gestaoEmpresarial": [
+        {
+          "id": "modulos",
+          "label": "Quais áreas precisam de gestão?",
+          "type": "text",
+          "required": true,
+          "placeholder": "ex_finance_inventory_hr"
+        },
+        {
+          "id": "mobilidade",
+          "label": "Precisa de acesso mobile?",
+          "type": "select",
+          "options": ["Sim, essencial", "Desejável", "Não necessário"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "integracao_existente",
+          "label": "Precisa integrar com outros sistemas?",
+          "type": "select",
+          "options": ["Sim", "Não", "Não sei"],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "gestaoPedidos": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "volume",
+          "label": "Quantos pedidos por dia, em média?",
+          "type": "number",
+          "min": 1,
+          "required": true,
+          "placeholder": "enter_number"
+        }
+      ],
+      "gestaoAgendamentos": [
+        {
+          "id": "volume_agendamentos",
+          "label": "Quantos agendamentos por dia, em média?",
+          "type": "number",
+          "min": 1,
+          "required": true,
+          "placeholder": "enter_number"
+        },
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "integracao_calendario",
+          "label": "Precisa de integração com calendários ou sistemas?",
+          "type": "select",
+          "options": [
+            "Google Calendar",
+            "Outlook",
+            "Outro sistema",
+            "Não preciso"
+          ],
+          "required": false,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "notificacoes",
+          "label": "Deseja lembretes automáticos para os clientes?",
+          "type": "select",
+          "options": [
+            "Sim, por e-mail",
+            "Sim, por SMS",
+            "Sim, ambos",
+            "Não"
+          ],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "design": [
+        {
+          "id": "elementos",
+          "label": "Quais elementos precisa criar?",
+          "type": "text",
+          "required": true,
+          "placeholder": "ex_logo_card_letterhead"
+        },
+        {
+          "id": "cores",
+          "label": "Tem paleta de cores definida?",
+          "type": "select",
+          "options": [
+            "Sim, quero manter",
+            "Sim, mas posso ajustar",
+            "Não, preciso de ajuda"
+          ],
+          "required": true,
+          "placeholder": "select_option"
+        }
+      ],
+      "landingPage": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "conteudo",
+          "label": "Já tem todo o conteúdo pronto?",
+          "type": "select",
+          "options": ["Sim, completo", "Parcial", "Não, preciso de ajuda"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "referencias",
+          "label": "Tem exemplos de páginas que gosta?",
+          "type": "select",
+          "options": ["Sim, posso mostrar", "Não, quero sugestões"],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "materialPromocional": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "tipo_material",
+          "label": "Que tipo de material precisa?",
+          "type": "select",
+          "options": ["Digital", "Impresso", "Ambos", "Não tenho certeza"],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "portfolio": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "exemplos",
+          "label": "Possui alguns exemplos que possam servir de inspiração?",
+          "type": "select",
+          "options": ["Sim", "Não"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "destaque",
+          "label": "Qual seu maior objetivo com seu portfólio?",
+          "type": "select",
+          "options": [
+            "Conquistar clientes",
+            "Mostrar habilidades",
+            "Construir reputação",
+            "Documentar projetos",
+            "Outro"
+          ],
+          "required": false,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "atualizacao",
+          "label": "Com que frequência atualizará o portfólio?",
+          "type": "select",
+          "options": ["Mensal", "Trimestral", "Semestral", "Raramente"],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "siteInstitucional": [
+        {
+          "id": "identidade_visual",
+          "label": "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
+          "type": "select",
+          "options": ["Sim, completa", "Parcial", "Não, preciso criar"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "idiomas",
+          "label": "Precisa de versão em outros idiomas?",
+          "type": "select",
+          "options": ["Apenas português", "Inglês também", "Outros idiomas"],
+          "required": true,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "seo",
+          "label": "Precisa de otimização para buscadores?",
+          "type": "select",
+          "options": ["Sim, completa", "Apenas básica", "Não por enquanto"],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ],
+      "outro": [
+        {
+          "id": "descricao",
+          "label": "Descreva seu projeto com detalhes:",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "describe_project"
+        },
+        {
+          "id": "complexidade",
+          "label": "Qual o nível de complexidade estimado?",
+          "type": "select",
+          "options": [
+            "Simples (1-2 funcionalidades)",
+            "Médio (3-5 funcionalidades)",
+            "Complexo (sistema completo)"
+          ],
+          "required": false,
+          "placeholder": "select_option"
+        },
+        {
+          "id": "orcamento",
+          "label": "Tem uma faixa de investimento em mente?",
+          "type": "select",
+          "options": [
+            "Até R$ 3.000",
+            "R$ 3.000 - 10.000",
+            "Acima de R$ 10.000",
+            "Preciso de orientação"
+          ],
+          "required": false,
+          "placeholder": "select_option"
+        }
+      ]
+    },
+    "errors": {
+      "required": "{label} é obrigatório",
+      "number_min": "{label} deve ser pelo menos {min}",
+      "select_required": "Selecione uma opção para {label}"
+    }
+  },
+  "serviceNames": {
+    "cardapio": "Cardápio Impresso ou Digital",
+    "ecommerce": "E-commerce",
+    "gestaoEmpresarial": "Gestão Empresarial",
+    "gestaoPedidos": "Gestão de Pedidos",
+    "gestaoAgendamentos": "Gestão de Agendamentos",
+    "design": "Design e Identidade Visual",
+    "landingPage": "Landing Page",
+    "materialPromocional": "Material Promocional",
+    "portfolio": "Portfólio",
+    "siteInstitucional": "Site Institucional",
+    "outro": "Outro"
+  },
+    "services": {
+      "title": "Serviços",
+      "subtitle": "Aqui você encontra alguns dos serviços que ofereço",
+      "desenvolvimento_web": {
+        "title": "Desenvolvimento Web",
+        "ariaLabel": "Ícone de Desenvolvimento Web",
+        "exemplos": [
+          {
+            "nome": "E-commerce",
+            "descricao": "lojas online com integração de pagamentos"
+          },
+          {
+            "nome": "Landing Pages",
+            "descricao": "páginas de conversão para capturar leads"
+          },
+          {
+            "nome": "Portfólios",
+            "descricao": "páginas personalizadas para exibir projetos, habilidades e conquistas de forma profissional"
+          },
+          {
+            "nome": "Sites Institucionais",
+            "descricao": "presença digital para empresas"
+          }
+        ]
+      },
+      "sistemas_gestao": {
+        "title": "Sistemas de Gestão",
+        "ariaLabel": "Ícone de Sistemas de Gestão",
+        "exemplos": [
+          {
+            "nome": "Gestão de Pedido",
+            "descricao": "controle de pedidos e estoque para restaurantes"
+          },
+          {
+            "nome": "Gestão Empresarial (ERP)",
+            "descricao": "gestão de processos internos para empresas"
+          },
+          {
+            "nome": "Gestão de Agendamentos",
+            "descricao": "sistemas para reservas e marcações"
+          }
+        ]
+      },
+      "design": {
+        "title": "Design",
+        "ariaLabel": "Ícone de Design",
+        "exemplos": [
+          {
+            "nome": "Identidade Visual",
+            "descricao": "logotipos, paleta de cores e tipografia"
+          },
+          {
+            "nome": "Cardápios",
+            "descricao": "menus bonitos e funcionais para restaurantes"
+          },
+          {
+            "nome": "Material Promocional",
+            "descricao": "banners, flyers e postagens para redes sociais"
+          }
+        ]
+      },
+      "saiba_mais": "Saiba Mais"
+    },
+    "sistema_gestao": {
+      "sectionTitle": "Sistema de Gestão",
+      "slides": [
+        {
+          "title": "Sistema de Gestão de Pedidos",
+          "description": "Desenvolva um sistema completo de pedidos para sua loja, com fácil gestão, controle de estoque e integração com pagamentos online.",
+          "features": [
+            "Processamento Eficiente",
+            "Gestão de Inventário",
+            "Notificações de Pedidos",
+            "Integração com Pagamentos"
+          ],
+          "cta": {
+            "title": "Otimize seus Pedidos",
+            "buttonText": "Solicite já"
+          }
+        },
+        {
+          "title": "Sistema de Gestão Empresarial (ERP)",
+          "description": "Automatize e centralize a gestão do seu negócio, com ferramentas avançadas para controlar finanças, inventário e equipes de forma integrada.",
+          "features": [
+            "Gestão Financeira",
+            "Controle de Estoque",
+            "Relatórios em Tempo Real",
+            "Integração Multicanal"
+          ],
+          "cta": {
+            "title": "Transforme sua Gestão",
+            "buttonText": "Saiba Mais"
+          }
+        },
+        {
+          "title": "Sistema de Gestão de Agendamentos",
+          "description": "Facilite seus agendamentos com um sistema eficiente e simples de usar, tanto para clientes quanto para gestores.",
+          "features": [
+            "Agendamento Online",
+            "Notificações de Lembretes",
+            "Acesso ao Histórico de Consultas",
+            "Interface Intuitiva"
+          ],
+          "cta": {
+            "title": "Gerencie Agendamentos com Facilidade",
+            "buttonText": "Comece Agora"
+          }
+        }
+      ]
+    },
+    "design": {
+      "sectionTitle": "Design",
+      "slides": [
+        {
+          "title": "Identidade Visual",
+          "description": "Crie uma identidade visual forte e única que conecte sua marca com seu público, deixando uma impressão duradoura com design impactante.",
+          "features": [
+            "Logo Personalizado",
+            "Paleta de Cores",
+            "Tipografia Exclusiva",
+            "Design Coeso"
+          ],
+          "cta": {
+            "title": "Fortaleça sua Marca",
+            "buttonText": "Solicite agora"
+          }
+        },
+        {
+          "title": "Cardápio Digital",
+          "description": "Ofereça um cardápio digital dinâmico e fácil de navegar para seus clientes, com a capacidade de personalização e atualizações em tempo real.",
+          "features": [
+            "Design Interativo",
+            "Atualizações em Tempo Real",
+            "Cardápio Responsivo",
+            "Análises de Acesso"
+          ],
+          "cta": {
+            "title": "Crie seu Cardápio",
+            "buttonText": "Comece Agora"
+          }
+        },
+        {
+          "title": "Materiais Promocionais",
+          "description": "Desenvolva materiais promocionais que chamam a atenção e promovem sua marca, desde flyers a banners online, com design profissional e criativo.",
+          "features": [
+            "Design Impactante",
+            "Ajustes Rápidos",
+            "Comunicação Clara",
+            "Análises de Impacto"
+          ],
+          "cta": {
+            "title": "Promova sua Marca",
+            "buttonText": "Solicite Agora"
+          }
+        }
+      ]
+    },
+    "dev_web": {
+      "sectionTitle": "Desenvolvimento Web",
+      "slides": [
+        {
+          "title": "E-Commerce",
+          "description": "Crie uma loja online poderosa e personalizada que converte visitantes em clientes com design intuitivo e funcionalidade avançada.",
+          "features": [
+            "Checkout Otimizado",
+            "Design Responsivo",
+            "SEO Integrado",
+            "Gestão Simples"
+          ],
+          "cta": {
+            "title": "Tenha o seu próprio E-Commerce",
+            "buttonText": "Solicite agora"
+          }
+        },
+        {
+          "title": "Landing Pages",
+          "description": "Páginas de destino projetadas para capturar leads e aumentar conversões com layouts estratégicos e visual impactante.",
+          "features": [
+            "Carregamento Rápido",
+            "Call-to-Action Claro",
+            "Animações Suaves",
+            "Analytics Integrado"
+          ],
+          "cta": {
+            "title": "Tenha sua Landing Page",
+            "buttonText": "Comece Hoje"
+          }
+        },
+        {
+          "title": "Portfólio",
+          "description": "Páginas personalizadas para exibir projetos, habilidades e conquistas de forma profissional, destacando o trabalho e a experiência de maneira visual e organizada.",
+          "features": [
+            "Carregamento Rápido",
+            "Call-to-Action Claro",
+            "Animações Suaves",
+            "Analytics Integrado"
+          ],
+          "cta": {
+            "title": "Tenha seu Portfólio",
+            "buttonText": "Solicite Já"
+          }
+        },
+        {
+          "title": "Sites Institucionais",
+          "description": "Construa uma presença online sólida para sua empresa ou instituição com sites que refletem sua identidade e valores, e que são otimizados para engajamento e usabilidade.",
+          "features": [
+            "Design Personalizado",
+            "SEO Básico",
+            "Otimização para Móvel",
+            "Atualizações Simples"
+          ],
+          "cta": {
+            "title": "Crie seu Site Institucional",
+            "buttonText": "Solicite o Seu"
+          }
+        }
+      ]
+    },
+    "carousel": {
+      "target_audience_title": "Esse serviço é pra você🫵?",
+      "features_toggle": "Veja os benefícios",
+      "target_audience": {
+        "E-Commerce": [
+          "- Este serviço é para você que tem <strong>uma loja</strong> e quer expandir suas vendas de maneira estratégica online.",
+          "- Se você é um <strong>empreendedor</strong> em busca de otimização e potencializar seu resultados, esse serviço é para você.",
+          "- Você que quer transformar sua loja em uma <strong>máquina de vendas</strong>, este serviço é para você."
+        ],
+        "Landing Pages": [
+          "- Para você que está lançando um <strong>produto ou serviço</strong> e precisa de uma landing page que converta!",
+          "- Este serviço é ideal para <strong>startups e empreendedores</strong> que querem fazer um lançamento de sucesso.",
+          "- Se você é um <strong>profissional de marketing</strong> e quer aumentar a conversão das suas campanhas, este serviço também é para você."
+        ],
+        "Portfólio": [
+          "- Se você é <strong>arquiteto, designer, fotógrafo ou profissional criativo</strong>, um portfólio digital é essencial para destacar seu trabalho.",
+          "- <strong>Psicólogos, coaches e consultores</strong> podem se beneficiar de um site profissional para apresentar seus serviços e diferenciais.",
+          "- Para <strong>artistas, escritores e freelancers</strong> que querem uma vitrine digital atrativa e funcional, esse serviço é para você."
+        ],
+        "Sites Institucionais": [
+          "- Este serviço é para <strong>empresas</strong> que buscam estabelecer uma presença online sólida e profissional.",
+          "- Se você tem uma <strong>instituição</strong> e precisa de um site informativo, temos a solução perfeita para você.",
+          "- Você que quer gerar confiança com um site institucional que destaque a <strong>credibilidade do seu negócio</strong>, este serviço é para você."
+        ],
+        "Sistema de Gestão de Pedidos": [
+          "- Se você tem um <strong>restaurante, lanchonete, padaria, loja de conveniência</strong> ou qualquer negócio que lida com pedidos, esse sistema ajuda a otimizar sua gestão.",
+          "- Para <strong>estabelecimentos</strong> que precisam de um sistema eficiente para gerenciar pedidos de forma ágil e organizada, estamos aqui para ajudar!",
+          "- Este serviço é para você, <strong>empreendedor do ramo alimentício, varejista ou prestador de serviços</strong>, que busca uma plataforma de pedidos sem erros e mais produtividade."
+        ],
+        "Sistema de Gestão Empresarial (ERP)": [
+          "- Se sua <strong>empresa</strong> precisa de integração de processos e maior controle financeiro, este serviço é ideal para você.",
+          "- Para <strong>negócios</strong> que buscam automatizar suas operações e melhorar a eficiência, esse sistema ERP vai transformar a sua gestão.",
+          "- Você, que está em busca de uma solução completa para gerenciar seu <strong>negócio</strong> de forma inteligente, este ERP é para você."
+        ],
+        "Sistema de Gestão de Agendamentos": [
+          "- Para <strong>clínicas, salões, barbearias, estúdios de tatuagem</strong> e outros negócios que dependem de agendamentos, esse sistema ajuda a organizar e otimizar sua rotina.",
+          "- Este serviço é ideal para <strong>profissionais</strong> que precisam gerenciar horários de forma ágil e eficiente, garantindo praticidade para clientes e equipe.",
+          "- Se você quer transformar a gestão do seu <strong>consultório</strong> com um sistema eficiente de agendamento, esse serviço é para você."
+        ],
+        "Identidade Visual": [
+          "- Se você é dono de uma <strong>marca</strong> e quer se destacar no mercado, este serviço de identidade visual é para você.",
+          "- Para <strong>startups</strong> que estão criando sua imagem no mercado, este serviço ajuda a construir uma identidade única e poderosa.",
+          "- Você que busca uma renovação de imagem para sua <strong>empresa ou produto</strong>, esse serviço de identidade visual foi feito para você."
+        ],
+        "Cardápio Digital": [
+          "- Se você tem um <strong>restaurante, cafeteria ou food truck</strong> e quer modernizar o atendimento com um cardápio digital, este serviço é para você.",
+          "- Este serviço é ideal para <strong>estabelecimentos de alimentação</strong> que buscam praticidade e inovação no atendimento ao cliente.",
+          "- Para você, <strong>dono de restaurante</strong>, que quer oferecer um cardápio digital moderno e fácil de usar para seus clientes, estamos prontos para ajudar!"
+        ],
+        "Materiais Promocionais": [
+          "- Este serviço é para <strong>empresas</strong> que estão em campanha e querem engajar seu público com materiais promocionais criativos.",
+          "- Para <strong>profissionais de marketing</strong> que querem impactar seus clientes com materiais promocionais de alta qualidade.",
+          "- Você que tem um <strong>negócio</strong> e quer atrair mais clientes com materiais promocionais personalizados, este serviço é para você."
+        ]
+    }
+  }
+}

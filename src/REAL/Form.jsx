@@ -1,21 +1,18 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import styles from "./REAl.module.scss";
 import { LuHandshake } from "react-icons/lu";
-// import LogoReal from "../assets/img/Logo Preto Simulador.png";
-import FileList from "./FileList";
 
 const Form = ({
   formData,
   errors,
   handleChange,
-  handleFileChange,
   handleSubmit,
-  files,
-  uploadProgress,
-  removeFile,
   serviceNames,
   questionFlows,
 }) => {
+  const { t } = useTranslation();
+
   const renderQuestion = (question) => {
     const isRequired = question.required || false;
     return (
@@ -36,7 +33,7 @@ const Form = ({
               name={`details.${question.id}`}
               value={formData.details[question.id] || ""}
               onChange={handleChange}
-              placeholder={question.placeholder || "Digite aqui"}
+              placeholder={t(`questionFlows.placeholders.${question.placeholder}`)}
             />
           )}
           {question.type === "number" && (
@@ -47,7 +44,7 @@ const Form = ({
               value={formData.details[question.id] || ""}
               onChange={handleChange}
               min={question.min}
-              placeholder={question.placeholder || "Digite um número"}
+              placeholder={t(`questionFlows.placeholders.${question.placeholder}`)}
             />
           )}
           {question.type === "select" && (
@@ -57,7 +54,7 @@ const Form = ({
               value={formData.details[question.id] || ""}
               onChange={handleChange}
             >
-              <option value="">Selecione uma opção</option>
+              <option value="">{t("form.placeholders.select")}</option>
               {question.options.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
@@ -71,7 +68,7 @@ const Form = ({
               name={`details.${question.id}`}
               value={formData.details[question.id] || ""}
               onChange={handleChange}
-              placeholder={question.placeholder || "Descreva aqui"}
+              placeholder={t(`questionFlows.placeholders.${question.placeholder}`)}
               rows="4"
             />
           )}
@@ -85,29 +82,10 @@ const Form = ({
 
   return (
     <form className={styles.form} autoComplete="off" onSubmit={handleSubmit}>
-      {/*
-      <div className={styles.logoContainer}>
-        <div className={styles.logo}>
-          <img src={LogoReal} alt="Logo REAL" />
-          <p>© 2025 REAL. Todos os direitos reservados</p>
-          <a
-            href="https://real-iota-ivory.vercel.app/"
-            className={styles.knowREAL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Conheça o REAL - Simulador de Orçamentos
-          </a>
-        </div>
-      </div>
-      <h3 style={{ color: "black", fontSize: "28px" }}>
-        Simulador de Orçamento
-      </h3>
-      */}
-
       <div className={styles.formGroup}>
         <label htmlFor="name">
-          Qual seu Nome? <span className={styles.requiredAsterisk}>*</span>
+          {t("form.labels.name")}{" "}
+          <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
           className={`${styles.inputWrapper} ${
@@ -120,7 +98,7 @@ const Form = ({
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Ex: Pedro"
+            placeholder={t("form.placeholders.name")}
             autoComplete="off"
             autoCapitalize="words"
           />
@@ -132,7 +110,8 @@ const Form = ({
 
       <div className={styles.formGroup}>
         <label htmlFor="lastname">
-          Qual seu Sobrenome? <span className={styles.requiredAsterisk}>*</span>
+          {t("form.labels.lastname")}{" "}
+          <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
           className={`${styles.inputWrapper} ${
@@ -145,7 +124,7 @@ const Form = ({
             name="lastname"
             value={formData.lastname}
             onChange={handleChange}
-            placeholder="Ex: Silva"
+            placeholder={t("form.placeholders.lastname")}
             autoComplete="off"
             autoCapitalize="words"
           />
@@ -157,7 +136,7 @@ const Form = ({
 
       <div className={styles.formGroup}>
         <label htmlFor="service">
-          Tipo de serviço desejado{" "}
+          {t("form.labels.service")}{" "}
           <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
@@ -171,10 +150,10 @@ const Form = ({
             value={formData.service}
             onChange={handleChange}
           >
-            <option value="">Selecione o tipo de serviço</option>
+            <option value="">{t("form.placeholders.service")}</option>
             {Object.keys(serviceNames).map((key) => (
               <option key={key} value={key}>
-                {serviceNames[key]}
+                {t(`serviceNames.${key}`)}
               </option>
             ))}
           </select>
@@ -186,14 +165,14 @@ const Form = ({
 
       {formData.service && (
         <>
-          {questionFlows.initial[formData.service]?.map(renderQuestion)}
-          {questionFlows.detailed[formData.service]?.map(renderQuestion)}
+          {questionFlows.initial[formData.service]?.map((q) => renderQuestion(q))}
+          {questionFlows.detailed[formData.service]?.map((q) => renderQuestion(q))}
         </>
       )}
 
       <div className={styles.formGroup}>
         <label htmlFor="deadline">
-          Qual sua expectativa de prazo?{" "}
+          {t("form.labels.deadline")}{" "}
           <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
@@ -207,12 +186,14 @@ const Form = ({
             value={formData.deadline}
             onChange={handleChange}
           >
-            <option value="">Selecione um prazo</option>
-            <option value="1-semana">1 semana</option>
-            <option value="2-semanas">2 semanas</option>
-            <option value="1-mes">1 mês</option>
-            <option value="2-meses">2 meses</option>
-            <option value="flexivel">Flexível</option>
+            <option value="">{t("form.placeholders.deadline")}</option>
+            {Object.keys(t("form.deadlineOptions", { returnObjects: true })).map(
+              (key) => (
+                <option key={key} value={key}>
+                  {t(`form.deadlineOptions.${key}`)}
+                </option>
+              )
+            )}
           </select>
           {errors.deadline && (
             <span className={styles.errorMessage}>{errors.deadline}</span>
@@ -220,31 +201,11 @@ const Form = ({
         </div>
       </div>
 
-      <div className={styles.formGroup}>
-        <label htmlFor="file">Anexo(s) (opcional)</label>
-        <div className={styles.fileInputWrapper}>
-          <input
-            type="file"
-            id="file"
-            name="file"
-            onChange={handleFileChange}
-            accept=".pdf,.doc,.docx,.jpg,.png"
-            multiple
-            className={styles.fileInput}
-          />
-          <label htmlFor="file" className={styles.customFileButton}>
-            Escolher arquivos
-          </label>
-        </div>
-        <FileList
-          files={files}
-          uploadProgress={uploadProgress}
-          removeFile={removeFile}
-        />
-      </div>
+      
 
       <button type="submit" className={styles.submitButton}>
-        <LuHandshake className={styles.buttonIcon} /> Gerar Orçamento
+        <LuHandshake className={styles.buttonIcon} />{" "}
+        {t("form.submitButton")}
       </button>
     </form>
   );

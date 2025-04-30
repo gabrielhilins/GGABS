@@ -1,10 +1,12 @@
 // src/pages/NotFound404.jsx
+import ChangeLanguage from '../components/ChangeLanguage';
 import styles from './404.module.scss';
 
 function NotFound404() {
   return (
     <div className={styles.notFoundContainer}>
       {/* Conteúdo da página 404 */}
+      <ChangeLanguage />
       <div className={styles.content}>
         <h1 className={styles.title}>404 - Tripulante Perdido!</h1>
         <p className={styles.message}>

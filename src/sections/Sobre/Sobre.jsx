@@ -7,27 +7,30 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation, Trans } from "react-i18next";
 
 function Sobre() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init({ duration: 1200, easing: "ease-out" });
   }, []);
 
   return (
     <div className={styles["sobre-container"]}>
-      <h1 className={styles.title}>Sobre a GGABS Tech & Design</h1>
+      <h1 className={styles.title}>{t("sobre.title")}</h1>
       <div className={styles["profile-card"]} data-aos="fade-up">
         <div className={styles["logo-wrapper"]}>
-          <img src={Logo} alt="Logo GGABS" className={styles.logo} />
+          <img src={Logo} alt={t("sobre.logoAlt")} className={styles.logo} />
           <img
             src={profilePhoto}
-            alt="Foto de Gabriel Henrique Lins"
+            alt={t("sobre.profilePhotoAlt")}
             className={styles["profile-photo"]}
           />
         </div>
-        <h2 className={styles.name}>Gabriel Henrique Lins</h2>
+        <h2 className={styles.name}>{t("sobre.name")}</h2>
         <div className={styles.founder}>
-          <p>Fundador da GGABS Tech & Design</p>
+          <p>{t("sobre.founder")}</p>
         </div>
         <div className={styles.links}>
           <a
@@ -36,7 +39,7 @@ function Sobre() {
             rel="noopener noreferrer"
             className={styles.link}
             data-tooltip-id="linkedin-tooltip"
-            data-tooltip-content="Visite meu LinkedIn"
+            data-tooltip-content={t("sobre.linkedinTooltip")}
           >
             <FaLinkedin />
           </a>
@@ -46,47 +49,35 @@ function Sobre() {
             rel="noopener noreferrer"
             className={styles.link}
             data-tooltip-id="github-tooltip"
-            data-tooltip-content="Visite meu GitHub"
+            data-tooltip-content={t("sobre.githubTooltip")}
           >
             <FaGithub />
           </a>
         </div>
         <Tooltip id="linkedin-tooltip" place="bottom" />
         <Tooltip id="github-tooltip" place="bottom" />
-        <Tooltip id="curriculo-tooltip" place="bottom" />
         <hr className={styles.hr}></hr>
         <p className={styles.description}>
-          A <strong>GGABS Tech & Design</strong> é uma agência independente
-          especializada em soluções digitais sob medida. Atuo na interseção
-          entre tecnologia e design para desenvolver experiências únicas,
-          funcionais e visualmente impactantes.
-        </p>
-
-        <p className={styles.description}>
-          Com uma visão clara de transformar ideias em realidade, criei a{" "}
-          <strong>GGABS </strong>para oferecer soluções digitais que impulsionam
-          negócios e realizam sonhos.
+          <Trans
+            i18nKey="sobre.description1"
+            components={{ strong: <strong /> }}
+          />
         </p>
         <p className={styles.description}>
-          Minha missão é unir criatividade e tecnologia para entregar projetos
-          que fazem a diferença. Acredito que todos os negócios,
-          independentemente do tamanho, merecem ter acesso a um design de
-          qualidade e soluções tecnológicas inovadoras.
+          <Trans
+            i18nKey="sobre.description2"
+            components={{ strong: <strong /> }}
+          />
         </p>
+        <p className={styles.description}>{t("sobre.description3")}</p>
         <p className={styles.description}>
-          Através da <strong>GGABS</strong>, busco oferecer soluções
-          personalizadas e acessíveis, ajudando empresas a transformarem suas
-          ideias em realidade e alcançarem seu potencial máximo.
+          <Trans
+            i18nKey="sobre.description4"
+            components={{ strong: <strong /> }}
+          />
         </p>
         <blockquote className={styles.quote}>
-          <p className={styles.quotePt}>
-            &quot;Para conseguir algo que você nunca teve, precisa fazer algo
-            que nunca fez.&quot;
-          </p>
-          <p className={styles.quoteEn}>
-            &quot;To get something you never had, you have to do something you
-            never did.&quot;
-          </p>
+          <p>{t("sobre.quote")}</p>
           <footer className={styles.quoteFooter}>
             <a
               href="https://youtu.be/tt4DFUmoM2o?si=OyHM8ef0hZvxoixK"
@@ -94,9 +85,9 @@ function Sobre() {
               rel="noopener noreferrer"
               className={styles.videoLink}
             >
-              Veja no YouTube
+              {t("sobre.videoLink")}
             </a>
-            — Denzel Washington
+            — {t("sobre.quoteAuthor")}
           </footer>
         </blockquote>
       </div>

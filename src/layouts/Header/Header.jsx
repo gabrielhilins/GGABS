@@ -3,8 +3,11 @@ import StarsBackground from "../../components/StarsBackground";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import ChangeLanguage from "../../components/ChangeLanguage";
+import { useTranslation } from "react-i18next";
 
 function Header() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = (sectionId) => {
@@ -16,12 +19,12 @@ function Header() {
   };
 
   const navItems = [
-    "sobre",
-    "serviços",
-    "portifolio",
-    "pacotes",
+    "about",
+    "services",
+    "portfolio",
+    "packages",
     "faq",
-    "depoimentos",
+    "feedback",
   ];
 
   return (
@@ -29,13 +32,13 @@ function Header() {
       <StarsBackground section="header" />
       <div className={styles.container}>
         <div className={styles.logo}>
-          <img src={Logo} alt="Logo" loading="lazy" />
+          <img src={Logo} alt={t("header.logoAlt")} loading="lazy" />
         </div>
 
         <button
           className={styles.menuToggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={t("header.toggleMenu")}
           aria-expanded={isMenuOpen}
         >
           <IoMenu size={30} color="white" />
@@ -53,9 +56,12 @@ function Header() {
                 handleScroll(section);
               }}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {t(`header.nav.${section}`)}
             </a>
           ))}
+          <div className={styles.languageWrapper}>
+            <ChangeLanguage />
+          </div>
         </nav>
       </div>
 
@@ -71,11 +77,14 @@ function Header() {
                 handleScroll(section);
               }}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {t(`header.nav.${section}`)}
             </a>
             {index !== navItems.length - 1 && <hr className={styles.sidebarHr} />}
           </div>
         ))}
+        <div className={styles.sidebarLanguageWrapper}>
+          <ChangeLanguage />
+        </div>
       </nav>
 
       {/* Overlay */}

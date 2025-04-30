@@ -4,6 +4,7 @@ export const serviceNames = {
   ecommerce: "E-Commerce",
   gestaoEmpresarial: "Gestão Empresarial (ERP)",
   gestaoPedidos: "Gestão de Pedidos",
+  gestaoAgendamentos: "Gestão de Agendamentos",
   design: "Identidade Visual",
   landingPage: "Landing Page",
   materialPromocional: "Material Promocional",

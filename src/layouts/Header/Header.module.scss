@@ -3,7 +3,7 @@ $breakpoint-md: 768px;
 $sidebar-width: 280px;
 
 .header {
-  position: relative;
+  position: fixed;
   background: #0a0a23;
   padding: 1rem 2rem;
   height: 100px;

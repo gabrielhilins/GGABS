@@ -7,8 +7,10 @@ import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { ReactTyped } from "react-typed";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [subtitleVisible, setSubtitleVisible] = useState(false);
   const [buttonsVisible, setButtonsVisible] = useState(false);
   const navigate = useNavigate();
@@ -28,7 +30,7 @@ const Hero = () => {
   const handleSaibaMaisClick = () => {
     document.getElementById("diferenciais").scrollIntoView({ behavior: "smooth" });
   };
-  
+
   const handleOrçamentoClick = () => {
     navigate("/solicitar-orcamentos");
     window.scrollTo(0, 0); // Rola a página para o topo
@@ -40,7 +42,7 @@ const Hero = () => {
       <div className={styles.title}>
         <h1>
           <ReactTyped
-            strings={["O que faltava para seu negócio está aqui!"]}
+            strings={[t("hero.title")]}
             typeSpeed={40}
             backSpeed={30}
             showCursor={false}
@@ -53,7 +55,7 @@ const Hero = () => {
         <div className={styles.subtitle}>
           <p>
             <ReactTyped
-              strings={["Design e tecnologia que conectam sua visão ao sucesso."]}
+              strings={[t("hero.subtitle")]}
               typeSpeed={60}
               backSpeed={30}
               showCursor={false}
@@ -65,13 +67,20 @@ const Hero = () => {
 
       {buttonsVisible && (
         <div className={styles.botoes} data-aos="fade-up">
-          <button className={styles.act} onClick={handleOrçamentoClick} aria-label="Conecte-se ao futuro agora">
+          <button
+            className={styles.act}
+            onClick={handleOrçamentoClick}
+            aria-label={t("hero.connectAriaLabel")}
+          >
             <HiRocketLaunch className={styles.icon} />
-            <span>CONECTE-SE AO FUTURO AGORA!</span>
+            <span>{t("hero.connectButton")}</span>
           </button>
           <button className={styles.saibamais} onClick={handleSaibaMaisClick}>
-            <IoIosArrowDropdownCircle className={styles.icon2}  aria-label="Saiba mais sobre meus diferenciais"/>
-            <p className={styles.text}>Saiba mais</p>
+            <IoIosArrowDropdownCircle
+              className={styles.icon2}
+              aria-label={t("hero.learnMoreAriaLabel")}
+            />
+            <p className={styles.text}>{t("hero.learnMoreButton")}</p>
           </button>
         </div>
       )}

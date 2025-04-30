@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from './Historia.module.scss';
+import { useTranslation } from "react-i18next";
 
 import Ilustracao1 from '../../assets/img/Ilustracao1.png';
 import Ilustracao2 from '../../assets/img/Ilustracao2.png';
@@ -12,6 +13,7 @@ import Ilustracao5 from '../../assets/img/Ilustracao5.png';
 const images = [Ilustracao1, Ilustracao2, Ilustracao3, Ilustracao4, Ilustracao5];
 
 const Historia = () => {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const horizontalRef = useRef(null);
 
@@ -24,22 +26,20 @@ const Historia = () => {
     const totalWidth = horizontalRef.current.scrollWidth;
     const movementDistance = -(totalWidth - window.innerWidth);
 
-    // Configuração mínima e direta
     ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
       end: `+=${totalWidth}`,
       pin: true,
-      scrub: 0.1, // Valor mínimo para suavidade básica
+      scrub: 0.1,
       animation: gsap.to(horizontalRef.current, {
         x: movementDistance,
         ease: "none",
-        duration: 0.1 // Duração mínima
+        duration: 0.1
       }),
-      markers: false // Desative para produção
+      markers: false
     });
 
-    // Otimização de performance
     ScrollTrigger.config({
       autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
     });
@@ -56,24 +56,16 @@ const Historia = () => {
     };
   }, []);
 
-  const panels = [
-    "Tem um sonho, mas não sabe por onde começar?",
-    "Procurando alguém para transformar sua ideia em realidade?",
-    "Encontre quem entende a sua necessidade!",
-    "Seu projeto ganha vida com tecnologia e criatividade!",
-    "Resultado? Seu sonho realizado da melhor forma!",
-  ];
-
   return (
     <section className={styles['historia-container']} ref={containerRef}>
       <div className={styles["horizontal-story"]} ref={horizontalRef}>
-        {panels.map((text, index) => (
+        {t('historia.panels', { returnObjects: true }).map((text, index) => (
           <div key={index} className={styles.panel}>
             <img 
               src={images[index]} 
-              alt={`Ilustração ${index + 1}`} 
+              alt={t('historia.imageAlt', { index: index + 1 })} 
               className={styles.illustration}
-              loading="lazy" // Otimização de carregamento
+              loading="lazy"
             />
             <p className={styles.text}>{text}</p>
           </div>

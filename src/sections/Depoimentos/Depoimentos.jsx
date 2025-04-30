@@ -5,33 +5,29 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import { useTranslation } from "react-i18next";
 
-import PedroCezar from '../../assets/img/Pedro Cezar.png'
-import MariaClara from '../../assets/img/MariaClara.png'
+import PedroCezar from '../../assets/img/Pedro Cezar.png';
+import MariaClara from '../../assets/img/MariaClara.png';
 
 function Depoimentos() {
-  const depoimentos = [
-    {
-      user: "Pedro Cezar Sites",
-      text: "I don't know what to say, I'm speechless.",
-      imagem: PedroCezar, 
-      link: "https://pedrocezar-orcamento.vercel.app/",
-    },
-    {
-      user: "Maria Clara - Arquiteta",
-      text: "I'm at a loss for words, this is amazing, I love it.",
-      imagem: MariaClara,
-      link: "https://www.metalmax.com.br",
-    },
-  ];
+  const { t } = useTranslation(); // Hook para acessar traduções
+  const imagens = [PedroCezar, MariaClara]; // Array de imagens
+
+  const depoimentos = t("depoimentos.testimonials", { returnObjects: true }).map(
+    (depoimento, index) => ({
+      ...depoimento,
+      imagem: imagens[index], // Associando imagens aos depoimentos
+    })
+  );
 
   return (
     <div className={styles["depoimentos-container"]}>
       <div className={styles.title}>
-        <h1>Depoimentos</h1>
+        <h1>{t("depoimentos.title")}</h1>
       </div>
       <div className={styles.subtitle}>
-        <p>Veja os depoimentos de quem confiou!</p>
+        <p>{t("depoimentos.subtitle")}</p>
       </div>
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -40,7 +36,7 @@ function Depoimentos() {
         centeredSlides={true}
         loop={true}
         autoplay={{
-          delay: 7000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{ clickable: true }}
@@ -49,6 +45,9 @@ function Depoimentos() {
           prevEl: `.${styles["swiper-button-prev"]}`,
         }}
         effect="fade"
+        fadeEffect={{
+          crossFade: true,
+        }}
         className={styles["depoimentos-slider"]}
       >
         {depoimentos.map((depoimento, index) => (
@@ -57,8 +56,8 @@ function Depoimentos() {
               <img
                 className={styles["user-avatar"]}
                 src={depoimento.imagem}
-                alt="Imagem da pessoa do depoimento"
-              ></img>
+                alt={depoimento.imageAlt}
+              />
               <div className={styles["user-info"]}>
                 <span className={styles["user-name"]}>{depoimento.user}</span>
                 <p className={styles["user-text"]}>{depoimento.text}</p>
@@ -68,7 +67,9 @@ function Depoimentos() {
                   rel="noopener noreferrer"
                   className={styles["user-link"]}
                 >
-                  Conheça o {depoimento.user}
+                  {t("depoimentos.testimonials." + index + ".linkText", {
+                    user: depoimento.user,
+                  })}
                 </a>
               </div>
             </div>

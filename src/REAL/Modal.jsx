@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useTranslation} from "react-i18next";
 import styles from "./REAl.module.scss";
 
 const Modal = ({
@@ -7,6 +8,8 @@ const Modal = ({
   setShowModal = () => {},
   navigate = () => {},
 }) => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (showModal) {
       const timer = setTimeout(() => {
@@ -23,14 +26,9 @@ const Modal = ({
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h3>Muito Obrigado pela confiança!</h3>
-        <p>
-          Agradecemos por escolher a GGABS TECH & DESIGN! Sua solicitação de
-          orçamento foi enviada com sucesso via WhatsApp. Entrarei em contato o mais breve possível.
-        </p>
-        <p className={styles.redirectNotice}>
-          Redirecionando ao topo da página inicial em 10 segundos.
-        </p>
+        <h3>{t("modal.title")}</h3>
+        <p>{t("modal.message")}</p>
+        <p className={styles.redirectNotice}>{t("modal.redirect")}</p>
       </div>
     </div>
   );

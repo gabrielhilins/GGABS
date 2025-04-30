@@ -71,9 +71,10 @@ $border-gray: #D1D5DB;
 
     .headerRow {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between; // Distribui os elementos: início (botão) e fim (ChangeLanguage)
+      align-items: center; // Alinha verticalmente os elementos no centro
       margin-bottom: clamp(15px, 3vw, 20px);
-
+    
       .goBackButton {
         display: flex;
         align-items: center;
@@ -83,10 +84,16 @@ $border-gray: #D1D5DB;
         color: #fff;
         font-size: clamp(0.85rem, 2vw, 1rem);
         cursor: pointer;
-
+    
         .goBackIcon {
           font-size: clamp(1rem, 2.5vw, 1.2rem);
         }
+      }
+    
+      // Estilização para o ChangeLanguage, garantindo que fique à direita
+      .changeLanguageContainer {
+        display: flex;
+        align-items: center;
       }
     }
 

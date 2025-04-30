@@ -1,0 +1,177 @@
+$primary-color: #00c4ff;
+$background-color: #1a2a44;
+$text-color: #ffffff;
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 15px;
+  padding: clamp(20px, 4vw, 30px);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  
+  h2 {
+    font-size: clamp(20px, 4vw, 24px);
+    color: $background-color;
+    margin-bottom: clamp(10px, 2vw, 15px);
+  }
+  
+  p {
+    font-size: clamp(12px, 2.5vw, 14px);
+    color: #333;
+    margin-bottom: clamp(15px, 3vw, 20px);
+  }
+  
+  .formGroup {
+    margin-bottom: clamp(15px, 3vw, 20px);
+    text-align: left;
+    
+    label {
+      font-size: clamp(12px, 2.5vw, 14px);
+      color: $background-color;
+      display: block;
+      margin-bottom: clamp(5px, 1vw, 8px);
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: clamp(8px, 1.5vw, 10px);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: clamp(12px, 2vw, 14px);
+      outline: none;
+      
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+    
+    .checkboxLabel {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: clamp(10px, 2.5vw, 12px);
+      color: $background-color;
+      cursor: pointer;
+      
+      input[type="checkbox"] {
+        width: clamp(16px, 3vw, 18px);
+        height: clamp(16px, 3vw, 18px);
+        accent-color: $primary-color;
+        cursor: pointer;
+      }
+    }
+    
+    .requiredAsterisk {
+      color: #ff4d4f;
+    }
+    
+    .errorMessage {
+      color: #ff4d4f;
+      font-size: clamp(12px, 2vw, 14px);
+      margin-top: clamp(5px, 1vw, 8px);
+      display: block;
+    }
+  }
+  
+  .modalButtons {
+    display: flex;
+    gap: clamp(10px, 2vw, 15px);
+    justify-content: center;
+  
+    button {
+      padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
+      border: none;
+      border-radius: 8px;
+      font-size: clamp(14px, 2.5vw, 16px);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    .cancelButton {
+      background: #ccc;
+      color: #333;
+  
+      &:hover {
+        background: #bbb;
+      }
+    }
+  
+    .submitButton {
+      background: $primary-color;
+      color: $text-color;
+  
+      &:hover {
+        background: #00aedf;
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 95%;
+    padding: clamp(15px, 3vw, 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    h2 {
+      font-size: clamp(18px, 3.5vw, 20px);
+    }
+    
+    p {
+      font-size: clamp(12px, 2vw, 14px);
+    }
+    
+    .formGroup {
+      label {
+        font-size: clamp(12px, 2vw, 14px);
+      }
+      
+      input[type="text"] {
+        font-size: clamp(11px, 1.8vw, 13px);
+      }
+      
+      .checkboxLabel {
+        font-size: clamp(12px, 2vw, 14px);
+        
+        input[type="checkbox"] {
+          width: clamp(14px, 2.5vw, 16px);
+          height: clamp(14px, 2.5vw, 16px);
+        }
+      }
+    }
+    
+    .modalButtons {
+      flex-direction: column;
+      
+      button {
+        width: 100%;
+        padding: clamp(8px, 1.5vw, 10px);
+        font-size: clamp(12px, 2vw, 14px);
+      }
+    }
+  }
+}

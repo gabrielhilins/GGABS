@@ -230,25 +230,44 @@ $disabled-color: #666;
   line-height: 1.4;
 }
 
-.input {
+.perguntaForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 400px;
+  gap: clamp(10px, 2vw, 15px);
+}
+
+.input,
+.textarea {
+  width: 100%;
   padding: clamp(10px, 2vw, 12px);
   font-size: clamp(0.9rem, 1.8vw, 1rem);
   border-radius: 10px;
   border: 1px solid #fff;
   background-color: transparent;
   color: white;
-  margin-bottom: clamp(10px, 2vw, 15px);
+  box-sizing: border-box;
+
+  &.textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
 
   &::placeholder {
     color: white;
     opacity: 0.6;
     font-size: clamp(10px, 1.5vw, 12px);
   }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
 
-.submitButton {
+.botaoEnviar {
   background: $button-bg;
   color: $text-color;
   font-weight: bold;
@@ -258,11 +277,37 @@ $disabled-color: #666;
   cursor: pointer;
   font-size: clamp(0.9rem, 1.8vw, 1rem);
   width: 100%;
-  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.3s ease;
+  position: relative;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: $button-hover;
+  }
+
+  &:disabled {
+    background: $disabled-color;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -278,6 +323,10 @@ $disabled-color: #666;
 
   .ilustracao {
     width: clamp(50%, 30vw, 60%);
+  }
+
+  .perguntaForm {
+    max-width: 100%;
   }
 }
 
@@ -308,5 +357,27 @@ $disabled-color: #666;
     min-width: 80px;
     padding: clamp(5px, 1vw, 8px) clamp(8px, 1.5vw, 12px);
     font-size: clamp(8px, 1.5vw, 12px);
+  }
+
+  .perguntaForm {
+    gap: clamp(8px, 1.5vw, 12px);
+  }
+
+  .input,
+  .textarea {
+    padding: clamp(8px, 1.5vw, 10px);
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+  }
+
+  .botaoEnviar {
+    padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2.5vw, 15px);
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #ffffff;
+      border-top: 2px solid transparent;
+    }
   }
 }

@@ -56,7 +56,7 @@
     border-radius: 12px;
     padding: clamp(15px, 3vw, 20px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     transition: transform 0.3s ease;
 
@@ -75,7 +75,8 @@
     .user-info {
       display: flex;
       flex-direction: column;
-      text-align: left;
+      text-align: justify;
+      gap: 5px;
 
       .user-name {
         font-size: clamp(14px, 2.5vw, 16px);

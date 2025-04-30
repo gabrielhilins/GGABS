@@ -74,7 +74,7 @@ function REAL() {
       files: prev.files.filter((f) => f.name !== fileName),
     }));
     setUploadProgress((prev) => {
-      const { [fileName]: _, ...rest } = prev;
+      const {  ...rest } = prev;
       return rest;
     });
   };
