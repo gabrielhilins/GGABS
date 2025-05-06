@@ -1,8 +1,8 @@
-$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
+$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #111D3E 100%);
 $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
 
 .servicos-container {
-  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px) clamp(150px, 30vw, 300px);
   display: flex;
   flex-direction: column;
@@ -61,17 +61,22 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 
   &:hover {
     background: #111D3E;
-    border: 2px solid #00DDEB;
+    border: 2px solid #111D3E;
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 221, 235, 0.3);
 
-    h2, ul, svg {
+    h2, ul, .icon {
       color: white;
     }
 
     a {
-      color: #111D3E;
       background: white;
+      color: #111D3E;
+      border-color: transparent;
+
+      .saibaMaisIcon {
+        color: #111D3E;
+      }
     }
   }
 
@@ -100,7 +105,7 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 
       &::before {
         content: "•";
-        color: #00DDEB;
+        color: #111D3E;
         font-size: 1.5em;
         line-height: 0;
         margin-top: 0.2em;
@@ -135,25 +140,40 @@ $gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C
 }
 
 a.saiba-mais {
-  display: inline-block;
-  padding: clamp(8px, 1.8vw, 10px) clamp(15px, 3vw, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 8px);
+  padding: clamp(10px, 2vw, 12px) clamp(18px, 3vw, 22px);
   background: #111D3E;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
-  margin-top: clamp(15px, 3vw, 20px);
+  border-radius: 10px;
+  margin: clamp(20px, 3vw, 25px) auto 0;
   transition: all 0.3s ease;
-  font-size: clamp(13px, 2vw, 15px);
+  font-size: clamp(14px, 2vw, 16px);
   font-weight: 600;
   border: 2px solid transparent;
-  align-self: center;
   width: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .saibaMaisIcon {
+    font-size: clamp(14px, 1.8vw, 16px);
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
 
   &:hover {
     background: white;
     color: #111D3E;
-    border-color: #111D3E;
-    transform: translateY(-2px);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 221, 235, 0.3);
+
+    .saibaMaisIcon {
+      transform: translateX(2px) translateY(-2px);
+      color: #111D3E;
+    }
   }
 }
 
@@ -190,12 +210,20 @@ a.saiba-mais {
         display: none;
       }
     }
-    
   }
 
   .exemplos li {
     flex-direction: column;
     gap: 4px;
+  }
+
+  a.saiba-mais {
+    padding: clamp(8px, 1.8vw, 10px) clamp(14px, 2.5vw, 18px);
+    font-size: clamp(13px, 2vw, 15px);
+
+    .saibaMaisIcon {
+      font-size: clamp(13px, 1.8vw, 15px);
+    }
   }
 }
 
@@ -234,6 +262,10 @@ a.saiba-mais {
   a.saiba-mais {
     padding: 8px 16px;
     font-size: clamp(12px, 3vw, 14px);
+
+    .saibaMaisIcon {
+      font-size: clamp(12px, 2vw, 14px);
+    }
   }
 
   .icon {

@@ -1,10 +1,10 @@
-import Logo from "../../assets/img/Logo-TS-Branco.png";
-import StarsBackground from "../../components/StarsBackground";
-import styles from "./Header.module.scss";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import ChangeLanguage from "../../components/ChangeLanguage";
 import { useTranslation } from "react-i18next";
+import Logo from "../../assets/img/Logo-TS-Branco.png";
+import StarsBackground from "../../components/StarsBackground";
+import ChangeLanguage from "../../components/ChangeLanguage";
+import styles from "./Header.module.scss";
 
 function Header() {
   const { t } = useTranslation();
@@ -15,16 +15,16 @@ function Header() {
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setIsMenuOpen(false); // Fecha a sidebar ao clicar em um item
+    setIsMenuOpen(false);
   };
 
   const navItems = [
-    "about",
     "services",
-    "portfolio",
     "packages",
-    "faq",
+    "portfolio",
     "feedback",
+    "about",
+    "faq",
   ];
 
   return (
@@ -67,23 +67,25 @@ function Header() {
 
       {/* Sidebar para telas menores */}
       <nav className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ""}`}>
-        {navItems.map((section, index) => (
-          <div key={section}>
-            <a
-              href={`#${section}`}
-              className={styles.sidebarLink}
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll(section);
-              }}
-            >
-              {t(`header.nav.${section}`)}
-            </a>
-            {index !== navItems.length - 1 && <hr className={styles.sidebarHr} />}
-          </div>
-        ))}
         <div className={styles.sidebarLanguageWrapper}>
           <ChangeLanguage />
+        </div>
+        <div className={styles.sidebarNav}>
+          {navItems.map((section, index) => (
+            <div key={section} className={styles.sidebarItem}>
+              <a
+                href={`#${section}`}
+                className={styles.sidebarLink}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll(section);
+                }}
+              >
+                {t(`header.nav.${section}`)}
+              </a>
+              {index !== navItems.length - 1 && <div className={styles.sidebarDivider} />}
+            </div>
+          ))}
         </div>
       </nav>
 

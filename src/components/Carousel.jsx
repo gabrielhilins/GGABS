@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,11 +12,12 @@ import {
   FaRocket,
   FaBuilding,
 } from "react-icons/fa6";
-import { FaCogs, FaPaintBrush, } from "react-icons/fa";
+import { FaCogs, FaPaintBrush } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { BiSolidFoodMenu } from "react-icons/bi";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import AOS from "aos";
+import HomeButton from "./HomeButton";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -91,6 +93,7 @@ const Carousel = ({ slides, sectionTitle }) => {
       className={`${styles.carouselContainer} ${getCategoryClass()}`}
       data-aos="fade-up"
     >
+      <HomeButton />
       <div className={styles.overlay}></div>
       <div className={styles.titleContainer}>
         <h1 className={styles.sectionTitle}>{sectionTitle}</h1>

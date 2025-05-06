@@ -6,10 +6,10 @@
     "nav": {
       "about": "Sobre",
       "services": "Serviços",
-      "portfolio": "Portifólio",
+      "portfolio": "Portfólio",
       "packages": "Pacotes",
       "faq": "FAQ",
-      "feedback": "Feedback"
+      "feedback": "Depoimentos"
     }
   },
   "footer": {
@@ -37,47 +37,47 @@
   },
   "diferenciais": {
     "title": "Diferenciais",
-    "subtitle": "que me destacam no mercado:",
+    "subtitle": "que nos destacam no mercado:",
     "items": [
       {
         "title": "Design + Tecnologia",
-        "description": "Eu combino criatividade e tecnologia para criar soluções únicas que transformam ideias em realidade."
+        "description": "Combinamos criatividade e tecnologia para criar soluções únicas que transformam ideias em realidade."
       },
       {
         "title": "Variedade Criativa",
-        "description": "Ofereço uma ampla gama de serviços e criações, trazendo versatilidade para realizar seus sonhos."
+        "description": "Oferecemos uma ampla gama de serviços e criações, trazendo versatilidade para realizar seus sonhos."
       },
       {
         "title": "Custo Acessível",
-        "description": "Ofereço qualidade premium a preços justos, porque acredito que todos merecem soluções incríveis."
+        "description": "Oferecemos qualidade premium a preços justos, porque acredito que todos merecem soluções incríveis."
       },
       {
         "title": "Personalização Total",
-        "description": "Crio projetos sob medida, alinhados com seus sonhos e objetivos, com a minha identidade única."
+        "description": "Criamos projetos sob medida, alinhados com seus sonhos e objetivos, com a minha identidade única."
       },
       {
         "title": "Branding Impactante",
-        "description": "Construo marcas que conectam, engajam e deixam uma marca no mundo."
+        "description": "Construímos marcas que conectam, engajam e deixam uma marca no mundo."
       },
       {
         "title": "Internacionalização",
-        "description": "Adapto e traduzo projetos para alcançar mercados globais, levando sua visão além das fronteiras."
+        "description": "Adaptamos e traduzo projetos para alcançar mercados globais, levando sua visão além das fronteiras."
       },
       {
         "title": "Inovação Sempre",
-        "description": "Busco as últimas tendências para entregar o que há de mais atual em design e tech."
+        "description": "Buscamos as últimas tendências para entregar o que há de mais atual em design e tech."
       },
       {
         "title": "Entregas Rápidas",
-        "description": "Realizo projetos com agilidade, sem abrir mão da qualidade que você merece."
+        "description": "Realizamos projetos com agilidade, sem abrir mão da qualidade que você merece."
       },
       {
         "title": "Crescimento Junto",
-        "description": "Desenvolvo soluções que evoluem com seu negócio, acompanhando cada conquista."
+        "description": "Desenvolvemos soluções que evoluem com seu negócio, acompanhando cada conquista."
       },
       {
         "title": "Acessibilidade para Todos",
-        "description": "Crio projetos inclusivos, garantindo que todos possam aproveitar suas ideias."
+        "description": "Criamos projetos inclusivos, garantindo que todos possam aproveitar suas ideias."
       },
       {
         "title": "Resultados Visíveis",
@@ -85,7 +85,7 @@
       },
       {
         "title": "Suporte Dedicado",
-        "description": "Estou com você em cada etapa, oferecendo suporte contínuo para garantir seu sucesso."
+        "description": "Estamos com você em cada etapa, oferecendo suporte contínuo para garantir seu sucesso."
       }
     ]
   },
@@ -166,9 +166,9 @@
     "founder": "Fundador da GGABS Tech & Design",
     "linkedinTooltip": "Visite meu LinkedIn",
     "githubTooltip": "Visite meu GitHub",
-    "description1": "A <strong>GGABS Tech & Design</strong> é uma agência independente especializada em soluções digitais sob medida. Atuo na interseção entre tecnologia e design para desenvolver experiências únicas, funcionais e visualmente impactantes.",
+    "description1": "A <strong>GGABS Tech & Design</strong> é uma agência independente especializada em soluções digitais sob medida. Atuamos na interseção entre tecnologia e design para desenvolver experiências únicas, funcionais e visualmente impactantes.",
     "description2": "Com uma visão clara de transformar ideias em realidade, criei a <strong>GGABS</strong> para oferecer soluções digitais que impulsionam negócios e realizam sonhos.",
-    "description3": "Minha missão é unir criatividade e tecnologia para entregar projetos que fazem a diferença. Acredito que todos os negócios, independentemente do tamanho, merecem ter acesso a um design de qualidade e soluções tecnológicas inovadoras.",
+    "description3": "A missão é unir criatividade e tecnologia para entregar projetos que fazem a diferença. Acreditamos que todos os negócios, independentemente do tamanho, merecem ter acesso a um design de qualidade e soluções tecnológicas inovadoras.",
     "description4": "Através da <strong>GGABS</strong>, busco oferecer soluções personalizadas e acessíveis, ajudando empresas a transformarem suas ideias em realidade e alcançarem seu potencial máximo.",
     "quote": "\"Para conseguir algo que você nunca teve, precisa fazer algo que nunca fez.\"",
     "videoLink": "Veja no YouTube",
@@ -186,7 +186,7 @@
   },
   "servicos": {
     "title": "Serviços",
-    "subtitle": "Aqui você encontra alguns dos serviços que ofereço",
+    "subtitle": "Aqui você encontra alguns dos serviços que oferecemos",
     "saibaMais": "Saiba Mais",
     "saibaMaisAriaLabel": "Saiba mais sobre {{title}}",
     "services": [
@@ -224,7 +224,7 @@
     ]
   },
   "pacotes": {
-    "title": "Meus Pacotes de Serviços",
+    "title": "Nossos Pacotes de Serviços",
     "subtitle": {
       "mainText": "Escolha o pacote ideal para o seu projeto e veja como posso ajudar a sua ideia a ganhar vida.",
       "ctaText": "<strong>Todos os pacotes são flexíveis e podem ser adaptados conforme suas necessidades.</strong>"
@@ -317,7 +317,7 @@
   },
   "faq": {
     "title": "Perguntas Frequentes",
-    "subtitle": "Aqui estão as perguntas mais frequentes que os clientes me fazem",
+    "subtitle": "Aqui estão as perguntas mais frequentes que os clientes nos fazem",
     "services": [
       {
         "id": "web",

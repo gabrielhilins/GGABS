@@ -28,12 +28,14 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 
   .subtitle {
     color: rgba(255, 255, 255, 0.8);
-    font-size: clamp(0.875rem, 2.5vw, 1.25rem);
     line-height: 1.5;
     margin: clamp(1rem, 2vw, 1.625rem) clamp(0.5rem, 2vw, 1rem) 0;
-    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
   }
 
   .hamburger-menu {

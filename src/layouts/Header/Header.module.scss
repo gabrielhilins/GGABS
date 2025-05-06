@@ -1,6 +1,6 @@
 $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #00ddeb 100%);
 $breakpoint-md: 768px;
-$sidebar-width: 280px;
+$sidebar-width: 300px;
 
 .header {
   position: fixed;
@@ -41,10 +41,10 @@ $sidebar-width: 280px;
   display: flex;
   gap: 2.5rem;
   z-index: 6;
-  margin-left: 4rem; // **Adicionado espaço entre a logo e a navbar**
+  margin-left: 4rem;
 
   @media (max-width: $breakpoint-md) {
-    display: none; // Esconde o nav em telas menores
+    display: none;
   }
 }
 
@@ -81,6 +81,11 @@ $sidebar-width: 280px;
   }
 }
 
+.languageWrapper {
+  display: flex;
+  align-items: center;
+}
+
 // Botão do menu hamburguer
 .menuToggle {
   display: none;
@@ -92,7 +97,7 @@ $sidebar-width: 280px;
     padding: 0.5rem;
     cursor: pointer;
     z-index: 12;
-    margin-left: 1rem; // **Afastando o botão do menu hamburguer da logo**
+    margin-left: 1rem;
   }
 }
 
@@ -107,7 +112,7 @@ $sidebar-width: 280px;
   z-index: 11;
   display: flex;
   flex-direction: column;
-  padding: 8rem 1.5rem 2rem; // **Aumentado o padding-top para afastar os itens da logo**
+  padding: 8rem 1.5rem 2rem;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
 
@@ -116,17 +121,30 @@ $sidebar-width: 280px;
   }
 
   @media (min-width: $breakpoint-md + 1) {
-    display: none; // Esconde a sidebar em telas grandes
+    display: none;
   }
+}
+
+.sidebarNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebarItem {
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebarLink {
   text-decoration: none;
   color: white;
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2.2vw, 1.25rem);
   font-weight: 500;
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   transition: all 0.3s ease;
+  border-radius: 6px;
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -134,10 +152,30 @@ $sidebar-width: 280px;
   }
 }
 
-.sidebarHr {
-  border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 0.5rem 1rem;
+.sidebarDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0.5rem 1.5rem;
+}
+
+.sidebarLanguageWrapper {
+  margin: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 221, 235, 0.3);
+  display: flex;
+  justify-content: center;
+
+  > * {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: white;
+    font-weight: 500;
+
+    &:hover {
+      color: #00ddeb;
+    }
+  }
 }
 
 .overlay {
@@ -174,11 +212,24 @@ $sidebar-width: 280px;
   }
 
   .sidebar {
-    width: 240px;
-    left: -240px;
+    width: 260px;
+    left: -260px;
 
     &.sidebarOpen {
-      transform: translateX(240px);
+      transform: translateX(260px);
+    }
+  }
+
+  .sidebarLink {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    padding: 1rem 1.25rem;
+  }
+
+  .sidebarLanguageWrapper {
+    padding: 0.5rem 0.75rem;
+
+    > * {
+      font-size: clamp(0.875rem, 1.8vw, 1rem);
     }
   }
 }

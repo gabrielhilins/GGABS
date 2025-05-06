@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import styles from "./Serviços.module.scss";
 import { FaCode, FaLayerGroup, FaPaintBrush } from "react-icons/fa";
+import { FaUpRightFromSquare } from "react-icons/fa6";
 
 const servicosData = [
   {
@@ -9,55 +10,31 @@ const servicosData = [
     ariaLabel: "services.desenvolvimento_web.ariaLabel",
     title: "services.desenvolvimento_web.title",
     exemplos: "services.desenvolvimento_web.exemplos",
+    route: "/desenvolvimento-web",
   },
   {
     icon: <FaLayerGroup />,
     ariaLabel: "services.sistemas_gestao.ariaLabel",
     title: "services.sistemas_gestao.title",
     exemplos: "services.sistemas_gestao.exemplos",
+    route: "/sistemas-de-gestao",
   },
   {
     icon: <FaPaintBrush />,
     ariaLabel: "services.design.ariaLabel",
     title: "services.design.title",
     exemplos: "services.design.exemplos",
+    route: "/design",
   },
 ];
 
 function Servicos() {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const handleSmoothScroll = (e) => {
-      const targetId = e.currentTarget.getAttribute("href");
-      if (targetId.startsWith("#")) {
-        e.preventDefault();
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }
-    };
-
-    const saibaMaisLinks = document.querySelectorAll(`.${styles["saiba-mais"]}`);
-    saibaMaisLinks.forEach((link) => {
-      link.addEventListener("click", handleSmoothScroll);
-    });
-
-    return () => {
-      saibaMaisLinks.forEach((link) => {
-        link.removeEventListener("click", handleSmoothScroll);
-      });
-    };
-  }, []);
-
   return (
     <section className={styles["servicos-container"]}>
-      <h1 className={styles.title}>{t("services.title")}</h1>
-      <p className={styles.subtitle}>{t("services.subtitle")}</p>
+      <h1 className={styles.title}>{t("servicos.title")}</h1>
+      <p className={styles.subtitle}>{t("servicos.subtitle")}</p>
       <div className={styles["cards-container"]}>
         {servicosData.map((servico, index) => (
           <div key={index} className={styles.card}>
@@ -74,15 +51,14 @@ function Servicos() {
                 </li>
               ))}
             </ul>
-            <a
-              href={`#${t(servico.title)
-                .replace(/\s+/g, "-")
-                .toLowerCase()}`}
+            <Link
+              to={servico.route}
               className={styles["saiba-mais"]}
               aria-label={t("services.saiba_mais") + " " + t(servico.title)}
             >
+              <FaUpRightFromSquare className={styles.saibaMaisIcon} />
               {t("services.saiba_mais")}
-            </a>
+            </Link>
           </div>
         ))}
       </div>

@@ -56,7 +56,7 @@ const Hero = () => {
           <p>
             <ReactTyped
               strings={[t("hero.subtitle")]}
-              typeSpeed={60}
+              typeSpeed={40}
               backSpeed={30}
               showCursor={false}
               onComplete={onSubtitleComplete}

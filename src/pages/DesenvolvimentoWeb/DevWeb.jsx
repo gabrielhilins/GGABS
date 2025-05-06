@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Carousel from "../../../components/Carousel";
+import Carousel from "../../components/Carousel";
 import styles from "./DevWeb.module.scss";
 
 function DevWeb() {
@@ -9,6 +9,7 @@ function DevWeb() {
 
   return (
     <div className={styles.devWebContainer}>
+      
       <Carousel slides={slidesData} sectionTitle={t("dev_web.sectionTitle")} />
     </div>
   );

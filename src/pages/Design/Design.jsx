@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Carousel from "../../../components/Carousel";
+import Carousel from "../../components/Carousel";
 import styles from "./Design.module.scss";
 
 function Design() {

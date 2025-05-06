@@ -1,44 +1,42 @@
-import {
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./layouts/Footer/Footer";
 import Header from "./layouts/Header/Header";
-// import Compartilha from "./sections/Compartilha/Compartilha";
 import Depoimentos from "./sections/Depoimentos/Depoimentos";
 import Diferenciais from "./sections/Diferenciais/Diferenciais";
-import Estatisticas from "./sections/Estatisticas/Estatisticas";
 import Faq from "./sections/Faq/Faq";
 import Hero from "./sections/Hero/Hero";
 import Historia from "./sections/historia/Historia";
 import Portifolio from "./sections/Portifolio/Portifolio";
-import ServicoDevWeb from "./sections/Serviços/DesenvolvimentoWeb/DevWeb";
-import ServicoDesign from "./sections/Serviços/Design/Design";
 import Serviços from "./sections/Serviços/Serviços";
-import ServicoSistemaGestao from "./sections/Serviços/SistemaGestao/SistemaGestao";
 import Sobre from "./sections/Sobre/Sobre";
-
-// Pagina de orçamento
 import Orçamento from "./pages/Orçamento/Orçamento";
-
-// Pagina 404
 import NotFound404 from "./pages/404";
 import Pacotes from "./sections/Pacotes/Pacotes";
 import PoliticaPrivacidade from "./pages/Política de Privacidade/PoliticaPrivacidade";
 import TermosDeUso from "./pages/Termos de Uso/TermosDeUso";
 import CTA from "./sections/Compartilha/CTA";
+import DevWeb from "./pages/DesenvolvimentoWeb/DevWeb";
+import SistemaGestao from "./pages/SistemaGestao/SistemaGestao";
+import Design from "./pages/Design/Design";
+import useScrollRestoration from "./hooks/useScrollRestoration";
 
 function App() {
   const location = useLocation();
+  useScrollRestoration(); // Apply scroll restoration
+
+  const isHeaderExcludedRoute = [
+    "/solicitar-orcamentos",
+    "/desenvolvimento-web",
+    "/sistemas-de-gestao",
+    "/design",
+  ].includes(location.pathname);
   const isOrcamentoRoute = location.pathname.startsWith("/solicitar-orcamentos");
-  const is404Route = location.pathname !== "/" && !isOrcamentoRoute; // Identifica a rota 404
+  const is404Route = location.pathname !== "/" && !["/solicitar-orcamentos", "/politica-de-privacidade", "/termos-de-uso", "/desenvolvimento-web", "/sistemas-de-gestao", "/design"].includes(location.pathname);
 
   return (
-    <div className="app-container ">
-      {!isOrcamentoRoute && !is404Route && <Header />} {/* Header oculto na 404 e orçamento */}
+    <div className="app-container">
+      {!isHeaderExcludedRoute && !is404Route && <Header />}
       <Routes>
-        {/* Rota principal */}
         <Route
           path="/"
           element={
@@ -49,60 +47,42 @@ function App() {
               <div id="diferenciais">
                 <Diferenciais />
               </div>
-              <div id="estatisticas">
-                <Estatisticas />
-              </div>
-              <div id="about">
-                <Sobre />
-              </div>
-              <div id="historia">
-                <Historia />
-              </div>
               <div id="services">
                 <Serviços />
-              </div>
-              <div id="portfolio">
-                <Portifolio />
-              </div>
-              <div id="desenvolvimento-web">
-                <ServicoDevWeb />
-              </div>
-              <div id="sistemas-de-gestão">
-                <ServicoSistemaGestao />
-              </div>
-              <div id="design">
-                <ServicoDesign />
               </div>
               <div id="packages">
                 <Pacotes />
               </div>
-              <div id="faq">
-                <Faq />
+              <div id="portfolio">
+                <Portifolio />
               </div>
               <div id="feedback">
                 <Depoimentos />
               </div>
+              <div id="about">
+                <Sobre />
+              </div>
+              <div id="faq">
+                <Faq />
+              </div>
+              <div id="historia">
+                <Historia />
+              </div>
               <div id="cta">
                 <CTA />
               </div>
-              {/*
-              <div id="compartilha">
-                <Compartilha />
-              </div>
-              */}
             </>
           }
         />
-
-        {/* Rota de orçamento */}
         <Route path="/solicitar-orcamentos" element={<Orçamento />} />
         <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
         <Route path="/termos-de-uso" element={<TermosDeUso />} />
-
-        {/* Rota 404 */}
+        <Route path="/desenvolvimento-web" element={<DevWeb />} />
+        <Route path="/sistemas-de-gestao" element={<SistemaGestao />} />
+        <Route path="/design" element={<Design />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
-      {!isOrcamentoRoute && <Footer />} {/* Footer visível na 404 e na rota principal */}
+      {!isOrcamentoRoute && <Footer />}
     </div>
   );
 }

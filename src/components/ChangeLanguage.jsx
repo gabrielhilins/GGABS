@@ -31,10 +31,10 @@ const ChangeLanguage = () => {
           className={styles.dropdownButton}
         >
           {selectedLanguage === 'pt' && (
-            <img src={BrazilFlag} alt="Português" width={32} height={32} className={styles.flagImage} />
+            <img src={BrazilFlag} alt="Português" width={48} height={48} className={styles.flagImage} />
           )}
           {selectedLanguage === 'en' && (
-            <img src={UsaFlag}alt="English" width={32} height={32} className={styles.flagImage} />
+            <img src={UsaFlag}alt="English" width={48} height={48} className={styles.flagImage} />
           )}
           
           <FaArrowDown className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ''}`} />
@@ -44,11 +44,11 @@ const ChangeLanguage = () => {
         <div className={styles.dropdownMenu}>
           <div className="py-1">
             <button onClick={() => changeLanguage('en')} className={styles.languageButton}>
-              <img src={UsaFlag} alt="English" width={32} height={32} className={styles.flagImage} />
+              <img src={UsaFlag} alt="English" width={48} height={48} className={styles.flagImage} />
               <span className={styles.languageText}>EN-US</span> 
             </button>
             <button onClick={() => changeLanguage('pt')} className={styles.languageButton}>
-              <img src={BrazilFlag} alt="Português" width={32} height={32} className={styles.flagImage} />
+              <img src={BrazilFlag} alt="Português" width={48} height={48} className={styles.flagImage} />
               <span className={styles.languageText}>PT-BR</span> 
             </button>
           </div>
