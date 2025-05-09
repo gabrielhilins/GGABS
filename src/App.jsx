@@ -33,7 +33,7 @@ function App() {
     "/links"
   ].includes(location.pathname);
   const isFooterExcludedRoute = location.pathname.startsWith("/solicitar-orcamentos") || location.pathname === "/links";
-  const is404Route = location.pathname !== "/" && !["/solicitar-orcamentos", "/politica-de-privacidade", "/termos-de-uso", "/desenvolvimento-web", "/sistemas-de-gestao", "/design", "/links"].includes(location.pathname);
+  const is404Route = location.pathname !== "/" && !["/solicitar-orcamentos", "/politica-de-privacidade", "/termos-de-uso", "/desenvolvimento-web", "/sistemas-de-gestao", "/design"].includes(location.pathname);
 
   return (
     <div className="app-container">
