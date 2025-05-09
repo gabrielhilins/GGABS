@@ -25,19 +25,40 @@ function App() {
   const location = useLocation();
   useScrollRestoration(); // Apply scroll restoration
 
+  // Routes where Header should be hidden
   const isHeaderExcludedRoute = [
     "/solicitar-orcamentos",
     "/desenvolvimento-web",
     "/sistemas-de-gestao",
     "/design",
-    "/links"
+    "/links" // Header will be hidden on /links
   ].includes(location.pathname);
-  const isFooterExcludedRoute = location.pathname.startsWith("/solicitar-orcamentos") || location.pathname === "/links";
-  const is404Route = location.pathname !== "/" && !["/solicitar-orcamentos", "/politica-de-privacidade", "/termos-de-uso", "/desenvolvimento-web", "/sistemas-de-gestao", "/design"].includes(location.pathname);
+
+  // Routes where Footer should be hidden
+  const isFooterExcludedRoute = 
+    location.pathname.startsWith("/solicitar-orcamentos") || 
+    location.pathname === "/links";
+
+  // All valid routes (to prevent 404 errors)
+  const validRoutes = [
+    "/",
+    "/solicitar-orcamentos",
+    "/politica-de-privacidade",
+    "/termos-de-uso",
+    "/desenvolvimento-web",
+    "/sistemas-de-gestao",
+    "/design",
+    "/links" // Added to valid routes
+  ];
+
+  // Check if current route should show 404
+  const is404Route = !validRoutes.includes(location.pathname);
 
   return (
     <div className="app-container">
+      {/* Hide header on excluded routes and 404 pages */}
       {!isHeaderExcludedRoute && !is404Route && <Header />}
+      
       <Routes>
         <Route
           path="/"
@@ -85,6 +106,8 @@ function App() {
         <Route path="/links" element={<Links />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
+      
+      {/* Hide footer on excluded routes */}
       {!isFooterExcludedRoute && <Footer />}
     </div>
   );
