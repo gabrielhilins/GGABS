@@ -1,26 +1,27 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/links",
-      "dest": "/index.html",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "source": "/links",
+      "destination": "/index.html"
     },
     {
-      "src": "/solicitar-orcamentos",
-      "dest": "/index.html"
+      "source": "/solicitar-orcamentos",
+      "destination": "/index.html"
     },
     {
-      "src": "/(.*)", 
-      "dest": "/index.html",
-      "status": 200
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
-  "rewrites": [
-    { 
-      "source": "/(.*)", 
-      "destination": "/index.html" 
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
     }
   ]
 }
