@@ -1,5 +1,9 @@
 {
+  "i18n": {
+    "locale": "en-US"
+  },
   "back": "Back",
+  "backHome": "Go back HomePage",
   "header": {
     "logoAlt": "GGabs Design and Tech Logo",
     "toggleMenu": "Toggle menu",
@@ -658,7 +662,7 @@
       "line1": "Answer the questions below to request a quote.",
       "line2": "It's quick, easy, and commitment-free!"
     },
-    "requiredNote": "Fields with <span class=\"requiredAsterisk\">*</span> are required",
+    "requiredNote": "Fields with * are required",
     "loading": "Sending your request...",
     "toast": {
       "success": "Request sent successfully!",
@@ -678,8 +682,8 @@
       "deadline": "What is your expected deadline?"
     },
     "placeholders": {
-      "name": "Ex: John",
-      "lastname": "Ex: Smith",
+      "name": "Type your name",
+      "lastname": "Type your lastname",
       "service": "Select the type of service",
       "deadline": "Select a deadline",
       "select": "Select an option"

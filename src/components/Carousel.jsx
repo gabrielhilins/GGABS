@@ -27,7 +27,7 @@ import styles from "./Carousel.module.scss";
 
 const Carousel = ({ slides, sectionTitle }) => {
   const { t } = useTranslation();
-  const [backgroundImage, setBackgroundImage] = useState(slides[0].image);
+  const [, setBackgroundImage] = useState(slides[0].image);
   const [activeSlideTitle, setActiveSlideTitle] = useState(slides[0].title);
   const navigate = useNavigate();
 

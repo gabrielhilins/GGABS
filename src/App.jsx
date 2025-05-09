@@ -19,6 +19,7 @@ import DevWeb from "./pages/DesenvolvimentoWeb/DevWeb";
 import SistemaGestao from "./pages/SistemaGestao/SistemaGestao";
 import Design from "./pages/Design/Design";
 import useScrollRestoration from "./hooks/useScrollRestoration";
+import Links from "./pages/Links/Links";
 
 function App() {
   const location = useLocation();
@@ -29,9 +30,10 @@ function App() {
     "/desenvolvimento-web",
     "/sistemas-de-gestao",
     "/design",
+    "/links"
   ].includes(location.pathname);
-  const isOrcamentoRoute = location.pathname.startsWith("/solicitar-orcamentos");
-  const is404Route = location.pathname !== "/" && !["/solicitar-orcamentos", "/politica-de-privacidade", "/termos-de-uso", "/desenvolvimento-web", "/sistemas-de-gestao", "/design"].includes(location.pathname);
+  const isFooterExcludedRoute = location.pathname.startsWith("/solicitar-orcamentos") || location.pathname === "/links";
+  const is404Route = location.pathname !== "/" && !["/solicitar-orcamentos", "/politica-de-privacidade", "/termos-de-uso", "/desenvolvimento-web", "/sistemas-de-gestao", "/design", "/links"].includes(location.pathname);
 
   return (
     <div className="app-container">
@@ -80,9 +82,10 @@ function App() {
         <Route path="/desenvolvimento-web" element={<DevWeb />} />
         <Route path="/sistemas-de-gestao" element={<SistemaGestao />} />
         <Route path="/design" element={<Design />} />
+        <Route path="/links" element={<Links />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
-      {!isOrcamentoRoute && <Footer />}
+      {!isFooterExcludedRoute && <Footer />}
     </div>
   );
 }

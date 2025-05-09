@@ -1,5 +1,9 @@
 {
+  "i18n": {
+    "locale": "pt-BR"
+  },
   "back": "Voltar",
+  "backHome": "Voltar para o Início",
   "header": {
     "logoAlt": "Logotipo GGabs Design e Tech",
     "toggleMenu": "Alternar menu",
@@ -658,7 +662,7 @@
       "line1": "Responda às perguntas abaixo para solicitar um orçamento.",
       "line2": "É rápido, prático e sem compromisso!"
     },
-    "requiredNote": "Campos com <span class=\"requiredAsterisk\">*</span> são obrigatórios",
+    "requiredNote": "Campos com * são obrigatórios",
     "loading": "Enviando sua solicitação...",
     "toast": {
       "success": "Solicitação enviada com sucesso!",
@@ -678,8 +682,8 @@
       "deadline": "Qual sua expectativa de prazo?"
     },
     "placeholders": {
-      "name": "Ex: Pedro",
-      "lastname": "Ex: Silva",
+      "name": "Digite seu Nome",
+      "lastname": "Digite seu Sobrenome",
       "service": "Selecione o tipo de serviço",
       "deadline": "Selecione um prazo",
       "select": "Selecione uma opção"

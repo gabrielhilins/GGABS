@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { IoMdArrowBack } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import styles from "./REAl.module.scss";
-import enviarWhatsAppTeste from "./enviarMensagemTeste";
+import enviarWhatsAppTeste from "./EnviarMsgTeste";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Modal from "./Modal";
@@ -28,11 +28,30 @@ function REALTeste() {
   const [uploadProgress, setUploadProgress] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const getSafeLocale = () => {
+    try {
+      const browserLocale = navigator.language;
+      const supportedLocales = ["pt-BR", "en-US", "es-ES"];
+      
+      if (supportedLocales.includes(i18n.language)) {
+        return i18n.language;
+      }
+      
+      if (supportedLocales.includes(browserLocale)) {
+        return browserLocale;
+      }
+      
+      return "en-US";
+    } catch {
+      return "en-US";
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,16 +89,16 @@ function REALTeste() {
       files: prev.files.filter((f) => f.name !== fileName),
     }));
     setUploadProgress((prev) => {
-      const { ...rest } = prev;
-      return rest;
+      const newProgress = { ...prev };
+      delete newProgress[fileName];
+      return newProgress;
     });
   };
 
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = t("form.errors.name");
-    if (!formData.lastname.trim())
-      newErrors.lastname = t("form.errors.lastname");
+    if (!formData.lastname.trim()) newErrors.lastname = t("form.errors.lastname");
     if (!formData.service) newErrors.service = t("form.errors.service");
     if (!formData.deadline) newErrors.deadline = t("form.errors.deadline");
 
@@ -116,12 +135,15 @@ function REALTeste() {
     if (validateForm()) {
       setTimeout(() => {
         const timestamp = new Date();
-        const formattedDate = timestamp.toLocaleDateString(t("i18n.locale"), {
+        const locale = getSafeLocale();
+        
+        const formattedDate = timestamp.toLocaleDateString(locale, {
           day: "2-digit",
           month: "2-digit",
           year: "numeric",
         });
-        const formattedTime = timestamp.toLocaleTimeString(t("i18n.locale"), {
+        
+        const formattedTime = timestamp.toLocaleTimeString(locale, {
           hour: "2-digit",
           minute: "2-digit",
           second: "2-digit",
@@ -146,7 +168,7 @@ function REALTeste() {
           t(`form.deadlineOptions.${formData.deadline}`),
           briefingSummary,
           formattedDate,
-          formattedTime
+          formattedTime,
         );
 
         setShowModal(true);
@@ -187,10 +209,8 @@ function REALTeste() {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          <Trans
-            i18nKey="realTeste.requiredNote"
-            components={{ span: <span className={styles.requiredAsterisk} /> }}
-          />
+          {t("realTeste.requiredNote")}
+          <span className={styles.requiredAsterisk}>*</span>
         </p>
 
         <Form
