@@ -41,7 +41,7 @@ const Links = () => {
     {
       id: 4,
       title: "TikTok",
-      url: "https://tiktok.com/@ggabstechdesign",
+      url: "https://tiktok.com/@ggabs.tech.design",
       icon: <FaTiktok />,
       color: "linear-gradient(45deg, #FE2C55, #25F4EE, #000000, #FE2C55)",
     },
