@@ -1,10 +1,26 @@
 {
-    "redirects": [
-      {
-        "source": "/:path*",
-        "destination": "/",
-        "statusCode": 200
+  "routes": [
+    {
+      "src": "/links",
+      "dest": "/index.html",
+      "headers": {
+        "Cache-Control": "no-cache"
       }
-    ]
-  }
-  
+    },
+    {
+      "src": "/solicitar-orcamentos",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)", 
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
+  "rewrites": [
+    { 
+      "source": "/(.*)", 
+      "destination": "/index.html" 
+    }
+  ]
+}
