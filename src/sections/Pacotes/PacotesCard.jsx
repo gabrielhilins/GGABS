@@ -62,7 +62,7 @@ function PacotesCard({ title, description, target, benefits, price, icon, observ
 
 PacotesCard.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   target: PropTypes.arrayOf(PropTypes.string),
   benefits: PropTypes.arrayOf(PropTypes.string).isRequired,
   price: PropTypes.string.isRequired,

@@ -491,10 +491,18 @@
     },
     "ownProducts": {
       "real": {
-        "title": "REAL - Budget Simulator",
+        "title": "REAL",
         "text": "- REAL is an {strong}intelligent budget simulator{/strong} that transforms your services into instant, clear, and professional proposals, with direct WhatsApp sharing to speed up deal closures.",
         "imageAlt": "Preview of REAL - Budget Simulator",
         "logoAlt": "Logo of REAL - Budget Simulator",
+        "gender": "neutral",
+        "linkText": "Discover {{title}}"
+      },
+      "ref": {
+        "title": "REF",
+        "text": "- REF is a modern and intuitive {strong}ABNT reference generator{/strong}, designed to make life easier for students, teachers, and researchers by helping them create accurate and properly formatted bibliographic references.",
+        "imageAlt": "Preview of REAL - ABNT Reference Generator",
+        "logoAlt": "Logo of REF - ABNT Reference Generator",
         "gender": "neutral",
         "linkText": "Discover {{title}}"
       },

@@ -8,6 +8,8 @@ import Tarefex from "../../assets/img/Tarefex.png";
 import TarefexPreview from "../../assets/img/TarefexPreview.png";
 import REAL from "../../assets/img/Logo Branco Simulador.png";
 import REALPreview from "../../assets/img/REALPreview.png";
+import REF from '../../assets/img/LogoREF.png';
+import REFPreview from '../../assets/img/REFPreview.png';
 import MariaClaraPreview from "../../assets/img/MariaClaraPreview.png";
 import MariaClara from "../../assets/img/Maria Clara Logo.png";
 import PedrocezarPreview from "../../assets/img/PreviewPedrocezar.png";
@@ -30,6 +32,7 @@ function Portifolio() {
   // Mapeamento de imagens por ID fixo
   const images = {
     real: { logo: REAL, preview: REALPreview },
+    ref: { logo: REF, preview: REFPreview },
     tarefex: { logo: Tarefex, preview: TarefexPreview },
     pedro_cezar: { logo: LogoPedroCezar, preview: PedrocezarPreview },
     maria_clara: { logo: MariaClara, preview: MariaClaraPreview },
@@ -39,7 +42,7 @@ function Portifolio() {
   const ownProducts = [
     {
       id: "real",
-      title: t("portifolio.ownProducts.real.title", "REAL - Simulador de Orçamentos"),
+      title: t("portifolio.ownProducts.real.title", "REAL"),
       text: t("portifolio.ownProducts.real.text", "- O REAL é um {strong}simulador de orçamentos inteligente{/strong} que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas."),
       link: "https://real-iota-ivory.vercel.app/",
       imageAlt: t("portifolio.ownProducts.real.imageAlt", "Preview do REAL - Simulador de Orçamentos"),
@@ -52,6 +55,22 @@ function Portifolio() {
       status: "finalizado",
       linkText: t("portifolio.ownProducts.real.linkText", "Conheça o {{title}}"),
     },
+    {
+      id: "ref",
+      title: t("portifolio.ownProducts.ref.title", "REF"),
+      text: t("portifolio.ownProducts.ref.text", "- O REF é um {strong}gerador de referências no formato ABNT{/strong} moderno e intuitivo. Criado para facilitar a vida de estudantes, professores e pesquisadores na criação de referências bibliográficas precisas e padronizadas."),
+      link: "https://ref-gerador-abnt.vercel.app/",
+      imageAlt: t("portifolio.ownProducts.ref.imageAlt", "Preview do REF"),
+      logoAlt: t("portifolio.ownProducts.ref.logoAlt", "Logo do REF"),
+      cor1: "#1D4ED8",
+      cor2: "#FFFFFF",
+      sector: "tech",
+      type: "landing-page",
+      gender: t("portifolio.ownProducts.ref.gender", "masculino"),
+      status: "finalizado",
+      linkText: t("portifolio.ownProducts.ref.linkText", "Conheça o {{title}}"),
+    },
+    /*
     {
       id: "tarefex",
       title: t("portifolio.ownProducts.tarefex.title", "Tarefex"),
@@ -67,6 +86,7 @@ function Portifolio() {
       status: "em concepção",
       linkText: t("portifolio.ownProducts.tarefex.linkText", "Conheça o {{title}}"),
     },
+    */
   ].map((project) => ({
     ...project,
     logo: images[project.id].logo,

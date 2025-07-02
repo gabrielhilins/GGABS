@@ -491,10 +491,18 @@
     },
     "ownProducts": {
       "real": {
-        "title": "REAL - Simulador de Orçamentos",
+        "title": "REAL",
         "text": "- O REAL é um {strong}simulador de orçamentos inteligente{/strong} que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas.",
         "imageAlt": "Preview do REAL - Simulador de Orçamentos",
         "logoAlt": "Logo do REAL - Simulador de Orçamentos",
+        "gender": "masculino",
+        "linkText": "Conheça o {{title}}"
+      },
+      "ref": {
+        "title": "REF",
+        "text": "- O REF é um {strong}gerador de referências no formato ABNT{/strong} moderno e intuitivo. Criado para facilitar a vida de estudantes, professores e pesquisadores na criação de referências bibliográficas precisas e padronizadas.",
+        "imageAlt": "Preview do REF - Gerador de Referências ABNT",
+        "logoAlt": "Logo do REAL - gerador de refer~encias ABNT",
         "gender": "masculino",
         "linkText": "Conheça o {{title}}"
       },
