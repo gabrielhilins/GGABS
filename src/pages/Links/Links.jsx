@@ -11,6 +11,8 @@ import { IoIosRocket } from "react-icons/io";
 import style from "./Links.module.scss";
 import StarsBackground from "../../components/StarsBackground";
 import Monograma from '../../assets/img/LogoTipo Fundo Branco e Azul.png';
+import REAL from '../../assets/img/Icone REAL.png';
+import REF from '../../assets/img/Icone REF.png';
 
 const Links = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -33,47 +35,71 @@ const Links = () => {
     },
     {
       id: 3,
+      title: "REF - Gerador de referências ABNT",
+      url: "https://ref-gerador-abnt.vercel.app/",
+      icon: REF,
+      color: "#1D4ED8",
+      highlight: true
+    },
+    {
+      id: 4,
+      title: "REAL - Simulador de Orçamentos",
+      url: "https://real-iota-ivory.vercel.app/",
+      icon: REAL,
+      color: "#00C49A",
+      highlight: true
+    },
+    {
+      id: 5,
       title: "Instagram",
       url: "https://instagram.com/ggabstechdesign",
       icon: <FaInstagram />,
       color: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
     },
     {
-      id: 4,
+      id: 6,
       title: "TikTok",
       url: "https://tiktok.com/@ggabs.tech.design",
       icon: <FaTiktok />,
       color: "linear-gradient(45deg, #FE2C55, #25F4EE, #000000, #FE2C55)",
     },
     {
-      id: 5,
+      id: 7,
       title: "LinkedIn",
       url: "https://linkedin.com/company/ggabs-tech-design",
       icon: <FaLinkedinIn />,
       color: "#0077b5",
     },
     {
-      id: 6,
+      id: 8,
       title: "X",
       url: "https://x.com/ggabstechdesign",
       icon: <FaXTwitter />,
       color: "#000000",
     },
     {
-      id: 7,
+      id: 9,
       title: "Threads",
       url: "https://threads.net/ggabstechdesign",
       icon: <FaThreads />,
       color: "linear-gradient(45deg, #000000, #444444)",
     },
     {
-      id: 8,
+      id: 10,
       title: "Pinterest",
       url: "https://pinterest.com/ggabstechdesign",
       icon: <FaPinterest />,
       color: "#E60023",
     },
   ];
+
+  const renderIcon = (icon) => {
+    // Check if icon is a string (image source) or a React component
+    if (typeof icon === 'string') {
+      return <img src={icon} alt="Link icon" className={style.linkImage} />;
+    }
+    return icon;
+  };
 
   return (
     <div className={style.linksContainer}>
@@ -96,11 +122,11 @@ const Links = () => {
               style={{ "--link-color": link.color }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              target="_blank" // Sempre abrir em nova guia
-              rel="noopener noreferrer" // Sempre incluir rel para segurança
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={link.title}
             >
-              <span className={style.linkIcon}>{link.icon}</span>
+              <span className={style.linkIcon}>{renderIcon(link.icon)}</span>
               <span className={style.linkTitle}>{link.title}</span>
               <div
                 className={`${style.linkBackground} ${hoveredIndex === index ? style.active : ""}`}

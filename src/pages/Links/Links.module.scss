@@ -164,6 +164,12 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+.linkImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .linkTitle {
   font-size: clamp(14px, 3.5vw, 16px);
   z-index: 1;
@@ -217,6 +223,11 @@
     margin-right: 10px;
   }
 
+  .linkImage {
+    width: 20px;
+    height: 20px;
+  }
+
   .linkTitle {
     font-size: clamp(13px, 3.2vw, 15px);
   }
@@ -257,6 +268,11 @@
     width: clamp(34px, 8.5vw, 38px);
     height: clamp(34px, 8.5vw, 38px);
     margin-right: 8px;
+  }
+
+  .linkImage {
+    width: 18px;
+    height: 18px;
   }
 
   .linkTitle {
