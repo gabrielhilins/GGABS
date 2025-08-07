@@ -3,10 +3,10 @@ import {
   FaGlobe,
   FaInstagram,
   FaLinkedinIn,
-  FaPinterest,
+  FaFacebook,
   FaTiktok,
 } from "react-icons/fa";
-import { FaXTwitter, FaThreads } from "react-icons/fa6";
+import { FaThreads } from "react-icons/fa6";
 import { IoIosRocket } from "react-icons/io";
 import style from "./Links.module.scss";
 import StarsBackground from "../../components/StarsBackground";
@@ -65,17 +65,17 @@ const Links = () => {
     },
     {
       id: 7,
+      title: "Facebook",
+      url: "https://www.facebook.com/share/1AMxWY2jNe/",
+      icon: <FaFacebook />,
+      color: "#1877F2",
+    },
+    {
+      id: 8,
       title: "LinkedIn",
       url: "https://linkedin.com/company/ggabs-tech-design",
       icon: <FaLinkedinIn />,
       color: "#0077b5",
-    },
-    {
-      id: 8,
-      title: "X",
-      url: "https://x.com/ggabstechdesign",
-      icon: <FaXTwitter />,
-      color: "#000000",
     },
     {
       id: 9,
@@ -83,13 +83,6 @@ const Links = () => {
       url: "https://threads.net/ggabstechdesign",
       icon: <FaThreads />,
       color: "linear-gradient(45deg, #000000, #444444)",
-    },
-    {
-      id: 10,
-      title: "Pinterest",
-      url: "https://pinterest.com/ggabstechdesign",
-      icon: <FaPinterest />,
-      color: "#E60023",
     },
   ];
 

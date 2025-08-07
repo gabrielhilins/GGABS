@@ -4,6 +4,7 @@ import styles from "./Hero.module.scss";
 import StarsBackground from "../../components/StarsBackground";
 import { HiRocketLaunch } from "react-icons/hi2";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { FaInstagram, FaTiktok, FaFacebookF, FaLinkedinIn, FaThreads } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -33,8 +34,16 @@ const Hero = () => {
 
   const handleOrçamentoClick = () => {
     navigate("/solicitar-orcamentos");
-    window.scrollTo(0, 0); // Rola a página para o topo
+    window.scrollTo(0, 0);
   };
+
+  const socialMediaLinks = [
+    { icon: <FaInstagram />, url: "https://instagram.com/ggabstechdesign", label: "Instagram", tooltip: t("footer.social.instagram") },
+    { icon: <FaTiktok />, url: "https://tiktok.com/@ggabs.tech.design", label: "TikTok", tooltip: t("footer.social.tiktok") },
+    { icon: <FaFacebookF />, url: "https://www.facebook.com/share/1AMxWY2jNe/", label: "Facebook", tooltip: t("footer.social.facebook") },
+    { icon: <FaLinkedinIn />, url: "https://linkedin.com/company/ggabs-tech-design", label: "LinkedIn", tooltip: t("footer.social.linkedin") },
+    { icon: <FaThreads />, url: "https://threads.net/ggabstechdesign", label: "Threads", tooltip: t("footer.social.threads") },
+  ];
 
   return (
     <div className={styles["hero-container"]}>
@@ -66,23 +75,46 @@ const Hero = () => {
       )}
 
       {buttonsVisible && (
-        <div className={styles.botoes} data-aos="fade-up">
-          <button
-            className={styles.act}
-            onClick={handleOrçamentoClick}
-            aria-label={t("hero.connectAriaLabel")}
-          >
-            <HiRocketLaunch className={styles.icon} />
-            <span>{t("hero.connectButton")}</span>
-          </button>
-          <button className={styles.saibamais} onClick={handleSaibaMaisClick}>
-            <IoIosArrowDropdownCircle
-              className={styles.icon2}
-              aria-label={t("hero.learnMoreAriaLabel")}
-            />
-            <p className={styles.text}>{t("hero.learnMoreButton")}</p>
-          </button>
-        </div>
+        <>
+          <div className={styles.botoes} data-aos="fade-up">
+            <button
+              className={styles.act}
+              onClick={handleOrçamentoClick}
+              aria-label={t("hero.connectAriaLabel")}
+            >
+              <HiRocketLaunch className={styles.icon} />
+              <span>{t("hero.connectButton")}</span>
+            </button>
+            <button className={styles.saibamais} onClick={handleSaibaMaisClick}>
+              <IoIosArrowDropdownCircle
+                className={styles.icon2}
+                aria-label={t("hero.learnMoreAriaLabel")}
+              />
+              <p className={styles.text}>{t("hero.learnMoreButton")}</p>
+            </button>
+          </div>
+
+          <div className={styles.socialContainer} data-aos="fade-up" data-aos-delay="200">
+            <div className={styles.socialTitle}>
+              <p>{t("hero.socialTitle")}</p>
+            </div>
+            <div className={styles.socials}>
+              {socialMediaLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialIcon}
+                  aria-label={`Visit our ${social.label} profile`}
+                  data-tooltip={social.tooltip}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

@@ -25,15 +25,16 @@
     "followSocialMedia": "Follow on Social Media",
     "social": {
       "instagram": "Instagram",
-      "pinterest": "Pinterest",
+      "tiktok": "Tiktok",
+      "facebook": "Facebook",
       "linkedin": "LinkedIn",
-      "twitter": "X (Twitter)",
       "threads": "Threads"
     }
   },
   "hero": {
     "title": "Everything your business needs is here!",
     "subtitle": "Design and technology that connect your vision to success.",
+    "socialTitle": "Socials:",
     "connectButton": "CONNECT TO THE FUTURE NOW!",
     "connectAriaLabel": "Connect to the future now",
     "learnMoreButton": "Learn More",

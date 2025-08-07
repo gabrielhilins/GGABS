@@ -25,15 +25,16 @@
     "followSocialMedia": "Acompanhe nas Redes Sociais",
     "social": {
       "instagram": "Instagram",
-      "pinterest": "Pinterest",
+      "tiktok": "Tiktok",
+      "Facebook": "Facebook",
       "linkedin": "LinkedIn",
-      "twitter": "X (Twitter)",
       "threads": "Threads"
     }
   },
   "hero": {
     "title": "O que faltava para seu negócio está aqui!",
     "subtitle": "Design e tecnologia que conectam sua visão ao sucesso.",
+    "socialTitle": "Redes Sociais:",
     "connectButton": "CONECTE-SE AO FUTURO AGORA!",
     "connectAriaLabel": "Conecte-se ao futuro agora",
     "learnMoreButton": "Saiba mais",

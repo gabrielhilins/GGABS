@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/img/Logo-ITSSL-Branco.png";
 import styles from "./Footer.module.scss";
 import { SiThreads } from "react-icons/si";
-import { FaInstagram, FaLinkedin, FaPinterest } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 function Footer() {
@@ -39,19 +38,19 @@ function Footer() {
               <FaInstagram className={styles.icon} />
             </a>
           </div>
-          <div className={styles.socialBox} data-tooltip={t("footer.social.pinterest")}>
-            <a href="https://www.pinterest.com/ggabstechdesign" target="_blank" rel="noopener noreferrer">
-              <FaPinterest className={styles.icon} />
+          <div className={styles.socialBox} data-tooltip={t("footer.social.tiktok")}>
+            <a href="https://tiktok.com/@ggabs.tech.design" target="_blank" rel="noopener noreferrer">
+              <FaTiktok className={styles.icon} />
+            </a>
+          </div>
+          <div className={styles.socialBox} data-tooltip={t("footer.social.facebook")}>
+            <a href="https://www.facebook.com/share/1AMxWY2jNe/" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className={styles.icon} />
             </a>
           </div>
           <div className={styles.socialBox} data-tooltip={t("footer.social.linkedin")}>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/company/ggabs-tech-design" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className={styles.icon} />
-            </a>
-          </div>
-          <div className={styles.socialBox} data-tooltip={t("footer.social.twitter")}>
-            <a href="https://x.com/ggabstechdesign" target="_blank" rel="noopener noreferrer">
-              <FaXTwitter className={styles.icon} />
             </a>
           </div>
           <div className={styles.socialBox} data-tooltip={t("footer.social.threads")}>

@@ -17,7 +17,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     padding-top: clamp(2rem, 5vw, 3.75rem);
     
     h1 {
-      font-size: clamp(1.5rem, 6vw, 4rem); // Ajustado para telas menores
+      font-size: clamp(1.5rem, 6vw, 4rem);
       background: $gradient-one;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -39,7 +39,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   }
 
   .hamburger-menu {
-    display: none; // Escondido por padrão (telas grandes)
+    display: none;
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -67,8 +67,86 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
+  .socialContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    z-index: 3;
+    position: relative;
+
+    .socialTitle {
+      p {
+        font-size: clamp(0.875rem, 2vw, 1.125rem);
+        color: white;
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(1rem, 2vw, 1.5rem);
+
+      .socialIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(2.5rem, 6vw, 3rem);
+        height: clamp(2.5rem, 6vw, 3rem);
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: transparent;
+        backdrop-filter: blur(5px);
+        color: white;
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+          transform: scale(1.1);
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        &[data-tooltip] {
+          &:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(#0a0a23, 0.9);
+            color: white;
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            white-space: nowrap;
+            z-index: 5;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+          }
+
+          &:hover::before {
+            content: "";
+            position: absolute;
+            top: calc(100% - 0.25rem);
+            left: 50%;
+            transform: translateX(-50%);
+            border: 0.5rem solid transparent;
+            border-bottom-color: rgba(#0a0a23, 0.9);
+            z-index: 5;
+          }
+        }
+      }
+    }
+  }
+
   .mobile-menu {
-    display: none; // Escondido por padrão
+    display: none;
     flex-direction: column;
     gap: 1.5rem;
     position: absolute;
@@ -137,18 +215,18 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     cursor: pointer;
     transition: 0.3s;
     white-space: nowrap;
-  
+
     .icon2 {
       width: clamp(1rem, 3vw, 1.75rem);
       height: clamp(1rem, 3vw, 1.75rem);
       transition: all 0.3s ease-in-out;
     }
-  
+
     .text {
       transition: all 0.5s ease-in-out;
       opacity: 1;
     }
-  
+
     &:hover {
       .text {
         transform: translateX(clamp(2rem, 8vw, 5rem));
@@ -160,26 +238,53 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     }
   }
 
-  // Media Queries
   @media screen and (max-width: 768px) {
     padding-top: clamp(3rem, 12vh, 6rem);
 
     .hamburger-menu {
-      display: block; // Mostra o hambúrguer em telas menores
+      display: block;
     }
 
     .desktop-buttons {
-      display: none; // Esconde os botões normais
+      display: none;
     }
 
     .mobile-menu.active {
-      display: flex; // Mostra o menu quando ativo
+      display: flex;
     }
 
     .act, .saibamais {
-      width: 80%; // Reduz a largura dos botões em telas menores
-      margin: 0 auto; // Centraliza os botões
-      justify-content: center; // Centraliza o conteúdo dos botões
+      width: 80%;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .socialContainer {
+      gap: clamp(0.5rem, 1vw, 0.75rem);
+      margin-top: clamp(1.5rem, 3vw, 2rem);
+
+      .socialTitle {
+        p {
+          font-size: clamp(0.75rem, 1.8vw, 1rem);
+        }
+      }
+
+      .socials {
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+
+        .socialIcon {
+          width: clamp(2rem, 5vw, 2.5rem);
+          height: clamp(2rem, 5vw, 2.5rem);
+          font-size: clamp(1rem, 2.5vw, 1.25rem);
+
+          &[data-tooltip] {
+            &:hover::after {
+              font-size: clamp(0.625rem, 1.2vw, 0.75rem);
+              padding: 0.4rem 0.8rem;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -202,8 +307,36 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
     }
 
     .act, .saibamais {
-      width: 90%; // Aumenta um pouco a largura para telas muito pequenas
-      padding: 0.75rem 1rem; // Ajusta o padding para telas muito pequenas
+      width: 90%;
+      padding: 0.75rem 1rem;
+    }
+
+    .socialContainer {
+      gap: clamp(0.5rem, 1vw, 0.75rem);
+      margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+
+      .socialTitle {
+        p {
+          font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+        }
+      }
+
+      .socials {
+        gap: clamp(0.75rem, 1vw, 1rem);
+
+        .socialIcon {
+          width: clamp(1.95rem, 4vw, 2.5rem);
+          height: clamp(1.95rem, 4vw, 2.5rem);
+          font-size: clamp(1rem, 2vw, 1.325rem);
+
+          &[data-tooltip] {
+            &:hover::after {
+              font-size: clamp(0.625rem, 1.2vw, 0.75rem);
+              padding: 0.4rem 0.8rem;
+            }
+          }
+        }
+      }
     }
   }
 }
