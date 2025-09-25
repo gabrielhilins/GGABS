@@ -2,9 +2,11 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PacotesCard.module.scss';
 import PacotesModal from './Modal'; // Importe o modal
+import { useTranslation } from 'react-i18next';
 
-function PacotesCard({ title, description, target, benefits, price, icon, observations, onCtaClick }) {
+function PacotesCard({ title, description, target, benefits, icon, observations, onCtaClick }) {
   const [showModal, setShowModal] = useState(false);
+  const {t} = useTranslation();
 
   return (
     <>
@@ -29,10 +31,6 @@ function PacotesCard({ title, description, target, benefits, price, icon, observ
           ))}
         </ul>
         <hr className={styles.divider} />
-        <div className={styles.priceWrapper}>
-          <span className={styles.priceLabel}>A partir de</span>
-          <div className={styles.price}>{price}</div>
-        </div>
         {observations && observations.length > 0 && (
           <div className={styles.observations}>
             <h4 className={styles.observationsTitle}>Observações</h4>
@@ -47,14 +45,14 @@ function PacotesCard({ title, description, target, benefits, price, icon, observ
           className={styles.ctaButton}
           onClick={onCtaClick}
         >
-          Adquira já o seu Pacote {title}
+          {t("pacotes.card.ctaButton", { title: title })}
         </button>
       </div>
 
       <PacotesModal 
         showModal={showModal} 
         setShowModal={setShowModal} 
-        pacote={{ title, description, benefits, price, observations }}
+        pacote={{ title, description, benefits, observations }}
       />
     </>
   );
@@ -65,7 +63,6 @@ PacotesCard.propTypes = {
   description: PropTypes.string,
   target: PropTypes.arrayOf(PropTypes.string),
   benefits: PropTypes.arrayOf(PropTypes.string).isRequired,
-  price: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
   observations: PropTypes.arrayOf(PropTypes.string),
   onCtaClick: PropTypes.func.isRequired,

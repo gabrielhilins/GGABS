@@ -236,7 +236,6 @@
     },
     "card": {
       "targetTitle": "Ideal para:",
-      "priceLabel": "A partir de",
       "observationsTitle": "Observações",
       "ctaButton": "Adquira já o seu Pacote {{title}}"
     },
@@ -266,12 +265,11 @@
           "Mesa Pronta - Plataforma para gerenciamento de pedidos e delivery",
           "Templates de Posts pro Instagram"
         ],
-        "price": "R$ 3.000,00",
         "icon": "FaUtensils",
         "observations": [
-          "Plano mensal",
-          "Valores podem variar conforme o porte do restaurante",
-          "Inclui suporte contínuo por 3 meses"
+          "Inclui 5 templates personalizados",
+          "Valores podem variar conforme o porte do restaurante e materiais que já estejam prontos previamente",
+          "Suporte contínuo por 3 meses"
         ]
       },
       {
@@ -290,15 +288,14 @@
         "benefits": [
           "Logotipo e Identidade Visual",
           "Cartões de Visita e Materiais de Papelaria",
-          "Portfólio web profissional",
-          "Pacote de Posts para Redes Sociais"
+          "Landing Page Profissional",
+          "Pacote de Templates de Posts para Redes Sociais"
         ],
-        "price": "R$ 2.000,00",
         "icon": "FaBriefcase",
         "observations": [
           "Indicado para profissionais autônomos de diversas áreas",
-          "SEO otimizado para aumentar a visibilidade online",
-          "Entrega em até 15 dias úteis"
+          "Acompanha 5 templates personalizados",
+          "Entrega em até 30 dias úteis"
         ]
       },
       {
@@ -308,14 +305,13 @@
           "Criação de Marca Pessoal",
           "Templates para Posts e Stories",
           "Site personalizado",
-          "Template Notion para Estratégia de conteúdo"
+          "Rebranding de perfil do instagram"
         ],
-        "price": "R$ 1.000,00",
         "icon": "FaInstagram",
         "observations": [
-          "Inclui 10 templates personalizados",
-          "Estratégia válida por 30 dias",
-          "Suporte para ajustes"
+          "Entrega em até 15 dias uteis",
+          "Inclui 5 templates personalizados",
+          "Ajuste de Conteúdo: O serviço foca na estratégia visual e na otimização de elementos como a foto de perfil, a bio e os destaques."
         ]
       }
     ]

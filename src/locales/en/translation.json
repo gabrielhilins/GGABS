@@ -229,14 +229,13 @@
     ]
   },
   "pacotes": {
-    "title": "My Service Packages",
+    "title": "Our Service Packages",
     "subtitle": {
       "mainText": "Choose the ideal package for your project and see how I can help bring your idea to life.",
       "ctaText": "<strong>All packages are flexible and can be tailored to your needs.</strong>"
     },
     "card": {
       "targetTitle": "Ideal for:",
-      "priceLabel": "Starting from",
       "observationsTitle": "Observations",
       "ctaButton": "Get your {{title}} Package now"
     },
@@ -259,19 +258,18 @@
     "packages": [
       {
         "title": "Restaurant",
-        "description": "Ideal for restaurants looking to attract more customers and strengthen their online presence.",
+        "description": "Ideal for restaurants that want to attract more customers and strengthen their online presence.",
         "benefits": [
           "Unique Visual Identity (Logo, Colors, and Typography)",
           "Menu Design (Physical and Digital)",
           "Mesa Pronta - Platform for order and delivery management",
           "Instagram Post Templates"
         ],
-        "price": "R$ 3,000.00",
         "icon": "FaUtensils",
         "observations": [
-          "Monthly plan",
-          "Prices may vary depending on the size of the restaurant",
-          "Includes continuous support for 3 months"
+          "Includes 5 custom templates",
+          "Prices may vary depending on the size of the restaurant and pre-existing materials",
+          "Continuous support for 3 months"
         ]
       },
       {
@@ -289,33 +287,31 @@
         ],
         "benefits": [
           "Logo and Visual Identity",
-          "Business Cards and Stationery",
-          "Professional Web Portfolio",
-          "Social Media Post Package"
+          "Business Cards and Stationery Materials",
+          "Professional Landing Page",
+          "Social Media Post Template Pack"
         ],
-        "price": "R$ 2,000.00",
         "icon": "FaBriefcase",
         "observations": [
-          "Recommended for self-employed professionals in various fields",
-          "SEO optimized to increase online visibility",
-          "Delivery within 15 business days"
+          "Suitable for freelancers in various fields",
+          "Comes with 5 custom templates",
+          "Delivery within 30 business days"
         ]
       },
       {
-        "title": "Influencers and Content Creators",
+        "title": "Influencers & Content Creators",
         "description": "Perfect for creators who want to stand out with a unique visual identity.",
         "benefits": [
           "Personal Brand Creation",
-          "Templates for Posts and Stories",
-          "Customized Website",
-          "Notion Template for Content Strategy"
+          "Post and Story Templates",
+          "Custom Website",
+          "Instagram Profile Rebranding"
         ],
-        "price": "R$ 1,000.00",
         "icon": "FaInstagram",
         "observations": [
-          "Includes 10 personalized templates",
-          "Strategy valid for 30 days",
-          "Support for adjustments"
+          "Delivery within 15 business days",
+          "Includes 5 custom templates",
+          "Content Adjustment: The service focuses on the visual strategy and optimization of elements like the profile picture, bio, and highlights."
         ]
       }
     ]
@@ -887,10 +883,7 @@
           "id": "digital",
           "label": "Do you want a digital version with QR Code?",
           "type": "select",
-          "options": [
-            "Yes, I want a digital menu",
-            "No, only printed version"
-          ],
+          "options": ["Yes, I want a digital menu", "No, only printed version"],
           "required": true,
           "placeholder": "select_option"
         },
@@ -1010,12 +1003,7 @@
           "id": "notificacoes",
           "label": "Do you want automatic reminders for clients?",
           "type": "select",
-          "options": [
-            "Yes, via email",
-            "Yes, via SMS",
-            "Yes, both",
-            "No"
-          ],
+          "options": ["Yes, via email", "Yes, via SMS", "Yes, both", "No"],
           "required": false,
           "placeholder": "select_option"
         }

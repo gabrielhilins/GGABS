@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./layouts/Footer/Footer";
 import Header from "./layouts/Header/Header";
 import Depoimentos from "./sections/Depoimentos/Depoimentos";
-import Diferenciais from "./sections/Diferenciais/Diferenciais";
+// import Diferenciais from "./sections/Diferenciais/Diferenciais";
 import Faq from "./sections/Faq/Faq";
 import Hero from "./sections/Hero/Hero";
 import Historia from "./sections/historia/Historia";
@@ -67,14 +67,16 @@ function App() {
               <div id="hero">
                 <Hero />
               </div>
+              <div id="historia">
+                <Historia />
+              </div>
+              {/*
               <div id="diferenciais">
                 <Diferenciais />
               </div>
+              */}
               <div id="services">
                 <Serviços />
-              </div>
-              <div id="packages">
-                <Pacotes />
               </div>
               <div id="portfolio">
                 <Portifolio />
@@ -82,14 +84,14 @@ function App() {
               <div id="feedback">
                 <Depoimentos />
               </div>
-              <div id="about">
-                <Sobre />
-              </div>
               <div id="faq">
                 <Faq />
               </div>
-              <div id="historia">
-                <Historia />
+              <div id="packages">
+                <Pacotes />
+              </div>
+              <div id="about">
+                <Sobre />
               </div>
               <div id="cta">
                 <CTA />

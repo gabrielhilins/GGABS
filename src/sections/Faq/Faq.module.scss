@@ -8,7 +8,7 @@ $disabled-color: #666;
 @import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 
 .faq-container {
-  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   color: $text-color;
   padding: clamp(20px, 5vw, 40px);
   text-align: center;

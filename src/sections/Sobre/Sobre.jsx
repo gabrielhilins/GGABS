@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styles from "./Sobre.module.scss";
 import Logo from "../../assets/img/Logo-T-Branco-FundoAzul.png";
-import profilePhoto from "../../assets/img/FotoGabriel.png";
+import profilePhoto from "../../assets/img/DSC_5656.png";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import AOS from "aos";
@@ -76,20 +76,7 @@ function Sobre() {
             components={{ strong: <strong /> }}
           />
         </p>
-        <blockquote className={styles.quote}>
-          <p>{t("sobre.quote")}</p>
-          <footer className={styles.quoteFooter}>
-            <a
-              href="https://youtu.be/tt4DFUmoM2o?si=OyHM8ef0hZvxoixK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.videoLink}
-            >
-              {t("sobre.videoLink")}
-            </a>
-            — {t("sobre.quoteAuthor")}
-          </footer>
-        </blockquote>
+        
       </div>
     </div>
   );

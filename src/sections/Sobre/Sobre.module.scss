@@ -64,7 +64,6 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 }
 
 .profile-card {
-  
   border-radius: 20px;
   padding: clamp(20px, 5vw, 40px);
   max-width: 800px;
@@ -94,16 +93,17 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
 }
 
 .profile-photo {
-  width: clamp(80px, 20vw, 120px);
-  height: clamp(80px, 20vw, 120px);
+  width: clamp(5rem, 20vw, 7.5rem);
+  height: clamp(5rem, 20vw, 7.5rem);
+  object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #00DDEB;
+  border: 0.25rem solid #00DDEB; 
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
   position: absolute;
-  bottom: clamp(-40px, -10vw, -60px);
   left: 50%;
   transform: translateX(-50%);
+  bottom: clamp(-2.5rem, -10vw, -3.75rem); 
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .name {
