@@ -15,6 +15,7 @@ Landing Page da minha agência freelance de tecnologia e design: a GGABS Tech & 
 
 Descreva a organização das pastas e arquivos principais.
 
+```
 /
 ├── .env.example
 ├── README.md
@@ -31,3 +32,4 @@ Descreva a organização das pastas e arquivos principais.
 │   ├── /sections/       - Seções da landing page
 │   ├── /styles/         - Arquivos de estilização
 │   └── App.jsx           - Componente principal da aplicação.
+```
