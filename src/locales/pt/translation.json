@@ -460,6 +460,13 @@
         "imageAlt": "Imagem de Maria Clara",
         "linkText": "Conheça o {{user}}",
         "link": "https://portfolio-maria-clara.vercel.app/"
+      },
+      {
+        "user": "Jhon Silva - Criador de Plataformas,",
+        "text": "Feedback de jhon",
+        "imageAlt": "Imagem de Jhon Silva",
+        "linkText": "Conheça o {{user}}",
+        "link": "https://portifolio-jhon-sites.vercel.app/"
       }
     ]
   },

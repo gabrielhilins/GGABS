@@ -9,10 +9,11 @@ import { useTranslation } from "react-i18next";
 
 import PedroCezar from '../../assets/img/Pedro Cezar.png';
 import MariaClara from '../../assets/img/MariaClara.png';
+import JhonSilva from '../../assets/img/perfil-jhon.jpg'
 
 function Depoimentos() {
   const { t } = useTranslation(); // Hook para acessar traduções
-  const imagens = [PedroCezar, MariaClara]; // Array de imagens
+  const imagens = [PedroCezar, MariaClara, JhonSilva]; // Array de imagens
 
   const depoimentos = t("depoimentos.testimonials", { returnObjects: true }).map(
     (depoimento, index) => ({

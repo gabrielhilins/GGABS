@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import styles from "./Portifolio.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,11 +14,14 @@ import MariaClaraPreview from "../../assets/img/MariaClaraPreview.png";
 import MariaClara from "../../assets/img/Maria Clara Logo.png";
 import PedrocezarPreview from "../../assets/img/PreviewPedrocezar.png";
 import LogoPedroCezar from "../../assets/img/LogoPedroCezar.png";
+import JhonSilva from '../../assets/img/WORDMARK PRINCIPAL JHON SILVA.png';
+import LogoJhonSilva from '../../assets/img/JS GRADIENTE CLARO.png';
 
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa"; // Ícone do Instagram
 
 function Portifolio() {
   const { t } = useTranslation();
@@ -29,24 +32,26 @@ function Portifolio() {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  // Mapeamento de imagens por ID fixo
+  // Mapeamento de imagens
   const images = {
     real: { logo: REAL, preview: REALPreview },
     ref: { logo: REF, preview: REFPreview },
     tarefex: { logo: Tarefex, preview: TarefexPreview },
     pedro_cezar: { logo: LogoPedroCezar, preview: PedrocezarPreview },
     maria_clara: { logo: MariaClara, preview: MariaClaraPreview },
+    jhon_silva: { logo: LogoJhonSilva, preview: JhonSilva },
   };
 
-  // Criações GGABS com traduções
+  // === PROJETOS PRÓPRIOS ===
   const ownProducts = [
     {
       id: "real",
       title: t("portifolio.ownProducts.real.title", "REAL"),
       text: t("portifolio.ownProducts.real.text", "- O REAL é um {strong}simulador de orçamentos inteligente{/strong} que transforma seus serviços em propostas instantâneas, claras e profissionais, com envio direto pelo WhatsApp para agilizar o fechamento de vendas."),
       link: "https://real-iota-ivory.vercel.app/",
-      imageAlt: t("portifolio.ownProducts.real.imageAlt", "Preview do REAL - Simulador de Orçamentos"),
-      logoAlt: t("portifolio.ownProducts.real.logoAlt", "Logo do REAL - Simulador de Orçamentos"),
+      postInstagram: "https://instagram.com/p/exemplo_real", // Exemplo
+      imageAlt: t("portifolio.ownProducts.real.imageAlt", "Preview do REAL"),
+      logoAlt: t("portifolio.ownProducts.real.logoAlt", "Logo do REAL"),
       cor1: "#00C49A",
       cor2: "#FFFFFF",
       sector: "tech",
@@ -54,12 +59,14 @@ function Portifolio() {
       gender: t("portifolio.ownProducts.real.gender", "masculino"),
       status: "finalizado",
       linkText: t("portifolio.ownProducts.real.linkText", "Conheça o {{title}}"),
+      date: "2025-03-15",
     },
     {
       id: "ref",
       title: t("portifolio.ownProducts.ref.title", "REF"),
-      text: t("portifolio.ownProducts.ref.text", "- O REF é um {strong}gerador de referências no formato ABNT{/strong} moderno e intuitivo. Criado para facilitar a vida de estudantes, professores e pesquisadores na criação de referências bibliográficas precisas e padronizadas."),
+      text: t("portifolio.ownProducts.ref.text", "- O REF é um {strong}gerador de referências no formato ABNT{/strong} moderno e intuitivo."),
       link: "https://ref-gerador-abnt.vercel.app/",
+      postInstagram: "https://instagram.com/p/exemplo_ref",
       imageAlt: t("portifolio.ownProducts.ref.imageAlt", "Preview do REF"),
       logoAlt: t("portifolio.ownProducts.ref.logoAlt", "Logo do REF"),
       cor1: "#1D4ED8",
@@ -69,37 +76,39 @@ function Portifolio() {
       gender: t("portifolio.ownProducts.ref.gender", "masculino"),
       status: "finalizado",
       linkText: t("portifolio.ownProducts.ref.linkText", "Conheça o {{title}}"),
+      date: "2025-02-20",
     },
-    /*
-    {
-      id: "tarefex",
-      title: t("portifolio.ownProducts.tarefex.title", "Tarefex"),
-      text: t("portifolio.ownProducts.tarefex.text", "- O Tarefex é um {strong}aplicativo de gerenciamento de tarefas{/strong} perfeito para organizar suas tarefas diárias de forma simples, completamente intuitiva e organizada!"),
-      link: "#",
-      imageAlt: t("portifolio.ownProducts.tarefex.imageAlt", "Preview do Tarefex"),
-      logoAlt: t("portifolio.ownProducts.tarefex.logoAlt", "Logo do Tarefex"),
-      cor1: "#006FFF",
-      cor2: "#FFFFFF",
-      sector: "tech",
-      type: "app",
-      gender: t("portifolio.ownProducts.tarefex.gender", "masculino"),
-      status: "em concepção",
-      linkText: t("portifolio.ownProducts.tarefex.linkText", "Conheça o {{title}}"),
-    },
-    */
-  ].map((project) => ({
+  ].map(project => ({
     ...project,
     logo: images[project.id].logo,
     image: images[project.id].preview,
   }));
 
-  // Projetos para Clientes com traduções
+  // === PROJETOS DE CLIENTES (com postInstagram) ===
   const clientProjects = [
+    {
+      id: "jhon_silva",
+      title: t("portifolio.clientProjects.jhon_silva.title", "Jhon Silva"),
+      text: t("portifolio.clientProjects.Jhon_Silva.text", "- {strong}Identidade Visual{/strong} para o criador de plataformas Jhon Silva"),
+      link: "https://portifolio-jhon-sites.vercel.app/",
+      postInstagram: "https://www.instagram.com/p/DQM4bR6gbTe/?img_index=1", 
+      imageAlt: t("portifolio.clientProjects.jhon_silva.imageAlt", "Preview do Jhon Silva"),
+      logoAlt: t("portifolio.clientProjects.jhon_silva.logoAlt", "Logo do Jhon Silva"),
+      cor1: "#101719",
+      cor2: "#00F6FF",
+      sector: "design",
+      type: "identidade-visual",
+      gender: t("portifolio.clientProjects.jhon_silva.gender", "masculino"),
+      status: "finalizado",
+      linkText: t("portifolio.clientProjects.jhon_silva.linkText", "Conheça a {{title}}"),
+      date: "2025-04-10",
+    },
     {
       id: "pedro_cezar",
       title: t("portifolio.clientProjects.pedro_cezar.title", "Pedro Cezar Sites"),
       text: t("portifolio.clientProjects.pedro_cezar.text", "- {strong}Criação de Logo{/strong} para o Pedro Cezar Sites"),
       link: "https://pedrocezar-orcamento.vercel.app/",
+      postInstagram: "https://www.instagram.com/p/DJcuSe2SK9r/?img_index=1",
       imageAlt: t("portifolio.clientProjects.pedro_cezar.imageAlt", "Preview do Pedro Cezar Sites"),
       logoAlt: t("portifolio.clientProjects.pedro_cezar.logoAlt", "Logo do Pedro Cezar Sites"),
       cor1: "#040122",
@@ -109,6 +118,7 @@ function Portifolio() {
       gender: t("portifolio.clientProjects.pedro_cezar.gender", "masculino"),
       status: "finalizado",
       linkText: t("portifolio.clientProjects.pedro_cezar.linkText", "Conheça o {{title}}"),
+      date: "2025-03-25",
     },
     {
       id: "maria_clara",
@@ -124,19 +134,34 @@ function Portifolio() {
       gender: t("portifolio.clientProjects.maria_clara.gender", "feminino"),
       status: "em desenvolvimento",
       linkText: t("portifolio.clientProjects.maria_clara.linkText", "Conheça a {{title}}"),
+      date: "2025-04-20",
     },
-  ].map((project) => ({
+  ].map(project => ({
     ...project,
     logo: images[project.id].logo,
     image: images[project.id].preview,
   }));
 
-  const projects = selectedSection === "clients" ? clientProjects : ownProducts;
+  // === ORDENAÇÃO ===
+  const sortProjects = (projects) => {
+    return [...projects].sort((a, b) => {
+      const statusOrder = { finalizado: 0, "em desenvolvimento": 1, "em concepção": 2 };
+      const statusDiff = statusOrder[a.status] - statusOrder[b.status];
+      if (statusDiff !== 0) return statusDiff;
+      return new Date(b.date) - new Date(a.date);
+    });
+  };
 
-  const filteredProjects =
-    selectedCategory === "all"
+  const projects = useMemo(() => {
+    const base = selectedSection === "clients" ? clientProjects : ownProducts;
+    return sortProjects(base);
+  }, [selectedSection]);
+
+  const filteredProjects = useMemo(() => {
+    return selectedCategory === "all"
       ? projects
-      : projects.filter((project) => project.sector === selectedCategory);
+      : projects.filter(p => p.sector === selectedCategory);
+  }, [projects, selectedCategory]);
 
   return (
     <div className={styles["portifolio-container"]}>
@@ -147,17 +172,15 @@ function Portifolio() {
         <p>{t("portifolio.subtitle", "Veja o Meu trabalho: O que criei e já fiz para meus clientes!")}</p>
       </div>
 
-      {/* Navegação entre seções */}
+      {/* Navegação de Seção */}
       <div className={styles["portifolio-section-nav"]} data-aos="fade-up">
         {[
           { id: "clients", label: t("portifolio.sections.clients", "Feitos para Clientes") },
           { id: "own-products", label: t("portifolio.sections.own-products", "Criações GGABS") },
-        ].map((section) => (
+        ].map(section => (
           <label
             key={section.id}
-            className={`${styles["nav-button"]} ${
-              selectedSection === section.id ? styles.active : ""
-            }`}
+            className={`${styles["nav-button"]} ${selectedSection === section.id ? styles.active : ""}`}
           >
             <input
               type="radio"
@@ -174,18 +197,16 @@ function Portifolio() {
         ))}
       </div>
 
-      {/* Navegação de categorias */}
+      {/* Navegação de Categoria */}
       <div className={styles["portifolio-nav"]} data-aos="fade-up">
         {[
           { id: "all", label: t("portifolio.categories.all", "Tudo") },
           { id: "tech", label: t("portifolio.categories.tech", "Tecnologia") },
           { id: "design", label: t("portifolio.categories.design", "Design") },
-        ].map((category) => (
+        ].map(category => (
           <label
             key={category.id}
-            className={`${styles["nav-button"]} ${
-              selectedCategory === category.id ? styles.active : ""
-            }`}
+            className={`${styles["nav-button"]} ${selectedCategory === category.id ? styles.active : ""}`}
           >
             <input
               type="radio"
@@ -199,21 +220,20 @@ function Portifolio() {
         ))}
       </div>
 
-      {/* Grid de projetos */}
+      {/* Grid de Projetos */}
       <div className={styles["portifolio-grid"]} data-aos="zoom-in">
         {filteredProjects.map((project, index) => (
           <div
-            key={index}
+            key={project.id}
             className={styles["portifolio-card"]}
             style={{ background: project.cor1 }}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
           >
             <div className={styles["card-image-wrapper"]}>
-              <img
-                className={styles["card-image"]}
-                src={project.image}
-                alt={project.imageAlt}
-              />
+              <img className={styles["card-image"]} src={project.image} alt={project.imageAlt} />
             </div>
+
             <div className={styles["card-content"]}>
               <img
                 src={project.logo}
@@ -221,18 +241,16 @@ function Portifolio() {
                 className={styles["card-logo"]}
                 style={
                   project.id === "pedro_cezar"
-                    ? {
-                        maxWidth: "clamp(200px, 50vw, 450px)",
-                        maxHeight: "clamp(200px, 50vw, 450px)",
-                      }
+                    ? { maxWidth: "clamp(200px, 50vw, 450px)", maxHeight: "clamp(200px, 50vw, 450px)" }
                     : {}
                 }
               />
+
               <p className={styles["card-text"]} style={{ color: project.cor2 }}>
                 {project.text.split(/(\{strong\}.*?\{\/strong\})/g).map((part, idx) => {
                   if (part.startsWith("{strong}") && part.endsWith("{/strong}")) {
                     return (
-                      <strong key={idx}>
+                      <strong key={idx} style={{ color: project.cor2 }}>
                         {part.replace("{strong}", "").replace("{/strong}", "")}
                       </strong>
                     );
@@ -240,13 +258,12 @@ function Portifolio() {
                   return <span key={idx}>{part}</span>;
                 })}
               </p>
+
+              {/* Status */}
               <div className={styles["project-status"]}>
                 {project.status === "finalizado" && (
                   <>
-                    <FaCheckCircle
-                      className={styles["status-icon"]}
-                      style={{ color: project.cor2 }}
-                    />
+                    <FaCheckCircle className={styles["status-icon"]} style={{ color: project.cor2 }} />
                     <span style={{ color: project.cor2 }}>
                       {t("portifolio.status.finalizado", "Finalizado")}
                     </span>
@@ -254,10 +271,7 @@ function Portifolio() {
                 )}
                 {project.status === "em desenvolvimento" && (
                   <>
-                    <FaTools
-                      className={styles["status-icon"]}
-                      style={{ color: project.cor2 }}
-                    />
+                    <FaTools className={styles["status-icon"]} style={{ color: project.cor2 }} />
                     <span style={{ color: project.cor2 }}>
                       {t("portifolio.status.em desenvolvimento", "Em Desenvolvimento")}
                     </span>
@@ -265,16 +279,15 @@ function Portifolio() {
                 )}
                 {project.status === "em concepção" && (
                   <>
-                    <FaLightbulb
-                      className={styles["status-icon"]}
-                      style={{ color: project.cor2 }}
-                    />
+                    <FaLightbulb className={styles["status-icon"]} style={{ color: project.cor2 }} />
                     <span style={{ color: project.cor2 }}>
                       {t("portifolio.status.em concepção", "Em Concepção")}
                     </span>
                   </>
                 )}
               </div>
+
+              {/* Botões */}
               <div className={styles.links}>
                 {project.status !== "em concepção" && (
                   <a
@@ -286,6 +299,20 @@ function Portifolio() {
                   >
                     <FaSquareArrowUpRight className={styles.icon} />
                     {project.linkText.replace("{{title}}", project.title)}
+                  </a>
+                )}
+
+                {project.postInstagram && (
+                  <a
+                    href={project.postInstagram}
+                    className={styles["instagram-button"]}
+                    style={{ background: project.cor2, color: project.cor1 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Veja no Instagram"
+                  >
+                    <FaInstagram className={styles.icon} />
+                    Veja no Instagram
                   </a>
                 )}
               </div>
