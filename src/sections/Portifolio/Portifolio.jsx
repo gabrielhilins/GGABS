@@ -84,7 +84,6 @@ function Portifolio() {
     image: images[project.id].preview,
   }));
 
-  // === PROJETOS DE CLIENTES (com postInstagram) ===
   const clientProjects = [
     {
       id: "jhon_silva",
@@ -309,10 +308,9 @@ function Portifolio() {
                     style={{ background: project.cor2, color: project.cor1 }}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="Veja no Instagram"
                   >
                     <FaInstagram className={styles.icon} />
-                    Veja no Instagram
+                    {t("portifolio.seeOnInstagram")}
                   </a>
                 )}
               </div>
