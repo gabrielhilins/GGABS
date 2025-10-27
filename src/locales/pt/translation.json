@@ -460,6 +460,13 @@
         "imageAlt": "Imagem de Maria Clara",
         "linkText": "Conheça o {{user}}",
         "link": "https://portfolio-maria-clara.vercel.app/"
+      },
+      {
+        "user": "Jhon Silva - Criador de Plataformas,",
+        "text": "A sua logo foi a que de fato me impressionou! Fiquei extremamente satisfeito. O atendimento foi muito atencioso, entendendo perfeitamente a proposta da minha marca e ofertando um serviço altamente personalizado. Recomendo pela qualidade, criatividade e compromisso.",
+        "imageAlt": "Imagem de Jhon Silva",
+        "linkText": "Conheça o {{user}}",
+        "link": "https://portifolio-jhon-sites.vercel.app/"
       }
     ]
   },
@@ -472,6 +479,7 @@
   "portifolio": {
     "title": "Portfólio",
     "subtitle": "Veja o Meu trabalho: O que criei e já fiz para meus clientes!",
+    "seeOnInstagram": "Veja no Instagram",
     "sections": {
       "clients": "Feitos para Clientes",
       "own-products": "Criações GGABS"
@@ -528,6 +536,15 @@
         "logoAlt": "Logo do Maria Clara Arquitetura",
         "gender": "feminino",
         "linkText": "Conheça a {{title}}"
+      },
+      "jhon_silva": 
+      {
+        "title": "Jhon Silva",
+        "text": "{strong}Identidade Visual{/strong} para o criador de plataformas Jhon Silva",
+        "imageAlt": "Preview do Jhon Silva",
+        "logoAlt": "Logo do Jhon Silva",
+        "gender": "masculino",
+        "linkText": "Conheça o {{title}}"
       }
     }
   },

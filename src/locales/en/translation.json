@@ -460,6 +460,13 @@
         "imageAlt": "Image of Maria Clara",
         "linkText": "Meet {{user}}",
         "link": "https://portfolio-maria-clara.vercel.app/"
+      },
+      {
+        "user": "Jhon Silva - Platforms Creator,",
+        "text": "Your logo truly impressed me! I was extremely satisfied. The service was very attentive, perfectly understanding my brand's proposal and offering a highly personalized service. I recommend them for their quality, creativity, and commitment.",
+        "imageAlt": "Image of Jhon Silva",
+        "linkText": "Meet {{user}}",
+        "link": "https://portifolio-jhon-sites.vercel.app/"
       }
     ]
   },
@@ -472,6 +479,7 @@
   "portifolio": {
     "title": "Portfolio",
     "subtitle": "See my work: What I created and have done for my clients!",
+    "seeOnInstagram": "See on Instagram",
     "sections": {
       "clients": "Made for Clients",
       "own-products": "GGABS Creations"
@@ -526,6 +534,15 @@
         "text": "- {strong}Professional Package (Visual Identity + Portfolio){/strong} for Architecture Student Maria Clara",
         "imageAlt": "Preview of Maria Clara Architecture",
         "logoAlt": "Logo of Maria Clara Architecture",
+        "gender": "neutral",
+        "linkText": "Discover {{title}}"
+      },
+      "jhon_silva": 
+      {
+        "title": "Jhon Silva",
+        "text": "{strong}Visual identity{/strong} for Jhon Silva, a creator of digital platforms",
+        "imageAlt": "Preview of Jhon Silva",
+        "logoAlt": "Logo of Jhon Silva",
         "gender": "neutral",
         "linkText": "Discover {{title}}"
       }
