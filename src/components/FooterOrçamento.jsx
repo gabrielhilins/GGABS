@@ -1,4 +1,4 @@
-import Logo from "../assets/img/Logo-ITSSL-Branco.png";
+import Logo from "../assets/img/Wordmark Branco.png";
 import styles from "./FooterOrçamento.module.scss";
 import { SiThreads } from "react-icons/si";
 import { FaInstagram, FaLinkedin, FaPinterest } from "react-icons/fa";

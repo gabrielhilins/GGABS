@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../../assets/img/Logo-ITSSL-Branco.png";
 import styles from "./Footer.module.scss";
 import { SiThreads } from "react-icons/si";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
@@ -20,12 +19,6 @@ function Footer() {
           <Link to="/politica-de-privacidade">{t("footer.privacyPolicy")}</Link>
           <Link to="/termos-de-uso">{t("footer.termsOfUse")}</Link>
         </div>
-      </div>
-
-      <div className={styles.verticalLine}></div>
-
-      <div className={styles.logo}>
-        <img src={Logo} alt={t("footer.logoAlt")} />
       </div>
 
       <div className={styles.verticalLine}></div>

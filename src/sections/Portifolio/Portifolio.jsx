@@ -16,6 +16,8 @@ import PedrocezarPreview from "../../assets/img/PreviewPedrocezar.png";
 import LogoPedroCezar from "../../assets/img/LogoPedroCezar.png";
 import JhonSilva from '../../assets/img/WORDMARK PRINCIPAL JHON SILVA.png';
 import LogoJhonSilva from '../../assets/img/JS GRADIENTE CLARO.png';
+import LogoPemun from '../../assets/img/LOGO PEMUN BRANCA.png';
+import PemunPreview from '../../assets/img/Pemun Preview.png'
 
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
@@ -40,6 +42,7 @@ function Portifolio() {
     pedro_cezar: { logo: LogoPedroCezar, preview: PedrocezarPreview },
     maria_clara: { logo: MariaClara, preview: MariaClaraPreview },
     jhon_silva: { logo: LogoJhonSilva, preview: JhonSilva },
+    pemun: { logo: LogoPemun, preview: PemunPreview },
   };
 
   // === PROJETOS PRÓPRIOS ===
@@ -135,6 +138,22 @@ function Portifolio() {
       linkText: t("portifolio.clientProjects.maria_clara.linkText", "Conheça a {{title}}"),
       date: "2025-04-20",
     },
+    {
+      id: "pemun",
+      title: t("portifolio.clientProjects.pemun.title", "Pernambuco Model United Nations"),
+      text: t("portifolio.clientProjects.pemun.text", "- {strong}Site institucional{/strong} para a Pernambuco Model United Nations"),
+      link: "https://www.instagram.com/pernambucomun/",
+      imageAlt: t("portifolio.clientProjects.maria_clara.imageAlt", "Preview da PEMUN"),
+      logoAlt: t("portifolio.clientProjects.maria_clara.logoAlt", "Logo da PEMUN"),
+      cor1: "#3155A4",
+      cor2: "#FFFFFF",
+      sector: "tech",
+      type: "site-institucional",
+      gender: t("portifolio.clientProjects.pemun.gender", "feminino"),
+      status: "em desenvolvimento",
+      linkText: t("portifolio.clientProjects.pemun.linkText", "Conheça a {{title}}"),
+      date: "2025-08-01",
+    },
   ].map(project => ({
     ...project,
     logo: images[project.id].logo,
@@ -168,7 +187,7 @@ function Portifolio() {
         <h1>{t("portifolio.title", "Portfólio")}</h1>
       </div>
       <div className={styles.subtitle} data-aos="fade-up">
-        <p>{t("portifolio.subtitle", "Veja o Meu trabalho: O que criei e já fiz para meus clientes!")}</p>
+        <p>{t("portifolio.subtitle", "Veja nosso trabalho: O que criamos e já fizemoz para nossos clientes!")}</p>
       </div>
 
       {/* Navegação de Seção */}

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
-import Logo from "../../assets/img/Logo-TS-Branco.png";
+import Logo from "../../assets/img/Wordmark Branco.png";
 import StarsBackground from "../../components/StarsBackground";
-import ChangeLanguage from "../../components/ChangeLanguage";
 import styles from "./Header.module.scss";
 
 function Header() {
@@ -20,10 +19,8 @@ function Header() {
 
   const navItems = [
     "services",
-    "packages",
     "portfolio",
     "feedback",
-    "about",
     "faq",
   ];
 
@@ -59,17 +56,11 @@ function Header() {
               {t(`header.nav.${section}`)}
             </a>
           ))}
-          <div className={styles.languageWrapper}>
-            <ChangeLanguage />
-          </div>
+
         </nav>
       </div>
-
-      {/* Sidebar para telas menores */}
       <nav className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ""}`}>
-        <div className={styles.sidebarLanguageWrapper}>
-          <ChangeLanguage />
-        </div>
+
         <div className={styles.sidebarNav}>
           {navItems.map((section, index) => (
             <div key={section} className={styles.sidebarItem}>

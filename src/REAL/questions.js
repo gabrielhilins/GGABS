@@ -24,26 +24,6 @@ export const questionFlows = {
         placeholder: "select_option"
       },
     ],
-    gestaoEmpresarial: [
-      {
-        id: "tamanho_empresa",
-        label: "Quantos funcionários sua empresa tem?",
-        type: "select",
-        options: ["1-5", "6-15", "16-50", "51+"],
-        required: true,
-        placeholder: "select_option"
-      },
-    ],
-    gestaoPedidos: [
-      {
-        id: "modelo_negocio",
-        label: "Qual seu modelo principal de vendas?",
-        type: "select",
-        options: ["Delivery", "Balcão", "Mesa", "Misto", "Outro"],
-        required: true,
-        placeholder: "select_option"
-      },
-    ],
     gestaoAgendamentos: [
       {
         id: "tipo_agendamento",
@@ -188,49 +168,6 @@ export const questionFlows = {
         options: ["Mercado Pago", "PagSeguro", "Outro gateway", "Ainda não sei"],
         required: false,
         placeholder: "select_option"
-      },
-    ],
-    gestaoEmpresarial: [
-      {
-        id: "modulos",
-        label: "Quais áreas precisam de gestão?",
-        type: "text",
-        required: true,
-        placeholder: "ex_finance_inventory_hr"
-      },
-      {
-        id: "mobilidade",
-        label: "Precisa de acesso mobile?",
-        type: "select",
-        options: ["Sim, essencial", "Desejável", "Não necessário"],
-        required: true,
-        placeholder: "select_option"
-      },
-      {
-        id: "integracao_existente",
-        label: "Precisa integrar com outros sistemas?",
-        type: "select",
-        options: ["Sim", "Não", "Não sei"],
-        required: false,
-        placeholder: "select_option"
-      },
-    ],
-    gestaoPedidos: [
-      {
-        id: "identidade_visual",
-        label: "Você já possui uma identidade visual do projeto (logo, cores, tipografia etc)?",
-        type: "select",
-        options: ["Sim, completa", "Parcial", "Não, preciso criar"],
-        required: true,
-        placeholder: "select_option"
-      },
-      {
-        id: "volume",
-        label: "Quantos pedidos por dia, em média?",
-        type: "number",
-        min: 1,
-        required: true,
-        placeholder: "enter_number"
       },
     ],
     gestaoAgendamentos: [
