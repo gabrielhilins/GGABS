@@ -197,22 +197,13 @@
     "services": [
       {
         "icon": "FaCode",
-        "ariaLabel": "Ícone de Desenvolvimento Web",
-        "title": "Desenvolvimento Web",
+        "ariaLabel": "Ícone de Tech",
+        "title": "Tech",
         "exemplos": [
           "<strong>E-commerce:</strong> lojas online com integração de pagamentos",
           "<strong>Landing Pages:</strong> páginas de conversão para capturar leads",
           "<strong>Portfólios:</strong> páginas personalizadas para exibir projetos, habilidades e conquistas de forma profissional",
-          "<strong>Sites Institucionais:</strong> presença digital para empresas"
-        ]
-      },
-      {
-        "icon": "FaLayerGroup",
-        "ariaLabel": "Ícone de Sistemas de Gestão",
-        "title": "Sistemas de Gestão",
-        "exemplos": [
-          "<strong>Gestão de Pedido:</strong> controle de pedidos e estoque para restaurantes",
-          "<strong>Gestão Empresarial (ERP):</strong> gestão de processos internos para empresas",
+          "<strong>Sites Institucionais:</strong> presença digital para empresas",
           "<strong>Gestão de Agendamentos:</strong> sistemas para reservas e marcações"
         ]
       },
@@ -375,33 +366,6 @@
         ]
       },
       {
-        "id": "management",
-        "label": "Sistemas de Gestão",
-        "title": "Perguntas sobre Sistemas de Gestão",
-        "questions": [
-          {
-            "question": "O que é um sistema de gestão?",
-            "answer": "É uma solução personalizada para organizar processos do seu negócio, como estoque, finanças ou tarefas, tudo em uma plataforma digital."
-          },
-          {
-            "question": "Quanto tempo leva para desenvolver um sistema de gestão?",
-            "answer": "Depende da complexidade, mas sistemas simples podem levar de 15 a 30 dias, enquanto os mais robustos podem levar até 60 dias."
-          },
-          {
-            "question": "Quais tecnologias são usadas nos sistemas de gestão?",
-            "answer": "Utilizo Java Spring Boot para o backend, PostgreSQL para o banco de dados e React para interfaces modernas e intuitivas."
-          },
-          {
-            "question": "Os sistemas de gestão são personalizados?",
-            "answer": "Sim! Cada sistema é desenvolvido sob medida para atender às necessidades específicas do seu negócio."
-          },
-          {
-            "question": "Você oferece suporte após a entrega do sistema?",
-            "answer": "Sim, ofereço suporte técnico para ajustes e manutenção após a entrega, conforme acordado no projeto."
-          }
-        ]
-      },
-      {
         "id": "ggabs",
         "label": "Criações GGABS",
         "title": "Perguntas sobre Criações GGABS",
@@ -413,10 +377,6 @@
           {
             "question": "O REAL realmente ajuda a fazer orçamentos?",
             "answer": "Sim! O REAL é um simulador de orçamentos que facilita a criação de propostas rápidas e profissionais, com design intuitivo e funcionalidade prática."
-          },
-          {
-            "question": "O Tarefex será gratuito ou pago?",
-            "answer": "O Tarefex é um aplicativo que irei lançar com uma versão gratuita básica. Versões premium com mais funcionalidades podem ser desenvolvidas sob demanda."
           },
           {
             "question": "Como o Mesa Pronta pode ajudar meu negócio?",
@@ -478,7 +438,7 @@
   },
   "portifolio": {
     "title": "Portfólio",
-    "subtitle": "Veja o Meu trabalho: O que criei e já fiz para meus clientes!",
+    "subtitle": "Veja nosso trabalho: O que criamos e já fizemoz para nossos clientes!",
     "seeOnInstagram": "Veja no Instagram",
     "sections": {
       "clients": "Feitos para Clientes",
@@ -534,6 +494,14 @@
         "text": "- {strong}Pacote Profissional (Identidade Visual + Portfólio){/strong} para a Estudante de Arquitetura Maria Clara",
         "imageAlt": "Preview do Maria Clara Arquitetura",
         "logoAlt": "Logo do Maria Clara Arquitetura",
+        "gender": "feminino",
+        "linkText": "Conheça a {{title}}"
+      },
+      "pemun": {
+        "title": "Pernambuco Model United Nations",
+        "text": "- {strong}Site institucional{/strong} para a Pernambuco Model United Nations",
+        "imageAlt": "Preview da PEMUN",
+        "logoAlt": "Logo da PEMUN",
         "gender": "feminino",
         "linkText": "Conheça a {{title}}"
       },
@@ -1208,10 +1176,8 @@
   "serviceNames": {
     "cardapio": "Cardápio Impresso ou Digital",
     "ecommerce": "E-commerce",
-    "gestaoEmpresarial": "Gestão Empresarial",
-    "gestaoPedidos": "Gestão de Pedidos",
     "gestaoAgendamentos": "Gestão de Agendamentos",
-    "design": "Design e Identidade Visual",
+    "design": "Identidade Visual",
     "landingPage": "Landing Page",
     "materialPromocional": "Material Promocional",
     "portfolio": "Portfólio",
@@ -1220,10 +1186,10 @@
   },
     "services": {
       "title": "Serviços",
-      "subtitle": "Aqui você encontra alguns dos serviços que ofereço",
+      "subtitle": "Aqui você encontra alguns dos serviços que oferecemos",
       "desenvolvimento_web": {
-        "title": "Desenvolvimento Web",
-        "ariaLabel": "Ícone de Desenvolvimento Web",
+        "title": "Tech",
+        "ariaLabel": "Ícone de Tech",
         "exemplos": [
           {
             "nome": "E-commerce",
@@ -1240,20 +1206,6 @@
           {
             "nome": "Sites Institucionais",
             "descricao": "presença digital para empresas"
-          }
-        ]
-      },
-      "sistemas_gestao": {
-        "title": "Sistemas de Gestão",
-        "ariaLabel": "Ícone de Sistemas de Gestão",
-        "exemplos": [
-          {
-            "nome": "Gestão de Pedido",
-            "descricao": "controle de pedidos e estoque para restaurantes"
-          },
-          {
-            "nome": "Gestão Empresarial (ERP)",
-            "descricao": "gestão de processos internos para empresas"
           },
           {
             "nome": "Gestão de Agendamentos",
@@ -1280,53 +1232,6 @@
         ]
       },
       "saiba_mais": "Saiba Mais"
-    },
-    "sistema_gestao": {
-      "sectionTitle": "Sistema de Gestão",
-      "slides": [
-        {
-          "title": "Sistema de Gestão de Pedidos",
-          "description": "Desenvolva um sistema completo de pedidos para sua loja, com fácil gestão, controle de estoque e integração com pagamentos online.",
-          "features": [
-            "Processamento Eficiente",
-            "Gestão de Inventário",
-            "Notificações de Pedidos",
-            "Integração com Pagamentos"
-          ],
-          "cta": {
-            "title": "Otimize seus Pedidos",
-            "buttonText": "Solicite já"
-          }
-        },
-        {
-          "title": "Sistema de Gestão Empresarial (ERP)",
-          "description": "Automatize e centralize a gestão do seu negócio, com ferramentas avançadas para controlar finanças, inventário e equipes de forma integrada.",
-          "features": [
-            "Gestão Financeira",
-            "Controle de Estoque",
-            "Relatórios em Tempo Real",
-            "Integração Multicanal"
-          ],
-          "cta": {
-            "title": "Transforme sua Gestão",
-            "buttonText": "Saiba Mais"
-          }
-        },
-        {
-          "title": "Sistema de Gestão de Agendamentos",
-          "description": "Facilite seus agendamentos com um sistema eficiente e simples de usar, tanto para clientes quanto para gestores.",
-          "features": [
-            "Agendamento Online",
-            "Notificações de Lembretes",
-            "Acesso ao Histórico de Consultas",
-            "Interface Intuitiva"
-          ],
-          "cta": {
-            "title": "Gerencie Agendamentos com Facilidade",
-            "buttonText": "Comece Agora"
-          }
-        }
-      ]
     },
     "design": {
       "sectionTitle": "Design",
@@ -1432,6 +1337,20 @@
           "cta": {
             "title": "Crie seu Site Institucional",
             "buttonText": "Solicite o Seu"
+          }
+        },
+         {
+          "title": "Sistema de Gestão de Agendamentos",
+          "description": "Facilite seus agendamentos com um sistema eficiente e simples de usar, tanto para clientes quanto para gestores.",
+          "features": [
+            "Agendamento Online",
+            "Notificações de Lembretes",
+            "Acesso ao Histórico de Consultas",
+            "Interface Intuitiva"
+          ],
+          "cta": {
+            "title": "Gerencie Agendamentos com Facilidade",
+            "buttonText": "Comece Agora"
           }
         }
       ]

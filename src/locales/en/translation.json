@@ -198,21 +198,12 @@
       {
         "icon": "FaCode",
         "ariaLabel": "Web Development Icon",
-        "title": "Web Development",
+        "title": "Tech",
         "exemplos": [
           "<strong>E-commerce:</strong> online stores with payment integration",
           "<strong>Landing Pages:</strong> conversion pages to capture leads",
           "<strong>Portfolios:</strong> customized pages to showcase projects, skills, and achievements professionally",
-          "<strong>Institutional Websites:</strong> digital presence for businesses"
-        ]
-      },
-      {
-        "icon": "FaLayerGroup",
-        "ariaLabel": "Management Systems Icon",
-        "title": "Management Systems",
-        "exemplos": [
-          "<strong>Order Management:</strong> order and inventory control for restaurants",
-          "<strong>Enterprise Management (ERP):</strong> management of internal business processes",
+          "<strong>Institutional Websites:</strong> digital presence for businesses",
           "<strong>Appointment Management:</strong> systems for bookings and scheduling"
         ]
       },
@@ -537,8 +528,15 @@
         "gender": "neutral",
         "linkText": "Discover {{title}}"
       },
-      "jhon_silva": 
-      {
+      "pemun": {
+        "title": "Pernambuco Model United Nations",
+        "text": "- {strong}Institutional Website{/strong} for the Pernambuco Model United Nations",
+        "imageAlt": "PEMUN Preview",
+        "logoAlt": "PEMUN Logo",
+        "gender": "female",
+        "linkText": "Learn about {{title}}"
+      },
+      "jhon_silva": {
         "title": "Jhon Silva",
         "text": "{strong}Visual identity{/strong} for Jhon Silva, a creator of digital platforms",
         "imageAlt": "Preview of Jhon Silva",

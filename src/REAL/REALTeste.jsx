@@ -12,7 +12,6 @@ import Modal from "./Modal";
 import Form from "./Form";
 import { serviceNames } from "./serviceNames";
 import { questionFlows } from "./questions";
-import ChangeLanguage from "../components/ChangeLanguage";
 
 function REALTeste() {
   const [formData, setFormData] = useState({
@@ -188,9 +187,7 @@ function REALTeste() {
           <button onClick={() => navigate("/")} className={styles.goBackButton}>
             <IoMdArrowBack className={styles.goBackIcon} /> {t("back")}
           </button>
-          <div className={styles.changeLanguageContainer}>
-            <ChangeLanguage />
-          </div>
+
         </div>
         <h1 data-aos="fade-up">{t("realTeste.title")}</h1>
         <p className={styles.umpasso} data-aos="fade-up" data-aos-delay="100">

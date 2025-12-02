@@ -8,11 +8,10 @@ import {
   FaCartShopping,
   FaBullhorn,
   FaCalendarCheck,
-  FaClipboardList,
   FaRocket,
   FaBuilding,
 } from "react-icons/fa6";
-import { FaCogs, FaPaintBrush } from "react-icons/fa";
+import { FaPaintBrush } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { BiSolidFoodMenu } from "react-icons/bi";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
@@ -45,11 +44,11 @@ const Carousel = ({ slides, sectionTitle }) => {
     "Landing Pages": <FaRocket className={styles.serviceIcon} />,
     Portfólio: <BsFillGrid1X2Fill className={styles.serviceIcon} />,
     "Sites Institucionais": <FaBuilding className={styles.serviceIcon} />,
-    "Sistema de Gestão de Pedidos": <FaClipboardList className={styles.serviceIcon} />,
-    "Sistema de Gestão Empresarial (ERP)": <FaCogs className={styles.serviceIcon} />,
-    "Sistema de Gestão de Agendamentos": <FaCalendarCheck className={styles.serviceIcon} />,
+    "Sistema de Gestão de Agendamentos": (
+      <FaCalendarCheck className={styles.serviceIcon} />
+    ),
     "Identidade Visual": <FaPaintBrush className={styles.serviceIcon} />,
-    "Cardápio Digital": <BiSolidFoodMenu className={styles.serviceIcon} />,
+    Cardápio: <BiSolidFoodMenu className={styles.serviceIcon} />,
     "Materiais Promocionais": <FaBullhorn className={styles.serviceIcon} />,
   };
 
@@ -58,23 +57,18 @@ const Carousel = ({ slides, sectionTitle }) => {
     "Landing Pages",
     "Portfólio",
     "Sites Institucionais",
-  ];
-  const managementSystemServices = [
-    "Sistema de Gestão de Pedidos",
-    "Sistema de Gestão Empresarial (ERP)",
     "Sistema de Gestão de Agendamentos",
   ];
+
   const designServices = [
     "Identidade Visual",
-    "Cardápio Digital",
+    "Cardápio",
     "Materiais Promocionais",
   ];
 
   const getCategoryClass = () => {
     if (webDevelopmentServices.includes(activeSlideTitle)) {
       return styles.webDevelopment;
-    } else if (managementSystemServices.includes(activeSlideTitle)) {
-      return styles.managementSystems;
     } else if (designServices.includes(activeSlideTitle)) {
       return styles.design;
     }
@@ -136,7 +130,10 @@ const Carousel = ({ slides, sectionTitle }) => {
                     })
                       .slice(0, 3)
                       .map((audience, i) => (
-                        <li key={i} dangerouslySetInnerHTML={{ __html: audience }} />
+                        <li
+                          key={i}
+                          dangerouslySetInnerHTML={{ __html: audience }}
+                        />
                       ))}
                   </ul>
                 </div>
@@ -154,7 +151,10 @@ const Carousel = ({ slides, sectionTitle }) => {
               {slide.cta && (
                 <div className={styles.ctaSection}>
                   <h3 className={styles.ctaTitle}>{slide.cta.title}</h3>
-                  <button className={styles.ctaButton} onClick={handleSolicitar}>
+                  <button
+                    className={styles.ctaButton}
+                    onClick={handleSolicitar}
+                  >
                     <FaArrowUpRightFromSquare className={styles.ctaIcon} />
                     {slide.cta.buttonText}
                   </button>

@@ -1,229 +1,130 @@
-$gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #111D3E 100%);
-$gradient-two: linear-gradient(90deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1C4FF 100%);
+$gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
+$gradient-two: linear-gradient(90deg, #111d3e 0%, #2e4377 50%, #5a7cff 75%, #a1c4ff 100%);
 
 .servicos-container {
-  background: linear-gradient(180deg, #111d3e 0%, #0a0a23 100%);
+  background: linear-gradient(0deg, #111d3e 0%, #0a0a23 100%);
   padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px) clamp(150px, 30vw, 300px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: white;
   min-height: 100vh;
 }
 
 .title {
-  font-size: clamp(28px, 6vw, 42px);
+  font-size: clamp(30px, 6vw, 48px);
   font-weight: bold;
-  margin-bottom: clamp(5px, 1.5vw, 8px);
-  color: white;
+  margin-bottom: clamp(10px, 2vw, 20px);
   text-align: center;
-  line-height: 1.3;
 }
 
 .subtitle {
-  font-size: clamp(14px, 2.2vw, 16px);
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: clamp(20px, 5vw, 40px);
+  font-size: clamp(15px, 2.3vw, 18px);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: clamp(30px, 5vw, 50px);
+  max-width: 800px;
   text-align: center;
-  max-width: 90%;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .cards-container {
   display: flex;
   justify-content: center;
-  gap: clamp(15px, 3vw, 30px);
-  width: 90%;
-  max-width: 1200px;
+  gap: clamp(25px, 3vw, 45px);
+  width: 100%;
+  max-width: 1400px;
   flex-wrap: wrap;
-
-  @media(max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .card {
   background: white;
-  border-radius: 16px;
-  padding: clamp(20px, 3vw, 25px);
+  border-radius: 22px;
+  padding: clamp(34px, 4vw, 42px);
   width: 100%;
-  max-width: 380px;
-  min-height: 220px;
+  max-width: 460px;
+  min-height: 380px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
   border: 2px solid transparent;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  gap: 22px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 
   &:hover {
-    background: #111D3E;
-    border: 2px solid #111D3E;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 221, 235, 0.3);
+    background: #0d1633;
+    border-color: #0d1633;
+    transform: translateY(-12px);
+    box-shadow: 0 16px 32px rgba(0, 221, 235, 0.3);
 
-    h2, ul, .icon {
-      color: white;
+    h2,
+    ul li,
+    ul li strong,
+    .icon {
+      color: white !important;
     }
 
-    a {
-      background: white;
-      color: #111D3E;
-      border-color: transparent;
-
-      .saibaMaisIcon {
-        color: #111D3E;
-      }
+    ul li {
+      border-left-color: white !important;
     }
-  }
 
-  h2 {
-    font-size: clamp(18px, 3vw, 22px);
-    font-weight: 700;
-    color: #111D3E;
-    margin: clamp(5px, 1.5vw, 10px) 0;
-    line-height: 1.4;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: clamp(10px, 2vw, 15px) 0;
-    text-align: left;
-
-    li {
-      margin: clamp(8px, 1.5vw, 12px) 0;
-      font-size: clamp(14px, 2vw, 15px);
-      display: flex;
-      align-items: flex-start;
-      text-align: justify;
-      gap: 10px;
-      line-height: 1.5;
-
-      &::before {
-        content: "•";
-        color: #111D3E;
-        font-size: 1.5em;
-        line-height: 0;
-        margin-top: 0.2em;
-        flex-shrink: 0;
-      }
+    .exemploTexto {
+      color: rgba(255, 255, 255, 0.85) !important;
     }
   }
 }
 
-.exemplos {
-  color: #666;
-  margin-top: clamp(10px, 2vw, 15px);
-  padding-left: 0;
-
-  li {
-    font-size: clamp(13px, 1.8vw, 15px);
-    color: #999;
-    display: flex;
-    align-items: flex-start;
-    text-align: left;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-}
-
-.exemploDescricao {
-  font-size: clamp(12px, 1.8vw, 14px);
-  margin-left: 0;
-  margin-top: 2px;
-  color: rgba(0, 0, 0, 0.7);
-  line-height: 1.4;
-}
-
-a.saiba-mais {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(6px, 1vw, 8px);
-  padding: clamp(10px, 2vw, 12px) clamp(18px, 3vw, 22px);
-  background: #111D3E;
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  margin: clamp(20px, 3vw, 25px) auto 0;
-  transition: all 0.3s ease;
-  font-size: clamp(14px, 2vw, 16px);
-  font-weight: 600;
-  border: 2px solid transparent;
-  width: fit-content;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  .saibaMaisIcon {
-    font-size: clamp(14px, 1.8vw, 16px);
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  &:hover {
-    background: white;
-    color: #111D3E;
-    border-color: transparent;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 221, 235, 0.3);
-
-    .saibaMaisIcon {
-      transform: translateX(2px) translateY(-2px);
-      color: #111D3E;
-    }
-  }
+.cardTitle {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: #111d3e;
+  margin-top: 5px;
+  margin-bottom: 8px;
 }
 
 .icon {
-  font-size: clamp(28px, 6vw, 40px);
-  margin-bottom: clamp(8px, 2vw, 12px);
-  color: #111D3E;
+  font-size: clamp(40px, 7vw, 55px);
+  color: #111d3e;
 }
 
-// Media queries melhoradas
-@media screen and (max-width: 768px) {
-  .servicos-container {
-    padding-bottom: clamp(100px, 25vw, 200px);
-  }
+.exemplos {
+  padding: 0;
+  margin-top: 10px;
+  list-style: none;
+  color: #666;
 
+  li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: clamp(15px, 2vw, 17px);
+    text-align: justify;
+    line-height: 1.55;
+    border-left: 3px solid #111d3e;
+    padding-left: 12px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+}
+
+.exemploTexto {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 768px) {
   .cards-container {
     flex-direction: column;
     align-items: center;
-    gap: clamp(20px, 4vw, 30px);
-    width: 95%;
   }
 
   .card {
-    width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    padding: 30px;
     min-height: auto;
-    padding: 20px;
-
-    ul li {
-      align-items: flex-start;
-      gap: 8px;
-      
-      &::before {
-        display: none;
-      }
-    }
   }
 
   .exemplos li {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  a.saiba-mais {
-    padding: clamp(8px, 1.8vw, 10px) clamp(14px, 2.5vw, 18px);
-    font-size: clamp(13px, 2vw, 15px);
-
-    .saibaMaisIcon {
-      font-size: clamp(13px, 1.8vw, 15px);
-    }
+    margin-bottom: 15px;
   }
 }
 
@@ -232,43 +133,20 @@ a.saiba-mais {
     padding: 20px 12px 120px;
   }
 
-  .title {
-    font-size: clamp(24px, 7vw, 32px);
-  }
-
-  .subtitle {
-    font-size: clamp(13px, 3vw, 15px);
-  }
-
   .card {
-    padding: 18px 16px;
-    border-radius: 14px;
-
-    h2 {
-      font-size: clamp(16px, 4vw, 20px);
-    }
-
-    ul li {
-      font-size: clamp(13px, 3vw, 15px);
-      margin: 10px 0;
-      gap: 6px;
-    }
+    padding: 26px 20px;
+    border-radius: 18px;
   }
 
-  .exemploDescricao {
-    font-size: clamp(11px, 3vw, 13px);
+  .cardTitle {
+    font-size: 20px;
   }
 
-  a.saiba-mais {
-    padding: 8px 16px;
-    font-size: clamp(12px, 3vw, 14px);
-
-    .saibaMaisIcon {
-      font-size: clamp(12px, 2vw, 14px);
-    }
+  .exemplos li {
+    font-size: 14px;
   }
 
   .icon {
-    font-size: clamp(24px, 7vw, 32px);
+    font-size: 38px;
   }
 }
