@@ -10,9 +10,7 @@ import { FaThreads } from "react-icons/fa6";
 import { IoIosRocket } from "react-icons/io";
 import style from "./Links.module.scss";
 import StarsBackground from "../../components/StarsBackground";
-import Monograma from '../../assets/img/LogoTipo Fundo Azul e Branco.png';
-import REAL from '../../assets/img/Icone REAL.png';
-import REF from '../../assets/img/Icone REF.png';
+import Monograma from '../../assets/img/LogoTipo Fundo Azul e branco.png';
 
 const Links = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
