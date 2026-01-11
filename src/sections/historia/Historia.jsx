@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from './Historia.module.scss';
-import { useTranslation } from "react-i18next";
 
 import Ilustracao1 from '../../assets/img/Ilustracao1.png';
 import Ilustracao2 from '../../assets/img/Ilustracao2.png';
@@ -12,8 +11,15 @@ import Ilustracao5 from '../../assets/img/Ilustracao5.png';
 
 const images = [Ilustracao1, Ilustracao2, Ilustracao3, Ilustracao4, Ilustracao5];
 
+const panels = [
+  "Tem um sonho, mas não sabe por onde começar?",
+  "Procurando alguém para transformar sua ideia em realidade?",
+  "Encontre quem entende a sua necessidade!",
+  "Seu projeto ganha vida com tecnologia e criatividade!",
+  "Resultado? Seu sonho realizado da melhor forma!"
+];
+
 const Historia = () => {
-  const { t } = useTranslation();
   const containerRef = useRef(null);
   const horizontalRef = useRef(null);
 
@@ -59,11 +65,11 @@ const Historia = () => {
   return (
     <section className={styles['historia-container']} ref={containerRef}>
       <div className={styles["horizontal-story"]} ref={horizontalRef}>
-        {t('historia.panels', { returnObjects: true }).map((text, index) => (
+        {panels.map((text, index) => (
           <div key={index} className={styles.panel}>
             <img 
               src={images[index]} 
-              alt={t('historia.imageAlt', { index: index + 1 })} 
+              alt={`Ilustração ${index + 1}`} 
               className={styles.illustration}
               loading="lazy"
             />

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +24,6 @@ import "swiper/css/effect-fade";
 import styles from "./Carousel.module.scss";
 
 const Carousel = ({ slides, sectionTitle }) => {
-  const { t } = useTranslation();
   const [, setBackgroundImage] = useState(slides[0].image);
   const [activeSlideTitle, setActiveSlideTitle] = useState(slides[0].title);
   const navigate = useNavigate();
@@ -48,7 +46,7 @@ const Carousel = ({ slides, sectionTitle }) => {
       <FaCalendarCheck className={styles.serviceIcon} />
     ),
     "Identidade Visual": <FaPaintBrush className={styles.serviceIcon} />,
-    Cardápio: <BiSolidFoodMenu className={styles.serviceIcon} />,
+    "Cardápio Digital": <BiSolidFoodMenu className={styles.serviceIcon} />,
     "Materiais Promocionais": <FaBullhorn className={styles.serviceIcon} />,
   };
 
@@ -62,7 +60,7 @@ const Carousel = ({ slides, sectionTitle }) => {
 
   const designServices = [
     "Identidade Visual",
-    "Cardápio",
+    "Cardápio Digital",
     "Materiais Promocionais",
   ];
 
@@ -122,12 +120,10 @@ const Carousel = ({ slides, sectionTitle }) => {
                 <p className={styles.description}>{slide.description}</p>
                 <div className={styles.targetAudienceSection}>
                   <h3 className={styles.targetAudienceTitle}>
-                    {t("carousel.target_audience_title")}
+                    Esse serviço é pra você🫵?
                   </h3>
                   <ul className={styles.targetAudienceList}>
-                    {t(`carousel.target_audience.${slide.title}`, {
-                      returnObjects: true,
-                    })
+                    {slide.targetAudience && slide.targetAudience
                       .slice(0, 3)
                       .map((audience, i) => (
                         <li
@@ -139,7 +135,7 @@ const Carousel = ({ slides, sectionTitle }) => {
                 </div>
                 {slide.features && (
                   <details className={styles.featuresToggle}>
-                    <summary>{t("carousel.features_toggle")}</summary>
+                    <summary>Veja os benefícios</summary>
                     <ul className={styles.featuresList}>
                       {slide.features.map((feature, i) => (
                         <li key={i}>{feature}</li>

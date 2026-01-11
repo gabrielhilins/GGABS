@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import { useTranslation } from "react-i18next";
 import Logo from "../../assets/img/Wordmark Branco.png";
 import StarsBackground from "../../components/StarsBackground";
 import styles from "./Header.module.scss";
 
 function Header() {
-  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = (sectionId) => {
@@ -18,10 +16,10 @@ function Header() {
   };
 
   const navItems = [
-    "services",
-    "portfolio",
-    "feedback",
-    "faq",
+    { id: "services", label: "Serviços" },
+    { id: "portfolio", label: "Portfólio" },
+    { id: "feedback", label: "Depoimentos" },
+    { id: "faq", label: "FAQ" },
   ];
 
   return (
@@ -29,13 +27,13 @@ function Header() {
       <StarsBackground section="header" />
       <div className={styles.container}>
         <div className={styles.logo}>
-          <img src={Logo} alt={t("header.logoAlt")} loading="lazy" />
+          <img src={Logo} alt="Logotipo GGabs Design e Tech" loading="lazy" />
         </div>
 
         <button
           className={styles.menuToggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={t("header.toggleMenu")}
+          aria-label="Alternar menu"
           aria-expanded={isMenuOpen}
         >
           <IoMenu size={30} color="white" />
@@ -43,17 +41,17 @@ function Header() {
 
         {/* Navbar para telas maiores */}
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
-          {navItems.map((section) => (
+          {navItems.map((item) => (
             <a
-              key={section}
-              href={`#${section}`}
+              key={item.id}
+              href={`#${item.id}`}
               className={styles.link}
               onClick={(e) => {
                 e.preventDefault();
-                handleScroll(section);
+                handleScroll(item.id);
               }}
             >
-              {t(`header.nav.${section}`)}
+              {item.label}
             </a>
           ))}
 
@@ -62,17 +60,17 @@ function Header() {
       <nav className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ""}`}>
 
         <div className={styles.sidebarNav}>
-          {navItems.map((section, index) => (
-            <div key={section} className={styles.sidebarItem}>
+          {navItems.map((item, index) => (
+            <div key={item.id} className={styles.sidebarItem}>
               <a
-                href={`#${section}`}
+                href={`#${item.id}`}
                 className={styles.sidebarLink}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleScroll(section);
+                  handleScroll(item.id);
                 }}
               >
-                {t(`header.nav.${section}`)}
+                {item.label}
               </a>
               {index !== navItems.length - 1 && <div className={styles.sidebarDivider} />}
             </div>

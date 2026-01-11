@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { IoMdArrowBack } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
-import { useTranslation } from "react-i18next";
 import styles from "./REAl.module.scss";
 import enviarWhatsAppTeste from "./EnviarMsgTeste";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Modal from "./Modal";
 import Form from "./Form";
+import StarsBackground from "../components/StarsBackground";
 import { serviceNames } from "./serviceNames";
 import { questionFlows } from "./questions";
 
@@ -27,30 +27,10 @@ function REALTeste() {
   const [uploadProgress, setUploadProgress] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-
-  const getSafeLocale = () => {
-    try {
-      const browserLocale = navigator.language;
-      const supportedLocales = ["pt-BR", "en-US", "es-ES"];
-      
-      if (supportedLocales.includes(i18n.language)) {
-        return i18n.language;
-      }
-      
-      if (supportedLocales.includes(browserLocale)) {
-        return browserLocale;
-      }
-      
-      return "en-US";
-    } catch {
-      return "en-US";
-    }
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -96,10 +76,10 @@ function REALTeste() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = t("form.errors.name");
-    if (!formData.lastname.trim()) newErrors.lastname = t("form.errors.lastname");
-    if (!formData.service) newErrors.service = t("form.errors.service");
-    if (!formData.deadline) newErrors.deadline = t("form.errors.deadline");
+    if (!formData.name.trim()) newErrors.name = "O nome é obrigatório";
+    if (!formData.lastname.trim()) newErrors.lastname = "O sobrenome é obrigatório";
+    if (!formData.service) newErrors.service = "Selecione um serviço";
+    if (!formData.deadline) newErrors.deadline = "Selecione um prazo";
 
     const questions = [
       ...(questionFlows.initial[formData.service] || []),
@@ -109,18 +89,11 @@ function REALTeste() {
       const value = formData.details[q.id];
       if (q.required) {
         if (q.type === "number" && (!value || value < q.min))
-          newErrors[q.id] = t("questionFlows.errors.number_min", {
-            label: q.label,
-            min: q.min,
-          });
+          newErrors[q.id] = `${q.label} deve ser pelo menos ${q.min}`;
         if ((q.type === "text" || q.type === "textarea") && !value?.trim())
-          newErrors[q.id] = t("questionFlows.errors.required", {
-            label: q.label,
-          });
+          newErrors[q.id] = `${q.label} é obrigatório`;
         if (q.type === "select" && !value)
-          newErrors[q.id] = t("questionFlows.errors.select_required", {
-            label: q.label,
-          });
+          newErrors[q.id] = `Selecione uma opção para ${q.label}`;
       }
     });
 
@@ -134,7 +107,7 @@ function REALTeste() {
     if (validateForm()) {
       setTimeout(() => {
         const timestamp = new Date();
-        const locale = getSafeLocale();
+        const locale = "pt-BR";
         
         const formattedDate = timestamp.toLocaleDateString(locale, {
           day: "2-digit",
@@ -160,53 +133,55 @@ function REALTeste() {
           .filter(Boolean)
           .join("\n");
 
+        const deadlineOptions = {
+          "1-semana": "1 semana",
+          "2-semanas": "2 semanas",
+          "1-mes": "1 mês",
+          "2-meses": "2 meses",
+          "flexivel": "Flexível"
+        };
+
         enviarWhatsAppTeste(
           formData.name,
           formData.lastname,
-          t(`serviceNames.${formData.service}`),
-          t(`form.deadlineOptions.${formData.deadline}`),
+          serviceNames[formData.service],
+          deadlineOptions[formData.deadline],
           briefingSummary,
           formattedDate,
           formattedTime,
         );
 
         setShowModal(true);
-        toast.success(t("realTeste.toast.success"));
+        toast.success("Solicitação enviada com sucesso!");
         setLoading(false);
       }, 2000);
     } else {
-      toast.error(t("realTeste.toast.error"));
+      toast.error("Corrija os erros no formulário.");
       setLoading(false);
     }
   };
 
   return (
     <section className={styles.realContainer}>
+      <StarsBackground section="hero" />
       <div className={styles.formSection}>
         <div className={styles.headerRow}>
           <button onClick={() => navigate("/")} className={styles.goBackButton}>
-            <IoMdArrowBack className={styles.goBackIcon} /> {t("back")}
+            <IoMdArrowBack className={styles.goBackIcon} /> Voltar
           </button>
 
         </div>
-        <h1 data-aos="fade-up">{t("realTeste.title")}</h1>
+        <h1 data-aos="fade-up">Solicite seu Orçamento</h1>
         <p className={styles.umpasso} data-aos="fade-up" data-aos-delay="100">
-          {t("realTeste.subtitle")}
+          Transforme o futuro do seu negócio em realidade agora!
         </p>
-        <div
-          className={styles.description}
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <p>{t("realTeste.description.line1")}</p>
-          <p>{t("realTeste.description.line2")}</p>
-        </div>
+        
         <p
           className={styles.requiredNote}
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          {t("realTeste.requiredNote")}
+          Campos com * são obrigatórios
           <span className={styles.requiredAsterisk}>*</span>
         </p>
 
@@ -227,7 +202,7 @@ function REALTeste() {
       {loading && (
         <div className={styles.loader}>
           <div className={styles.spinner}></div>
-          <p>{t("realTeste.loading")}</p>
+          <p>Enviando sua solicitação...</p>
         </div>
       )}
 

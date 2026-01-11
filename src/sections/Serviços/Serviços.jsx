@@ -1,52 +1,81 @@
-import { useTranslation } from "react-i18next";
+import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Serviços.module.scss";
-import { FaCode, FaPaintBrush } from "react-icons/fa";
-
-const servicosData = [
-  {
-    icon: <FaCode />,
-    ariaLabel: "services.desenvolvimento_web.ariaLabel",
-    title: "services.desenvolvimento_web.title",
-    exemplos: "services.desenvolvimento_web.exemplos",
-    route: "/tech",
-  },
-  {
-    icon: <FaPaintBrush />,
-    ariaLabel: "services.design.ariaLabel",
-    title: "services.design.title",
-    exemplos: "services.design.exemplos",
-    route: "/design",
-  },
-];
+import { servicesData } from "../../data/services";
 
 function Servicos() {
-  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState("Tech");
+
+  // Flatten the data: Create a single array of all service items with their category info
+  const allServices = useMemo(() => {
+    return servicesData.flatMap((category) =>
+      category.exemplos.map((exemplo) => ({
+        ...exemplo,
+        categoryTitle: category.title,
+        icon: category.icon,
+        route: category.route,
+      }))
+    );
+  }, []);
+
+  // Filter based on selection
+  const filteredServices = useMemo(() => {
+    return allServices.filter((service) => service.categoryTitle === selectedCategory);
+  }, [selectedCategory, allServices]);
 
   return (
     <section className={styles["servicos-container"]}>
-      <h1 className={styles.title}>{t("servicos.title")}</h1>
-      <p className={styles.subtitle}>{t("servicos.subtitle")}</p>
+      <h1 className={styles.title}>Serviços</h1>
+      <p className={styles.subtitle}>
+        Aqui você encontra alguns dos serviços que oferecemos
+      </p>
 
-      <div className={styles["cards-container"]}>
-        {servicosData.map((servico, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.icon} aria-label={t(servico.ariaLabel)}>
-              {servico.icon}
-            </div>
-
-            <h2 className={styles.cardTitle}>{t(servico.title)}</h2>
-
-            <ul className={styles.exemplos}>
-              {t(servico.exemplos, { returnObjects: true }).map((exemplo, i) => (
-                <li key={i}>
-                  <span className={styles.exemploTexto}>
-                    <strong>{exemplo.nome}:</strong> {exemplo.descricao}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* Filter Controls */}
+      <div className={styles.filterContainer}>
+        {[
+          { id: "Tech", label: "Tech" },
+          { id: "Design", label: "Design" },
+        ].map((option) => (
+          <label
+            key={option.id}
+            className={`${styles.filterButton} ${
+              selectedCategory === option.id ? styles.active : ""
+            }`}
+          >
+            <input
+              type="radio"
+              name="category"
+              value={option.id}
+              checked={selectedCategory === option.id}
+              onChange={() => setSelectedCategory(option.id)}
+            />
+            {option.label}
+          </label>
         ))}
+      </div>
+
+      {/* Services List */}
+      <div className={styles.servicesList}>
+        {filteredServices.map((service, index) => {
+          const IconComponent = service.icon;
+          return (
+            <div key={index} className={styles.serviceItem}>
+              <div className={styles.imageContainer}>
+                <div className={styles.iconWrapper}>
+                  <IconComponent />
+                </div>
+              </div>
+              <div className={styles.contentContainer}>
+                <span className={styles.categoryTag}>{service.categoryTitle}</span>
+                <h2 className={styles.serviceTitle}>{service.nome}</h2>
+                <p className={styles.serviceDescription}>{service.descricao}</p>
+                <Link to={service.route} className={styles.saibaMaisBtn}>
+                  {service.buttonText}
+                </Link>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

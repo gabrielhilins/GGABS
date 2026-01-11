@@ -11,6 +11,12 @@
   text-align: center;
   padding: clamp(20px, 5vw, 40px) 0;
 
+  &.transparentFooter {
+    background: transparent;
+    position: relative;
+    z-index: 2;
+  }
+
   .verticalLine {
     width: 2px;
     height: clamp(40px, 10vw, 80px);

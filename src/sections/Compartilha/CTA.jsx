@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import styles from "./CTA.module.scss";
 
 const CTA = () => {
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,19 +20,19 @@ const CTA = () => {
     <div className={styles.fim}>
       <div className={styles.ctaContainer} data-aos="fade-up">
         <h2 className={styles.ctaTitle} data-aos="zoom-in" data-aos-delay="200">
-          {t("cta.title")}
+          Pronto para transformar seu projeto em realidade?
         </h2>
         <p className={styles.ctaSubtitle} data-aos="fade-up" data-aos-delay="400">
-          {t("cta.subtitle")}
+          Não deixe para depois - vamos criar algo incrível juntos!
         </p>
         <button
           onClick={handleOrçamentoClick}
           className={styles.ctaButton}
-          aria-label={t("cta.buttonAriaLabel")}
+          aria-label="Solicitar orçamento agora"
           data-aos="fade-right"
           data-aos-delay="600"
         >
-          {t("cta.button")} <FaArrowRight className={styles.ctaIcon} />
+          Solicitar Orçamento Agora <FaArrowRight className={styles.ctaIcon} />
         </button>
       </div>
     </div>

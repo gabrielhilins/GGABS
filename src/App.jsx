@@ -15,8 +15,6 @@ import NotFound404 from "./pages/404";
 import PoliticaPrivacidade from "./pages/Política de Privacidade/PoliticaPrivacidade";
 import TermosDeUso from "./pages/Termos de Uso/TermosDeUso";
 import CTA from "./sections/Compartilha/CTA";
-import DevWeb from "./pages/DesenvolvimentoWeb/DevWeb";
-import Design from "./pages/Design/Design";
 import useScrollRestoration from "./hooks/useScrollRestoration";
 import Links from "./pages/Links/Links";
 
@@ -24,29 +22,26 @@ function App() {
   const location = useLocation();
   useScrollRestoration(); 
 
-  // Routes where Header should be hidden
-  const isHeaderExcludedRoute = [
-    "/solicitar-orcamentos",
-    "/tech",
-    "/design",
-    "/links" // Header will be hidden on /links
-  ].includes(location.pathname);
-
-  const isFooterExcludedRoute = 
-    location.pathname.startsWith("/solicitar-orcamentos") || 
-    location.pathname === "/links";
-
   const validRoutes = [
     "/",
     "/solicitar-orcamentos",
     "/politica-de-privacidade",
     "/termos-de-uso",
-    "/tech",
-    "/design",
     "/links"
   ];
 
   const is404Route = !validRoutes.includes(location.pathname);
+
+  // Routes where Header should be hidden
+  const isHeaderExcludedRoute = [
+    "/solicitar-orcamentos",
+    "/links" // Header will be hidden on /links
+  ].includes(location.pathname);
+
+  const isFooterExcludedRoute = 
+    location.pathname.startsWith("/solicitar-orcamentos") || 
+    location.pathname === "/links" ||
+    is404Route;
 
   return (
     <div className="app-container">
@@ -102,8 +97,6 @@ function App() {
         <Route path="/solicitar-orcamentos" element={<Orçamento />} />
         <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
         <Route path="/termos-de-uso" element={<TermosDeUso />} />
-        <Route path="/tech" element={<DevWeb />} />
-        <Route path="/design" element={<Design />} />
         <Route path="/links" element={<Links />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>

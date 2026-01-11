@@ -2,10 +2,8 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Modal.module.scss";
 import enviarWhatsApp from "./enviarMensagemPacote";
-import { useTranslation } from "react-i18next";
 
 function PacotesModal({ showModal, setShowModal, pacote }) {
-  const { t } = useTranslation(); // Hook para acessar traduções
   const [name, setName] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [errors, setErrors] = useState({ name: "", confirmation: "" });
@@ -15,10 +13,10 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
     let newErrors = { name: "", confirmation: "" };
 
     if (!name.trim()) {
-      newErrors.name = t("pacotes.modal.form.nameError");
+      newErrors.name = "O nome é obrigatório";
     }
     if (!isConfirmed) {
-      newErrors.confirmation = t("pacotes.modal.form.confirmationError");
+      newErrors.confirmation = "Você deve confirmar a solicitação do pacote";
     }
 
     setErrors(newErrors);
@@ -28,12 +26,12 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
     }
 
     const timestamp = new Date();
-    const formattedDate = timestamp.toLocaleDateString(t("i18n.language"), {
+    const formattedDate = timestamp.toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
     });
-    const formattedTime = timestamp.toLocaleTimeString(t("i18n.language"), {
+    const formattedTime = timestamp.toLocaleTimeString("pt-BR", {
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
@@ -68,12 +66,12 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modal}>
-        <h2>{t("pacotes.modal.title")}</h2>
-        <p dangerouslySetInnerHTML={{ __html: t("pacotes.modal.description", { title: pacote.title }) }} />
+        <h2>Solicitar Pacote</h2>
+        <p dangerouslySetInnerHTML={{ __html: `Preencha os detalhes para o pacote <strong>${pacote.title}</strong>` }} />
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="name">
-              {t("pacotes.modal.form.nameLabel")} <span className={styles.requiredAsterisk}>{t("pacotes.modal.form.requiredAsterisk")}</span>
+              Seu Nome e Sobrenome <span className={styles.requiredAsterisk}>*</span>
             </label>
             <input
               type="text"
@@ -83,7 +81,7 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
                 setName(e.target.value);
                 setErrors((prev) => ({ ...prev, name: "" }));
               }}
-              placeholder={t("pacotes.modal.form.namePlaceholder")}
+              placeholder="Ex: Ana Silva"
               autoComplete="off"
               autoCapitalize="words"
             />
@@ -99,8 +97,8 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
                   setErrors((prev) => ({ ...prev, confirmation: "" }));
                 }}
               />
-              <span dangerouslySetInnerHTML={{ __html: t("pacotes.modal.form.confirmationLabel", { title: pacote.title }) }} />
-              <span className={styles.requiredAsterisk}>{t("pacotes.modal.form.requiredAsterisk")}</span>
+              <span dangerouslySetInnerHTML={{ __html: `Confirmo a solicitação do pacote <strong>${pacote.title}</strong>` }} />
+              <span className={styles.requiredAsterisk}>*</span>
             </label>
             {errors.confirmation && (
               <span className={styles.errorMessage}>{errors.confirmation}</span>
@@ -112,10 +110,10 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
               onClick={handleClose}
               className={styles.cancelButton}
             >
-              {t("pacotes.modal.buttons.cancel")}
+              Cancelar
             </button>
             <button type="submit" className={styles.submitButton}>
-              {t("pacotes.modal.buttons.submit")}
+              Enviar Solicitação
             </button>
           </div>
         </form>
@@ -130,7 +128,7 @@ PacotesModal.propTypes = {
   pacote: PropTypes.shape({
     title: PropTypes.string.isRequired,
     benefits: PropTypes.arrayOf(PropTypes.string).isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.string,
     observations: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };

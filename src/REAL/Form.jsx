@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useTranslation } from "react-i18next";
 import styles from "./REAl.module.scss";
 import { LuHandshake } from "react-icons/lu";
 
@@ -11,7 +10,14 @@ const Form = ({
   serviceNames,
   questionFlows,
 }) => {
-  const { t } = useTranslation();
+
+  const deadlineOptions = {
+    "1-semana": "1 semana",
+    "2-semanas": "2 semanas",
+    "1-mes": "1 mês",
+    "2-meses": "2 meses",
+    "flexivel": "Flexível"
+  };
 
   const renderQuestion = (question) => {
     const isRequired = question.required || false;
@@ -33,7 +39,7 @@ const Form = ({
               name={`details.${question.id}`}
               value={formData.details[question.id] || ""}
               onChange={handleChange}
-              placeholder={t(`questionFlows.placeholders.${question.placeholder}`)}
+              placeholder={question.placeholder}
             />
           )}
           {question.type === "number" && (
@@ -44,7 +50,7 @@ const Form = ({
               value={formData.details[question.id] || ""}
               onChange={handleChange}
               min={question.min}
-              placeholder={t(`questionFlows.placeholders.${question.placeholder}`)}
+              placeholder={question.placeholder}
             />
           )}
           {question.type === "select" && (
@@ -54,7 +60,7 @@ const Form = ({
               value={formData.details[question.id] || ""}
               onChange={handleChange}
             >
-              <option value="">{t("form.placeholders.select")}</option>
+              <option value="">Selecione uma opção</option>
               {question.options.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
@@ -68,7 +74,7 @@ const Form = ({
               name={`details.${question.id}`}
               value={formData.details[question.id] || ""}
               onChange={handleChange}
-              placeholder={t(`questionFlows.placeholders.${question.placeholder}`)}
+              placeholder={question.placeholder}
               rows="4"
             />
           )}
@@ -84,7 +90,7 @@ const Form = ({
     <form className={styles.form} autoComplete="off" onSubmit={handleSubmit}>
       <div className={styles.formGroup}>
         <label htmlFor="name">
-          {t("form.labels.name")}{" "}
+          Qual seu Nome?{" "}
           <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
@@ -98,7 +104,7 @@ const Form = ({
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder={t("form.placeholders.name")}
+            placeholder="Digite seu Nome"
             autoComplete="off"
             autoCapitalize="words"
           />
@@ -110,7 +116,7 @@ const Form = ({
 
       <div className={styles.formGroup}>
         <label htmlFor="lastname">
-          {t("form.labels.lastname")}{" "}
+          Qual seu Sobrenome?{" "}
           <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
@@ -124,7 +130,7 @@ const Form = ({
             name="lastname"
             value={formData.lastname}
             onChange={handleChange}
-            placeholder={t("form.placeholders.lastname")}
+            placeholder="Digite seu Sobrenome"
             autoComplete="off"
             autoCapitalize="words"
           />
@@ -136,7 +142,7 @@ const Form = ({
 
       <div className={styles.formGroup}>
         <label htmlFor="service">
-          {t("form.labels.service")}{" "}
+          Tipo de serviço desejado{" "}
           <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
@@ -150,10 +156,10 @@ const Form = ({
             value={formData.service}
             onChange={handleChange}
           >
-            <option value="">{t("form.placeholders.service")}</option>
+            <option value="">Selecione o tipo de serviço</option>
             {Object.keys(serviceNames).map((key) => (
               <option key={key} value={key}>
-                {t(`serviceNames.${key}`)}
+                {serviceNames[key]}
               </option>
             ))}
           </select>
@@ -172,7 +178,7 @@ const Form = ({
 
       <div className={styles.formGroup}>
         <label htmlFor="deadline">
-          {t("form.labels.deadline")}{" "}
+          Qual sua expectativa de prazo?{" "}
           <span className={styles.requiredAsterisk}>*</span>
         </label>
         <div
@@ -186,11 +192,11 @@ const Form = ({
             value={formData.deadline}
             onChange={handleChange}
           >
-            <option value="">{t("form.placeholders.deadline")}</option>
-            {Object.keys(t("form.deadlineOptions", { returnObjects: true })).map(
+            <option value="">Selecione um prazo</option>
+            {Object.keys(deadlineOptions).map(
               (key) => (
                 <option key={key} value={key}>
-                  {t(`form.deadlineOptions.${key}`)}
+                  {deadlineOptions[key]}
                 </option>
               )
             )}
@@ -205,7 +211,7 @@ const Form = ({
 
       <button type="submit" className={styles.submitButton}>
         <LuHandshake className={styles.buttonIcon} />{" "}
-        {t("form.submitButton")}
+        Solicitar Orçamento
       </button>
     </form>
   );

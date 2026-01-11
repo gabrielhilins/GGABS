@@ -1,4 +1,3 @@
-import FooterOrçamento from "../../components/FooterOrçamento";
 import { useEffect } from "react";
 import REALTeste from "../../REAL/REALTeste";
 
@@ -10,7 +9,6 @@ function Orçamento() {
   return (
     <>
     <REALTeste />
-    <FooterOrçamento />
     </>
   );
 }

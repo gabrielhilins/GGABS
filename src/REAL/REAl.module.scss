@@ -11,14 +11,10 @@ $border-gray: #D1D5DB;
   align-items: center;
   padding: clamp(15px, 4vw, 20px); // Ajusta padding pra telas menores
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    #1A2A6C 0%,
-    #2E4377 30%,
-    #5A7CFF 60%,
-    #3A539B 85%,
-    #0A122A 100%
-  );
+  background: #0a0a23; // Fundo escuro igual ao Hero
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 
   .logoContainer {
     max-width: 1200px;
@@ -68,6 +64,8 @@ $border-gray: #D1D5DB;
     width: 100%;
     text-align: center;
     margin-bottom: clamp(40px, 10vw, 80px);
+    position: relative;
+    z-index: 5; // Garante que o formulário e botões fiquem acima das estrelas
 
     .headerRow {
       display: flex;
@@ -84,9 +82,14 @@ $border-gray: #D1D5DB;
         color: #fff;
         font-size: clamp(0.85rem, 2vw, 1rem);
         cursor: pointer;
+        z-index: 10; // Extra segurança para o clique
     
         .goBackIcon {
           font-size: clamp(1rem, 2.5vw, 1.2rem);
+        }
+
+        &:hover {
+          color: #00DDEB;
         }
       }
     
@@ -163,15 +166,17 @@ $border-gray: #D1D5DB;
   }
 
   .form {
-    background: $light-gray;
+    background: rgba(255, 255, 255, 0.05); // Transparente com leve opacidade
+    backdrop-filter: blur(10px); // Efeito Glassmorphism
+    -webkit-backdrop-filter: blur(10px);
     padding: clamp(15px, 4vw, 30px);
     border-radius: 12px;
-    border: 1px solid $border-gray;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2); // Borda meio cinza/transparente
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
 
     &:hover {
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
 
     .formGroup {
@@ -181,7 +186,7 @@ $border-gray: #D1D5DB;
       label {
         display: block;
         font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-        color: $dark-gray;
+        color: #f8fafc; // Texto branco/claro
         font-weight: 600;
         margin-bottom: clamp(5px, 1vw, 8px);
         letter-spacing: 0.2px;
@@ -195,25 +200,28 @@ $border-gray: #D1D5DB;
         textarea {
           width: 100%;
           padding: clamp(8px, 2vw, 12px) clamp(10px, 2.5vw, 15px);
-          border: 1px solid $border-gray;
+          border: 1px solid rgba(255, 255, 255, 0.3); // Borda mais visível
           border-radius: 8px;
           font-size: clamp(0.85rem, 2vw, 1rem);
-          background: #fff;
-          color: $dark-gray;
-          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+          background: transparent; // Fundo totalmente transparente
+          color: #ffffff;
+          transition: all 0.3s ease;
+          backdrop-filter: none; // Remove blur interno para ficar "clean"
 
           &:focus {
             outline: none;
-            border-color: $accent-blue;
-            box-shadow: 0 0 5px rgba($accent-blue, 0.3);
+            border-color: #00DDEB;
+            background: rgba(255, 255, 255, 0.02); // Leve destaque ao focar
+            box-shadow: 0 0 15px rgba(0, 221, 235, 0.15);
           }
 
-          &::-webkit-input-placeholder,
-          &:-moz-placeholder,
-          &::-moz-placeholder,
-          &:-ms-input-placeholder {
-            font-size: clamp(0.75rem, 1.8vw, 0.9rem); // Placeholders responsivos
-            color: #A0AEC0;
+          option {
+            background: #0a0a23; // Mantém fundo escuro nas opções para legibilidade
+            color: #fff;
+          }
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.4);
           }
         }
 

@@ -11,7 +11,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import PacotesModal from "./Modal";
-import { useTranslation } from "react-i18next";
 
 // Dados dos pacotes, agora referenciando ícones diretamente
 const pacotesIcons = [
@@ -21,7 +20,6 @@ const pacotesIcons = [
 ];
 
 function Pacotes() {
-  const { t } = useTranslation(); // Hook para acessar traduções
 
   // Inicializando o AOS
   useEffect(() => {
@@ -39,16 +37,74 @@ function Pacotes() {
     setShowModal(true);
   };
 
+  const packages = [
+    {
+      title: "Restaurante",
+      description: "Ideal para restaurantes que desejam atrair mais clientes e fortalecer sua presença online.",
+      benefits: [
+        "Identidade Visual Única (Logo, Cores e Tipografia)",
+        "Design de Cardápio (Físico e Digital)",
+        "Mesa Pronta - Plataforma para gerenciamento de pedidos e delivery",
+        "Templates de Posts pro Instagram"
+      ],
+      observations: [
+        "Inclui 5 templates personalizados",
+        "Valores podem variar conforme o porte do restaurante e materiais que já estejam prontos previamente",
+        "Suporte contínuo por 3 meses"
+      ]
+    },
+    {
+      title: "Profissional",
+      target: [
+        "Médicos",
+        "Psicólogos",
+        "Coaches",
+        "Personal Trainers",
+        "Arquitetos",
+        "Nutricionistas",
+        "Consultores",
+        "Corretores",
+        "e Mais!"
+      ],
+      benefits: [
+        "Logotipo e Identidade Visual",
+        "Cartões de Visita e Materiais de Papelaria",
+        "Landing Page Profissional",
+        "Pacote de Templates de Posts para Redes Sociais"
+      ],
+      observations: [
+        "Indicado para profissionais autônomos de diversas áreas",
+        "Acompanha 5 templates personalizados",
+        "Entrega em até 30 dias úteis"
+      ]
+    },
+    {
+      title: "Influencers e Criadores de Conteúdo",
+      description: "Perfeito para criadores que querem se destacar com uma identidade visual única.",
+      benefits: [
+        "Criação de Marca Pessoal",
+        "Templates para Posts e Stories",
+        "Site personalizado",
+        "Rebranding de perfil do instagram"
+      ],
+      observations: [
+        "Entrega em até 15 dias uteis",
+        "Inclui 5 templates personalizados",
+        "Ajuste de Conteúdo: O serviço foca na estratégia visual e na otimização de elementos como a foto de perfil, a bio e os destaques."
+      ]
+    }
+  ];
+
   return (
     <section className={styles.pacotesContainer}>
       <div className={styles.title}>
-        <h1>{t("pacotes.title")}</h1>
+        <h1>Nossos Pacotes de Serviços</h1>
       </div>
       <div className={styles.subtitle}>
-        <p className={styles.mainText}>{t("pacotes.subtitle.mainText")}</p>
+        <p className={styles.mainText}>Escolha o pacote ideal para o seu projeto e veja como posso ajudar a sua ideia a ganhar vida.</p>
         <p
           className={styles.ctaText}
-          dangerouslySetInnerHTML={{ __html: t("pacotes.subtitle.ctaText") }}
+          dangerouslySetInnerHTML={{ __html: "<strong>Todos os pacotes são flexíveis e podem ser adaptados conforme suas necessidades.</strong>" }}
         />
       </div>
       <Swiper
@@ -62,7 +118,7 @@ function Pacotes() {
         autoplay={{ delay: 10000, disableOnInteraction: false }}
         className={styles.swiper}
       >
-        {t("pacotes.packages", { returnObjects: true }).map((pacote, index) => (
+        {packages.map((pacote, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
             <div className={styles.slideContent}>
               <div

@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./Estatisticas.module.scss";
-import { useTranslation } from "react-i18next";
 
 const animateCounter = (start, end, duration, callback) => {
   let startTime = null;
@@ -21,22 +20,39 @@ const animateCounter = (start, end, duration, callback) => {
 };
 
 const Estatisticas = () => {
-  const { t } = useTranslation();
+  const tecnologiaItems = [
+    { title: "Importância do Site", value: 53, description: "dos consumidores não confiam em uma empresa sem um site." },
+    { title: "Credibilidade Online", value: 80, description: "do aumento da confiança ao ter um site bem estruturado." },
+    { title: "Sites Responsivos", value: 70, description: "afirmam que a experiência com celular influencia na compra." },
+    { title: "Eficiência Operacional", value: 50, description: "implementação de sistemas de gerenciamento pode aumentar a eficiência." },
+    { title: "Acesso 24/7", value: 100, description: "ter um site online aumenta o atendimento contínuo aos clientes." },
+    { title: "Velocidade de Carregamento", value: 47, description: "dos usuários abandonam um site que demora mais de 3 segundos para carregar." }
+  ];
+
+  const designItems = [
+    { title: "Identidade Visual Forte", value: 75, description: "dos consumidores julgam a credibilidade pela identidade visual." },
+    { title: "Estética e Usabilidade", value: 94, description: "do julgamento inicial sobre um site depende do design." },
+    { title: "Design de Cardápios", value: 15, description: "aumenta as vendas ao criar um cardápio visualmente atraente." },
+    { title: "Logo e Branding", value: 80, description: "uma identidade visual coesa aumenta o reconhecimento de marca." },
+    { title: "Design Responsivo", value: 67, description: "sites responsivos têm mais chances de conversão." },
+    { title: "Primeira Impressão", value: 50, description: "dos usuários formam uma opinião sobre uma marca em menos de 1 segundo com base no design." }
+  ];
+
   const tecnologiaRefs = useRef([]);
   const designRefs = useRef([]);
   const titleRefs = useRef([]);
   const descRefs = useRef([]);
   const [techProgress, setTechProgress] = useState(
-    Array(t("estatisticas.tecnologia", { returnObjects: true }).length).fill(0)
+    Array(tecnologiaItems.length).fill(0)
   );
   const [designProgress, setDesignProgress] = useState(
-    Array(t("estatisticas.design", { returnObjects: true }).length).fill(0)
+    Array(designItems.length).fill(0)
   );
   const [techPercentage, setTechPercentage] = useState(
-    Array(t("estatisticas.tecnologia", { returnObjects: true }).length).fill(0)
+    Array(tecnologiaItems.length).fill(0)
   );
   const [designPercentage, setDesignPercentage] = useState(
-    Array(t("estatisticas.design", { returnObjects: true }).length).fill(0)
+    Array(designItems.length).fill(0)
   );
 
   useEffect(() => {
@@ -49,9 +65,6 @@ const Estatisticas = () => {
     const observerCallback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const tecnologiaItems = t("estatisticas.tecnologia", { returnObjects: true });
-          const designItems = t("estatisticas.design", { returnObjects: true });
-
           // Handle tecnologiaEstatisticas items
           const techIndex = tecnologiaRefs.current.indexOf(entry.target);
           if (techIndex !== -1 && techProgress[techIndex] === 0) {
@@ -126,11 +139,11 @@ const Estatisticas = () => {
     <section className={styles["estatisticas-container"]}>
       <div className={styles["tecnologia-container"]}>
         <div className={styles.title}>
-          <h1>{t("estatisticas.tecnologiaTitle")}</h1>
+          <h1>O poder da tecnologia no mercado</h1>
           <hr className={styles.hr}></hr>
         </div>
         <div className={styles["horizontal-tecnologia"]}>
-          {t("estatisticas.tecnologia", { returnObjects: true }).map((item, index) => (
+          {tecnologiaItems.map((item, index) => (
             <div
               key={index}
               className={styles.tecnologia}
@@ -172,11 +185,11 @@ const Estatisticas = () => {
 
       <div className={styles["design-container"]}>
         <div className={styles.title}>
-          <h2>{t("estatisticas.designTitle")}</h2>
+          <h2>O poder do Design no mercado</h2>
           <hr className={styles.hr}></hr>
         </div>
         <div className={styles["horizontal-design"]}>
-          {t("estatisticas.design", { returnObjects: true }).map((item, index) => (
+          {designItems.map((item, index) => (
             <div
               key={index}
               className={styles.design}
@@ -185,7 +198,7 @@ const Estatisticas = () => {
               <div
                 className={styles["title-estatistica"]}
                 ref={(el) =>
-                  (titleRefs.current[index + t("estatisticas.tecnologia", { returnObjects: true }).length] = el)
+                  (titleRefs.current[index + tecnologiaItems.length] = el)
                 }
               >
                 <h3>{item.title}</h3>
@@ -210,7 +223,7 @@ const Estatisticas = () => {
               <div
                 className={styles.description}
                 ref={(el) =>
-                  (descRefs.current[index + t("estatisticas.tecnologia", { returnObjects: true }).length] = el)
+                  (descRefs.current[index + tecnologiaItems.length] = el)
                 }
               >
                 <p>{item.description}</p>
@@ -220,7 +233,7 @@ const Estatisticas = () => {
         </div>
         <div className={styles.fonte}>
           <p>
-            {t("estatisticas.sources")}{" "}
+            Fontes:{" "}
             <a
               href="https://www.divera.com.br/blog/post/pequenas-empresas-precisam-de-site-sim-precisam-e-aqui-estao-8-motivos"
               target="_blank"

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
+import PropTypes from "prop-types";
 import styles from './StarsBackground.module.scss';
 
 const StarsBackground = ({ section }) => {
@@ -65,6 +66,10 @@ const StarsBackground = ({ section }) => {
       ))}
     </div>
   );
+};
+
+StarsBackground.propTypes = {
+  section: PropTypes.string,
 };
 
 export default StarsBackground;

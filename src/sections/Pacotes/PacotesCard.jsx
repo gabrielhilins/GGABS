@@ -2,11 +2,9 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PacotesCard.module.scss';
 import PacotesModal from './Modal'; // Importe o modal
-import { useTranslation } from 'react-i18next';
 
 function PacotesCard({ title, description, target, benefits, icon, observations, onCtaClick }) {
   const [showModal, setShowModal] = useState(false);
-  const {t} = useTranslation();
 
   return (
     <>
@@ -45,7 +43,7 @@ function PacotesCard({ title, description, target, benefits, icon, observations,
           className={styles.ctaButton}
           onClick={onCtaClick}
         >
-          {t("pacotes.card.ctaButton", { title: title })}
+          Adquira já o seu Pacote {title}
         </button>
       </div>
 

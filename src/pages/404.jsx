@@ -1,12 +1,25 @@
 // src/pages/NotFound404.jsx
-import ChangeLanguage from '../components/ChangeLanguage';
 import styles from './404.module.scss';
+import Logo from '../assets/img/Wordmark Branco.png';
+import { FaHome } from "react-icons/fa";
 
 function NotFound404() {
   return (
     <div className={styles.notFoundContainer}>
+      <div className={styles.videoWrapper}>
+        <iframe
+          src="https://www.youtube.com/embed/kvPHbLM16tc?autoplay=1&mute=1&controls=0&loop=1&playlist=kvPHbLM16tc&showinfo=0&rel=0&iv_load_policy=3&disablekb=1"
+          title="Background Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className={styles.videoIframe}
+        ></iframe>
+      </div>
+      <div className={styles.overlay}></div>
+      
+      <img src={Logo} alt="GGABS Logo" className={styles.logo} />
+      
       {/* Conteúdo da página 404 */}
-      <ChangeLanguage />
       <div className={styles.content}>
         <h1 className={styles.title}>404 - Tripulante Perdido!</h1>
         <p className={styles.message}>
@@ -19,7 +32,8 @@ function NotFound404() {
           className={styles.backButton}
           onClick={() => (window.location.href = "/")}
         >
-          Voltar para a Nave GGABS(Página Inicial)
+          <FaHome className={styles.buttonIcon} />
+          Voltar para Home
         </button>
       </div>
     </div>

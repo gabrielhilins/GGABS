@@ -5,30 +5,52 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import { useTranslation } from "react-i18next";
 
 import PedroCezar from '../../assets/img/Pedro Cezar.png';
 import MariaClara from '../../assets/img/MariaClara.png';
 import JhonSilva from '../../assets/img/perfil-jhon.jpg'
 
 function Depoimentos() {
-  const { t } = useTranslation(); // Hook para acessar traduções
-  const imagens = [PedroCezar, MariaClara, JhonSilva]; // Array de imagens
+  const imagens = [PedroCezar, MariaClara, JhonSilva];
 
-  const depoimentos = t("depoimentos.testimonials", { returnObjects: true }).map(
+  const depoimentosList = [
+    {
+      user: "Pedro Cezar - Criador de Sites",
+      text: "Muito bom o seu serviço, você tem ideias fora da caixa que complementam e dão vida a identidade visual, fiquei muito satisfeito com seu serviço, parabêns!",
+      imageAlt: "Imagem de Pedro Cezar",
+      linkText: "Conheça o Pedro Cezar - Criador de Sites",
+      link: "https://pedrocezar-orcamento.vercel.app/"
+    },
+    {
+      user: "Maria Clara - Estudante de Arquitetura",
+      text: "Estou extremamente empolgada em poder fazer minha marca pessoal de arquitetura e portfólio com o GGABS.",
+      imageAlt: "Imagem de Maria Clara",
+      linkText: "Conheça o Maria Clara - Estudante de Arquitetura",
+      link: "https://portfolio-maria-clara.vercel.app/"
+    },
+    {
+      user: "Jhon Silva - Criador de Plataformas,",
+      text: "A sua logo foi a que de fato me impressionou! Fiquei extremamente satisfeito. O atendimento foi muito atencioso, entendendo perfeitamente a proposta da minha marca e ofertando um serviço altamente personalizado. Recomendo pela qualidade, criatividade e compromisso.",
+      imageAlt: "Imagem de Jhon Silva",
+      linkText: "Conheça o Jhon Silva - Criador de Plataformas,",
+      link: "https://portifolio-jhon-sites.vercel.app/"
+    }
+  ];
+
+  const depoimentos = depoimentosList.map(
     (depoimento, index) => ({
       ...depoimento,
-      imagem: imagens[index], // Associando imagens aos depoimentos
+      imagem: imagens[index],
     })
   );
 
   return (
     <div className={styles["depoimentos-container"]}>
       <div className={styles.title}>
-        <h1>{t("depoimentos.title")}</h1>
+        <h1>Depoimentos</h1>
       </div>
       <div className={styles.subtitle}>
-        <p>{t("depoimentos.subtitle")}</p>
+        <p>Veja os depoimentos de quem confiou!</p>
       </div>
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -68,9 +90,7 @@ function Depoimentos() {
                   rel="noopener noreferrer"
                   className={styles["user-link"]}
                 >
-                  {t("depoimentos.testimonials." + index + ".linkText", {
-                    user: depoimento.user,
-                  })}
+                  {depoimento.linkText}
                 </a>
               </div>
             </div>

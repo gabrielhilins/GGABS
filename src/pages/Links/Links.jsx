@@ -10,7 +10,7 @@ import { FaThreads } from "react-icons/fa6";
 import { IoIosRocket } from "react-icons/io";
 import style from "./Links.module.scss";
 import StarsBackground from "../../components/StarsBackground";
-import Monograma from '../../assets/img/LogoTipo Fundo Branco e Azul.png';
+import Monograma from '../../assets/img/LogoTipo Fundo Azul e Branco.png';
 import REAL from '../../assets/img/Icone REAL.png';
 import REF from '../../assets/img/Icone REF.png';
 
@@ -32,22 +32,6 @@ const Links = () => {
       url: "/",
       icon: <FaGlobe />,
       color: "#0a0a23",
-    },
-    {
-      id: 3,
-      title: "REF - Gerador de referências ABNT",
-      url: "https://ref-gerador-abnt.vercel.app/",
-      icon: REF,
-      color: "#1D4ED8",
-      highlight: true
-    },
-    {
-      id: 4,
-      title: "REAL - Simulador de Orçamentos",
-      url: "https://real-iota-ivory.vercel.app/",
-      icon: REAL,
-      color: "#00C49A",
-      highlight: true
     },
     {
       id: 5,
@@ -103,7 +87,7 @@ const Links = () => {
             <img src={Monograma} alt="GGABS Tech & Design Monograma" />
           </div>
           <h1>GGABS TECH & DESIGN</h1>
-          <p>Realizamos sonhos, conectamos ao futuro.</p>
+          <p>Impulsionando sua presença digital com Tech e Design!</p>
         </div>
 
         <div className={style.linksList}>
