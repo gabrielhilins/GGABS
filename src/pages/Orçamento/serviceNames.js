@@ -1,4 +1,3 @@
-// Mapeamento dos valores do serviço para nomes legíveis
 export const serviceNames = {
   cardapio: "Cardápio",
   ecommerce: "E-Commerce",

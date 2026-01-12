@@ -12,9 +12,7 @@ import Serviços from "./sections/Serviços/Serviços";
 import Orçamento from "./pages/Orçamento/Orçamento";
 import NotFound404 from "./pages/404";
 // import Pacotes from "./sections/Pacotes/Pacotes";
-import PoliticaPrivacidade from "./pages/Política de Privacidade/PoliticaPrivacidade";
-import TermosDeUso from "./pages/Termos de Uso/TermosDeUso";
-import CTA from "./sections/Compartilha/CTA";
+import CTA from "./sections/CTA/CTA";
 import useScrollRestoration from "./hooks/useScrollRestoration";
 import Links from "./pages/Links/Links";
 
@@ -25,8 +23,6 @@ function App() {
   const validRoutes = [
     "/",
     "/solicitar-orcamentos",
-    "/politica-de-privacidade",
-    "/termos-de-uso",
     "/links"
   ];
 
@@ -56,16 +52,6 @@ function App() {
               <div id="hero">
                 <Hero />
               </div>
-              {/*
-              <div id="historia">
-                <Historia />
-              </div>
-              */}
-              {/*
-              <div id="diferenciais">
-                <Diferenciais />
-              </div>
-              */}
               <div id="services">
                 <Serviços />
               </div>
@@ -78,16 +64,6 @@ function App() {
               <div id="faq">
                 <Faq />
               </div>
-              {/*}
-              <div id="packages">
-                <Pacotes />
-              </div>
-              */}
-              {/*}
-              <div id="about">
-                <Sobre />
-              </div>
-              */}
               <div id="cta">
                 <CTA />
               </div>
@@ -95,13 +71,10 @@ function App() {
           }
         />
         <Route path="/solicitar-orcamentos" element={<Orçamento />} />
-        <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
-        <Route path="/termos-de-uso" element={<TermosDeUso />} />
         <Route path="/links" element={<Links />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
       
-      {/* Hide footer on excluded routes */}
       {!isFooterExcludedRoute && <Footer />}
     </div>
   );

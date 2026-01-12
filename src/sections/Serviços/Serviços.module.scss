@@ -173,7 +173,8 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 32px;
-  max-width: 480px; /* Limit line length for readability */
+  max-width: 480px; 
+  text-align: justify;
 }
 
 .saibaMaisBtn {

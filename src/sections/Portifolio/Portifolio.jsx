@@ -5,7 +5,6 @@ import "aos/dist/aos.css";
 import { portfolioData } from "../../data/portfolio";
 import ProjectCard from "../../components/common/ProjectCard";
 
-// Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -25,7 +24,6 @@ function Portifolio() {
       const dateDiff = new Date(b.date) - new Date(a.date);
       if (dateDiff !== 0) return dateDiff;
       
-      // Secondary: Status order
       const statusOrder = { finalizado: 0, "em desenvolvimento": 1, "em concepção": 2 };
       return statusOrder[a.status] - statusOrder[b.status];
     });
@@ -47,7 +45,6 @@ function Portifolio() {
         <p>Veja nosso trabalho: O que criamos e já fizemoz para nossos clientes!</p>
       </div>
 
-      {/* Navegação de Categoria */}
       <div className={styles["portifolio-nav"]} data-aos="fade-up">
         {[
           { id: "all", label: "Tudo" },
@@ -70,7 +67,6 @@ function Portifolio() {
         ))}
       </div>
 
-      {/* Carrossel de Projetos */}
       <div className={styles["portifolio-carousel"]} data-aos="zoom-in">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -78,7 +74,7 @@ function Portifolio() {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 8000, disableOnInteraction: false }}
+          autoplay={{ delay: 12000, disableOnInteraction: false }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },

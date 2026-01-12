@@ -1,9 +1,10 @@
-$background-color: #1a2a44;
-$text-color: #000000;
-$primary-color: #00c4ff;
-$button-bg: #00c4ff;
-$button-hover: #009ac7;
-$disabled-color: #666;
+$primary-blue: #1E3A8A;
+$secondary-blue: #2E4377;
+$accent-blue: #5A7CFF;
+$light-gray: #F7F9FB;
+$dark-gray: #333;
+$border-gray: #D1D5DB;
+$text-color: #ffffff;
 
 @import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 
@@ -13,8 +14,8 @@ $disabled-color: #666;
   padding: clamp(20px, 5vw, 40px);
   text-align: center;
   min-height: 100vh;
-  padding-bottom: clamp(60px, 10vw, 320px);
-  padding-top: clamp(60px, 10vw, 320px);
+  padding-bottom: clamp(60px, 10vw, 120px);
+  padding-top: clamp(60px, 10vw, 120px);
 }
 
 .title {
@@ -44,12 +45,13 @@ $disabled-color: #666;
     justify-content: center;
     gap: clamp(5px, 1vw, 10px);
     padding: clamp(10px, 2.5vw, 12px) clamp(16px, 6vw, 30px);
-    background: #ffffff;
-    color: #1a2a44;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
     border-radius: 12px;
-    border: 2px solid #1a2a44;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: clamp(10px, 2.2vw, 14px);
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -63,25 +65,27 @@ $disabled-color: #666;
       width: clamp(10px, 2.5vw, 14px);
       height: clamp(10px, 2.5vw, 14px);
       left: clamp(4px, 1vw, 6px);
-      border: 2px solid #1a2a44;
+      border: 2px solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       position: absolute;
-      background: #ffffff;
-      transition: background 0.3s ease;
+      background: transparent;
+      transition: all 0.3s ease;
     }
 
     &:has(input[type="radio"]:checked) {
-      background: #1a2a44;
-      color: #ffffff;
-      border: 2px solid #ffffff;
+      border-color: #00DDEB;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 221, 235, 0.15);
 
       &::before {
-        background: #ffffff;
+        background: #00DDEB;
+        border-color: #00DDEB;
       }
     }
 
     &:hover:not(:has(input[type="radio"]:checked)) {
-      background: #e6f0ff;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #00DDEB;
     }
   }
 }
@@ -114,15 +118,24 @@ $disabled-color: #666;
 }
 
 .item {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
 .item.open {
   height: auto;
+  border-color: #00DDEB;
+  box-shadow: 0 0 15px rgba(0, 221, 235, 0.15);
 }
 
 .question {
@@ -131,12 +144,13 @@ $disabled-color: #666;
   text-align: left;
   background: transparent;
   border: none;
-  color: rgba(17, 29, 62, 0.7);
+  color: #ffffff;
   font-size: clamp(14px, 2.2vw, 16px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-weight: 500;
 
   span {
     display: flex;
@@ -144,15 +158,16 @@ $disabled-color: #666;
 
     svg {
       font-size: clamp(1.2rem, 3vw, 1.8rem);
-      color: #1a2a44;
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.3s ease;
     }
   }
 
   &:hover {
-    color: $primary-color;
+    color: #00DDEB;
 
     span svg {
-      color: $primary-color;
+      color: #00DDEB;
     }
   }
 }
@@ -160,12 +175,10 @@ $disabled-color: #666;
 .answer {
   padding: 0 clamp(15px, 2.5vw, 20px);
   font-size: clamp(12px, 2vw, 14px);
-  color: white;
-  background-color: $background-color;
-  border: 2px solid #fff;
-  border-top: 0;
-  font-family: "Michroma", sans-serif;
-  border-radius: 0 0 10px 10px;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Poppins", sans-serif;
   text-align: justify;
   margin: 0;
   box-sizing: border-box;
@@ -188,156 +201,8 @@ $disabled-color: #666;
   transform: translateY(0);
 }
 
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: clamp(15px, 3vw, 25px);
-  gap: clamp(10px, 2vw, 20px);
-}
-
-.navButton {
-  background: transparent;
-  color: $primary-color;
-  border: 2px solid $primary-color;
-  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2vw, 15px);
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: clamp(10px, 1.8vw, 14px);
-  flex: 1;
-  min-width: 100px;
-  transition: background 0.3s ease, color 0.3s ease;
-
-  &:hover:not(.disabled) {
-    background: $primary-color;
-    color: $text-color;
-  }
-
-  &.disabled {
-    color: $disabled-color;
-    border-color: $disabled-color;
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
-}
-
-.illustration {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 500px;
-}
-
-.ilustracao {
-  width: clamp(60%, 40vw, 80%);
-  margin-bottom: clamp(15px, 4vw, 30px);
-}
-
-.texto {
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-  margin-bottom: clamp(10px, 3vw, 20px);
-  color: white;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.perguntaForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  gap: clamp(10px, 2vw, 15px);
-}
-
-.input,
-.textarea {
-  width: 100%;
-  padding: clamp(10px, 2vw, 12px);
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-  border-radius: 10px;
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: white;
-  box-sizing: border-box;
-
-  &.textarea {
-    min-height: 100px;
-    resize: vertical;
-  }
-
-  &::placeholder {
-    color: white;
-    opacity: 0.6;
-    font-size: clamp(10px, 1.5vw, 12px);
-  }
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-}
-
-.botaoEnviar {
-  background: $button-bg;
-  color: $text-color;
-  font-weight: bold;
-  border: none;
-  padding: clamp(10px, 2vw, 12px) clamp(15px, 3vw, 20px);
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-  position: relative;
-
-  &:hover:not(:disabled) {
-    background: $button-hover;
-  }
-
-  &:disabled {
-    background: $disabled-color;
-    cursor: not-allowed;
-  }
-
-  .spinner {
-    width: 20px;
-    height: 20px;
-    border: 3px solid #ffffff;
-    border-top: 3px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Media Queries */
 @media screen and (max-width: 768px) {
   .questions {
-    max-width: 100%;
-  }
-
-  .illustration {
-    max-width: 100%;
-  }
-
-  .ilustracao {
-    width: clamp(50%, 30vw, 60%);
-  }
-
-  .perguntaForm {
     max-width: 100%;
   }
 }
@@ -362,34 +227,6 @@ $disabled-color: #666;
 
     .item.open & {
       padding: clamp(10px, 2vw, 15px);
-    }
-  }
-
-  .navButton {
-    min-width: 80px;
-    padding: clamp(5px, 1vw, 8px) clamp(8px, 1.5vw, 12px);
-    font-size: clamp(8px, 1.5vw, 12px);
-  }
-
-  .perguntaForm {
-    gap: clamp(8px, 1.5vw, 12px);
-  }
-
-  .input,
-  .textarea {
-    padding: clamp(8px, 1.5vw, 10px);
-    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
-  }
-
-  .botaoEnviar {
-    padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2.5vw, 15px);
-    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
-
-    .spinner {
-      width: 16px;
-      height: 16px;
-      border: 2px solid #ffffff;
-      border-top: 2px solid transparent;
     }
   }
 }

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -16,6 +17,13 @@ const CTA = () => {
     navigate("/solicitar-orcamentos");
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className={styles.fim}>
       <div className={styles.ctaContainer} data-aos="fade-up">
@@ -23,7 +31,7 @@ const CTA = () => {
           Pronto para transformar seu projeto em realidade?
         </h2>
         <p className={styles.ctaSubtitle} data-aos="fade-up" data-aos-delay="400">
-          Não deixe para depois - vamos criar algo incrível juntos!
+          Não deixe para depois. Vamos criar algo incrível juntos!
         </p>
         <button
           onClick={handleOrçamentoClick}
@@ -35,6 +43,10 @@ const CTA = () => {
           Solicitar Orçamento Agora <FaArrowRight className={styles.ctaIcon} />
         </button>
       </div>
+
+      <button onClick={scrollToTop} className={styles.backToTop}>
+        Voltar ao topo <IoIosArrowUp />
+      </button>
     </div>
   );
 };

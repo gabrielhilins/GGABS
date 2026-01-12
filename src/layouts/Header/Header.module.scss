@@ -1,6 +1,7 @@
 $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #00ddeb 100%);
 $breakpoint-md: 768px;
 $sidebar-width: 300px;
+$accent-blue: #00DDEB;
 
 .header {
   position: fixed;
@@ -36,9 +37,9 @@ $sidebar-width: 300px;
   }
 }
 
-// Navbar para telas grandes
 .nav {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
   z-index: 6;
   margin-left: 4rem;
@@ -81,12 +82,53 @@ $sidebar-width: 300px;
   }
 }
 
+.ctaButton {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover {
+    color: #0a0a23;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
 .languageWrapper {
   display: flex;
   align-items: center;
 }
 
-// Botão do menu hamburguer
 .menuToggle {
   display: none;
 
@@ -101,7 +143,6 @@ $sidebar-width: 300px;
   }
 }
 
-// Sidebar para telas menores
 .sidebar {
   position: fixed;
   top: 0;
@@ -152,30 +193,31 @@ $sidebar-width: 300px;
   }
 }
 
+.sidebarCtaButton {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+}
+
 .sidebarDivider {
   height: 1px;
   background: rgba(255, 255, 255, 0.2);
   margin: 0.5rem 1.5rem;
-}
-
-.sidebarLanguageWrapper {
-  margin: 1.5rem;
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(0, 221, 235, 0.3);
-  display: flex;
-  justify-content: center;
-
-  > * {
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    color: white;
-    font-weight: 500;
-
-    &:hover {
-      color: #00ddeb;
-    }
-  }
 }
 
 .overlay {
@@ -194,7 +236,6 @@ $sidebar-width: 300px;
   }
 }
 
-// Ajustes responsivos
 @media (max-width: $breakpoint-md) {
   .logo img {
     max-width: 180px;
@@ -223,13 +264,5 @@ $sidebar-width: 300px;
   .sidebarLink {
     font-size: clamp(1rem, 2vw, 1.125rem);
     padding: 1rem 1.25rem;
-  }
-
-  .sidebarLanguageWrapper {
-    padding: 0.5rem 0.75rem;
-
-    > * {
-      font-size: clamp(0.875rem, 1.8vw, 1rem);
-    }
   }
 }

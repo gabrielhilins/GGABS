@@ -50,10 +50,10 @@ function Depoimentos() {
         <h1>Depoimentos</h1>
       </div>
       <div className={styles.subtitle}>
-        <p>Veja os depoimentos de quem confiou!</p>
+        <p>Veja os depoimentos de quem confiou no nosso trabalho!</p>
       </div>
       <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
+        modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
         centeredSlides={true}
@@ -66,10 +66,6 @@ function Depoimentos() {
         navigation={{
           nextEl: `.${styles["swiper-button-next"]}`,
           prevEl: `.${styles["swiper-button-prev"]}`,
-        }}
-        effect="fade"
-        fadeEffect={{
-          crossFade: true,
         }}
         className={styles["depoimentos-slider"]}
       >

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import styles from "./REAl.module.scss";
+import styles from "./Orçamento.module.scss";
 
 const Modal = ({
   showModal = false,

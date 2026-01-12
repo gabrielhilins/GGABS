@@ -11,12 +11,8 @@ function Footer() {
       <div className={styles.copyright}>
         <div className={styles.copyrightText}>
           <p>
-            © 2025. Todos os direitos reservados <a href="/">GGABS</a>
+            © {new Date().getFullYear()} GGABS TECH & DESIGN. Todos os direitos reservados.
           </p>
-        </div>
-        <div className={styles.copyrightLinks}>
-          <Link to="/politica-de-privacidade">Política de Privacidade</Link>
-          <Link to="/termos-de-uso">Termos de Uso</Link>
         </div>
       </div>
 

@@ -4,12 +4,11 @@ import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { FaCheckCircle, FaTools, FaLightbulb } from "react-icons/fa";
 
 const ProjectCard = ({ project }) => {
-  // Helper to parse text with {strong} tags
   const renderText = (text) => {
     return text.split(/(\{strong\}.*?\{\/strong\})/g).map((part, idx) => {
       if (part.startsWith("{strong}") && part.endsWith("{/strong}")) {
         return (
-          <strong key={idx} style={{ color: project.cor2 }}>
+          <strong key={idx}>
             {part.replace("{strong}", "").replace("{/strong}", "")}
           </strong>
         );
@@ -19,12 +18,9 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div
-      className={styles["portifolio-card"]}
-      style={{ background: project.cor1 }}
-    >
+    <div className={styles["portifolio-card"]}>
       {/* Badge Label */}
-      <div className={styles.projectLabel} style={{ backgroundColor: project.cor2, color: project.cor1 }}>
+      <div className={styles.projectLabel}>
         {project.isOwnProduct ? "Criação GGABS" : "Cliente"}
       </div>
 
@@ -33,13 +29,15 @@ const ProjectCard = ({ project }) => {
       </div>
 
       <div className={styles["card-content"]}>
-        <img
-          src={project.logo}
-          alt={project.logoAlt}
-          className={styles["card-logo"]}
-        />
+        <div className={styles.logoWrapper}>
+          <img
+            src={project.logo}
+            alt={project.logoAlt}
+            className={styles["card-logo"]}
+          />
+        </div>
 
-        <p className={styles["card-text"]} style={{ color: project.cor2 }}>
+        <p className={styles["card-text"]}>
           {renderText(project.text)}
         </p>
 
@@ -47,20 +45,20 @@ const ProjectCard = ({ project }) => {
         <div className={styles["project-status"]}>
           {project.status === "finalizado" && (
             <>
-              <FaCheckCircle className={styles["status-icon"]} style={{ color: project.cor2 }} />
-              <span style={{ color: project.cor2 }}>Finalizado</span>
+              <FaCheckCircle className={styles["status-icon"]} />
+              <span>Finalizado</span>
             </>
           )}
           {project.status === "em desenvolvimento" && (
             <>
-              <FaTools className={styles["status-icon"]} style={{ color: project.cor2 }} />
-              <span style={{ color: project.cor2 }}>Em Desenvolvimento</span>
+              <FaTools className={styles["status-icon"]} />
+              <span>Em Desenvolvimento</span>
             </>
           )}
           {project.status === "em concepção" && (
             <>
-              <FaLightbulb className={styles["status-icon"]} style={{ color: project.cor2 }} />
-              <span style={{ color: project.cor2 }}>Em Concepção</span>
+              <FaLightbulb className={styles["status-icon"]} />
+              <span>Em Concepção</span>
             </>
           )}
         </div>
@@ -71,7 +69,6 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.link}
               className={styles["card-button"]}
-              style={{ background: project.cor2, color: project.cor1 }}
               target="_blank"
               rel="noopener noreferrer"
             >
