@@ -12,15 +12,15 @@ export const testimonialsData = [
     imagem: PedroCezar
   },
   {
-    user: "Maria Clara - Estudante de Arquitetura",
+    user: "Clara Vilela - Estudante de Arquitetura",
     text: "Estou extremamente empolgada em poder fazer minha marca pessoal de arquitetura e portfólio com o GGABS.",
-    imageAlt: "Imagem de Maria Clara",
-    linkText: "Conheça o Maria Clara - Estudante de Arquitetura",
+    imageAlt: "Imagem de Clara Vilela",
+    linkText: "Conheça a Clara Vilela - Estudante de Arquitetura",
     link: "https://portfolio-maria-clara.vercel.app/",
     imagem: MariaClara
   },
   {
-    user: "Jhon Silva - Criador de Plataformas,",
+    user: "Jhon Silva - Criador de Plataformas",
     text: "A sua logo foi a que de fato me impressionou! Fiquei extremamente satisfeito. O atendimento foi muito atencioso, entendendo perfeitamente a proposta da minha marca e ofertando um serviço altamente personalizado. Recomendo pela qualidade, criatividade e compromisso.",
     imageAlt: "Imagem de Jhon Silva",
     linkText: "Conheça o Jhon Silva - Criador de Plataformas,",

@@ -17,7 +17,7 @@ const SocialLinks = ({ containerClass, iconClass, itemClass, showTooltip = true 
             aria-label={`Visit our ${social.label} profile`}
             data-tooltip={showTooltip ? social.tooltip : undefined}
           >
-            <IconComponent className={`${styles.icon} ${iconClass || ""}`} />
+            <IconComponent className={iconClass || styles.icon} />
           </a>
         );
       })}

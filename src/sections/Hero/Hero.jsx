@@ -91,6 +91,7 @@ const Hero = () => {
             <SocialLinks 
               containerClass={styles.socials} 
               itemClass={styles.socialIcon} 
+              iconClass={styles.socialIconInner}
             />
           </div>
         </>

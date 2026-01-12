@@ -87,12 +87,12 @@ export const portfolioData = [
     isOwnProduct: false
   },
   {
-    id: "maria_clara",
-    title: "Maria Clara Arquitetura",
+    id: "clara_vilela",
+    title: "Clara Vilela Arquitetura",
     text: "Desenvolvimento de {strong}Portfólio{/strong} para estudante de Arquitetura. Autenticidade, interatividade e eficiência para destacar seus projetos perfeitamente!",
     link: "https://portfolio-maria-clara.vercel.app/",
-    imageAlt: "Site da Maria Clara",
-    logoAlt: "Logo Maria Clara",
+    imageAlt: "Site da Clara",
+    logoAlt: "Logo Clara Vilela",
     sector: "tech",
     type: "website",
     status: "em desenvolvimento",

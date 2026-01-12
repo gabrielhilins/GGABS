@@ -102,7 +102,6 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
         background: transparent;
         backdrop-filter: blur(5px);
         color: white;
-        font-size: clamp(1.25rem, 3vw, 1.5rem);
         transition: all 0.3s ease;
         position: relative;
 
@@ -141,6 +140,13 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
             z-index: 5;
           }
         }
+      }
+
+      .socialIconInner {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
@@ -270,12 +276,11 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
       }
 
       .socials {
-        gap: clamp(0.75rem, 1.5vw, 1rem);
+        gap: clamp(1rem, 3vw, 1.5rem);
 
         .socialIcon {
-          width: clamp(2rem, 5vw, 2.5rem);
-          height: clamp(2rem, 5vw, 2.5rem);
-          font-size: clamp(1rem, 2.5vw, 1.25rem);
+          width: clamp(2.2rem, 7vw, 2.8rem);
+          height: clamp(2.2rem, 7vw, 2.8rem);
 
           &[data-tooltip] {
             &:hover::after {
@@ -283,6 +288,10 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
               padding: 0.4rem 0.8rem;
             }
           }
+        }
+
+        .socialIconInner {
+          font-size: clamp(1.1rem, 3.5vw, 1.4rem);
         }
       }
     }
@@ -322,12 +331,11 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
       }
 
       .socials {
-        gap: clamp(0.75rem, 1vw, 1rem);
+        gap: clamp(1.25rem, 5vw, 1.5rem);
 
         .socialIcon {
-          width: clamp(1.95rem, 4vw, 2.5rem);
-          height: clamp(1.95rem, 4vw, 2.5rem);
-          font-size: clamp(1rem, 2vw, 1.325rem);
+          width: clamp(2.4rem, 12vw, 2.8rem);
+          height: clamp(2.4rem, 12vw, 2.8rem);
 
           &[data-tooltip] {
             &:hover::after {
@@ -335,6 +343,10 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
               padding: 0.4rem 0.8rem;
             }
           }
+        }
+
+        .socialIconInner {
+          font-size: clamp(1.2rem, 6vw, 1.4rem);
         }
       }
     }
