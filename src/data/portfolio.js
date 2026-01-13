@@ -18,6 +18,10 @@ import BarbeariaPreview from '../assets/img/BarbeariaPreview.png'
 import Logobarbearia from '../assets/img/LogoBarbearia.png'
 import FisioterapiaPreview from '../assets/img/FisioterapiaPreview.png'
 import LogoFisioterapia from '../assets/img/LogoFisioterapia.png'
+import HamburgueriaPreview from '../assets/img/HamburgueriaPreview.png'
+import LogoHamburgueria from '../assets/img/HamburgueriaLogo.png'
+import CursoPreview from '../assets/img/CursoPreview.png'
+import LogoCurso from '../assets/img/BrowniesLogo.png'
 
 export const portfolioData = [
   {
@@ -180,6 +184,38 @@ export const portfolioData = [
     date: "2026-01-09",
     logo: LogoFisioterapia,
     image: FisioterapiaPreview,
+    isOwnProduct: true
+  },
+  {
+    id: "curso-oline",
+    title: "Brownies Lucrativos",
+    text: "{strong}Página de Vendas Otimizada{/strong} para cursos online e infoprodutos. Layout focado em conversão, com destaque estratégico para os benefícios e provas sociais.",
+    link: "https://fisioterapeuta-landing-page.vercel.app/",
+    imageAlt: "Site Curso",
+    logoAlt: "Logo Brownies",
+    sector: "tech",
+    type: "landing-page",
+    status: "finalizado",
+    linkText: "Ver Demo",
+    date: "2026-01-12",
+    logo: LogoCurso,
+    image: CursoPreview,
+    isOwnProduct: true
+  },
+  {
+    id: "hamburgueria",
+    title: "IRON BURGUER",
+    text: "{strong}Landing Page Gastronômica{/strong} para hamburguerias e delivery. Design visualmente atraente que desperta o desejo e destaca o cardápio de forma irresistível.",
+    link: "https://hamburgueria-landing-page.vercel.app/",
+    imageAlt: "Site Hamburgueria",
+    logoAlt: "Logo Hamburgueria",
+    sector: "tech",
+    type: "landing-page",
+    status: "finalizado",
+    linkText: "Ver Demo",
+    date: "2026-01-13",
+    logo: LogoHamburgueria,
+    image: HamburgueriaPreview,
     isOwnProduct: true
   },
 ];
