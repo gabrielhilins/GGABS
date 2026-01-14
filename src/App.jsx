@@ -2,16 +2,17 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./layouts/Footer/Footer";
 import Header from "./layouts/Header/Header";
 import Depoimentos from "./sections/Depoimentos/Depoimentos";
-// import Diferenciais from "./sections/Diferenciais/Diferenciais";
+
 import Faq from "./sections/Faq/Faq";
 import Hero from "./sections/Hero/Hero";
-// import Historia from "./sections/historia/Historia";
+
 import Portifolio from "./sections/Portifolio/Portifolio";
 import Serviços from "./sections/Serviços/Serviços";
-// import Sobre from "./sections/Sobre/Sobre";
+import LnkdPerfil from "./sections/LnkdPerfil/LnkdPerfil";
+
 import Orçamento from "./pages/Orçamento/Orçamento";
 import NotFound404 from "./pages/404";
-// import Pacotes from "./sections/Pacotes/Pacotes";
+
 import CTA from "./sections/CTA/CTA";
 import useScrollRestoration from "./hooks/useScrollRestoration";
 import Links from "./pages/Links/Links";
@@ -28,10 +29,10 @@ function App() {
 
   const is404Route = !validRoutes.includes(location.pathname);
 
-  // Routes where Header should be hidden
+  
   const isHeaderExcludedRoute = [
     "/solicitar-orcamentos",
-    "/links" // Header will be hidden on /links
+    "/links" 
   ].includes(location.pathname);
 
   const isFooterExcludedRoute = 
@@ -54,6 +55,9 @@ function App() {
               </div>
               <div id="services">
                 <Serviços />
+              </div>
+              <div id="lnkd-perfil">
+                <LnkdPerfil />
               </div>
               <div id="portfolio">
                 <Portifolio />

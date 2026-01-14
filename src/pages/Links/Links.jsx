@@ -69,7 +69,7 @@ const Links = () => {
   ];
 
   const renderIcon = (icon) => {
-    // Check if icon is a string (image source) or a React component
+    
     if (typeof icon === 'string') {
       return <img src={icon} alt="Link icon" className={style.linkImage} />;
     }

@@ -13,9 +13,9 @@ const StarsBackground = ({ section }) => {
         newStars.push({
           id: i,
           size: Math.random() * 3 + 1,
-          left: Math.random() * 100, // Posição inicial aleatória em %
-          top: Math.random() * 100, // Posição inicial aleatória em %
-          duration: Math.random() * 20 + 10, // Tempo aleatório de movimento
+          left: Math.random() * 100, 
+          top: Math.random() * 100, 
+          duration: Math.random() * 20 + 10, 
         });
       }
       setStars(newStars);
@@ -28,9 +28,9 @@ const StarsBackground = ({ section }) => {
     stars.forEach((star) => {
       gsap.fromTo(
         `#star-${star.id}`,
-        { x: -window.innerWidth }, // Começa fora da tela à esquerda
+        { x: -window.innerWidth }, 
         {
-          x: window.innerWidth, // Move até o fim da tela à direita
+          x: window.innerWidth, 
           duration: star.duration,
           repeat: -1,
           ease: "linear",
@@ -39,7 +39,7 @@ const StarsBackground = ({ section }) => {
     });
   }, [stars]);
 
-  // Determina a classe do container com base na prop "section"
+  
   const containerClass =
     section === "header"
       ? styles["header-stars-container"]
@@ -55,8 +55,8 @@ const StarsBackground = ({ section }) => {
           style={{
             width: `${star.size}px`,
             height: `${star.size}px`,
-            left: `${star.left}%`, // Posição inicial em %
-            top: `${star.top}%`,  // Posição inicial em %
+            left: `${star.left}%`, 
+            top: `${star.top}%`,  
             position: "absolute",
             borderRadius: "50%",
             backgroundColor: "white",

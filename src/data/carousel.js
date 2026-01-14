@@ -1,4 +1,4 @@
-// Slides para Desenvolvimento Web
+
 export const devWebSlides = [
   {
     title: "E-Commerce",
@@ -97,7 +97,7 @@ export const devWebSlides = [
   }
 ];
 
-// Slides para Design
+
 export const designSlides = [
   {
     title: "Identidade Visual",

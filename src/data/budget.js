@@ -1,4 +1,4 @@
-// Dados e lógica de negócios para o sistema de orçamento
+
 
 export const serviceNames = {
   cardapio: "Cardápio",

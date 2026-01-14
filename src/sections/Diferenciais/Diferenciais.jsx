@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import { useEffect } from 'react';
 import styles from './Diferenciais.module.scss';
 import { 

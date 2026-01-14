@@ -6,22 +6,22 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   min-height: 100vh;
   position: relative;
   color: white;
-  overflow-x: hidden; // Permite scroll horizontal
-  scroll-snap-type: x mandatory; // Scroll snap para melhor experiência
-  -webkit-overflow-scrolling: touch; // Suave em iOS
+  overflow-x: hidden; 
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch; 
 }
 
 .horizontal-story {
   display: flex;
   width: max-content;
   height: 100%;
-  will-change: transform; // Otimização
+  will-change: transform; 
 }
 
 .panel {
   width: 100vw;
   height: 100vh;
-  scroll-snap-align: start; // Alinhamento do scroll snap
+  scroll-snap-align: start; 
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   height: auto;
   margin-bottom: 1rem;
   max-width: 100%;
-  transform: translateZ(0); // Aceleração GPU
+  transform: translateZ(0); 
 }
 
 .text {
@@ -46,7 +46,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   text-align: center;
 }
 
-/* Media Queries */
+
 @media screen and (max-width: 768px) {
   .historia-container {
     overflow-x: hidden;

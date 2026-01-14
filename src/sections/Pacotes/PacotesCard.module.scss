@@ -1,4 +1,4 @@
-// PacotesCard.module.scss
+
 .card {
   background: #ffffff;
   border-radius: 20px;
@@ -54,9 +54,9 @@
 .divider {
   border: none;
   height: 1px;
-  background: #A1C4FF; // Cor suave que combina com o tema (azul claro)
-  opacity: 0.5; // Suaviza a linha para não ser muito dominante
-  margin: 15px 0; // Espaçamento acima e abaixo da linha
+  background: #A1C4FF; 
+  opacity: 0.5; 
+  margin: 15px 0; 
 }
 
 .target {
@@ -189,7 +189,7 @@
   color: #fff;
 }
 
-// Responsividade
+
 @media (max-width: 1024px) {
   .card {
     padding: 20px;
@@ -212,7 +212,7 @@
   }
 
   .divider {
-    margin: 12px 0; // Ajustado para telas menores
+    margin: 12px 0; 
   }
 
   .targetTitle {
@@ -281,7 +281,7 @@
   }
 
   .divider {
-    margin: 10px 0; // Ajustado para telas menores
+    margin: 10px 0; 
   }
 
   .targetTitle {
@@ -351,7 +351,7 @@
   }
 
   .divider {
-    margin: 8px 0; // Ajustado para telas muito pequenas
+    margin: 8px 0; 
   }
 
   .targetTitle {

@@ -95,6 +95,22 @@ export const questionFlows = {
         placeholder: "Selecione uma opção"
       },
     ],
+    lnkdPerfil: [
+      {
+        id: "objetivo_lnkd",
+        label: "Qual o objetivo do seu LNKD PERFIL?",
+        type: "select",
+        options: [
+          "Venda de Produtos",
+          "Divulgação de Serviços",
+          "Agendamentos",
+          "Cartão de Visitas Digital",
+          "Outro"
+        ],
+        required: true,
+        placeholder: "Selecione uma opção"
+      },
+    ],
     outro: [
       {
         id: "descricao",

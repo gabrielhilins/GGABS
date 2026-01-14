@@ -6,7 +6,7 @@ import { servicesData } from "../../data/services";
 function Servicos() {
   const [selectedCategory, setSelectedCategory] = useState("Tech");
 
-  // Flatten the data: Create a single array of all service items with their category info
+  
   const allServices = useMemo(() => {
     return servicesData.flatMap((category) =>
       category.exemplos.map((exemplo) => ({
@@ -18,20 +18,20 @@ function Servicos() {
     );
   }, []);
 
-  // Filter based on selection
+  
   const filteredServices = useMemo(() => {
     return allServices.filter((service) => service.categoryTitle === selectedCategory);
   }, [selectedCategory, allServices]);
 
   return (
     <section className={styles["servicos-container"]}>
-      <h1 className={styles.title}>Serviços</h1>
-      <p className={styles.subtitle}>
+      <h1 className={styles.title} data-aos="fade-up">Serviços</h1>
+      <p className={styles.subtitle} data-aos="fade-up" data-aos-delay="100">
         Aqui você encontra alguns dos serviços que oferecemos
       </p>
 
-      {/* Filter Controls */}
-      <div className={styles.filterContainer}>
+      {}
+      <div className={styles.filterContainer} data-aos="fade-up" data-aos-delay="200">
         {[
           { id: "Tech", label: "Tech" },
           { id: "Design", label: "Design" },
@@ -54,12 +54,12 @@ function Servicos() {
         ))}
       </div>
 
-      {/* Services List */}
+      {}
       <div className={styles.servicesList}>
         {filteredServices.map((service, index) => {
           const IconComponent = service.icon;
           return (
-            <div key={index} className={styles.serviceItem}>
+            <div key={index} className={styles.serviceItem} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
               <div className={styles.imageContainer}>
                 <div className={styles.iconWrapper}>
                   <IconComponent />

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./Orçamento.module.scss";
 import { LuHandshake } from "react-icons/lu";
+import { MdCheck } from "react-icons/md";
 
 const Form = ({
   formData,
@@ -19,90 +20,19 @@ const Form = ({
     "flexivel": "Flexível"
   };
 
-  const renderQuestion = (question) => {
-    const isRequired = question.required || false;
-    return (
-      <div key={question.id} className={styles.formGroup}>
-        <label htmlFor={question.id}>
-          {question.label}{" "}
-          {isRequired && <span className={styles.requiredAsterisk}>*</span>}
-        </label>
-        <div
-          className={`${styles.inputWrapper} ${
-            errors[question.id] ? styles.inputError : ""
-          }`}
-        >
-          {question.type === "text" && (
-            <input
-              type="text"
-              id={question.id}
-              name={`details.${question.id}`}
-              value={formData.details[question.id] || ""}
-              onChange={handleChange}
-              placeholder={question.placeholder}
-            />
-          )}
-          {question.type === "number" && (
-            <input
-              type="number"
-              id={question.id}
-              name={`details.${question.id}`}
-              value={formData.details[question.id] || ""}
-              onChange={handleChange}
-              min={question.min}
-              placeholder={question.placeholder}
-            />
-          )}
-          {question.type === "select" && (
-            <select
-              id={question.id}
-              name={`details.${question.id}`}
-              value={formData.details[question.id] || ""}
-              onChange={handleChange}
-            >
-              <option value="">Selecione uma opção</option>
-              {question.options.map((opt) => (
-                <option key={opt} value={opt}>
-                  {opt}
-                </option>
-              ))}
-            </select>
-          )}
-          {question.type === "textarea" && (
-            <textarea
-              id={question.id}
-              name={`details.${question.id}`}
-              value={formData.details[question.id] || ""}
-              onChange={handleChange}
-              placeholder={question.placeholder}
-              rows="4"
-            />
-          )}
-          {errors[question.id] && (
-            <span className={styles.errorMessage}>{errors[question.id]}</span>
-          )}
-        </div>
-        
-        {question.type === "select" && formData.details[question.id] === "Outro" && (
-          <div className={styles.inputWrapper} style={{ marginTop: '15px' }}>
-            <label htmlFor={`${question.id}_outro`} style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: '#f8fafc' }}>
-              Descreva sua ideia/projeto: <span className={styles.requiredAsterisk}>*</span>
-            </label>
-            <textarea
-              id={`${question.id}_outro`}
-              name={`details.${question.id}_outro`}
-              value={formData.details[`${question.id}_outro`] || ""}
-              onChange={handleChange}
-              placeholder="Conte um pouco mais sobre o que você precisa..."
-              rows="3"
-            />
-             {errors[`${question.id}_outro`] && (
-                <span className={styles.errorMessage}>{errors[`${question.id}_outro`]}</span>
-             )}
-          </div>
-        )}
-      </div>
-    );
+  const handleServiceToggle = (key) => {
+    const currentServices = Array.isArray(formData.service) ? formData.service : [];
+    const newServices = currentServices.includes(key)
+      ? currentServices.filter(s => s !== key)
+      : [...currentServices, key];
+    
+    
+    handleChange({
+      target: {
+        name: "service",
+        value: newServices
+      }
+    });
   };
 
   return (
@@ -222,69 +152,84 @@ const Form = ({
         </div>
       )}
 
-      <div className={styles.row}>
-        <div className={styles.formGroup}>
-          <label htmlFor="service">
-            Tipo de serviço desejado{" "}
-            <span className={styles.requiredAsterisk}>*</span>
-          </label>
-          <div
-            className={`${styles.inputWrapper} ${
-              errors.service ? styles.inputError : ""
-            }`}
-          >
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-            >
-              <option value="">Selecione o tipo de serviço</option>
-              {Object.keys(serviceNames).map((key) => (
-                <option key={key} value={key}>
-                  {serviceNames[key]}
-                </option>
-              ))}
-            </select>
-            {errors.service && (
-              <span className={styles.errorMessage}>{errors.service}</span>
-            )}
-          </div>
+      <div className={styles.formGroup}>
+        <label>
+          Serviços desejados {" "}
+          <span className={styles.requiredAsterisk}>*</span>
+        </label>
+        <div className={`${styles.multiSelectGrid} ${errors.service ? styles.gridError : ""}`}>
+          {Object.keys(serviceNames).map((key) => {
+            const isSelected = Array.isArray(formData.service) && formData.service.includes(key);
+            return (
+              <div 
+                key={key} 
+                className={`${styles.serviceCard} ${isSelected ? styles.selected : ""}`}
+                onClick={() => handleServiceToggle(key)}
+              >
+                <div className={styles.checkCircle}>
+                  {isSelected && <MdCheck />}
+                </div>
+                <span>{serviceNames[key]}</span>
+              </div>
+            );
+          })}
         </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="deadline">
-            Qual sua expectativa de prazo?{" "}
-            <span className={styles.requiredAsterisk}>*</span>
-          </label>
-          <div
-            className={`${styles.inputWrapper} ${
-              errors.deadline ? styles.inputError : ""
-            }`}
-          >
-            <select
-              id="deadline"
-              name="deadline"
-              value={formData.deadline}
-              onChange={handleChange}
-            >
-              <option value="">Selecione um prazo</option>
-              {Object.keys(deadlineOptions).map(
-                (key) => (
-                  <option key={key} value={key}>
-                    {deadlineOptions[key]}
-                  </option>
-                )
-              )}
-            </select>
-            {errors.deadline && (
-              <span className={styles.errorMessage}>{errors.deadline}</span>
-            )}
-          </div>
-        </div>
+        {errors.service && (
+          <span className={styles.errorMessage}>{errors.service}</span>
+        )}
       </div>
 
-      
+      {Array.isArray(formData.service) && formData.service.includes("outro") && (
+        <div className={styles.formGroup} data-aos="fade-down">
+          <label htmlFor="outro_description">
+            Descreva brevemente sua ideia <span className={styles.requiredAsterisk}>*</span>
+          </label>
+          <div className={`${styles.inputWrapper} ${errors.outro_description ? styles.inputError : ""}`}>
+            <textarea
+              id="outro_description"
+              name="details.outro_description"
+              value={formData.details.outro_description || ""}
+              onChange={handleChange}
+              placeholder="Conte um pouco sobre o projeto que você tem em mente..."
+              rows="3"
+            />
+            {errors.outro_description && (
+              <span className={styles.errorMessage}>{errors.outro_description}</span>
+            )}
+          </div>
+        </div>
+      )}
+
+      <div className={styles.formGroup}>
+        <label htmlFor="deadline">
+          Qual sua expectativa de prazo?{" "}
+          <span className={styles.requiredAsterisk}>*</span>
+        </label>
+        <div
+          className={`${styles.inputWrapper} ${
+            errors.deadline ? styles.inputError : ""
+          }`}
+        >
+          <select
+            id="deadline"
+            name="deadline"
+            value={formData.deadline}
+            onChange={handleChange}
+          >
+            <option value="">Selecione um prazo</option>
+            {Object.keys(deadlineOptions).map(
+              (key) => (
+                <option key={key} value={key}>
+                  {deadlineOptions[key]}
+                </option>
+              )
+            )}
+          </select>
+          {errors.deadline && (
+            <span className={styles.errorMessage}>{errors.deadline}</span>
+          )}
+        </div>
+      </div>
 
       <button type="submit" className={styles.submitButton}>
         <LuHandshake className={styles.buttonIcon} />{" "}
@@ -300,7 +245,7 @@ Form.propTypes = {
     lastname: PropTypes.string.isRequired,
     isCompany: PropTypes.string,
     companyName: PropTypes.string,
-    service: PropTypes.string.isRequired,
+    service: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
     details: PropTypes.object.isRequired,
     deadline: PropTypes.string.isRequired,
     files: PropTypes.arrayOf(PropTypes.instanceOf(File)).isRequired,

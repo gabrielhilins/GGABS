@@ -27,7 +27,7 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   line-height: 1.6;
 }
 
-/* --- Filter Controls --- */
+
 .filterContainer {
   display: flex;
   justify-content: center;
@@ -69,13 +69,13 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   }
 }
 
-/* --- Services List --- */
+
 .servicesList {
   display: flex;
   flex-direction: column;
   gap: clamp(100px, 12vw, 160px);
   width: 100%;
-  max-width: 1200px; /* Standardized max-width for the content area */
+  max-width: 1200px; 
 }
 
 .serviceItem {
@@ -83,16 +83,16 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 60px; /* Fixed gap for consistency */
+  gap: 60px; 
 
-  /* Zig-Zag Logic for Desktop */
+  
   &:nth-child(even) {
     flex-direction: row-reverse;
   }
 }
 
 .imageContainer {
-  flex: 1; /* Occupies 50% of the space minus gap */
+  flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
 
 .iconWrapper {
   width: 100%;
-  height: 340px; /* Fixed height for standardization */
+  height: 340px; 
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
@@ -109,7 +109,7 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   align-items: center;
   justify-content: center;
   font-size: 6rem;
-  color: rgba(255, 255, 255, 0.5); /* Subtler icon color */
+  color: rgba(255, 255, 255, 0.5); 
   backdrop-filter: blur(10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
@@ -131,7 +131,7 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   &:hover {
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.2);
-    color: #00DDEB; /* Highlight color on hover */
+    color: #00DDEB; 
     box-shadow: 0 30px 60px rgba(0, 221, 235, 0.15);
 
     &::before {
@@ -141,12 +141,12 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
 }
 
 .contentContainer {
-  flex: 1; /* Occupies 50% */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  padding: 0 10px; /* Slight padding to ensure text doesn't touch edges if flex shrinks */
+  padding: 0 10px; 
 }
 
 .categoryTag {
@@ -199,7 +199,7 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   }
 }
 
-/* --- Mobile / Tablet --- */
+
 @media screen and (max-width: 960px) {
   .serviceItem {
     flex-direction: column !important;
@@ -219,7 +219,7 @@ $gradient-one: linear-gradient(90deg, #aff0ff 0%, #6046ff 50%, #111d3e 100%);
   }
 
   .iconWrapper {
-    height: 280px; /* Slightly smaller height on mobile */
+    height: 280px; 
   }
 
   .serviceDescription {

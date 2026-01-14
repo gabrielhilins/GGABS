@@ -19,7 +19,7 @@ function Orçamento() {
     lastname: "",
     isCompany: "nao",
     companyName: "",
-    service: "",
+    service: [],
     details: {},
     deadline: "",
     files: [],
@@ -86,32 +86,17 @@ function Orçamento() {
     if (formData.isCompany === "sim" && !formData.companyName.trim()) {
       newErrors.companyName = "O nome da empresa é obrigatório";
     }
-    if (!formData.service) newErrors.service = "Selecione um serviço";
+    if (!formData.service || formData.service.length === 0) {
+      newErrors.service = "Selecione pelo menos um serviço";
+    }
     if (!formData.deadline) newErrors.deadline = "Selecione um prazo";
 
-    const questions = [
-      ...(questionFlows.initial[formData.service] || []),
-      ...(questionFlows.detailed[formData.service] || []),
-    ];
-    questions.forEach((q) => {
-      const value = formData.details[q.id];
-      if (q.required) {
-        if (q.type === "number" && (!value || value < q.min))
-          newErrors[q.id] = `${q.label} deve ser pelo menos ${q.min}`;
-        if ((q.type === "text" || q.type === "textarea") && !value?.trim())
-          newErrors[q.id] = `${q.label} é obrigatório`;
-        if (q.type === "select" && !value)
-          newErrors[q.id] = `Selecione uma opção para ${q.label}`;
-        
-        // Validate "Outro" description
-        if (q.type === "select" && value === "Outro") {
-            const outroValue = formData.details[`${q.id}_outro`];
-            if (!outroValue?.trim()) {
-                newErrors[`${q.id}_outro`] = "Por favor, descreva sua ideia/projeto";
-            }
-        }
+    
+    if (Array.isArray(formData.service) && formData.service.includes("outro")) {
+      if (!formData.details.outro_description?.trim()) {
+        newErrors.outro_description = "A descrição é obrigatória para o serviço 'Outro'";
       }
-    });
+    }
 
     setErrors(newErrors);
     return !Object.keys(newErrors).length;
@@ -137,21 +122,17 @@ function Orçamento() {
           second: "2-digit",
         });
 
-        const questions = [
-          ...(questionFlows.initial[formData.service] || []),
-          ...(questionFlows.detailed[formData.service] || []),
-        ];
-        const briefingSummary = questions
-          .map((q) => {
-            const answer = formData.details[q.id];
-            if (q.type === "select" && answer === "Outro") {
-                const outroDetail = formData.details[`${q.id}_outro`];
-                return `${q.label}: Outro - ${outroDetail}`;
-            }
-            return answer ? `${q.label}: ${answer}` : null;
-          })
-          .filter(Boolean)
-          .join("\n");
+        
+        const selectedServiceNames = formData.service
+          .map(key => serviceNames[key])
+          .join(", ");
+
+        let briefingSummary = "";
+        if (formData.service.includes("outro") && formData.details.outro_description) {
+          briefingSummary = `Descrição do serviço 'Outro': ${formData.details.outro_description}`;
+        } else {
+          briefingSummary = "Múltiplos serviços selecionados";
+        }
 
         const deadlineOptions = {
           "1-semana": "1 semana",
@@ -166,9 +147,9 @@ function Orçamento() {
           formData.lastname,
           formData.isCompany,
           formData.companyName,
-          serviceNames[formData.service],
+          selectedServiceNames,
           deadlineOptions[formData.deadline],
-          briefingSummary,
+          "Múltiplos serviços selecionados",
           formattedDate,
           formattedTime,
         );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PacotesCard.module.scss';
-import PacotesModal from './Modal'; // Importe o modal
+import PacotesModal from './Modal'; 
 
 function PacotesCard({ title, description, target, benefits, icon, observations, onCtaClick }) {
   const [showModal, setShowModal] = useState(false);

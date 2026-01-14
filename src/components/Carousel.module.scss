@@ -15,7 +15,7 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
 .carouselContainer {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(0deg, #111D3E 0%, #0A0A23 100%); // Gradiente padrão
+  background: linear-gradient(0deg, #111D3E 0%, #0A0A23 100%); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,15 +24,15 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
   overflow: hidden;
 
   &.webDevelopment {
-    background: linear-gradient(180deg, #111D3E 0%, #0A0A23 100%); // 180deg para Desenvolvimento Web
+    background: linear-gradient(180deg, #111D3E 0%, #0A0A23 100%); 
   }
 
   &.managementSystems {
-    background: linear-gradient(0deg, #111D3E 0%, #0A0A23 100%); // 0deg para Sistemas de Gestão
+    background: linear-gradient(0deg, #111D3E 0%, #0A0A23 100%); 
   }
 
   &.design {
-    background: linear-gradient(180deg, #111D3E 0%, #0A0A23 100%); // 180deg para Design
+    background: linear-gradient(180deg, #111D3E 0%, #0A0A23 100%); 
   }
 
   .overlay {
@@ -343,7 +343,7 @@ $gradient-two: linear-gradient(135deg, #111D3E 0%, #2E4377 50%, #5A7CFF 75%, #A1
     }
   }
 
-  // Media queries específicas
+  
   @media screen and (min-width: 768px) {
     .slideContent {
       flex-direction: row;

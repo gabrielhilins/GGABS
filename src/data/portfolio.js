@@ -22,6 +22,8 @@ import HamburgueriaPreview from '../assets/img/HamburgueriaPreview.png'
 import LogoHamburgueria from '../assets/img/HamburgueriaLogo.png'
 import CursoPreview from '../assets/img/CursoPreview.png'
 import LogoCurso from '../assets/img/BrowniesLogo.png'
+import NAVIAPreview from '../assets/img/NAVIAPREVIEW.png'
+import LogoNAVIA from '../assets/img/LogoNAVIA.png'
 
 export const portfolioData = [
   {
@@ -88,6 +90,22 @@ export const portfolioData = [
     date: "2025-03-25",
     logo: LogoPedroCezar,
     image: PedrocezarPreview,
+    isOwnProduct: false
+  },
+  {
+    id: "navia",
+    title: "NAVIA",
+    text: "{strong}Identidade Visual{/strong} para projeto científico experimental chamado Núcleo de Análise e Vigilaância com Inteligência artificial.",
+    link: "",
+    imageAlt: "Logo completa NAVIA",
+    logoAlt: "Logo NAVIA",
+    sector: "design",
+    type: "branding",
+    status: "finalizado",
+    linkText: "Ver Projeto",
+    date: "2025-11-30",
+    logo: LogoNAVIA,
+    image: NAVIAPreview,
     isOwnProduct: false
   },
   {
@@ -190,7 +208,7 @@ export const portfolioData = [
     id: "curso-oline",
     title: "Brownies Lucrativos",
     text: "{strong}Página de Vendas Otimizada{/strong} para cursos online e infoprodutos. Layout focado em conversão, com destaque estratégico para os benefícios e provas sociais.",
-    link: "https://fisioterapeuta-landing-page.vercel.app/",
+    link: "https://curso-online-landing-page.vercel.app/",
     imageAlt: "Site Curso",
     logoAlt: "Logo Brownies",
     sector: "tech",

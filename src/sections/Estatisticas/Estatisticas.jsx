@@ -65,7 +65,7 @@ const Estatisticas = () => {
     const observerCallback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Handle tecnologiaEstatisticas items
+          
           const techIndex = tecnologiaRefs.current.indexOf(entry.target);
           if (techIndex !== -1 && techProgress[techIndex] === 0) {
             setTechProgress((prev) => {
@@ -90,7 +90,7 @@ const Estatisticas = () => {
               .classList.add(styles["typewriter-desc"]);
           }
 
-          // Handle designEstatisticas items
+          
           const designIndex = designRefs.current.indexOf(entry.target);
           if (designIndex !== -1 && designProgress[designIndex] === 0) {
             setDesignProgress((prev) => {

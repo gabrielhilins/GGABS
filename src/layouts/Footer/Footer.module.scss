@@ -25,15 +25,15 @@
 
   .copyright {
     display: flex;
-    flex-direction: column; // Alterado para column para empilhar texto e links
+    flex-direction: column; 
     align-items: center;
-    gap: clamp(5px, 1.5vw, 10px); // Espaço entre texto e links
+    gap: clamp(5px, 1.5vw, 10px); 
 
     .copyrightText {
       p {
         max-width: clamp(200px, 40vw, 400px);
         font-size: clamp(10px, 1.5vw, 12px);
-        text-align: justify; // Centralizado para alinhar com os links
+        text-align: justify; 
         margin: 0;
       }
       a {
@@ -50,8 +50,8 @@
 
     .copyrightLinks {
       display: flex;
-      gap: clamp(10px, 2vw, 20px); // Espaço entre os links
-      flex-wrap: wrap; // Permite quebra de linha em telas pequenas
+      gap: clamp(10px, 2vw, 20px); 
+      flex-wrap: wrap; 
       justify-content: center;
 
       a {
@@ -118,7 +118,7 @@
           transition: color 0.3s ease;
         }
 
-        // Tooltip
+        
         &::after {
           content: attr(data-tooltip);
           position: absolute;
@@ -143,7 +143,7 @@
     }
   }
 
-  // Media queries específicas
+  
   @media screen and (max-width: 768px) {
     flex-direction: column;
     padding: clamp(15px, 4vw, 20px) 0;
@@ -167,7 +167,7 @@
       }
 
       .copyrightLinks {
-        flex-direction: column; // Links empilhados em telas muito pequenas
+        flex-direction: column; 
         gap: clamp(5px, 1vw, 10px);
       }
     }

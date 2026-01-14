@@ -17,36 +17,6 @@ $border-gray: #D1D5DB;
   overflow-y: auto;
   overflow-x: hidden;
 
-  .logoContainer {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: clamp(15px, 3vw, 20px);
-
-    .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(3px, 1vw, 5px);
-
-      img {
-        max-width: clamp(120px, 20vw, 200px);
-        height: auto;
-      }
-
-      p {
-        font-size: clamp(8px, 1.5vw, 10px);
-        color: black;
-      }
-    }
-
-    a {
-      color: #111D3E;
-      font-size: clamp(10px, 1.8vw, 12px);
-      text-decoration: underline;
-    }
-  }
-
   .requiredNote {
     font-size: 0.9rem;
     color: #bebebe;
@@ -55,7 +25,7 @@ $border-gray: #D1D5DB;
   }
 
   .requiredAsterisk {
-    color: red;
+    color: #e74c3c;
     font-weight: bold;
   }
 
@@ -92,11 +62,6 @@ $border-gray: #D1D5DB;
           color: #00DDEB;
         }
       }
-    
-      .changeLanguageContainer {
-        display: flex;
-        align-items: center;
-      }
     }
 
     h1 {
@@ -114,53 +79,6 @@ $border-gray: #D1D5DB;
       margin-bottom: clamp(10px, 2vw, 15px);
       line-height: 1.4;
       letter-spacing: 0.5px;
-    }
-
-    .description {
-      max-width: clamp(300px, 80vw, 700px);
-      margin: 0 auto;
-      color: #ddd;
-
-      p {
-        font-size: clamp(0.75rem, 2vw, 1rem);
-        line-height: 1.6;
-        margin-bottom: clamp(5px, 1.5vw, 10px);
-
-        &:last-child {
-          font-style: italic;
-          color: #e5e5e5;
-        }
-      }
-    }
-
-    .contactSection {
-      margin: clamp(15px, 4vw, 20px) 0;
-
-      p {
-        font-size: clamp(8px, 1.5vw, 10px);
-      }
-
-      .whatsappButton {
-        display: inline-flex;
-        align-items: center;
-        gap: clamp(5px, 1.5vw, 10px);
-        background-color: #25d366;
-        color: white;
-        padding: clamp(8px, 2vw, 12px) clamp(15px, 3vw, 24px);
-        border: none;
-        border-radius: 8px;
-        font-size: clamp(0.85rem, 2vw, 1rem);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        .whatsappIcon {
-          font-size: clamp(1rem, 2.5vw, 1.2rem);
-        }
-
-        &:hover {
-          background-color: #1ebe52;
-        }
-      }
     }
   }
 
@@ -202,7 +120,7 @@ $border-gray: #D1D5DB;
         font-size: clamp(0.8rem, 1.8vw, 0.95rem);
         color: #f8fafc;
         font-weight: 600;
-        margin-bottom: clamp(5px, 1vw, 8px);
+        margin-bottom: clamp(8px, 1.5vw, 12px);
         letter-spacing: 0.2px;
       }
 
@@ -221,11 +139,6 @@ $border-gray: #D1D5DB;
         font-size: clamp(0.85rem, 2vw, 1rem);
         position: relative;
         font-weight: 500;
-        
-        &:hover .radioCustom {
-          border-color: $accent-blue;
-          box-shadow: 0 0 5px rgba($accent-blue, 0.4);
-        }
       }
       
       .radioInput {
@@ -236,24 +149,14 @@ $border-gray: #D1D5DB;
         width: 0;
       
         &:checked ~ .radioCustom {
-          background-color: transparent;
           border-color: #00DDEB;
-          
-          &::after {
-            display: block;
-            background-color: #00DDEB;
-          }
-        }
-        
-        &:focus ~ .radioCustom {
-           box-shadow: 0 0 0 2px rgba($accent-blue, 0.3);
+          &::after { display: block; background-color: #00DDEB; }
         }
       }
       
       .radioCustom {
         height: 20px;
         width: 20px;
-        background-color: transparent;
         border: 2px solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
         position: relative;
@@ -269,7 +172,75 @@ $border-gray: #D1D5DB;
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          background: white;
+        }
+      }
+
+      
+      .multiSelectGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+
+        &.gridError {
+          .serviceCard {
+            border-color: rgba(231, 76, 60, 0.5);
+          }
+        }
+      }
+
+      .serviceCard {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        user-select: none;
+
+        span {
+          color: #fff;
+          font-size: 0.8rem;
+          font-weight: 500;
+          line-height: 1.2;
+        }
+
+        .checkCircle {
+          width: 16px;
+          height: 16px;
+          border-radius: 4px;
+          border: 1.5px solid rgba(255, 255, 255, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #0a0a23;
+          font-size: 12px;
+          transition: all 0.2s ease;
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        &.selected {
+          background: rgba(0, 221, 235, 0.1);
+          border-color: #00DDEB;
+          box-shadow: 0 0 15px rgba(0, 221, 235, 0.1);
+
+          span {
+            color: #00DDEB;
+            font-weight: 600;
+          }
+
+          .checkCircle {
+            background: #00DDEB;
+            border-color: #00DDEB;
+          }
         }
       }
 
@@ -287,12 +258,10 @@ $border-gray: #D1D5DB;
           background: transparent;
           color: #ffffff;
           transition: all 0.3s ease;
-          backdrop-filter: none;
 
           &:focus {
             outline: none;
             border-color: #00DDEB;
-            background: rgba(255, 255, 255, 0.02);
             box-shadow: 0 0 15px rgba(0, 221, 235, 0.15);
           }
 
@@ -300,113 +269,13 @@ $border-gray: #D1D5DB;
             background: #0a0a23;
             color: #fff;
           }
-
-          &::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-          }
-        }
-
-        &.inputError {
-          border-color: #e74c3c;
-          box-shadow: 0 0 5px rgba(#e74c3c, 0.3);
         }
 
         .errorMessage {
           color: #e74c3c;
-          font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-          margin-top: clamp(4px, 1vw, 6px);
-          font-style: italic;
-        }
-      }
-
-      .fileInputWrapper {
-        position: relative;
-
-        .fileInput {
-          display: none;
-        }
-
-        .customFileButton {
-          display: inline-block;
-          padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
-          background-color: #fff;
-          color: $primary-blue;
-          border: 1px solid $primary-blue;
-          border-radius: 8px;
-          cursor: pointer;
-          font-weight: 500;
-          font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-          transition: background-color 0.3s ease, color 0.3s ease;
-
-          &:hover {
-            background-color: $primary-blue;
-            color: #fff;
-          }
-        }
-      }
-
-      .fileList {
-        margin-top: clamp(10px, 2vw, 15px);
-
-        h4 {
-          font-size: clamp(0.85rem, 2vw, 1rem);
-          color: $dark-gray;
-          font-weight: 600;
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-
-          .checkIcon {
-            margin-left: clamp(5px, 1vw, 8px);
-            color: green;
-            font-size: clamp(14px, 2.5vw, 18px);
-          }
-
-          .fileItem {
-            display: flex;
-            align-items: center;
-            gap: clamp(8px, 1.5vw, 12px);
-            margin-bottom: clamp(8px, 1.5vw, 12px);
-
-            span {
-              flex: 1;
-              font-size: clamp(0.75rem, 1.8vw, 0.9rem);
-              color: $dark-gray;
-            }
-
-            .progressContainer {
-              width: clamp(80px, 15vw, 120px);
-              height: 6px;
-              background: #E2E8F0;
-              border-radius: 6px;
-
-              .progressBar {
-                height: 100%;
-                background: $accent-blue;
-                border-radius: 6px;
-                transition: width 0.2s ease;
-              }
-            }
-
-            .removeFileButton {
-              background: #e74c3c;
-              color: white;
-              border: none;
-              border-radius: 50%;
-              width: clamp(18px, 3vw, 22px);
-              height: clamp(18px, 3vw, 22px);
-              cursor: pointer;
-              font-size: clamp(0.8rem, 2vw, 1rem);
-              line-height: 1;
-              transition: background-color 0.3s ease;
-
-              &:hover {
-                background: #c0392b;
-              }
-            }
-          }
+          font-size: 0.8rem;
+          margin-top: 5px;
+          display: block;
         }
       }
     }
@@ -415,20 +284,20 @@ $border-gray: #D1D5DB;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(8px, 1.5vw, 12px);
-      padding: clamp(10px, 2vw, 14px) clamp(25px, 4vw, 40px);
+      gap: 12px;
+      padding: 14px 40px;
       background: transparent;
-      color: $accent-blue;
-      border: 2px solid $accent-blue;
+      color: #00DDEB;
+      border: 2px solid #00DDEB;
       border-radius: 12px;
-      font-size: clamp(1rem, 2vw, 1.1rem);
+      font-size: 1.1rem;
       font-weight: 700;
       cursor: pointer;
-      margin: clamp(20px, 3vw, 30px) auto 0;
+      margin: 30px auto 0;
       width: fit-content;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s ease;
       position: relative;
       z-index: 1;
       overflow: hidden;
@@ -436,211 +305,26 @@ $border-gray: #D1D5DB;
       &::after {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $accent-blue;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: #00DDEB;
         z-index: -1;
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .buttonIcon {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease;
       }
 
       &:hover {
         color: #0a0a23;
         box-shadow: 0 0 25px rgba(0, 221, 235, 0.4);
         transform: translateY(-3px);
-
-        &::after {
-          transform: scaleX(1);
-          transform-origin: left;
-        }
-
-        .buttonIcon {
-          transform: rotate(10deg) scale(1.1);
-        }
-      }
-
-      &:active {
-        transform: translateY(-1px);
-      }
-    }
-  }
-
-  .receiptContainer {
-    background: $light-gray;
-    padding: clamp(15px, 4vw, 30px);
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-    max-width: clamp(300px, 80vw, 600px);
-    width: 100%;
-    margin: clamp(15px, 3vw, 20px) auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    hr {
-      width: 100%;
-      border: none;
-      border-top: 1px solid $border-gray;
-      margin: clamp(15px, 3vw, 20px) 0;
-    }
-
-    h3 {
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
-      color: $dark-gray;
-      text-align: center;
-      margin-bottom: clamp(15px, 3vw, 20px);
-      font-weight: 600;
-    }
-
-    .receiptInfos {
-      text-align: left;
-      margin-bottom: clamp(15px, 3vw, 20px);
-      width: 100%;
-
-      p {
-        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-        color: #555;
-        margin: clamp(4px, 1vw, 6px) 0;
-      }
-    }
-
-    h4 {
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      color: $dark-gray;
-      margin: clamp(15px, 3vw, 20px) 0 clamp(8px, 1.5vw, 12px);
-      font-weight: 600;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: clamp(8px, 2vw, 12px) 0;
-
-      th,
-      td {
-        border: 1px solid $border-gray;
-        padding: clamp(8px, 2vw, 10px);
-        text-align: left;
-        font-size: clamp(0.75rem, 1.8vw, 0.9rem);
-      }
-
-      th {
-        background-color: $primary-blue;
-        font-weight: 500;
-        color: white;
-        text-align: center;
-      }
-
-      @media (max-width: 600px) {
-        thead {
-          display: none;
-        }
-
-        tbody,
-        tr,
-        td {
-          display: block;
-          width: 100%;
-        }
-
-        tr {
-          margin-bottom: clamp(10px, 2vw, 15px);
-          border-bottom: 2px solid $border-gray;
-        }
-
-        td {
-          position: relative;
-          padding-left: 50%;
-          text-align: right;
-          border: none;
-          border-bottom: 1px solid #E2E8F0;
-
-          &:before {
-            content: attr(data-label);
-            position: absolute;
-            left: clamp(5px, 1vw, 10px);
-            width: 45%;
-            padding-right: clamp(5px, 1vw, 10px);
-            font-weight: 600;
-            color: $dark-gray;
-            text-align: left;
-            white-space: nowrap;
-          }
-
-          &:last-child {
-            border-bottom: none;
-          }
-        }
-      }
-    }
-
-    .total {
-      font-weight: bold;
-      margin-top: clamp(8px, 2vw, 12px);
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: $dark-gray;
-    }
-
-    .observacao {
-      font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-      color: #555;
-      margin-top: clamp(8px, 2vw, 12px);
-      font-style: italic;
-    }
-
-    ul {
-      font-size: clamp(8px, 1.5vw, 10px);
-      color: $dark-gray;
-      margin-top: clamp(5px, 1vw, 8px);
-      padding-left: clamp(15px, 3vw, 20px);
-      text-align: left;
-      width: 100%;
-
-      li {
-        margin-bottom: clamp(4px, 1vw, 6px);
-      }
-    }
-
-    .resetButton {
-      display: flex;
-      align-items: center;
-      gap: clamp(5px, 1vw, 8px);
-      margin: clamp(15px, 3vw, 20px) auto 0;
-      background-color: $primary-blue;
-      opacity: 0.9;
-      color: white;
-      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-      transition: opacity 0.3s ease;
-
-      .icon {
-        margin-right: clamp(5px,  Cavendish, 8px);
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-      }
-
-      &:hover {
-        opacity: 1;
+        &::after { transform: scaleX(1); transform-origin: left; }
       }
     }
   }
 
   .loader {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
@@ -649,134 +333,16 @@ $border-gray: #D1D5DB;
     z-index: 999;
 
     .spinner {
-      width: clamp(40px, 10vw, 50px);
-      height: clamp(40px, 10vw, 50px);
+      width: 50px;
+      height: 50px;
       border: 5px solid #f3f3f3;
-      border-top: 5px solid #3498db;
+      border-top: 5px solid #00DDEB;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
 
-    p {
-      color: #fff;
-      font-size: clamp(14px, 3vw, 18px);
-      margin-top: clamp(10px, 2vw, 15px);
-    }
+    p { color: #fff; margin-top: 15px; }
   }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .modalContent {
-    background: #fff;
-    padding: clamp(20px, 5vw, 30px);
-    border-radius: 12px;
-    text-align: center;
-    max-width: clamp(300px, 80vw, 450px);
-    width: 90%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
-
-    h3 {
-      color: #2c3e50;
-      font-size: clamp(18px, 4vw, 24px);
-      margin-bottom: clamp(10px, 2vw, 15px);
-    }
-
-    p {
-      color: #555;
-      font-size: clamp(12px, 3vw, 16px);
-      line-height: 1.5;
-      margin-bottom: clamp(8px, 2vw, 10px);
-    }
-
-    .redirectNotice {
-      font-size: clamp(10px, 2.5vw, 14px);
-      color: #888;
-      font-style: italic;
-      margin-top: clamp(15px, 3vw, 20px);
-    }
-  }
-
-  .timestamp {
-    font-size: clamp(12px, 2vw, 16px);
-    color: #666;
-    text-align: center;
-    margin: clamp(8px, 2vw, 10px) 0;
-
-    strong {
-      color: #333;
-      font-weight: 600;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .panels {
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(20px, 5vw, 40px);
-    }
-
-    .formSection,
-    .receiptContainer {
-      width: 90%;
-      max-width: none;
-    }
-
-    .form {
-      padding: clamp(10px, 3vw, 15px);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .realContainer {
-      padding: clamp(10px, 3vw, 15px);
-    }
-
-    .logoContainer {
-      margin-bottom: clamp(10px, 2vw, 15px);
-    }
-
-    .formSection {
-      margin-bottom: clamp(20px, 5vw, 40px);
-
-      h1 {
-        margin-bottom: clamp(15px, 4vw, 20px);
-      }
-    }
-
-    .formGroup {
-      margin-bottom: clamp(10px, 2vw, 15px);
-    }
-
-    .submitButton {
-      padding: clamp(6px, 1.5vw, 8px) clamp(15px, 3vw, 20px);
-    }
-  }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
 }

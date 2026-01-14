@@ -11,7 +11,7 @@
   
   .title {
     h1 {
-      font-size: clamp(1rem, 5vw, 3.5rem); // Escala fluida entre 2rem e 3.5rem
+      font-size: clamp(1rem, 5vw, 3.5rem); 
       font-weight: 800;
       margin-bottom: 1.5rem;
       color: white;
@@ -40,13 +40,13 @@
       padding: 0.5rem 0;
   
       strong {
-        color: #00DDEB; // Cor vibrante para destaque
+        color: #00DDEB; 
         font-weight: 700;
         transition: color 0.3s ease;
       }
   
       &:hover strong {
-        color: #6046FF; // Interação sutil
+        color: #6046FF; 
       }
     }
   }
@@ -113,7 +113,7 @@
     opacity: 1;
   }
   
-  // Responsividade
+  
   @media (max-width: 1024px) {
     .pacotesContainer {
       padding: 3rem 1rem;

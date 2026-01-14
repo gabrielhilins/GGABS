@@ -19,7 +19,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   font-size: clamp(24px, 5vw, 40px);
 }
 
-// Keyframes para o efeito de brilho
+
 @keyframes shine {
   0% {
     transform: translateX(-100%) rotate(45deg);
@@ -32,7 +32,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   }
 }
 
-// Ajustes para telas menores
+
 @media screen and (max-width: 768px) {
   .purpose {
     font-size: clamp(14px, 3vw, 20px);
@@ -179,7 +179,7 @@ $gradient-one: linear-gradient(90deg, #AFF0FF 0%, #6046FF 50%, #00DDEB 100%);
   font-weight: lighter;
 }
 
-// Media queries específicas
+
 @media screen and (max-width: 768px) {
   .profile-card {
     width: 95%;

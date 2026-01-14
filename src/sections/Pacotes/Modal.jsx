@@ -39,13 +39,13 @@ function PacotesModal({ showModal, setShowModal, pacote }) {
 
     enviarWhatsApp(
       name,
-      "", // Sobrenome não coletado
+      "", 
       pacote.title,
-      "Flexível", // Prazo padrão
-      "", // Sem briefing
+      "Flexível", 
+      "", 
       formattedDate,
       formattedTime,
-      pacote // Passa o pacote para mensagem personalizada
+      pacote 
     );
 
     setShowModal(false);

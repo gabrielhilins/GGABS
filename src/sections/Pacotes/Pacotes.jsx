@@ -12,7 +12,7 @@ import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import PacotesModal from "./Modal";
 
-// Dados dos pacotes, agora referenciando ícones diretamente
+
 const pacotesIcons = [
   { icon: <FaUtensils /> },
   { icon: <FaBriefcase /> },
@@ -21,7 +21,7 @@ const pacotesIcons = [
 
 function Pacotes() {
 
-  // Inicializando o AOS
+  
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -129,7 +129,7 @@ function Pacotes() {
               >
                 <PacotesCard
                   {...pacote}
-                  icon={pacotesIcons[index].icon} // Atribuindo ícone correspondente
+                  icon={pacotesIcons[index].icon} 
                   onCtaClick={() => handleCardClick(pacote)}
                 />
               </div>

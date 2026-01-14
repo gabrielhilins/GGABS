@@ -19,7 +19,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className={styles["portifolio-card"]}>
-      {/* Badge Label */}
+      {}
       <div className={styles.projectLabel}>
         {project.isOwnProduct ? "Criação GGABS" : "Cliente"}
       </div>
@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
           {renderText(project.text)}
         </p>
 
-        {/* Status */}
+        {}
         <div className={styles["project-status"]}>
           {project.status === "finalizado" && (
             <>
@@ -63,7 +63,7 @@ const ProjectCard = ({ project }) => {
           )}
         </div>
 
-        {/* Botões */}
+        {}
         <div className={styles.links}>
           {project.status !== "em concepção" && (
             <a

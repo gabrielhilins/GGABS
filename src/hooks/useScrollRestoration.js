@@ -5,18 +5,18 @@ const useScrollRestoration = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Restore scroll position on page load
+    
     const scrollPosition = sessionStorage.getItem(`scrollPosition-${location.pathname}`);
     if (scrollPosition) {
       window.scrollTo(0, parseInt(scrollPosition, 10));
     }
 
-    // Save scroll position on scroll
+    
     const handleScroll = () => {
       sessionStorage.setItem(`scrollPosition-${location.pathname}`, window.scrollY.toString());
     };
 
-    // Save scroll position before unload
+    
     const handleBeforeUnload = () => {
       sessionStorage.setItem(`scrollPosition-${location.pathname}`, window.scrollY.toString());
     };
@@ -28,7 +28,7 @@ const useScrollRestoration = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
-  }, [location.pathname]); // Re-run when the route changes
+  }, [location.pathname]); 
 };
 
 export default useScrollRestoration;
