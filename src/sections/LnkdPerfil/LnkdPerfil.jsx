@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
 gsap.registerPlugin(ScrollTrigger);
-
 
 import LnkdAdvocacia from '../../assets/img/LNKDPERFIL-ADVOCACIA.png';
 import LnkdDann from '../../assets/img/LNKDPERFIL-DANN.png';
@@ -16,43 +14,61 @@ import LnkdGgabs from '../../assets/img/LNKDPERFIL-GGABS.png';
 import LnkdHamburgueria from '../../assets/img/LNKDPERFIL-HAMBURGUERIA.png';
 import LnkdPersonalTrainer from '../../assets/img/LNKDPERFIL-PERSONAL-TRAINER.png';
 import LNKDPERFIL from '../../assets/img/LNKD PERFIL.png';
+import LnkdNoirBarber from '../../assets/img/LNKDPERFIL-NOIR-BARBER.png';
 
 const lnkdPerfis = [
   LnkdAdvocacia,
-  LnkdDann,
   LnkdFisioterapeuta,
-  LnkdGabrielLins,
-  LnkdGgabs,
   LnkdHamburgueria,
-  LnkdPersonalTrainer
+  LnkdGgabs,
+  LnkdNoirBarber,
+  LnkdPersonalTrainer,
+  LnkdDann,
+  LnkdGabrielLins,
 ];
 
 const LnkdPerfil = () => {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
+  const scrollContentRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      // 1. Animação de entrada da seção (Scale e Opacity)
       gsap.fromTo(contentRef.current, 
         { 
-          scale: 0.7,
+          scale: 0.8,
           opacity: 0,
         },
         { 
           scale: 1,
           opacity: 1,
-          duration: 1.5,
-          ease: 'expo.out',
+          duration: 1.2,
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
+            start: 'top 80%',
             toggleActions: 'play none none none',
           }
         }
       );
+
+      // 2. Animação de rolagem interna do "celular"
+      // Ela só acontece enquanto o usuário rola a página por esta seção
+      gsap.to(scrollContentRef.current, {
+        y: '-50%', // Move metade da altura (já que dobramos o array de imagens)
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom', // Começa quando a seção aparece embaixo
+          end: 'bottom top',   // Termina quando ela sai por cima
+          scrub: 1,            // Suaviza o movimento (quanto maior o número, mais "lento" ele segue o scroll)
+        }
+      });
+
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => ctx.revert(); // Limpeza para evitar memory leaks
   }, []);
 
   return (
@@ -94,20 +110,20 @@ const LnkdPerfil = () => {
 
         <div className={styles.visualContent} data-aos="fade-left">
           <div className={styles.glowEffect}></div>
-          {}
+          
           <div className={styles.phoneFrame}>
             <div className={styles.notch}></div>
             <div className={styles.screen}>
-              <div className={styles.scrollingContent}>
-                 {}
-                 {[...lnkdPerfis, ...lnkdPerfis].map((img, index) => (
-                    <img 
-                      key={index} 
-                      src={img} 
-                      alt={`LNKDS PERFIS ${index}`} 
-                      className={styles.scrollImage}
-                    />
-                 ))}
+              {/* Adicionada a Ref aqui para o GSAP controlar */}
+              <div ref={scrollContentRef} className={styles.scrollingContent}>
+                {[...lnkdPerfis, ...lnkdPerfis].map((img, index) => (
+                  <img 
+                    key={index} 
+                    src={img} 
+                    alt={`LNKDS PERFIS ${index}`} 
+                    className={styles.scrollImage}
+                  />
+                ))}
               </div>
             </div>
           </div>

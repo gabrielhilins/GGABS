@@ -256,6 +256,8 @@ $border-gray: #D1D5DB;
           border-radius: 8px;
           font-size: clamp(0.85rem, 2vw, 1rem);
           background: transparent;
+          resize: vertical;
+          min-height: 45px;
           color: #ffffff;
           transition: all 0.3s ease;
 

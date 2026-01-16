@@ -112,7 +112,7 @@ export const portfolioData = [
     id: "clara_vilela",
     title: "Clara Vilela Arquitetura",
     text: "Desenvolvimento de {strong}Portfólio{/strong} para estudante de Arquitetura. Autenticidade, interatividade e eficiência para destacar seus projetos perfeitamente!",
-    link: "https://portfolio-maria-clara.vercel.app/",
+    link: "",
     imageAlt: "Site da Clara",
     logoAlt: "Logo Clara Vilela",
     sector: "tech",
@@ -159,7 +159,7 @@ export const portfolioData = [
   {
     id: "advocacia",
     title: "Advocacia Premium",
-    text: "{strong}Site Institucional Jurídico{/strong} com design sóbrio e autoritário. Estruturado para transmitir credibilidade e facilitar o contato com potenciais clientes.",
+    text: "{strong}Site Institucional{/strong} juruídico com design sóbrio e autoritário. Estruturado para transmitir credibilidade e facilitar o contato com potenciais clientes.",
     link: "https://advocacia-landing-page-delta.vercel.app/",
     imageAlt: "Site Advocacia",
     logoAlt: "Logo Advocacia",
@@ -223,7 +223,7 @@ export const portfolioData = [
   {
     id: "hamburgueria",
     title: "IRON BURGUER",
-    text: "{strong}Landing Page Gastronômica{/strong} para hamburguerias e delivery. Design visualmente atraente que desperta o desejo e destaca o cardápio de forma irresistível.",
+    text: "{strong}Landing Page{/strong} para hamburguerias e delivery. Design visualmente atraente que desperta o desejo e destaca o cardápio de forma irresistível.",
     link: "https://hamburgueria-landing-page.vercel.app/",
     imageAlt: "Site Hamburgueria",
     logoAlt: "Logo Hamburgueria",

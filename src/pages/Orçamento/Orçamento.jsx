@@ -11,7 +11,6 @@ import Modal from "./Modal";
 import Form from "./Form";
 import StarsBackground from "../../components/StarsBackground";
 import { serviceNames } from "./serviceNames";
-import { questionFlows } from "./questions";
 
 function Orçamento() {
   const [formData, setFormData] = useState({
@@ -19,10 +18,11 @@ function Orçamento() {
     lastname: "",
     isCompany: "nao",
     companyName: "",
+    instagram: "",
     service: [],
     details: {},
     deadline: "",
-    files: [],
+    briefing: "",
   });
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
@@ -81,7 +81,8 @@ function Orçamento() {
     const newErrors = {};
     if (formData.isCompany === "nao") {
       if (!formData.name.trim()) newErrors.name = "O nome é obrigatório";
-      if (!formData.lastname.trim()) newErrors.lastname = "O sobrenome é obrigatório";
+      if (!formData.lastname.trim())
+        newErrors.lastname = "O sobrenome é obrigatório";
     }
     if (formData.isCompany === "sim" && !formData.companyName.trim()) {
       newErrors.companyName = "O nome da empresa é obrigatório";
@@ -91,10 +92,10 @@ function Orçamento() {
     }
     if (!formData.deadline) newErrors.deadline = "Selecione um prazo";
 
-    
     if (Array.isArray(formData.service) && formData.service.includes("outro")) {
       if (!formData.details.outro_description?.trim()) {
-        newErrors.outro_description = "A descrição é obrigatória para o serviço 'Outro'";
+        newErrors.outro_description =
+          "A descrição é obrigatória para o serviço 'Outro'";
       }
     }
 
@@ -109,29 +110,31 @@ function Orçamento() {
       setTimeout(() => {
         const timestamp = new Date();
         const locale = "pt-BR";
-        
+
         const formattedDate = timestamp.toLocaleDateString(locale, {
           day: "2-digit",
           month: "2-digit",
           year: "numeric",
         });
-        
+
         const formattedTime = timestamp.toLocaleTimeString(locale, {
           hour: "2-digit",
           minute: "2-digit",
           second: "2-digit",
         });
 
-        
         const selectedServiceNames = formData.service
-          .map(key => serviceNames[key])
+          .map((key) => serviceNames[key])
           .join(", ");
 
-        let briefingSummary = "";
-        if (formData.service.includes("outro") && formData.details.outro_description) {
-          briefingSummary = `Descrição do serviço 'Outro': ${formData.details.outro_description}`;
+        let outroSummary = "";
+        if (
+          formData.service.includes("outro") &&
+          formData.details.outro_description
+        ) {
+          outroSummary = `Descrição do serviço 'Outro': ${formData.details.outro_description}`;
         } else {
-          briefingSummary = "Múltiplos serviços selecionados";
+          outroSummary = "Múltiplos serviços selecionados";
         }
 
         const deadlineOptions = {
@@ -139,17 +142,19 @@ function Orçamento() {
           "2-semanas": "2 semanas",
           "1-mes": "1 mês",
           "2-meses": "2 meses",
-          "flexivel": "Flexível"
+          flexivel: "Flexível",
         };
 
         enviarWhatsAppTeste(
           formData.name,
           formData.lastname,
           formData.isCompany,
+          `${formData.companyName} (Instagram: ${formData.instagram})`,
           formData.companyName,
           selectedServiceNames,
           deadlineOptions[formData.deadline],
-          "Múltiplos serviços selecionados",
+          formData.briefing,
+          outroSummary,
           formattedDate,
           formattedTime,
         );
@@ -172,13 +177,12 @@ function Orçamento() {
           <button onClick={() => navigate("/")} className={styles.goBackButton}>
             <IoMdArrowBack className={styles.goBackIcon} /> Voltar
           </button>
-
         </div>
         <h1 data-aos="fade-up">Solicite seu Orçamento</h1>
         <p className={styles.umpasso} data-aos="fade-up" data-aos-delay="100">
           Transforme o futuro do seu negócio em realidade agora!
         </p>
-        
+
         <p
           className={styles.requiredNote}
           data-aos="fade-up"
@@ -198,7 +202,6 @@ function Orçamento() {
           uploadProgress={uploadProgress}
           removeFile={removeFile}
           serviceNames={serviceNames}
-          questionFlows={questionFlows}
         />
       </div>
 

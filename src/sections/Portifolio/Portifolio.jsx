@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react"; // Adicionado useRef
 import styles from "./Portifolio.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,19 +11,45 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+// Importe o GSAP para controlar o trigger
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 function Portifolio() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const swiperRef = useRef(null); // Ref para o Swiper
+  const sectionRef = useRef(null); // Ref para a seção inteira
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
+
+    // Configuração do ScrollTrigger para o Autoplay
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 70%", // Quando o topo da seção atingir 70% da tela
+        onEnter: () => {
+          if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.autoplay.start();
+          }
+        },
+        // Opcional: pausar se o usuário sair da seção para economizar performance
+        onLeaveBack: () => {
+          if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.autoplay.stop();
+          }
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   const sortProjects = (projects) => {
     return [...projects].sort((a, b) => {
-
       const dateDiff = new Date(b.date) - new Date(a.date);
       if (dateDiff !== 0) return dateDiff;
-      
       const statusOrder = { finalizado: 0, "em desenvolvimento": 1, "em concepção": 2 };
       return statusOrder[a.status] - statusOrder[b.status];
     });
@@ -37,7 +63,7 @@ function Portifolio() {
   }, [selectedCategory]);
 
   return (
-    <div className={styles["portifolio-container"]}>
+    <div ref={sectionRef} className={styles["portifolio-container"]}>
       <div className={styles.title} data-aos="fade-down">
         <h1>Portfólio</h1>
       </div>
@@ -69,12 +95,21 @@ function Portifolio() {
 
       <div className={styles["portifolio-carousel"]} data-aos="zoom-in">
         <Swiper
+          ref={swiperRef} // Atribuindo a ref aqui
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 12000, disableOnInteraction: false }}
+          // Importante: começamos com o autoplay desativado ou parado
+          autoplay={{ 
+            delay: 4000, // Ajustado de 12s para algo mais dinâmico, mas pode manter o seu
+            disableOnInteraction: false 
+          }}
+          onSwiper={(swiper) => {
+            // Garante que o autoplay comece parado
+            swiper.autoplay.stop();
+          }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
