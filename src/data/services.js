@@ -1,66 +1,93 @@
-import { FaCode, FaPaintBrush } from "react-icons/fa";
+import { 
+  FaCode, 
+  FaPalette, 
+  FaRocket, 
+  FaGlobe, 
+  FaUserTie, 
+  FaShoppingCart, 
+  FaCalendarCheck, 
+  FaChessKnight, 
+  FaFingerprint, 
+  FaPenNib, 
+  FaBullhorn 
+} from "react-icons/fa";
 
 export const servicesData = [
   {
-    icon: FaCode,
+    icon: FaCode, // Ícone principal da categoria Tech
     ariaLabel: "Ícone de Tech",
     title: "Tech",
     exemplos: [
       {
-        nome: "Landing Pages",
+        icon: FaRocket,
+        nome: "Landing Page",
         descricao:
-          "Páginas estrategicamente desenhadas para converter. Focadas em uma única ação, combinam copywriting persuasivo e design otimizado para maximizar seus leads e vendas.",
-        buttonText: "Tenha sua Landing Page",
+          "Engenharia de conversão de alta performance. Páginas ultra-velozes com copywriting persuasivo, projetadas para transformar tráfego em faturamento real.",
+        buttonText: "Solicitar Orçamento de LP",
       },
       {
-        nome: "Sites Institucionais",
+        icon: FaGlobe,
+        nome: "Site Institucional",
         descricao:
-          "Fortaleça a autoridade da sua marca na web. Desenvolvemos sites que contam a história da sua empresa, apresentam seus serviços e facilitam o contato, funcionando como seu cartão de visitas digital.",
-        buttonText: "Tenha seu Site Institucional",
+          "Sua sede global no digital. Desenvolvemos ecossistemas robustos que consolidam sua autoridade e profissionalizam a presença da sua empresa no mercado.",
+        buttonText: "Quero Fortalecer minha marca",
       },
       {
-        nome: "Portfólios",
+        icon: FaUserTie,
+        nome: "Portfólio Web",
         descricao:
-          "Destaque sua carreira ou negócio com um portfólio digital impressionante. Apresente seus projetos e habilidades em uma interface moderna que transmite profissionalismo e conquista novas oportunidades.",
-        buttonText: "Tenha seu Portfólio",
+          "Sua trajetória com estética de vanguarda. Vitrines digitais exclusivas para profissionais que buscam destaque com interfaces modernas e tecnológicas.",
+        buttonText: "Quero Exibir meu talento",
       },
       {
+        icon: FaShoppingCart,
         nome: "E-commerce",
         descricao:
-          "Transforme visitantes em clientes com uma loja virtual de alta performance. Oferecemos design intuitivo, checkout seguro e painel administrativo fácil de usar para você vender 24 horas por dia.",
-        buttonText: "Tenha sua Loja Virtual",
+          "Lojas virtuais de alta escala. Design intuitivo e checkout fluido para criar experiências de compra que funcionam 24h por dia, sem interrupções.",
+        buttonText: "Quero minha Loja Virtual",
       },
       {
-        nome: "Sistemas de Agendamento",
+        icon: FaCalendarCheck,
+        nome: "Sistema de Agendamento",
         descricao:
-          "Automatize sua agenda e otimize seu tempo. Implementamos sistemas de reserva online que permitem aos seus clientes marcarem horários sozinhos, reduzindo faltas e eliminando a troca de mensagens manuais.",
-        buttonText: "Automatize sua Agenda",
+          "Sua operação no piloto automático. Automatize suas reservas online, elimine tarefas manuais e otimize seu tempo de forma inteligente e lucrativa.",
+        buttonText: "Automatizar minha agenda",
       },
     ],
     route: "/solicitar-orcamentos",
   },
   {
-    icon: FaPaintBrush,
+    icon: FaPalette, // Ícone principal da categoria Design
     ariaLabel: "Ícone de Design",
     title: "Design",
     exemplos: [
       {
+        icon: FaFingerprint,
         nome: "Identidade Visual",
         descricao:
-          "Crie uma marca inesquecível. Desenvolvemos logotipos, paletas de cores e tipografias que traduzem a essência do seu negócio e o diferenciam da concorrência no primeiro olhar.",
-        buttonText: "Crie sua Identidade Visual",
+          "Muito além de um logotipo. Desenvolvemos sistemas visuais completos e exclusivos que traduzem a essência da sua marca e geram reconhecimento imediato.",
+        buttonText: "Solicitar Identidade Visual",
       },
       {
-        nome: "Cardápios",
+        icon: FaChessKnight,
+        nome: "Branding Estratégico",
         descricao:
-          "Transforme a experiência do seu restaurante. Design de Cardápios físicos, que também podem ser interativos e acessíveis via QR Code, fáceis de atualizar e desenhados para despertar o apetite e agilizar o atendimento.",
-        buttonText: "Peça seu Cardápio agora!",
+          "Defina seu lugar no topo. Consultoria de posicionamento, tom de voz e arquétipos para transformar seu negócio em uma marca magnética e referência no nicho.",
+        buttonText: "Quero Definir meu posicionamento",
       },
       {
+        icon: FaPenNib,
+        nome: "Criação de Logotipos",
+        descricao:
+          "Sua assinatura visual com impacto. Desenvolvemos um logotipo único e memorável, o primeiro passo essencial para a profissionalização e reconhecimento da sua marca no mercado.",
+        buttonText: "Solicite sua Logo agora!",
+      },
+      {
+        icon: FaBullhorn,
         nome: "Materiais Promocionais",
         descricao:
-          "Comunique sua marca com impacto profissional. Desenvolvemos templates personalizados para posts e stories, banners digitais e flyers que capturam a atenção, facilitam sua rotina de postagens e garantem uma presença visual consistente.",
-        buttonText: "Tenha seus Materiais",
+          "Consistência visual em todos os pontos de contato. Templates estratégicos e peças promocionais que elevam o nível da sua comunicação diária.",
+        buttonText: "Quero Impactar meu público",
       },
     ],
     route: "/solicitar-orcamentos",

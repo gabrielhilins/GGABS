@@ -12,7 +12,7 @@ function Servicos() {
       category.exemplos.map((exemplo) => ({
         ...exemplo,
         categoryTitle: category.title,
-        icon: category.icon,
+        displayIcon: exemplo.icon || category.icon,
         route: category.route,
       }))
     );
