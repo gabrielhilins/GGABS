@@ -11,6 +11,7 @@ import Modal from "./Modal";
 import Form from "./Form";
 import StarsBackground from "../../components/StarsBackground";
 import { serviceNames } from "./serviceNames";
+import WordmarkBranco from '../../assets/img/Wordmark Branco.png';
 
 function Orçamento() {
   const [formData, setFormData] = useState({
@@ -218,6 +219,11 @@ function Orçamento() {
         navigate={navigate}
       />
       <ToastContainer />
+
+      <div className={styles.footerCopyright}>
+        <img src={WordmarkBranco} alt="Logo GGABS" className={styles.footerLogo} />
+        <p>&copy; {new Date().getFullYear()} GGABS TECH & DESIGN. Todos os direitos reservados.</p>
+      </div>
     </section>
   );
 }

@@ -1,40 +1,19 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import styles from './LnkdPerfil.module.scss';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LNKDPERFIL from '../../assets/img/LNKD PERFIL.png';
+import PhoneAnimation from '../../components/PhoneAnimation/PhoneAnimation';
 
 gsap.registerPlugin(ScrollTrigger);
-
-import LnkdAdvocacia from '../../assets/img/LNKDPERFIL-ADVOCACIA.png';
-import LnkdDann from '../../assets/img/LNKDPERFIL-DANN.png';
-import LnkdFisioterapeuta from '../../assets/img/LNKDPERFIL-FISIOTERAPEUTA.png';
-import LnkdGabrielLins from '../../assets/img/LNKDPERFIL-GABRIEL-LINS.png';
-import LnkdGgabs from '../../assets/img/LNKDPERFIL-GGABS.png';
-import LnkdHamburgueria from '../../assets/img/LNKDPERFIL-HAMBURGUERIA.png';
-import LnkdPersonalTrainer from '../../assets/img/LNKDPERFIL-PERSONAL-TRAINER.png';
-import LNKDPERFIL from '../../assets/img/LNKD PERFIL.png';
-import LnkdNoirBarber from '../../assets/img/LNKDPERFIL-NOIR-BARBER.png';
-
-const lnkdPerfis = [
-  LnkdAdvocacia,
-  LnkdFisioterapeuta,
-  LnkdHamburgueria,
-  LnkdGgabs,
-  LnkdNoirBarber,
-  LnkdPersonalTrainer,
-  LnkdDann,
-  LnkdGabrielLins,
-];
 
 const LnkdPerfil = () => {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
-  const scrollContentRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Animação de entrada da seção (Scale e Opacity)
+      // Animação de entrada da seção (Scale e Opacity)
       gsap.fromTo(contentRef.current, 
         { 
           scale: 0.8,
@@ -52,23 +31,9 @@ const LnkdPerfil = () => {
           }
         }
       );
-
-      // 2. Animação de rolagem interna do "celular"
-      // Ela só acontece enquanto o usuário rola a página por esta seção
-      gsap.to(scrollContentRef.current, {
-        y: '-50%', // Move metade da altura (já que dobramos o array de imagens)
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom', // Começa quando a seção aparece embaixo
-          end: 'bottom top',   // Termina quando ela sai por cima
-          scrub: 1,            // Suaviza o movimento (quanto maior o número, mais "lento" ele segue o scroll)
-        }
-      });
-
     }, sectionRef);
 
-    return () => ctx.revert(); // Limpeza para evitar memory leaks
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -103,36 +68,12 @@ const LnkdPerfil = () => {
             </li>
           </ul>
 
-          <Link to="/solicitar-orcamentos" className={styles.ctaButton} data-aos="zoom-in" data-aos-delay="500">
-            QUERO MEU LNKD PERFIL
-          </Link>
+          <a href="https://lnkd.SEUDOMINIO.com" target="_blank" rel="noopener noreferrer" className={styles.ctaButton} data-aos="zoom-in" data-aos-delay="500">
+            SAIBA MAIS
+          </a>
         </div>
 
-        <div className={styles.visualContent} data-aos="fade-left">
-          <div className={styles.glowEffect}></div>
-          
-          <div className={styles.phoneFrame}>
-            <div className={styles.notch}></div>
-            <div className={styles.screen}>
-              {/* Adicionada a Ref aqui para o GSAP controlar */}
-              <div ref={scrollContentRef} className={styles.scrollingContent}>
-                {[...lnkdPerfis, ...lnkdPerfis].map((img, index) => (
-                  <img 
-                    key={index} 
-                    src={img} 
-                    alt={`LNKDS PERFIS ${index}`} 
-                    className={styles.scrollImage}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className={styles.floatingBadge} data-aos="zoom-in" data-aos-delay="600">
-            <span>+10</span>
-            <small>Perfis Criados</small>
-          </div>
-        </div>
+        <PhoneAnimation />
 
       </div>
     </section>

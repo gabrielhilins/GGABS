@@ -12,7 +12,8 @@ function enviarWhatsAppTeste(
   generatedTime
 ) {
   let mensagem = `*Novo Orçamento Solicitado*\n\n` +
-                 `*Nome:* ${nome} ${sobrenome}\n`;
+                 `*Nome:* ${nome}\n` + 
+                 `*Sobrenome:* ${sobrenome}\n`;
 
   if (isCompany === "sim") {
     mensagem += `*Empresa:* ${companyName}\n` +

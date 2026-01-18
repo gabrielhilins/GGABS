@@ -1,0 +1,139 @@
+@use '../../styles/Variaveis' as vars;
+
+.visualContent {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    @media (max-width: 992px) {
+      height: 550px;
+      order: 1;
+    }
+  
+    @media (max-width: 480px) {
+      height: 480px;
+    }
+  }
+  
+  .phoneFrame {
+    width: 280px;
+    height: 580px;
+    border: 12px solid #1a1a1a;
+    border-radius: 45px;
+    background: #000;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    z-index: 2;
+    overflow: hidden;
+  
+    @media (max-width: 480px) {
+      width: 220px;
+      height: 450px;
+      border-width: 8px;
+      border-radius: 35px;
+    }
+  }
+  
+  .notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 24px;
+    background: #1a1a1a;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    z-index: 5;
+  
+    @media (max-width: 480px) {
+      width: 80px;
+      height: 18px;
+    }
+  }
+  
+  .screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scrollingContent {
+    width: 100%;
+  }
+  
+  .scrollImage {
+    width: 100%;
+    display: block;
+    margin-bottom: 0; 
+  }
+  
+  // Keyframes can be removed if GSAP is the sole driver
+  @keyframes scrollVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  
+  .floatingBadge {
+    position: absolute;
+    bottom: 80px;
+    right: calc(50% - 200px); 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 24px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 10;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+  
+    span {
+      font-size: 28px;
+      font-weight: 900;
+      color: vars.$white;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+  
+    small {
+      color: rgba(vars.$white, 0.8);
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 992px) {
+      right: 20%;
+      bottom: 30px;
+    }
+  
+    @media (max-width: 480px) {
+      right: 10%;
+      bottom: 20px;
+      padding: 12px 18px;
+      
+      span {
+        font-size: 20px;
+      }
+      
+      small {
+        font-size: 8px;
+      }
+    }
+  }
+  
