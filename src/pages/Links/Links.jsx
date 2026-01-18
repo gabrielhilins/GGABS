@@ -7,7 +7,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
-import { IoIosRocket } from "react-icons/io";
+import { IoIosRocket, IoMdPhonePortrait } from "react-icons/io";
 import style from "./Links.module.scss";
 import StarsBackground from "../../components/StarsBackground";
 import Monograma from '../../assets/img/LogoTipo Fundo Azul e branco.png';
@@ -32,35 +32,42 @@ const Links = () => {
       color: "#0a0a23",
     },
     {
-      id: 5,
+      id: 3,
+      title: "LNKD PERFIL",
+      url: "https://lnkdperfil.ggabstechdesign.com.br",
+      icon: <IoMdPhonePortrait />,
+      color: "#0a0a23",
+    },
+    {
+      id: 4,
       title: "Instagram",
       url: "https://instagram.com/ggabstechdesign",
       icon: <FaInstagram />,
       color: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
     },
     {
-      id: 6,
+      id: 5,
       title: "TikTok",
       url: "https://tiktok.com/@ggabs.tech.design",
       icon: <FaTiktok />,
       color: "linear-gradient(45deg, #FE2C55, #25F4EE, #000000, #FE2C55)",
     },
     {
-      id: 7,
+      id: 6,
       title: "Facebook",
       url: "https://www.facebook.com/share/1AMxWY2jNe/",
       icon: <FaFacebook />,
       color: "#1877F2",
     },
     {
-      id: 8,
+      id: 7,
       title: "LinkedIn",
       url: "https://linkedin.com/company/ggabs-tech-design",
       icon: <FaLinkedinIn />,
       color: "#0077b5",
     },
     {
-      id: 9,
+      id: 8,
       title: "Threads",
       url: "https://threads.net/ggabstechdesign",
       icon: <FaThreads />,
